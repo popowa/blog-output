@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="author" content="ayakomuro" />
+    <meta name="robots" content="index, follow"/>
+
+    <meta property="og:title" content=""/>
+    <meta property="og:url" content="http://blog.popowa.com/2011/05/rightscale-rightscale_24.html"/>
+    <meta property="og:site_name" content="popowa"/>
+    <meta property="og:type" content="article"/>
+
+    <link rel="canonical" href="http://blog.popowa.com/2011/05/rightscale-rightscale_24.html" />
+
+    <title> | popowa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />
+
+    <link rel="stylesheet" type="text/css" href="http://blog.popowa.com/theme/css/main.css" />
+
+    <script type="text/javascript">var switchTo5x=true;</script>
+    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript">
+        stLight.options({
+            publisher: "5a2ce781d0739000123acd73",
+            doNotHash: false,
+            doNotCopy: false,
+            hashAddressBar: false
+        });
+    </script>
+</head>
+
+<body id="index">
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <header id="banner" >
+                <h1>
+                    <a href="http://blog.popowa.com/">popowa </a>
+                </h1>
+                <nav class="navbar">
+                    <div class="navbar-inner">
+                        <ul class="nav">
+                        </ul>
+
+<script>
+  (function() {
+    var cx = '014316853335343165598:-bgzniyqm3y';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div id="google-custom-search" class="nav">
+    <gcse:search></gcse:search>
+</div>
+                    </div>
+                </nav>
+            </header><!-- /#banner -->
+        </div>
+    </div>
+
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <div class="row-fluid">
+<div class="span10 offset1">
+  <section>
+    <article>
+      <header>
+        <h1 class="entry-title">
+          <a href="http://blog.popowa.com/2011/05/rightscale-rightscale_24.html" rel="bookmark"
+             title="Permalink to "></a></h1>
+<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="ayakomuro">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+      </header>
+      <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2011-05-23
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/rightscale.html">RightScale</a>
+        <a href="http://blog.popowa.com/tag/rightscalejie-ti-xin-shu.html">RightScale解体新書</a>
+        <a href="http://blog.popowa.com/tag/tsurushao-jie.html">ツール紹介</a>
+
+
+
+    
+</footer><!-- /.post-info -->
+        <div class="sharethis-top">
+          <span class='st_fblike_hcount' displayText='Facebook Like'></span>
+          <span class='st_plusone_hcount' displayText='Google +1'></span>
+          <span class='st_twitter_hcount' displayText='Tweet'></span>
+          <span class='st_email_hcount' displayText='Email'></span>
+        </div>
+
+        <p>〜RightScaleで何が出来るか〜+次はRightScaleは「クラウド管理が出来るSaaS型のサービスである」と前回書きましたが、それじゃそのサービスで何が出来るの！？と列挙していきたいと思います。  </p>
+<p>[]  </p>
+<p>もちろん以下列挙している事の多くは個々のクラウドのAPI経由やダッシュボード（マネージメントコンソール等）で行う事が出来ますが、RightScaleを使い自動化設定をする事でより簡単に、インフラエンジニア大量雇用しなくても、また既存資源を使いつつ、よりスケールアウトや自動化などクラウドの利点を活用する事が出来ます。  </p>
+<h2>出来る事（順不同）</h2>
+<ol>
+<li>
+<p>マルチクラウドを[一元的に管理]出来る  </p>
+<ol>
+<li>ここで言うマルチクラウド、というのは、世の中に出ているクラウド（パブリック、プライベート）を一元的に同じように管理出来る（対応クラウドに関しては以下を参照）</li>
+<li>IaaSだけではなく、PaaSと呼ばれるようなクラウドも扱う事が出来る</li>
+<li>一つのクラウドにベンダーロックされない</li>
+</ol>
+</li>
+<li>
+<p>ハイブリット構成が構築出来る  </p>
+<ol>
+<li>データーベースだけはオンプレミスやプライベートクラウドに配置し、レスポンス返すHttpdサーバはパブリッククラウドに置く等</li>
+</ol>
+</li>
+<li>
+<p>サーバーテンプレートと呼ばれるインフラ（サーバーやアプリ）構成についてのレシピ集が多数あり、選ぶだけでサーバー構築が出来る  </p>
+<ol>
+<li>サーバーテンプレートは自前で作る事が出来る</li>
+<li>面倒ならばRightScaleにサーバーテンプレートを作ってもらう事が出来る</li>
+<li>作ったテンプレートを公開する事が出来る</li>
+<li>公開したテンプレートを課金対象とする事が出来る</li>
+</ol>
+</li>
+<li>
+<p>個々のサーバー管理ではなく構成を管理する事が出来る  </p>
+<ol>
+<li>サーバーが落ちれば自動で他のサーバーで立て直す事も可能</li>
+<li>構成はバージョン管理されており、バージョンを戻したり、一部のスクリプトだけ上げたりという事が出来る</li>
+</ol>
+</li>
+<li>
+<p>サーバー構築だけではなく保守もする事が出来る  </p>
+<ol>
+<li>例えばパッケージ（PHPやRuby等）のアップデートを行ったり、設定ファイルを書き換えたり、アプリを展開して再配置したりする事が出来る</li>
+<li>構築した構成を簡単に変える事が出来る</li>
+</ol>
+</li>
+<li>
+<p>監視機能を簡単につける事が出来る  </p>
+<ol>
+<li>取得値によって、自動でサーバーを増やしたり減らしたりする事が出来る</li>
+<li>自動でサーバーを大きくしたり小さくしたりする事が出来る</li>
+</ol>
+</li>
+<li>
+<p>RightScaleを自前クラウドに載せて再販出来るリセラープログラムがある</p>
+</li>
+<li>
+<p>特定の業界や、要望に合わせたソリューションパックを選ぶ事が出来る  </p>
+<ol>
+<li>開発とテストソリューションパック</li>
+<li>グリッドソリューションパック</li>
+<li>Zend PHP ハイアベーラビリティ(HA)ソリューションパック</li>
+<li>ソーシャルゲームソリューションパック</li>
+</ol>
+</li>
+</ol>
+<h2>RightScaleが対応しているクラウド一覧</h2>
+<ul>
+<li>
+<p>public  </p>
+<ul>
+<li><a href="http://aws.amazon.com/ec2/">Amazon EC2</a></li>
+<li><a href="http://www.gogrid.com/">GoGrid</a></li>
+<li><a href="http://www.flexiant.com/products/flexiscale/">FlexiScale</a></li>
+<li><a href="http://www.rackspace.com/cloud/">RackSpace</a></li>
+</ul>
+</li>
+<li>
+<p>private  </p>
+<ul>
+<li><a href="http://www.eucalyptus.com/">Eucalyptus</a></li>
+<li><a href="http://www.eucalyptus.com/"></a><a href="http://cloud.com/">Cloud.com</a></li>
+<li><a href="http://cloud.com/"></a><a href="http://www.openstack.org/">OpenStack</a></li>
+<li><a href="http://www.openstack.org/"></a><a href="http://www.rightscale.com/news_events/press_releases/2009/RightScale-Adds-VMware-vCloud-Express-to-Arsenal-of-Supported-Clouds.php">VMware
+    vCloud</a></li>
+</ul>
+</li>
+<li>
+<p>PaaS  </p>
+<ul>
+<li><a href="http://d.hatena.ne.jp/keyword/Azure">Azure</a>(<a href="http://www.rightscale.com/news_events/press_releases/2009/RightScale-Announces-Planned-Support-for-Windows-Azure-Platform.php">Blog</a>)</li>
+<li><a href="http://blog.rightscale.com/2011/04/12/launch-vmwares-cloudfoundry-paas-using-rightscale/">Cloud
+    Foundry</a></li>
+</ul>
+</li>
+</ul>
+<p>※もしかしたら他にもあるかもしれません。抜けがありましたらお知らせください。  </p>
+
+        <div class="sharethis-bottom">
+          <span class='st_fblike_hcount' displayText='Facebook Like'></span>
+          <span class='st_plusone_hcount' displayText='Google +1'></span>
+          <span class='st_twitter_hcount' displayText='Tweet'></span>
+          <span class='st_email_hcount' displayText='Email'></span>
+        </div>
+      </div><!-- /.entry-content -->
+
+    </article>
+  </section>
+</div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="site-footer">
+        <div class="row-fluid">
+            <div class="span10 offset1">
+                <address>
+                    <p>
+                        This blog is proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                    </p>
+                    <p>
+                        <a href="http://github.com/jsliang/pelican-fresh/">Fresh</a> is a responsive theme designed by <a href="http://jsliang.com/">jsliang</a> and <a href="https://github.com/jsliang/pelican-fresh/graphs/contributors">contributors</a>.
+                        Special thanks to <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a> and <a href="http://getbootstrap.com/">Twitter Bootstrap</a>.
+                    </p>
+                </address>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-845207-15']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+</body>
+</html>

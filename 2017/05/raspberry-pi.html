@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="author" content="ayakomuro" />
+    <meta name="robots" content="index, follow"/>
+
+    <meta property="og:title" content="Raspberry Piの初回設定"/>
+    <meta property="og:url" content="http://blog.popowa.com/2017/05/raspberry-pi.html"/>
+    <meta property="og:site_name" content="popowa"/>
+    <meta property="og:type" content="article"/>
+
+    <link rel="canonical" href="http://blog.popowa.com/2017/05/raspberry-pi.html" />
+
+    <title>Raspberry Piの初回設定 | popowa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />
+
+    <link rel="stylesheet" type="text/css" href="http://blog.popowa.com/theme/css/main.css" />
+
+    <script type="text/javascript">var switchTo5x=true;</script>
+    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript">
+        stLight.options({
+            publisher: "5a2ce781d0739000123acd73",
+            doNotHash: false,
+            doNotCopy: false,
+            hashAddressBar: false
+        });
+    </script>
+</head>
+
+<body id="index">
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <header id="banner" >
+                <h1>
+                    <a href="http://blog.popowa.com/">popowa </a>
+                </h1>
+                <nav class="navbar">
+                    <div class="navbar-inner">
+                        <ul class="nav">
+                        </ul>
+
+<script>
+  (function() {
+    var cx = '014316853335343165598:-bgzniyqm3y';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div id="google-custom-search" class="nav">
+    <gcse:search></gcse:search>
+</div>
+                    </div>
+                </nav>
+            </header><!-- /#banner -->
+        </div>
+    </div>
+
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <div class="row-fluid">
+<div class="span10 offset1">
+  <section>
+    <article>
+      <header>
+        <h1 class="entry-title">
+          <a href="http://blog.popowa.com/2017/05/raspberry-pi.html" rel="bookmark"
+             title="Permalink to Raspberry Piの初回設定">Raspberry Piの初回設定</a></h1>
+<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="ayakomuro">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+      </header>
+      <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2017-05-07
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/raspberrypi.html">RaspberryPi</a>
+
+
+
+    
+</footer><!-- /.post-info -->
+        <div class="sharethis-top">
+          <span class='st_fblike_hcount' displayText='Facebook Like'></span>
+          <span class='st_plusone_hcount' displayText='Google +1'></span>
+          <span class='st_twitter_hcount' displayText='Tweet'></span>
+          <span class='st_email_hcount' displayText='Email'></span>
+        </div>
+
+        <p>Raspberry Piを買ったので、初回設定をした時もメモ  </p>
+<p>インターネットにドキュメントが沢山転がっているので、簡単に出来る( ˇωˇ )b</p>
+<p><a href="http://code.popowa.com/damdum/wp-content/uploads/2017/05/25E3-2582-25BF-25E3-2582-2599-25E3-2582-25A6-25E3-2583-25B3-25E3-2583-25AD-25E3-2583-25BC-25E3-2583-2588-25E3-2582-2599.png">!</a>
+<a href="http://code.popowa.com/damdum/wp-content/uploads/2017/05/25E3-2582-25BF-25E3-2582-2599-25E3-2582-25A6-25E3-2583-25B3-25E3-2583-25AD-25E3-2583-25BC-25E3-2583-2588-25E3-2582-2599.png">!</a></p>
+<p>Raspberry
+Piの箱に入っていたマニュアルに設定方法が記載してあるのでまずそれを読みます。</p>
+<p><a href="https://www.raspberrypi.org/files/legacy/qsg.pdf">https://www.raspberrypi.org/files/legacy/qsg.pdf</a></p>
+<p>上記のフローをやれば簡単に出来るかと思います。legacyってあるから、もしかしたら今はもっと違う方法があるのかも？</p>
+<p>準備するものは上記に記載がある通り。後はあちらこちらに記事があるから、そこを見れば良いかと</p>
+<p>SDカードをフォーマットするアプリをダウンロード</p>
+<ul>
+<li><a href="https://www.sdcard.org/downloads/formatter_4/">https://www.sdcard.org/downloads/formatter_4/</a></li>
+</ul>
+<p>SDカードにRaspberry Pi OSを入れる。私はNOOBSにしてみた。</p>
+<ul>
+<li><a href="https://www.raspberrypi.org/downloads/">https://www.raspberrypi.org/downloads/</a></li>
+</ul>
+<p>その後、リモートでも入れるようにsshdを有効にします。</p>
+<ul>
+<li><a href="https://www.raspberrypi.org/documentation/remote-access/ssh/README.md">https://www.raspberrypi.org/documentation/remote-access/ssh/README.md</a></li>
+</ul>
+<p>wifiを設定してapt-get
+updateやrpi-updateなどを実施しレポジトリやファームウェアをアップデートした後に、ローカルIPアドレスを固定させます。ここら辺はDebianやLinuxを使っていると一般的かと思われます。</p>
+<p>WLAN0設定</p>
+<ul>
+<li><a href="https://thepihut.com/blogs/raspberry-pi-tutorials/16683276-how-to-setup-a-static-ip-address-on-your-raspberry-pi">https://thepihut.com/blogs/raspberry-pi-tutorials/16683276-how-to-setup-a-static-ip-address-on-your-raspberry-pi</a></li>
+<li><a href="http://www.electroschematics.com/9496/static-manual-ip-wireless-raspberry-pi/">http://www.electroschematics.com/9496/static-manual-ip-wireless-raspberry-pi/</a></li>
+</ul>
+<p>音が出るか確認します。スピーカーを差し込んで試してみます。</p>
+<ul>
+<li><a href="https://www.raspberrypi.org/documentation/usage/audio/README.md">https://www.raspberrypi.org/documentation/usage/audio/README.md</a></li>
+</ul>
+<p>VNCも試してみたのですが、カクカクだったのと、sshしてvim使えたらとりあえずいいので、オフにしました。</p>
+<ul>
+<li>設定はこちら <a href="https://www.raspberrypi.org/documentation/remote-access/vnc/README.md">https://www.raspberrypi.org/documentation/remote-access/vnc/README.md</a></li>
+<li>RealVNCだと便利 <a href="https://www.realvnc.com/download/viewer/macosx/">https://www.realvnc.com/download/viewer/macosx/</a></li>
+</ul>
+<p>Raspberry
+Piの準備はとても簡単です。よく大変だーとかありますが、いつの時代もマニュアルを読んでそれに沿って進めれば半分ぐらい上手く行くので、素直にやるのがよいかと思いました。</p>
+
+        <div class="sharethis-bottom">
+          <span class='st_fblike_hcount' displayText='Facebook Like'></span>
+          <span class='st_plusone_hcount' displayText='Google +1'></span>
+          <span class='st_twitter_hcount' displayText='Tweet'></span>
+          <span class='st_email_hcount' displayText='Email'></span>
+        </div>
+      </div><!-- /.entry-content -->
+
+    </article>
+  </section>
+</div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="site-footer">
+        <div class="row-fluid">
+            <div class="span10 offset1">
+                <address>
+                    <p>
+                        This blog is proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                    </p>
+                    <p>
+                        <a href="http://github.com/jsliang/pelican-fresh/">Fresh</a> is a responsive theme designed by <a href="http://jsliang.com/">jsliang</a> and <a href="https://github.com/jsliang/pelican-fresh/graphs/contributors">contributors</a>.
+                        Special thanks to <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a> and <a href="http://getbootstrap.com/">Twitter Bootstrap</a>.
+                    </p>
+                </address>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-845207-15']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+</body>
+</html>

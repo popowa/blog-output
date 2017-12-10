@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="author" content="ayakomuro" />
+    <meta name="robots" content="index, follow"/>
+
+    <meta property="og:title" content="popowa - ayakomuro"/>
+    <meta property="og:url" content="http://blog.popowa.com/author/ayakomuro.html"/>
+    <meta property="og:site_name" content="popowa"/>
+    <meta property="og:type" content="website"/>
+
+    <link rel="canonical" href="http://blog.popowa.com/author/ayakomuro.html" />
+
+    <title>popowa - ayakomuro | popowa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />
+
+    <link rel="stylesheet" type="text/css" href="http://blog.popowa.com/theme/css/main.css" />
+
+    <script type="text/javascript">var switchTo5x=true;</script>
+    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript">
+        stLight.options({
+            publisher: "5a2ce781d0739000123acd73",
+            doNotHash: false,
+            doNotCopy: false,
+            hashAddressBar: false
+        });
+    </script>
+</head>
+
+<body id="index">
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <header id="banner" >
+                <h1>
+                    <a href="http://blog.popowa.com/">popowa </a>
+                </h1>
+                <nav class="navbar">
+                    <div class="navbar-inner">
+                        <ul class="nav">
+                        </ul>
+
+<script>
+  (function() {
+    var cx = '014316853335343165598:-bgzniyqm3y';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div id="google-custom-search" class="nav">
+    <gcse:search></gcse:search>
+</div>
+                    </div>
+                </nav>
+            </header><!-- /#banner -->
+        </div>
+    </div>
+
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <div class="row-fluid">
+<div class="span9">
+                <section>
+                    <ol id="posts-list" class="hfeed" start="9">
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2013/04/vps.html" rel="bookmark" title="Permalink to VPS的なサービスを探している">
+                                       VPS的なサービスを探している
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2013-04-27
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/help.html">help</a>
+        <a href="http://blog.popowa.com/tag/vps.html">VPS</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>放置していたので全く気付かなかったんだけど、dotCloudがsandboxを停止するという通知を出していたみたいで、コードも全部削除になってしまった。</p>
+<ul>
+<li><a href="http://blog.dotcloud.com/new-sandbox#sunset">April 25thAll Sandbox applications will be
+    destroyed.</a></li>
+<li><a href="http://blog.popowa.com/2012/03/less-money-more-options.html">お金を(なるべく)かけずにサーバー運用出来るか試してみた</a></li>
+</ul>
+<p>元々のコード自体は<a href="https://github.com/popowa/ATND">github</a>に置いていたのでよかったんだけど、またホスティングする場所探さないとなーという事で自分の中でのVPS
+要件定義を書いてみる</p>
+<p>小室的VPS要件定義</p>
+<p>安い、もしくは無料</p>
+<ul>
+<li>年払いだと安くなる、というのでもOK</li>
+</ul>
+<p>サブドメインにて操作出来る</p>
+<ul>
+<li>NSを移譲しないと使えない、というのはNG</li>
+</ul>
+<p>SaaSでもいい</p>
+<ul>
+<li>以下のようにアクセス出来るAPIもしくは何かしらのデプロイ方法があれば。</li>
+</ul>
+<p>SSHが出来る、もしくは外部からの自分のコードがデプロイ方法がある</p>
+<ul>
+<li>指定アプリのデプロイはあまり嬉しくない。</li>
+<li>ex. wordpressをワンクリックでデプロイ、とか</li>
+</ul>
+<p>IPv4なくてもいい</p>
+<ul>
+<li>root domainを使わないので。</li>
+</ul>
+<p>性能にはそんなにこだわらない</p>
+<ul>
+<li>料金に比例する事を理解している</li>
+</ul>
+<p>サポートもそんなに必要ない</p>
+<ul>
+<li>helpページがあればいい</li>
+</ul>
+<p>という訳で、ゴールデンウィークかけてVPS探してみたいと思います。</p>
+<p>早速教えてもらったVPSサービス</p>
+<blockquote>
+<p>@<a href="https://twitter.com/ayakomuro">ayakomuro</a>
+<a href="http://t.co/pV2njG4cdS" title="http://www.epw.jp/">epw.jp</a>
+日本のホスティングで、3150円/年です …</p></blockquote>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2013/04/vps.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2013/04/blog-post.html" rel="bookmark" title="Permalink to 会話の本質を意識して話す">
+                                       会話の本質を意識して話す
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2013-04-26
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/thought.html">thought</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>この間夫とランチを食べていた時に出た話。</p>
+<p>会話の本質を見極めないと、いつまで経っても噛み合ないし、着地点が見つからないよ、という話です。</p>
+<p>何かというと</p>
+<ul>
+<li>「○○すべき」という話</li>
+<li>「（現状、未来は）△△である」という話</li>
+</ul>
+<p>は、混ぜると危険（言葉通りではなくニュアンス的な意味です）。<br>
+でもつい混ぜたくなるんですよね、不思議と。</p>
+<p>例えば「<a href="http://www.itmedia.co.jp/news/articles/1304/24/news040.html">ユニクロ"年収1億～100万円"の衝撃　「世界統一賃金」導入へ</a>」</p>
+<ul>
+<li>日本で年収なんで100万許されない！生活して行けないじゃないか</li>
+</ul>
+<p>というのと</p>
+<ul>
+<li>世界で戦って行くにはグローバル化していかないと生き残れない</li>
+</ul>
+<p>というのは混ぜられないと思うんです。</p>
+<p>本当は日本含めて社員みんな中流階級で少しずつ給料も上がっていって、、というのが維持出来ればそれが一番いいのかもしれないけど、グローバル化するて事はそれが維持出来ないという事なので、どう足掻いたって仕方ない（社会主義になればいいかもしれないけど）</p>
+<p>つまり「○○すべき」というのは現状と未来に対しての解決策を提案していない足掻きであり、「（現状、未来は）△△である」は、避けられない状況に対して良いか悪いかは置いといてそれを乗り越える打開策であると言えます。</p>
+<p>「（現状、未来は）△△である」という事に対して、心理的不満から「○○すべき」という言葉が出るのは分かります。でもそれは頓珍漢な会話で絶対かみ合いません …</p>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2013/04/blog-post.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2013/04/dna.html" rel="bookmark" title="Permalink to DNA鑑定に立ち会って来た。">
+                                       DNA鑑定に立ち会って来た。
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2013-04-17
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/yatsutemita.html">やってみた</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>突然だけど、この間DNA鑑定に立ち会って来た。</p>
+<p><a href="https://www.google.com/search?q=DNA%E9%91%91%E5%AE%9A">DNA鑑定で検索</a>すると、なんか人生＼(\^o\^)／な記事が多いんだけど、具体的にはどんな感じで利用して、どんなフローになっているのか書いてある記事が少なかったので、もし気になる人の参考になればいいなと思って書きます。<br>
+[]<br>
++=+=+=+=+</p>
+<p>まず調べて分かった事は、DNA鑑定が出来るキット、それにまつわる器具を売っている会社と、それを使って鑑定をし証明する会社は違う、という事が分かりました。</p>
+<p>なのでキットは一般的に使われている物を探し、鑑定・証明してくれる会社はより明確な所にしようと決めました。<br>
+[[]]</p>
+<p>[[<strong>[[</strong><br>
+<strong>]]</strong>]]</p>
+<p>[[<strong>用途</strong>]]<br>
+DNA鑑定には、私的DNA鑑定、と法的DNA鑑定があるそうです。<br>
+法的DNA鑑定は裁判の物証として使えるレベルの物で高い（大体８万〜）。<br>
+具体的に使うツール（キット）が違う訳でなく、立会人が来てくれて、第三者としてサンプル採取を行なう事で公的資料として使えるようです。</p>
+<p>医者にお願いをする事も出来るそうなのですが、医者もDNA鑑定をするときは鑑定会社からキット（以下参照）を取り寄せ、それを患者（？）に適応するだけなので、金額的に高くなる（医者の労働分が乗るので）なります。</p>
+<p>また調査出来る関係性も、親子、兄弟、姉妹、祖父母孫、叔父母甥姪など結構幅広い事も判明しました。</p>
+<p>そして鑑定結果も、偶発的に塩基の一部が破損していて誤診もあるという事も分かりました。</p>
+<p>色々調べた結果、今回は私的DNA鑑定を利用しました。購入したのはこちら>>
+<a href="http://www.e-kantei.org/kakuyasuDNA/index.html">精度重視型 …</a></p>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2013/04/dna.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2013/04/alias.html" rel="bookmark" title="Permalink to 今日のalias">
+                                       今日のalias
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2013-04-12
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/mac.html">Mac</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>Macのローカルで時々作業する時、MySQLの起動コマンドがどこだったか毎回忘れてhistoryでgrepしている自分に嫌気が指したので、aliasに入れてみた。</p>
+<blockquote>
+<p>\$ vi \~/.bashrc<br>
+alias startdb=\'/usr/local/bin/mysql.server start\'<br>
+:wc<br>
+\$ source \~/.bashrc<br>
+\$ startdb<br>
+Starting MySQL<br>
+.. SUCCESS!</p>
+</blockquote>
+<p>なかなかMacの環境には慣れませんね。。</p>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2013/04/alias.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2013/04/debian.html" rel="bookmark" title="Permalink to 第三回福岡Debian勉強会に参加した">
+                                       第三回福岡Debian勉強会に参加した
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2013-04-08
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/debian.html">Debian</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>先日<a href="http://fukuoka-debian.github.io/web/history/event03.html">第三回福岡Debian勉強会</a>に参加しました。</p>
+<p>WheezyのKernel変更点について話をしましたが、準備不足とそもそものKernelの知識がなさ過ぎで櫻井さんに助けて頂いてばかりでした。</p>
+<p>次回はもう少し知識を付けてから発表しようと思いました。。。(ᇂωᇂ)</p>
+<p>それから<a href="http://gum.debian.or.jp/2013/">大統一Debian勉強会</a>が６月２９日に開催されます！ぜひお越し下さい。スポンサーにもなってください。</p>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2013/04/debian.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2013/04/surface.html" rel="bookmark" title="Permalink to Surfaceでアプリがダウンロード出来ない時">
+                                       Surfaceでアプリがダウンロード出来ない時
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2013-04-05
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/uncategorized.html">Uncategorized</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>Surfaceにskypeを入れようとした時に出たエラー  </p>
+<blockquote>
+<p>your pc isn\'t connected to the internet. to use the store, connect to
+the internet and then try again.</p>
+</blockquote>
+<p>調べてみたら、以下の方法で対処出来た。</p>
+<p>【対応その１】</p>
+<p>問題=> ダウンロードしてくれない</p>
+<p>時間がずれている場合があるらしいのでそれを解決する</p>
+<ul>
+<li>Win + Cを押して検索窓を出す</li>
+<li>\"Date and Time\"を入力して日時アイコンが出たらクリックする</li>
+<li>日時を正しい物に変更する</li>
+</ul>
+<p><a href="http://answers.microsoft.com/en-us/windows/forum/windows_8-windows_store/app-store-your-pc-isnt-connected-to-the-internet/97487893-5825-4b93-a413-9920696166db">http://answers.microsoft.com/en-us/windows/forum/windows_8-windows_store/app-store-your-pc-isnt-connected-to-the-internet/97487893-5825-4b93-a413-9920696166db</a></p>
+<p>結果=> ダウンロードが出来る様になった</p>
+<p>【対応その２】</p>
+<p>次の問題発生 => ダウンロードが進まない</p>
+<ul>
+<li>Win …</li></ul>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2013/04/surface.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2013/02/amazon.html" rel="bookmark" title="Permalink to ">
+                                       
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2013-02-20
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/aws.html">AWS</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>マネージメントコンソールで気付いたとても小さいけど便利な事+S3のバケットにファイルをアップロードして公開していたのですが、プロパティのURIの部分にあるアイコンが状況によって変わるんですね。</p>
+<p><a href="http://4.bp.blogspot.com/-hgt-m9cDBQA/USRYSp_UlFI/AAAAAAAAWxQ/1t1JQm5AYXw/s1600/private.png"><img alt="" src="http://4.bp.blogspot.com/-hgt-m9cDBQA/USRYSp_UlFI/AAAAAAAAWxQ/1t1JQm5AYXw/s1600/private.png"></a></p>
+<p>↓</p>
+<p><a href="http://3.bp.blogspot.com/-293reNdPdXM/USRYSgCUl9I/AAAAAAAAWxU/i2NJ8dhGqZs/s1600/public.png"><img alt="" src="http://3.bp.blogspot.com/-293reNdPdXM/USRYSgCUl9I/AAAAAAAAWxU/i2NJ8dhGqZs/s1600/public.png"></a></p>
+<p>このアイコンになるにはEveryoneでListが許可された時のみのようです。</p>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2013/02/amazon.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2013/02/excel1-2.html" rel="bookmark" title="Permalink to Excelで列1 列2 が消えないとき">
+                                       Excelで列1 列2 が消えないとき
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2013-02-18
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/uncategorized.html">Uncategorized</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>とあるExcelを触っていたら、列1</p>
+<p>列2...という値が各セルに入った行だけを削除出来ない、また列nの値を消す事が出来ない事象が発生した。</p>
+<p><a href="http://4.bp.blogspot.com/-uA_DhQHsGKU/USGxuxFv5qI/AAAAAAAAWws/HchOXLnivTw/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88+2013-02-18+13.24.22.png"><img alt="" src="http://4.bp.blogspot.com/-uA_DhQHsGKU/USGxuxFv5qI/AAAAAAAAWws/HchOXLnivTw/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88+2013-02-18+13.24.22.png"></a></p>
+<p>↑どうやっても列nが消えない！</p>
+<p>困ったなぁと思って調べてみたら関係ない物ばかり出て来て結局分からず。色々Excel内をみていたら原因が分かった。</p>
+<p><a href="http://2.bp.blogspot.com/-dCMJ1-QsVas/USGxuxI4yQI/AAAAAAAAWww/1sro7iPDnGY/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588+2013-02-18+13.24.42.png"><img alt="" src="http://2.bp.blogspot.com/-dCMJ1-QsVas/USGxuxI4yQI/AAAAAAAAWww/1sro7iPDnGY/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588+2013-02-18+13.24.42.png"></a></p>
+<p>Excelの特定の場所にデザインが適応されていてその見出し行にチェックが入っていたから上記列nが消えなかったようです。</p>
+<p>解決してよかった、よかった。</p>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2013/02/excel1-2.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2013/02/blog-post.html" rel="bookmark" title="Permalink to ロリポップのレンタルサーバのメールだけを使えないか調べてみた">
+                                       ロリポップのレンタルサーバのメールだけを使えないか調べてみた
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2013-02-13
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/lolipop.html">lolipop</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>ロリポップのレンタルサーバのメール機能だけを使えないかどうか調べた見た。</p>
+<p>例えばexample.comというドメインがあった時</p>
+<ul>
+<li>example.comのドメイン取得はお名前.com</li>
+<li>example.comのネームサーバーはAWS Route53</li>
+<li>http://example.com、http://www.example.comのウェブサーバはさくらVPS</li>
+<li>メールアカウント@example.comをロリポップのレンタルサーバのメール機能</li>
+</ul>
+<p>という風にしたかった。</p>
+<p>[]<br>
+ロリポップのサービスを契約したりサポートに問い合わせてみたりしたけど、どうやらドップレベルの独自ドメインでしか利用出来ない模様。。<br>
+つまり</p>
+<ul>
+<li>ルートドメイン（example.com）のネームサーバーがロリポップ側にある</li>
+</ul>
+<p>以外はレンタルサーバがうまく利用出来ないという事のようです。</p>
+<p>それならばサブドメインで出来るかな、と思って調べてみた結果のメモです（ルートドメインて自分で書いておきながら少し矛盾もある気がするが。。）</p>
+<ul>
+<li>example.comのドメイン取得はお名前.com</li>
+<li>example.comのネームサーバーはAWS Route53</li>
+<li>http://example.com、http://www.example.comのウェブサーバはさくらVPS</li>
+<li>メールアカウント@[mail.]example.comをロリポップのレンタルサーバのメール機能<br>
+   ↑mail.example …</li></ul>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2013/02/blog-post.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2013/02/route53hosted-zone-delete-hosted-zone.html" rel="bookmark" title="Permalink to ">
+                                       
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2013-02-13
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/aws.html">AWS</a>
+        <a href="http://blog.popowa.com/tag/route53.html">Route53</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>Route53+既知な事かもしれないけど、Hosted Zone(ドメイン）を消す時はRecord
+Setを消す必要があるんだけど、NSとSOAは消せない。<br>
+You might already know this, but I didn\'t.<br>
+Before deleting hosted zone, you need to delete record sets first. But
+you can\'t with NS and SOA.</p>
+<p><a href="http://4.bp.blogspot.com/-A7tZ7VW6txI/URrrDZ8pBgI/AAAAAAAAWu8/zsO2DQdkKA8/s1600/1.png"><img alt="" src="http://4.bp.blogspot.com/-A7tZ7VW6txI/URrrDZ8pBgI/AAAAAAAAWu8/zsO2DQdkKA8/s1600/1.png"></a></p>
+<p>[]</p>
+<p>例えばNS/SOA/CNAMEがあった場合、全部を選択したら、Delete Record
+Setはクリック出来る状態。</p>
+<p>eg. there are 3 record sets, NS …</p>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2013/02/route53hosted-zone-delete-hosted-zone.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    </ol><!-- /#posts-list -->
+<p class="paginator">
+        <a href="http://blog.popowa.com/author/ayakomuro15.html">&laquo;</a>
+    Page 16 / 35
+        <a href="http://blog.popowa.com/author/ayakomuro17.html">&raquo;</a>
+</p>
+                </section><!-- /#content -->
+</div>
+<div class="span3">
+    <section id="sidebar">
+            <div>
+                <h2>Browse content by</h2>
+                <ul class="fa-ul">
+                <li><a href="http://blog.popowa.com/categories.html"><i class="fa-li fa fa-tags"></i> Categories</a></li>
+                <li><a href="http://blog.popowa.com/archives.html"><i class="fa-li fa fa-calendar"></i> Dates</a></li>
+                <li><a href="http://blog.popowa.com/tags.html"><i class="fa-li fa fa-tag"></i> Tags</a></li>
+
+                </ul>
+            </div><!-- /.browse -->
+            <div>
+                <h2>Social</h2>
+                <ul>
+                    <li><a href="https://twitter.com/ayakomuro">Twitter</a></li>
+                    <li><a href="http://www.popowa.com">popowa</a></li>
+                </ul>
+            </div><!-- /.social -->
+<!-- /.Tags -->
+    </section><!-- /#sidebar -->
+</div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="site-footer">
+        <div class="row-fluid">
+            <div class="span10 offset1">
+                <address>
+                    <p>
+                        This blog is proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                    </p>
+                    <p>
+                        <a href="http://github.com/jsliang/pelican-fresh/">Fresh</a> is a responsive theme designed by <a href="http://jsliang.com/">jsliang</a> and <a href="https://github.com/jsliang/pelican-fresh/graphs/contributors">contributors</a>.
+                        Special thanks to <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a> and <a href="http://getbootstrap.com/">Twitter Bootstrap</a>.
+                    </p>
+                </address>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-845207-15']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+</body>
+</html>

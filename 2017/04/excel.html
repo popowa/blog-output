@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="author" content="ayakomuro" />
+    <meta name="robots" content="index, follow"/>
+
+    <meta property="og:title" content="Excelで通貨のセルのズレを直したい時"/>
+    <meta property="og:url" content="http://blog.popowa.com/2017/04/excel.html"/>
+    <meta property="og:site_name" content="popowa"/>
+    <meta property="og:type" content="article"/>
+
+    <link rel="canonical" href="http://blog.popowa.com/2017/04/excel.html" />
+
+    <title>Excelで通貨のセルのズレを直したい時 | popowa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />
+
+    <link rel="stylesheet" type="text/css" href="http://blog.popowa.com/theme/css/main.css" />
+
+    <script type="text/javascript">var switchTo5x=true;</script>
+    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript">
+        stLight.options({
+            publisher: "5a2ce781d0739000123acd73",
+            doNotHash: false,
+            doNotCopy: false,
+            hashAddressBar: false
+        });
+    </script>
+</head>
+
+<body id="index">
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <header id="banner" >
+                <h1>
+                    <a href="http://blog.popowa.com/">popowa </a>
+                </h1>
+                <nav class="navbar">
+                    <div class="navbar-inner">
+                        <ul class="nav">
+                        </ul>
+
+<script>
+  (function() {
+    var cx = '014316853335343165598:-bgzniyqm3y';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div id="google-custom-search" class="nav">
+    <gcse:search></gcse:search>
+</div>
+                    </div>
+                </nav>
+            </header><!-- /#banner -->
+        </div>
+    </div>
+
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <div class="row-fluid">
+<div class="span10 offset1">
+  <section>
+    <article>
+      <header>
+        <h1 class="entry-title">
+          <a href="http://blog.popowa.com/2017/04/excel.html" rel="bookmark"
+             title="Permalink to Excelで通貨のセルのズレを直したい時">Excelで通貨のセルのズレを直したい時</a></h1>
+<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="ayakomuro">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+      </header>
+      <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2017-04-07
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/excel.html">Excel</a>
+
+
+
+    
+</footer><!-- /.post-info -->
+        <div class="sharethis-top">
+          <span class='st_fblike_hcount' displayText='Facebook Like'></span>
+          <span class='st_plusone_hcount' displayText='Google +1'></span>
+          <span class='st_twitter_hcount' displayText='Tweet'></span>
+          <span class='st_email_hcount' displayText='Email'></span>
+        </div>
+
+        <p>仕事柄見積もりをよく作るのですが、Excelで値を変更した時、微妙にずれるのをどうやって直したらいいか調べて解決策を見つけたので、思い出したようにブログに残しておきます。</p>
+<p>例えばこういうシートがあります。既存のシートに入っていたり別の人が作ったシートだったりします。</p>
+<p><a href="https://2.bp.blogspot.com/-WI5mAhnGtYY/WObZXEPKKAI/AAAAAAAAgag/AYJ7ZQliayQlZKp-9UKYW0VanNqmKxhYwCLcB/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2017-04-07%2B9.07.58.png"><img alt="" src="https://2.bp.blogspot.com/-WI5mAhnGtYY/WObZXEPKKAI/AAAAAAAAgag/AYJ7ZQliayQlZKp-9UKYW0VanNqmKxhYwCLcB/s320/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2017-04-07%2B9.07.58.png">{width="320"
+height="163"}</a></p>
+<p>値を変えたり新しい行を追加して、値を入れるとこんな感じで微妙にズレます。これがとても気になります。セルの設定を全て同じにしても発生したりします。</p>
+<p><a href="https://1.bp.blogspot.com/-DOrATlLtU70/WObZoo3Jh9I/AAAAAAAAgak/vQYl9GGHmnwVhz8McCcfP5AYQ4yAU6cRQCLcB/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2017-04-07%2B9.09.23.png"><img alt="" src="https://1.bp.blogspot.com/-DOrATlLtU70/WObZoo3Jh9I/AAAAAAAAgak/vQYl9GGHmnwVhz8McCcfP5AYQ4yAU6cRQCLcB/s320/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2017-04-07%2B9.09.23.png">{width="320"
+height="168"}</a></p>
+<p>そういう時は揃えたいセルを選択して、%に変換します。</p>
+<p><a href="https://4.bp.blogspot.com/-khxoL87YMuY/WObZzK-o9LI/AAAAAAAAgao/qCOt7LcumUwGlOPyWyV4apkpViKPzCY5gCLcB/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2017-04-07%2B9.09.36.png"><img alt="" src="https://4.bp.blogspot.com/-khxoL87YMuY/WObZzK-o9LI/AAAAAAAAgao/qCOt7LcumUwGlOPyWyV4apkpViKPzCY5gCLcB/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2017-04-07%2B9.09.36.png"></a>　→<a href="https://3.bp.blogspot.com/-D_Gs9wR9_Qg/WObalwJp5CI/AAAAAAAAgaw/vRnOOAp_VPcbPfdU2Hjx91N4T_mC1tuRQCLcB/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2017-04-07%2B9.09.48.png"><img alt="" src="https://3.bp.blogspot.com/-D_Gs9wR9_Qg/WObalwJp5CI/AAAAAAAAgaw/vRnOOAp_VPcbPfdU2Hjx91N4T_mC1tuRQCLcB/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2017-04-07%2B9.09.48.png"></a></p>
+<p>その後揃えたいセルを選択して、指定の通貨に変更します。</p>
+<p><a href="https://2.bp.blogspot.com/-faHXq6MWj6k/WObaO3hgazI/AAAAAAAAgas/LZLidARfMgkFW9W1PeEHPTnda2jtrR5EgCLcB/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2017-04-07%2B9.09.58.png"><img alt="" src="https://2.bp.blogspot.com/-faHXq6MWj6k/WObaO3hgazI/AAAAAAAAgas/LZLidARfMgkFW9W1PeEHPTnda2jtrR5EgCLcB/s320/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2017-04-07%2B9.09.58.png">{width="294"
+height="320"}</a></p>
+<p>わーい、やったね！あとは、小数点表示を0にすれば大体やりたい事は出来ます。</p>
+<p><a href="https://4.bp.blogspot.com/-aH_bEKKHX78/WObayvCRdOI/AAAAAAAAga0/GrKkg4psKJsC-1eCyfFPwZV3eYCwHQcNwCLcB/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2017-04-07%2B9.10.10.png"><img alt="" src="https://4.bp.blogspot.com/-aH_bEKKHX78/WObayvCRdOI/AAAAAAAAga0/GrKkg4psKJsC-1eCyfFPwZV3eYCwHQcNwCLcB/s320/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2017-04-07%2B9.10.10.png">{width="275"
+height="320"}</a></p>
+
+        <div class="sharethis-bottom">
+          <span class='st_fblike_hcount' displayText='Facebook Like'></span>
+          <span class='st_plusone_hcount' displayText='Google +1'></span>
+          <span class='st_twitter_hcount' displayText='Tweet'></span>
+          <span class='st_email_hcount' displayText='Email'></span>
+        </div>
+      </div><!-- /.entry-content -->
+
+    </article>
+  </section>
+</div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="site-footer">
+        <div class="row-fluid">
+            <div class="span10 offset1">
+                <address>
+                    <p>
+                        This blog is proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                    </p>
+                    <p>
+                        <a href="http://github.com/jsliang/pelican-fresh/">Fresh</a> is a responsive theme designed by <a href="http://jsliang.com/">jsliang</a> and <a href="https://github.com/jsliang/pelican-fresh/graphs/contributors">contributors</a>.
+                        Special thanks to <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a> and <a href="http://getbootstrap.com/">Twitter Bootstrap</a>.
+                    </p>
+                </address>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-845207-15']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+</body>
+</html>

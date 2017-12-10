@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="author" content="ayakomuro" />
+    <meta name="robots" content="index, follow"/>
+
+    <meta property="og:title" content="ライトスクリプト：MAIL Postfix local delivery"/>
+    <meta property="og:url" content="http://blog.popowa.com/2011/07/mail-postfix-local-delivery.html"/>
+    <meta property="og:site_name" content="popowa"/>
+    <meta property="og:type" content="article"/>
+
+    <link rel="canonical" href="http://blog.popowa.com/2011/07/mail-postfix-local-delivery.html" />
+
+    <title>ライトスクリプト：MAIL Postfix local delivery | popowa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />
+
+    <link rel="stylesheet" type="text/css" href="http://blog.popowa.com/theme/css/main.css" />
+
+    <script type="text/javascript">var switchTo5x=true;</script>
+    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript">
+        stLight.options({
+            publisher: "5a2ce781d0739000123acd73",
+            doNotHash: false,
+            doNotCopy: false,
+            hashAddressBar: false
+        });
+    </script>
+</head>
+
+<body id="index">
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <header id="banner" >
+                <h1>
+                    <a href="http://blog.popowa.com/">popowa </a>
+                </h1>
+                <nav class="navbar">
+                    <div class="navbar-inner">
+                        <ul class="nav">
+                        </ul>
+
+<script>
+  (function() {
+    var cx = '014316853335343165598:-bgzniyqm3y';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div id="google-custom-search" class="nav">
+    <gcse:search></gcse:search>
+</div>
+                    </div>
+                </nav>
+            </header><!-- /#banner -->
+        </div>
+    </div>
+
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <div class="row-fluid">
+<div class="span10 offset1">
+  <section>
+    <article>
+      <header>
+        <h1 class="entry-title">
+          <a href="http://blog.popowa.com/2011/07/mail-postfix-local-delivery.html" rel="bookmark"
+             title="Permalink to ライトスクリプト：MAIL Postfix local delivery">ライトスクリプト：MAIL Postfix local delivery</a></h1>
+<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="ayakomuro">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+      </header>
+      <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2011-07-31
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/rightscript.html">RightScript</a>
+
+
+
+    
+</footer><!-- /.post-info -->
+        <div class="sharethis-top">
+          <span class='st_fblike_hcount' displayText='Facebook Like'></span>
+          <span class='st_plusone_hcount' displayText='Google +1'></span>
+          <span class='st_twitter_hcount' displayText='Tweet'></span>
+          <span class='st_email_hcount' displayText='Email'></span>
+        </div>
+
+        <div class="highlight"><pre><span></span>個別のライトスクリプトを日本語化してみます：MAIL Postfix local delivery
+
+
+
+
+
+MAIL Postfix local delivery
+</pre></div>
+
+
+<blockquote>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash -ex</span>
+<span class="c1">#</span>
+<span class="c1"># Copyright (c) 2008-2011 RightScale, Inc, All Rights Reserved Worldwide.</span>
+<span class="c1">#</span>
+
+<span class="nv">postfix_file</span><span class="o">=</span>/etc/postfix/main.cf
+<span class="nv">backupfile_time</span><span class="o">=</span><span class="sb">`</span>date +%H%M%S<span class="sb">`</span>
+cp <span class="nv">$postfix_file</span> <span class="nv">$postfix_file</span>.<span class="nv">$backupfile_time</span>
+<span class="c1">#変数を設定しオリジナル設定ファイルをコピーしておく</span>
+
+
+
+<span class="k">if</span> <span class="o">[</span>  <span class="s2">&quot;</span><span class="nv">$RS_DISTRO</span><span class="s2">&quot;</span> <span class="o">==</span>  <span class="s2">&quot;ubuntu&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+  <span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="k">$(</span>lsb_release -rs<span class="k">)</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;8.04&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nb">export</span> <span class="nv">DEBIAN_FRONTEND</span><span class="o">=</span><span class="s2">&quot;noninteractive&quot;</span><span class="p">;</span> apt-get install  -y sysvconfig
+  <span class="k">fi</span>
+  <span class="nb">echo</span> <span class="s2">&quot;Using Ubuntu default main.cf config&quot;</span>
+<span class="k">else</span>
+<span class="c1"># Make the changes needed for centos</span>
+sed -i <span class="s1">&#39;s/inet_interfaces = localhost/#inet_interfaces = localhost/&#39;</span> <span class="nv">$postfix_file</span>
+<span class="c1">#設定ファイルを書き換える（inet_interface=localhostを無効にする）</span>
+sed -i <span class="s1">&#39;s/#inet_interfaces = all/inet_interfaces = all/&#39;</span> <span class="nv">$postfix_file</span>
+<span class="c1">#設定ファイルを書き換える（inet_interface=allを有効にする）</span>
+
+
+
+<span class="c1"># Replace everything after the localhost.  This assumes that the last host entry is</span>
+<span class="c1"># The host that this script added.  If there are other hosts added to this line by</span>
+<span class="c1"># some other script then this will break.  A specialized script must be written to</span>
+<span class="c1"># handle this case.</span>
+sed -i <span class="s2">&quot;s/^mydestination = </span><span class="nv">$myhostname</span><span class="s2">, localhost.</span><span class="nv">$mydomain</span><span class="s2">, localhost.*</span>$<span class="s2">/mydestination = </span><span class="nv">$myhostname</span><span class="s2">, localhost.</span><span class="nv">$mydomain</span><span class="s2">, localhost, </span><span class="nv">$EC2_LOCAL_HOSTNAME</span><span class="s2">/&quot;</span> <span class="nv">$postfix_file</span>
+<span class="c1">#さらに設定を追加する</span>
+service postfix reload
+<span class="c1">#postfixをリロード</span>
+<span class="k">fi</span>
+</pre></div>
+</td></tr></table>
+
+</blockquote>
+
+        <div class="sharethis-bottom">
+          <span class='st_fblike_hcount' displayText='Facebook Like'></span>
+          <span class='st_plusone_hcount' displayText='Google +1'></span>
+          <span class='st_twitter_hcount' displayText='Tweet'></span>
+          <span class='st_email_hcount' displayText='Email'></span>
+        </div>
+      </div><!-- /.entry-content -->
+
+    </article>
+  </section>
+</div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="site-footer">
+        <div class="row-fluid">
+            <div class="span10 offset1">
+                <address>
+                    <p>
+                        This blog is proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                    </p>
+                    <p>
+                        <a href="http://github.com/jsliang/pelican-fresh/">Fresh</a> is a responsive theme designed by <a href="http://jsliang.com/">jsliang</a> and <a href="https://github.com/jsliang/pelican-fresh/graphs/contributors">contributors</a>.
+                        Special thanks to <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a> and <a href="http://getbootstrap.com/">Twitter Bootstrap</a>.
+                    </p>
+                </address>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-845207-15']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+</body>
+</html>

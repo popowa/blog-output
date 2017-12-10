@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="author" content="ayakomuro" />
+    <meta name="robots" content="index, follow"/>
+
+    <meta property="og:title" content=""/>
+    <meta property="og:url" content="http://blog.popowa.com/2014/08/aws-support-api.html"/>
+    <meta property="og:site_name" content="popowa"/>
+    <meta property="og:type" content="article"/>
+
+    <link rel="canonical" href="http://blog.popowa.com/2014/08/aws-support-api.html" />
+
+    <title> | popowa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />
+
+    <link rel="stylesheet" type="text/css" href="http://blog.popowa.com/theme/css/main.css" />
+
+    <script type="text/javascript">var switchTo5x=true;</script>
+    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript">
+        stLight.options({
+            publisher: "5a2ce781d0739000123acd73",
+            doNotHash: false,
+            doNotCopy: false,
+            hashAddressBar: false
+        });
+    </script>
+</head>
+
+<body id="index">
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <header id="banner" >
+                <h1>
+                    <a href="http://blog.popowa.com/">popowa </a>
+                </h1>
+                <nav class="navbar">
+                    <div class="navbar-inner">
+                        <ul class="nav">
+                        </ul>
+
+<script>
+  (function() {
+    var cx = '014316853335343165598:-bgzniyqm3y';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div id="google-custom-search" class="nav">
+    <gcse:search></gcse:search>
+</div>
+                    </div>
+                </nav>
+            </header><!-- /#banner -->
+        </div>
+    </div>
+
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <div class="row-fluid">
+<div class="span10 offset1">
+  <section>
+    <article>
+      <header>
+        <h1 class="entry-title">
+          <a href="http://blog.popowa.com/2014/08/aws-support-api.html" rel="bookmark"
+             title="Permalink to "></a></h1>
+<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="ayakomuro">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+      </header>
+      <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2014-08-15
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/aws.html">AWS</a>
+        <a href="http://blog.popowa.com/tag/support.html">support</a>
+
+
+
+    
+</footer><!-- /.post-info -->
+        <div class="sharethis-top">
+          <span class='st_fblike_hcount' displayText='Facebook Like'></span>
+          <span class='st_plusone_hcount' displayText='Google +1'></span>
+          <span class='st_twitter_hcount' displayText='Tweet'></span>
+          <span class='st_email_hcount' displayText='Email'></span>
+        </div>
+
+        <p>APIでケースを取って来れる期間は一年前まで+今度閉じる社内用AWSアカウントがあったので、サポート内にあるコンテンツを全部バックアップ取っておこうと思ったんですよ。</p>
+<p>それで簡単なコード書いたら、  </p>
+<blockquote>
+<p>/Users/komuro/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/aws-sdk-1.50.0/lib/aws/core/client.rb:375:in
+`return_or_raise\': 
+(AWS::Support::Errors::InternalServerError)<br>
+from
+/Users/komuro/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/aws-sdk-1.50.0/lib/aws/core/client.rb:476:in
+`client_request\'<br>
+from (eval):3:in `describe_cases\'<br>
+from get-support-content.rb:11:in `\&lt;main>\'</p>
+</blockquote>
+<p>こんなエラーが出て。おや？と思ってパラメーター変えても駄目で、別のAWSアカウントのアクセスキー/シークレットアクセスキーを設定したらちゃんと取れた。<br>
+エラーが出たAWSアカウントの最後の問合せ日時はJul 17, 201304:37 PM
+PDTだった。</p>
+<p>上記の状況と風の噂で聞いた事を掛け合わせると、</p>
+<ul>
+<li>AWS Support APIでケース内容を取って来れるのは一年前までである</li>
+</ul>
+<p>という事らしい。またAWS Support
+APIと、マネージメントコンソールのサポート画面は別のAPIを使っていると思う（マネージメントコンソールでは表示されるのにSupport
+APIでは取れない）</p>
+<p>マネージメントコンソールで見れるんだからAPIでも取れる様にして欲しいなぁというのがユーザー側の想いですけど何か一年縛りにしている理由があるんですかねー。。<br>
+最後はマネージメントコンソールのサポート画面をあれするしか（うわ、何をするやめr</p>
+<p><strong>追記</strong>：APIのドキュメント調べたら確かに書いてあった！  </p>
+<blockquote>
+<p>Case data is available for 12 months after creation. If a case was
+created more than 12 months ago, a request for data might cause an
+error.</p>
+</blockquote>
+<p>http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeCases.html</p>
+<p>しょぼーん。</p>
+
+        <div class="sharethis-bottom">
+          <span class='st_fblike_hcount' displayText='Facebook Like'></span>
+          <span class='st_plusone_hcount' displayText='Google +1'></span>
+          <span class='st_twitter_hcount' displayText='Tweet'></span>
+          <span class='st_email_hcount' displayText='Email'></span>
+        </div>
+      </div><!-- /.entry-content -->
+
+    </article>
+  </section>
+</div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="site-footer">
+        <div class="row-fluid">
+            <div class="span10 offset1">
+                <address>
+                    <p>
+                        This blog is proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                    </p>
+                    <p>
+                        <a href="http://github.com/jsliang/pelican-fresh/">Fresh</a> is a responsive theme designed by <a href="http://jsliang.com/">jsliang</a> and <a href="https://github.com/jsliang/pelican-fresh/graphs/contributors">contributors</a>.
+                        Special thanks to <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a> and <a href="http://getbootstrap.com/">Twitter Bootstrap</a>.
+                    </p>
+                </address>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-845207-15']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+</body>
+</html>

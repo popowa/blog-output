@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="author" content="ayakomuro" />
+    <meta name="robots" content="index, follow"/>
+
+    <meta property="og:title" content=""/>
+    <meta property="og:url" content="http://blog.popowa.com/2011/07/rightscale_4942.html"/>
+    <meta property="og:site_name" content="popowa"/>
+    <meta property="og:type" content="article"/>
+
+    <link rel="canonical" href="http://blog.popowa.com/2011/07/rightscale_4942.html" />
+
+    <title> | popowa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />
+
+    <link rel="stylesheet" type="text/css" href="http://blog.popowa.com/theme/css/main.css" />
+
+    <script type="text/javascript">var switchTo5x=true;</script>
+    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript">
+        stLight.options({
+            publisher: "5a2ce781d0739000123acd73",
+            doNotHash: false,
+            doNotCopy: false,
+            hashAddressBar: false
+        });
+    </script>
+</head>
+
+<body id="index">
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <header id="banner" >
+                <h1>
+                    <a href="http://blog.popowa.com/">popowa </a>
+                </h1>
+                <nav class="navbar">
+                    <div class="navbar-inner">
+                        <ul class="nav">
+                        </ul>
+
+<script>
+  (function() {
+    var cx = '014316853335343165598:-bgzniyqm3y';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div id="google-custom-search" class="nav">
+    <gcse:search></gcse:search>
+</div>
+                    </div>
+                </nav>
+            </header><!-- /#banner -->
+        </div>
+    </div>
+
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <div class="row-fluid">
+<div class="span10 offset1">
+  <section>
+    <article>
+      <header>
+        <h1 class="entry-title">
+          <a href="http://blog.popowa.com/2011/07/rightscale_4942.html" rel="bookmark"
+             title="Permalink to "></a></h1>
+<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="ayakomuro">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+      </header>
+      <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2011-07-27
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/aws.html">AWS</a>
+        <a href="http://blog.popowa.com/tag/rightscale.html">RightScale</a>
+        <a href="http://blog.popowa.com/tag/rightscalejie-ti-xin-shu.html">RightScale解体新書</a>
+
+
+
+    
+</footer><!-- /.post-info -->
+        <div class="sharethis-top">
+          <span class='st_fblike_hcount' displayText='Facebook Like'></span>
+          <span class='st_plusone_hcount' displayText='Google +1'></span>
+          <span class='st_twitter_hcount' displayText='Tweet'></span>
+          <span class='st_email_hcount' displayText='Email'></span>
+        </div>
+
+        <p>げてみよう\~+クラウドの追加、諸設定が終わったので、サーバーテンプレートを取り込んで、サーバを立ち上げます。このページでは、サーバーテンプレートの動き、とどのようにサーバーを立ち上げるスクリプトが機能するかを見て行きたいと思います。  </p>
+<p>[]  </p>
+<ul>
+<li>デプロイメントを作成する</li>
+<li>サーバーテンプレートを持ってくる</li>
+<li>サーバーテンプレートの諸設定する</li>
+<li>サーバーテンプレートで使うバケット、ファイルの用意をする</li>
+<li>サーバーテンプレートをデプロイメントに追加する</li>
+<li>サーバーを立てる</li>
+</ul>
+<h2>◆デプロイメントを作成する</h2>
+<p>まず、「管理」->
+「デプロイメント」の横にある「新規追加」をクリックします。  </p>
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/depoyment_1.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/depoyment_1.png" title="depoyment_1">{.alignnone
+.size-full .wp-image-1219 width="205"
+height="86"}</a>  </p>
+<p>Nickname:  デプロイメントの名前です（後で変えられます）<br>
+Description:　説明文<br>
+Default Availability
+Zone:　ディフォルトのアベイラビリティゾーン（これはサーバーレベルで上書きする事が出来ます。）<br>
+Default Placement Group:
+ こちらは通常利用しないと思います（多分何も出てないかと）<br>
+これはCCI (クラスターコンピューティングインスタンス）をHPC(AWS High
+Performance Computing)として利用時に使う場所です。  </p>
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/depoyment_2.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/depoyment_2-300x186.png" title="depoyment_2">{.alignnone
+.size-medium .wp-image-1220 width="300"
+height="186"}</a>  </p>
+<p>「Save」をすると作成したデプロイメントのページに遷移します。先ほど入力した内容を変えたい場合は、「edit」をクリックして編集します。  </p>
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/deployment_3.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/deployment_3-300x288.png" title="deployment_3">{.alignnone
+.size-medium .wp-image-1221 width="300"
+height="288"}</a>  </p>
+<p>デプロイメントのページには  </p>
+<p><strong>インフォメーション、サーバ、入力、監視、スクリプト、ボリューム、アラート、監視エントリ、履歴、変更</strong>  </p>
+<p>というタブがあります。これは後ほど説明したいと思います。  </p>
+<h2>◆サーバーテンプレートを持ってくる</h2>
+<p>メニューバーの「デザイン」-> 「MultiCloud
+Maketplace」の下にある「サーバテンプレート」を選択します。  </p>
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/ss_1.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/ss_1-300x68.png" title="ss_1">{.alignnone
+.size-medium .wp-image-1222 width="300"
+height="68"}</a>  </p>
+<p>サーバーテンプレートのページへ遷移します。  </p>
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/ss_2.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/ss_2-300x117.png" title="ss_2">{.alignnone
+.size-medium .wp-image-1223 width="300"
+height="117"}</a>  </p>
+<p>サーバーテンプレートのページの見方については<br>
+>> <a href="http://www.popowa.com/archives/1225" title="RightScaleを解き明かす~サーバーテンプレートのページの見方~">RightScaleを解き明かす\~　サーバーテンプレートのページの見方\~</a><br>
+をご覧ください。  </p>
+<p>今回は@<a href="http://twitter.com/pinkguinness">pinkguinness</a>さんが作られた<br>
+>> <a href="http://www.rightscale.com/library/server_templates/LAMP-All-In-One-with-wordpress/20568">LAMP All-In-One with wordpress JP- 11H1<br>
+</a>を取り込みたいと思います。  </p>
+<p>対象サーバテンプレートのページを開いた後、右側にある「Import」をクリックします。  </p>
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/import.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/import-300x57.png" title="import">{.alignnone
+.size-medium .wp-image-1244 width="300"
+height="57"}</a>  </p>
+<p>するとマルチクラウド・マーケットプレイスからサーバテンプレートを取り込みます。<br>
+イメージ的に説明すると、本屋にある雑誌を１部、自分の本棚に入れる感じです（無償、有償関わらず）  </p>
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/imported.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/imported-300x108.png" title="imported">{.alignnone
+.size-medium .wp-image-1245 width="300"
+height="108"}</a>  </p>
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/imported.png"></a>そしてその後「Clone」で、複製を作成します。<br>
+<a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/clone.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/clone.png" title="clone">{.alignnone
+.size-full .wp-image-1246 width="62"
+height="28"}</a><br>
+これはなぜ複製を作るかというと、今後自分なりにカスタマイズすると思うのですが、
+その時に元のサーバテンプレートに戻りたいときがあるかもしれません。その時に戻れなくもないですが、今まで作業した内容も保持していたい場合、複製を作っておくと両方見る事が出来る為、便利です。しなくてもいいですが、した方がいいと思います。  </p>
+<blockquote>
+<p>Your cloned ServerTemplate will have its usage reported to
+RightScale.<br>
+ライトスケールに複製したサーバテンプレート情報を通知しました。<br>
+ServerTemplate successfully cloned and shown below. Click \'Edit\' to
+change it.<br>
+サーバテンプレートは以下の通り複製に成功しました。「Edit」をクリックして変更してください。</p>
+</blockquote>
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/cloned.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/cloned-300x46.png" title="cloned">{.alignnone
+.size-medium .wp-image-1247 width="300"
+height="46"}</a>  </p>
+<p>この複製を取ったのは先ほどのイメージで言うと自分の本棚に、同じ本をもう一つ作った事になります。<br>
+タイトルも、「LAMP All-In-One with wordpress JP- 11H1
+v1 」と「v1」が付いています。  </p>
+<h2>◆サーバーテンプレートの諸設定する</h2>
+<p>サーバテンプレートの設定に関しては<br>
+>>
+<a href="http://www.popowa.com/archives/1258" title="RightScaleを解き明かす~サーバテンプレートの諸設定をしよう~">RightScaleを解き明かす\~サーバテンプレートの諸設定をしよう\~</a><br>
+をご覧ください。  </p>
+<h2>◆サーバーテンプレートで使うバケット、ファイルの用意をする</h2>
+<p>例えば>> <a href="http://www.rightscale.com/library/server_templates/LAMP-All-In-One-with-wordpress/20568">LAMP All-In-One with wordpress JP-
+11H1</a>
+ではwordpressのファイルをzipファイルにしてS3に置いてあり、サーバを起動させる時に、S3から持って来て、展開するようになっています（これはRightScaleでは一般的なデプロイの仕方です）。  </p>
+<p>なので、まずS3のバケットを作りましょう。デスクトップアプリで簡単なのはCyberduckとかが使い易いと思います。<br>
+>>
+<a href="http://trac.cyberduck.ch/wiki/help/en/howto/s3">CyberduckでAWSのS3を使う方法(英語）</a>  </p>
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/s3.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/s3.png" title="s3">{.alignnone
+.size-full .wp-image-1288 width="463"
+height="67"}</a>  </p>
+<h2>◆サーバーテンプレートをデプロイメントに追加する</h2>
+<p>諸設定をしたサーバテンプレートをデプロイメントに取り込みます。自分の本棚にあった設定済みの本を取り出して、実際に実行させる、というイメージでしょうか。  </p>
+<p>対象のサーバテンプレートのページで、「Add to
+Deployment」をクリックします。  </p>
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/add2deployment.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/add2deployment.png" title="add2deployment">{.alignnone
+.size-full .wp-image-1279 width="140"
+height="30"}</a>  </p>
+<p>クリックすると、どのリージョンに立てるか、選択する事が出来ます。今回はシンガポールで立てたいと思います。  </p>
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/add_cloud.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/add_cloud.png" title="add_cloud">{.alignnone
+.size-full .wp-image-1278 width="426"
+height="145"}</a>  </p>
+<p>リージョンを設定した後、詳細の設定を行います。  </p>
+<ul>
+<li>Deployment: 展開をするデプロイメントを選択します</li>
+<li>ServerTemplate:
+    利用するサーバテンプレートのリビジョンを選択します（通常はHEADになります。</li>
+<li>Cloud: 先ほど選択したリージョン</li>
+<li>Multicloud Image: 利用するサーバイメージ<br>
+   Inherit from ServerTemplate ->
+    サーバテンプレートでディフォルトで設定されているサーバを利用。それ以外は指定のサーバイメージを選択する</li>
+<li>Nickname: サーバ構成の名前（後で変えられます）</li>
+<li>Instance Type:
+    インスタンスのタイプを選択出来ます。時々マイクロインスタンスが使える、と出ていますが、使えない場合があります。確実に使えるのはスモール以上の場合が多いです。</li>
+<li>SSH Key: 利用するSSHの鍵</li>
+<li>Security Group(s) ：利用するセキュリティグループ</li>
+<li>Availability Zone: 利用するゾーン</li>
+<li>Elastic IP : 固定IPを使うか</li>
+<li>Associate IP at Launch ? :
+    固定IPを利用する場合、構成に紐付けるかどうかを選択出来ます。Elastic
+    IPを利用しない、にしていたならばチェックをいれていても何も起こりません。</li>
+</ul>
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/add_deployment.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/add_deployment.png" title="add_deployment">{.alignnone
+.size-full .wp-image-1289 width="385"
+height="376"}</a>  </p>
+<p>デプロイメントに追加出来ました！しかしまだ起動してません。CPUの所が赤になっているのは、停止している（もしくは起動してない）という意味です。  </p>
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/added.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/added.png" title="added">{.alignnone
+.size-full .wp-image-1283 width="565"
+height="64"}</a>  </p>
+<h2>◆サーバーを立てる</h2>
+<p>サーバを立てます。青いボタンをクリックします。  </p>
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/start.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/start.png" title="start">{.alignnone
+.size-full .wp-image-1284 width="29"
+height="28"}</a>  </p>
+<p>入力で足りない分は赤い色で表示されます。  </p>
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/start_line.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/start_line.png" title="start_line">{.alignnone
+.size-full .wp-image-1285 width="471"
+height="59"}</a>  </p>
+<p>WEBSITE_DNSが未入力でした。  </p>
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/missing.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/missing.png" title="missing">{.alignnone
+.size-full .wp-image-1286 width="341"
+height="70"}</a>  </p>
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/missing.png"></a>未入力部分を入力して、「Launch」、もしくは「Save
+and Lauch」します。  </p>
+<p>起動が開始するとCPUの部分が黄色の↑に変わり、状態がpendingに変わります。またサーバ構成の上に想定金額が表示されます。  </p>
+<p>CPU  </p>
+<ul>
+<li>Stop　：赤い■</li>
+<li>Pending：黄色い↑</li>
+<li>Booting：緑の↑</li>
+<li>operational: 緑の■</li>
+</ul>
+<p>IPを取得したらパブリックIPの所に、IPアドレスが表示されます。  </p>
+<p>アクションの部分には  </p>
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/ssh.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/ssh.png" title="ssh">{.alignnone
+.size-full .wp-image-1292 width="24"
+height="23"}</a>：ssh  </p>
+<p>SSHアイコンをクリックすると、SSHコンソールをブラウザー越しに起動してくれてデスクトップに入っているコンソールでSSHにログインした状態にしてくれます。  </p>
+<p>RightScaleからのアクセスを許可します。<br>
+<a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/ssh_access.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/ssh_access-300x114.png" title="ssh_access">{.alignnone
+.size-medium .wp-image-1294 width="300" height="114"}<br>
+</a>  </p>
+<p>ウィンドウが1つ立ち上がり、どのコンソールを立ち上げるか聞いてきます（midtermかopenssh)　Mac
+OS Xについているコンソールに慣れているので、OpenSSHをクリックします。  </p>
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/ssh_which.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/ssh_which-300x100.png" title="ssh_which">{.alignnone
+.size-medium .wp-image-1295 width="300"
+height="100"}</a>  </p>
+<p>そうするとコンソールが立ち上がって（初めての場合はyesと入れる必要があるかもしれません）、サーバにはいる事が出来ます。  </p>
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/console.jpg"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/console-300x256.jpg" title="console">{.alignnone
+.size-medium .wp-image-1296 width="300"
+height="256"}</a>  </p>
+<p>起動/設定には時間がかかるので、AWS側のマネージメントコンソールを見て、実際に起動しているかどうか見ると良いかもしれません。  </p>
+<p>↓Runningになってますね。  </p>
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/aws.jpg"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/aws-300x10.jpg" title="aws">{.alignnone
+.size-medium .wp-image-1291 width="300"
+height="10"}</a>  </p>
+<p>RightScaleのコンソールに戻り、パブリックIPをコピペして、ブラウザーのアドレスバーに貼付けます。  </p>
+<p>Wordpressが立ち上がっていました！　もしサーバテンプレートで指定した「APPLICATION_CODE_PACKAGE」で指定したzipファイルが、インストール前にパッケージだったら、インストール画面が出てインストールを行う必要があります（3ページぐらいです）  </p>
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/wordpress.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/wordpress.png" title="wordpress">{.alignnone
+.size-full .wp-image-1298 width="269"
+height="174"}</a>  </p>
+
+        <div class="sharethis-bottom">
+          <span class='st_fblike_hcount' displayText='Facebook Like'></span>
+          <span class='st_plusone_hcount' displayText='Google +1'></span>
+          <span class='st_twitter_hcount' displayText='Tweet'></span>
+          <span class='st_email_hcount' displayText='Email'></span>
+        </div>
+      </div><!-- /.entry-content -->
+
+    </article>
+  </section>
+</div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="site-footer">
+        <div class="row-fluid">
+            <div class="span10 offset1">
+                <address>
+                    <p>
+                        This blog is proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                    </p>
+                    <p>
+                        <a href="http://github.com/jsliang/pelican-fresh/">Fresh</a> is a responsive theme designed by <a href="http://jsliang.com/">jsliang</a> and <a href="https://github.com/jsliang/pelican-fresh/graphs/contributors">contributors</a>.
+                        Special thanks to <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a> and <a href="http://getbootstrap.com/">Twitter Bootstrap</a>.
+                    </p>
+                </address>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-845207-15']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+</body>
+</html>

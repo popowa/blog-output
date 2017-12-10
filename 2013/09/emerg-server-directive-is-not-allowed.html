@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="author" content="ayakomuro" />
+    <meta name="robots" content="index, follow"/>
+
+    <meta property="og:title" content=""/>
+    <meta property="og:url" content="http://blog.popowa.com/2013/09/emerg-server-directive-is-not-allowed.html"/>
+    <meta property="og:site_name" content="popowa"/>
+    <meta property="og:type" content="article"/>
+
+    <link rel="canonical" href="http://blog.popowa.com/2013/09/emerg-server-directive-is-not-allowed.html" />
+
+    <title> | popowa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />
+
+    <link rel="stylesheet" type="text/css" href="http://blog.popowa.com/theme/css/main.css" />
+
+    <script type="text/javascript">var switchTo5x=true;</script>
+    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript">
+        stLight.options({
+            publisher: "5a2ce781d0739000123acd73",
+            doNotHash: false,
+            doNotCopy: false,
+            hashAddressBar: false
+        });
+    </script>
+</head>
+
+<body id="index">
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <header id="banner" >
+                <h1>
+                    <a href="http://blog.popowa.com/">popowa </a>
+                </h1>
+                <nav class="navbar">
+                    <div class="navbar-inner">
+                        <ul class="nav">
+                        </ul>
+
+<script>
+  (function() {
+    var cx = '014316853335343165598:-bgzniyqm3y';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div id="google-custom-search" class="nav">
+    <gcse:search></gcse:search>
+</div>
+                    </div>
+                </nav>
+            </header><!-- /#banner -->
+        </div>
+    </div>
+
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <div class="row-fluid">
+<div class="span10 offset1">
+  <section>
+    <article>
+      <header>
+        <h1 class="entry-title">
+          <a href="http://blog.popowa.com/2013/09/emerg-server-directive-is-not-allowed.html" rel="bookmark"
+             title="Permalink to "></a></h1>
+<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="ayakomuro">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+      </header>
+      <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2013-09-28
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/nginx.html">nginx</a>
+
+
+
+    
+</footer><!-- /.post-info -->
+        <div class="sharethis-top">
+          <span class='st_fblike_hcount' displayText='Facebook Like'></span>
+          <span class='st_plusone_hcount' displayText='Google +1'></span>
+          <span class='st_twitter_hcount' displayText='Tweet'></span>
+          <span class='st_email_hcount' displayText='Email'></span>
+        </div>
+
+        <p>hereて言われたら+Nginxでauth_basicを追加して設定ファイルの確認しようとしたら  </p>
+<blockquote>
+<p>[root@dev-site conf.d]# /usr/sbin/nginx -t -c
+/etc/nginx/conf.d/default.conf<br>
+nginx: [emerg] \"server\" directive is not allowed here in
+/etc/nginx/conf.d/default.conf:1<br>
+nginx: configuration file /etc/nginx/conf.d/default.conf test failed<br>
+[root@dev-site conf.d]# /usr/sbin/nginx -v<br>
+nginx version: nginx/1.4.2</p>
+</blockquote>
+<p>が出て、調べてみた。ちなにみNginxはあまり使った事がない。<br>
+どうやら設定上http外にserverが出ていてはいけないという投稿 (
+<a href="http://forum.owncloud.org/viewtopic.php?f=3&amp;t=3426">http://forum.owncloud.org/viewtopic.php?f=3&amp;t=3426</a> ) をみて、</p>
+<blockquote>
+<p>[root@dev-site conf.d]# cat default.conf >> ../nginx.conf</p>
+</blockquote>
+<p>コード上  </p>
+<blockquote>
+<p>\~<br>
+http{<br>
+略<br>
+include /etc/nginx/conf.d/*.conf; #←これをコメント<br>
+}</p>
+</blockquote>
+<p>をコメントし<br>
+最後に}を追加  </p>
+<blockquote>
+<blockquote>
+<p>[root@dev-site nginx]# diff nginx.conf nginx.conf.komurobk<br>
+95,172c95<br>
+\&lt; #    include /etc/nginx/conf.d/*.conf;<br>
+\&lt; #}<br>
+\&lt; server {<br>
+\&lt;     listen      80 default;<br>
+\&lt;     server_name _;<br>
+\&lt;     root        /var/www/vhosts/cms;<br>
+\&lt;     index       index.html index.htm;<br>
+\&lt;     charset     utf-8;<br>
+〜略〜<br>
+\&lt;     }<br>
+---<br>
+>     include /etc/nginx/conf.d/*.conf;<br>
+174,175d96<br>
+\&lt;<br>
+\&lt; } #close http</p>
+</blockquote>
+</blockquote>
+<p>構図としてはこんな感じ  </p>
+<blockquote>
+<p>http{<br>
+  \~略\~<br>
+ #include /etc/nginx/conf.d/*.conf;
+#server設定が入っていたファイル<br>
+  server <br>
+}</p>
+</blockquote>
+<p>確認  </p>
+<blockquote>
+<p>[root@dev-site nginx]# /usr/sbin/nginx -t<br>
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok<br>
+nginx: configuration file /etc/nginx/nginx.conf test is successful<br>
+[root@dev-site nginx]# /etc/init.d/nginx reload<br>
+nginx を再読み込み中:　successful</p>
+</blockquote>
+<p>反映された。最近仕様が変わったのかな？</p>
+
+        <div class="sharethis-bottom">
+          <span class='st_fblike_hcount' displayText='Facebook Like'></span>
+          <span class='st_plusone_hcount' displayText='Google +1'></span>
+          <span class='st_twitter_hcount' displayText='Tweet'></span>
+          <span class='st_email_hcount' displayText='Email'></span>
+        </div>
+      </div><!-- /.entry-content -->
+
+    </article>
+  </section>
+</div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="site-footer">
+        <div class="row-fluid">
+            <div class="span10 offset1">
+                <address>
+                    <p>
+                        This blog is proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                    </p>
+                    <p>
+                        <a href="http://github.com/jsliang/pelican-fresh/">Fresh</a> is a responsive theme designed by <a href="http://jsliang.com/">jsliang</a> and <a href="https://github.com/jsliang/pelican-fresh/graphs/contributors">contributors</a>.
+                        Special thanks to <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a> and <a href="http://getbootstrap.com/">Twitter Bootstrap</a>.
+                    </p>
+                </address>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-845207-15']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+</body>
+</html>

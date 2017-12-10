@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="author" content="ayakomuro" />
+    <meta name="robots" content="index, follow"/>
+
+    <meta property="og:title" content="お金を(なるべく)かけずにサーバー運用出来るか試してみた"/>
+    <meta property="og:url" content="http://blog.popowa.com/2012/03/less-money-more-options.html"/>
+    <meta property="og:site_name" content="popowa"/>
+    <meta property="og:type" content="article"/>
+
+    <link rel="canonical" href="http://blog.popowa.com/2012/03/less-money-more-options.html" />
+
+    <title>お金を(なるべく)かけずにサーバー運用出来るか試してみた | popowa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />
+
+    <link rel="stylesheet" type="text/css" href="http://blog.popowa.com/theme/css/main.css" />
+
+    <script type="text/javascript">var switchTo5x=true;</script>
+    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript">
+        stLight.options({
+            publisher: "5a2ce781d0739000123acd73",
+            doNotHash: false,
+            doNotCopy: false,
+            hashAddressBar: false
+        });
+    </script>
+</head>
+
+<body id="index">
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <header id="banner" >
+                <h1>
+                    <a href="http://blog.popowa.com/">popowa </a>
+                </h1>
+                <nav class="navbar">
+                    <div class="navbar-inner">
+                        <ul class="nav">
+                        </ul>
+
+<script>
+  (function() {
+    var cx = '014316853335343165598:-bgzniyqm3y';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div id="google-custom-search" class="nav">
+    <gcse:search></gcse:search>
+</div>
+                    </div>
+                </nav>
+            </header><!-- /#banner -->
+        </div>
+    </div>
+
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <div class="row-fluid">
+<div class="span10 offset1">
+  <section>
+    <article>
+      <header>
+        <h1 class="entry-title">
+          <a href="http://blog.popowa.com/2012/03/less-money-more-options.html" rel="bookmark"
+             title="Permalink to お金を(なるべく)かけずにサーバー運用出来るか試してみた">お金を(なるべく)かけずにサーバー運用出来るか試してみた</a></h1>
+<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="ayakomuro">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+      </header>
+      <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2012-03-19
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/uncategorized.html">Uncategorized</a>
+
+
+
+    
+</footer><!-- /.post-info -->
+        <div class="sharethis-top">
+          <span class='st_fblike_hcount' displayText='Facebook Like'></span>
+          <span class='st_plusone_hcount' displayText='Google +1'></span>
+          <span class='st_twitter_hcount' displayText='Tweet'></span>
+          <span class='st_email_hcount' displayText='Email'></span>
+        </div>
+
+        <p>最初に結論</p>
+<ul>
+<li><strong>[ドメイン周りをスムーズに扱えるPaaSは売れる！]</strong></li>
+</ul>
+<p>ドメイン
+popowa.comに付随する過去のサブドメイン遺産をどれだけ安く運営出来るか試してみました。</p>
+<p>過去のサブドメイン遺産はほとんどアクセスがない、もしくは自分しか使っていないのでここではスケールが出来るかどうかは重要視しない事にします。</p>
+<p>このドメイン(popowa.com)には、</p>
+<ol>
+<li>ネームサーバ</li>
+<li>メールサーバ</li>
+<li>ブログサーバ</li>
+<li>レポジトリサーバ</li>
+<li>ウェブサーバ</li>
+<li>検証で試したOSSなアプリ（主にWordpressなど）用検証サーバ</li>
+</ol>
+<p>がありました。<br>
+過去使っていた有償環境としては</p>
+<ol>
+<li>自宅サーバー</li>
+<li>さくらVPS</li>
+<li>ムームードメイン</li>
+<li>Lolipop</li>
+<li>AWS</li>
+<li>VPSLink</li>
+<li>Tektonic</li>
+<li>Xrea</li>
+<li>RackSpace</li>
+</ol>
+<p>とかで運営していました(順不同)。</p>
+<h3>■ネームサーバー</h3>
+<p>まずネームサーバーをAWSが提供している<a href="http://aws.amazon.com/jp/route53/">Route
+53</a>に移します。Bindも脆弱性が多いので、これでBindのパッチ当てを気にする必要がなくなります(ﾉ´▽｀)ﾉ
+。<br>
+Route 53は有償ですが、気にするに値しないほど安いです。本当に。</p>
+<blockquote>
+<p>★ネームサーバーはRoute 53で決まり！</p>
+</blockquote>
+<h3>■メールサーバー</h3>
+<p>メールは、スパムしか受けないので、<a href="http://www.google.com/apps/intl/ja/group/index.html">Google
+Apps</a>に移行しました。元々メールサーバーの構成はcatch-allなExim
++ SpamAssassin + ClamAVでした。<br>
+メールをトリガーにする動きが出来なくなったのでそれは別に何か考えたいと思います。</p>
+<blockquote>
+<p>★複数アカウントを作るのではなくアカウント+hoge@exampleとかで拡張出来るようにしておくと移行が楽</p>
+</blockquote>
+<h3>■ブログサーバー</h3>
+<p>ブログは、WordPressから、 Bloggerに移行しました。<br>
+まず前提ですが、WordPressに以下のプラグインを入れてから、WordPressは運用しましょう。</p>
+<ul>
+<li><a href="http://wordpress.org/extend/plugins/tantan-s3/">Amazon S3 for
+    WordPress</a></li>
+</ul>
+<p>画像などアップロードされたファイルをS3にあげてくれるPluginです。</p>
+<p>もしくはPicasaに画像を最初にアップロードして、そこから参照するものあり</p>
+<ul>
+<li><a href="http://wordpress.org/extend/plugins/picasa-images-express/">Picasa Image
+    Express</a></li>
+</ul>
+<p>Flickrは使っていないが同じようなPluginがあると思う。</p>
+<p>ブログの引っ越しで困るのは画像ファイルです。画像だけ歯抜けみたいになるので、出来るならばS3とか外部ファイルサーバーに置いておくと吉です。</p>
+<p>WPからBloggerの引っ越しは簡単で、WPから吐き出されたXMLをBloggerにインポートすれば完了。<br>
+<a href="http://wordpress.com/">WordPress.com</a>というPaaSサービスもあるのだけれど、独自ドメイン、独自のテーマを使いたい場合は有償なので諦めました。  </p>
+<blockquote>
+<p>★画像は外部サーバに置こう</p>
+</blockquote>
+<h3>■レポジトリサーバー</h3>
+<p>まず過去のレポジトリは、GitHubにあげてしまいます。</p>
+<ul>
+<li><a href="https://github.com/">GitHub</a></li>
+</ul>
+<p>しかし実情として半分ぐらいしかあげられませんでした。<br>
+実際に運用しているコードはあげられません。過去のサイト運営で溜まったデータやサーバ別の設定ファイルなどはあげないように出来ますが、面倒なのは変わりありません。<br>
+GitHubにもプライベートモードがあるのですが、有償です。<br>
+GitHubの一番安いプランでもいんだけどなぁとも、ここで考えを切り替えます（切り替えられない人はレポジトリサーバを立てるか有償GitHubにするかとかでしょうか）</p>
+<p>今GitHubにあげられないレポジトリはAWS上に立っているEC2についているEBSにあるので、必要な時だけEC2---EBS経由でみる事にしました。</p>
+<p>ここはまだ作業中なので、以下のレポジトリサービスも検討予定</p>
+<ul>
+<li><a href="http://bitnami.org/cloud">BitNami Cloud
+    (1マイクロインスタンスが無料)</a></li>
+<li><a href="http://gitorious.org/">Gitorious</a></li>
+<li><a href="http://www.indefero.net/">InDefero</a></li>
+</ul>
+<blockquote>
+<p>★プライベートレポジトリの扱いは難しい...</p>
+</blockquote>
+<h3>■ウェブサーバー</h3>
+<p>ウェブサーバーと言っても、アクセスの状況や、更新の頻度によって対応が変わってくると思います。<br>
+まずwww.popowa.comは静的HTMLにしたので、S3に置きました。<br>
+それ以外の動的なウェブサーバーはPaaSであるdotCloudに置いてみる事にしました</p>
+<ul>
+<li><a href="https://www.dotcloud.com/">dotCloud</a></li>
+</ul>
+<p>無料版は、appは2つまでしかデプロイ出来ません。しかしアプリの下に更にまたアプリ、という事も出来ます。<br>
+しかしルートの設定がサブディレクトリにも適応されてしまうようなので、複数の開発言語が違うアプリを一つのアプリとしてデプロイというのは難しそうです。</p>
+<p>memokui.popowa.comをdotCloudに置いてみました。  </p>
+<blockquote>
+<p>dotcloud create memokui<br>
+cd \~/Project/Code/memokui<br>
+emacs dotcloud.yml<br>
+www:<br>
+    type: php<br>
+dotcloud push memokui .<br>
+#ソースディレクトリのルートディレクトリで行う必要がある<br>
+dotcloud restart memokui.www</p>
+</blockquote>
+<p>ハマった点は、typeをstaticにした場合はappを一度削除して再度作り直さないといけない、という点です。<br>
+DBも使えるようなのでよさげですが、有償版はそこそこするのでもっと安価なdotCloudがあればいいなぁと思いました。</p>
+<p>dotCloudのよい点はサブドメインをCNAMEで指定出来る、という所です。dotCloudでは、  </p>
+<blockquote>
+<p>http://memokui-csg3kdce.dotcloud.com</p>
+</blockquote>
+<p>のように独自サブドメインを配布してくれます（これはどこのPaaSでも同じ）<br>
+しかしdotCloudでは独自（サブ）ドメインを追加する事が出来るのです。  </p>
+<blockquote>
+<p>dotcloud alias add memokui.www memokui.popowa.com</p>
+</blockquote>
+<p>ネームサーバーでの設定  </p>
+<blockquote>
+<p>memokui.popowa.com CNAME  memokui-csg3kdce.dotcloud.com</p>
+</blockquote>
+<p>という風にRoute 53に設定しておけば、おk<br>
+dotCloudだけかしら、と思ったら、<a href="https://www.cloudcontrol.com/">cloudcontrol</a>も<a href="https://www.cloudcontrol.com/documentation/add-ons/aliases">同じ事を無料で出来るよう</a>です！</p>
+<p>他のPaaSや安価なレンタルサーバーは、独自サブドメインを使いたい場合は、ドメインのネームサーバーを移行したら可能になるものばかりで、ネームサーバーとウェブサーバーを別のサービスにしたい人には向いていないと思いました。</p>
+<p>(´･ω･`)ｶﾞｯｶﾘ･･･</p>
+<p>後はwikiをどこに置くか検討中。。</p>
+<p><strong>[追記：]</strong>GitHubでウェブサイト運営が出来るようです！<a href="https://twitter.com/#%21/d6rkaiz">@d6rkaiz</a>さんありがとう！<br>
+<a href="http://pages.github.com/">http://pages.github.com/</a></p>
+<blockquote>
+<p>★無償でエイリアスで独自ドメインが使えるPaaSは嬉しい</p>
+</blockquote>
+<h3>■検証用ウェブサーバー</h3>
+<p>検証用は、色々触るので、さくらVPSと必要な時にAWSな感じで行こうかなぁと思っています。</p>
+<h3>■突然まとめ</h3>
+<p>PaaSなサービスとかレンタルサーバーとかの多くは、ネームサーバーも一緒にしたらいいじゃない！というスタンスですが、これはユーザーの自由を奪うものに他ありません。</p>
+<p>一番起点になるドメインの扱いをロックされてしまうサービスは今後流行らないのではないでしょうか？<br>
+ビジネス的にはAll in
+oneにしたい所だと思いますが、ベンダーロックがない、というだけでもその商品を選択候補に入れやすくなります。<br>
+<br>
+SaaS/PaaS/IaaS環境を提供する上でも、ブロックのように取り外し可能な状態である事が今後大事になってくるのだと思いました！</p>
+
+        <div class="sharethis-bottom">
+          <span class='st_fblike_hcount' displayText='Facebook Like'></span>
+          <span class='st_plusone_hcount' displayText='Google +1'></span>
+          <span class='st_twitter_hcount' displayText='Tweet'></span>
+          <span class='st_email_hcount' displayText='Email'></span>
+        </div>
+      </div><!-- /.entry-content -->
+
+    </article>
+  </section>
+</div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="site-footer">
+        <div class="row-fluid">
+            <div class="span10 offset1">
+                <address>
+                    <p>
+                        This blog is proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                    </p>
+                    <p>
+                        <a href="http://github.com/jsliang/pelican-fresh/">Fresh</a> is a responsive theme designed by <a href="http://jsliang.com/">jsliang</a> and <a href="https://github.com/jsliang/pelican-fresh/graphs/contributors">contributors</a>.
+                        Special thanks to <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a> and <a href="http://getbootstrap.com/">Twitter Bootstrap</a>.
+                    </p>
+                </address>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-845207-15']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="author" content="ayakomuro" />
+    <meta name="robots" content="index, follow"/>
+
+    <meta property="og:title" content="昔からAWSを使っている人はセキュリティ証明書をIAM側に移行させよう"/>
+    <meta property="og:url" content="http://blog.popowa.com/2014/01/awsiam.html"/>
+    <meta property="og:site_name" content="popowa"/>
+    <meta property="og:type" content="article"/>
+
+    <link rel="canonical" href="http://blog.popowa.com/2014/01/awsiam.html" />
+
+    <title>昔からAWSを使っている人はセキュリティ証明書をIAM側に移行させよう | popowa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />
+
+    <link rel="stylesheet" type="text/css" href="http://blog.popowa.com/theme/css/main.css" />
+
+    <script type="text/javascript">var switchTo5x=true;</script>
+    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript">
+        stLight.options({
+            publisher: "5a2ce781d0739000123acd73",
+            doNotHash: false,
+            doNotCopy: false,
+            hashAddressBar: false
+        });
+    </script>
+</head>
+
+<body id="index">
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <header id="banner" >
+                <h1>
+                    <a href="http://blog.popowa.com/">popowa </a>
+                </h1>
+                <nav class="navbar">
+                    <div class="navbar-inner">
+                        <ul class="nav">
+                        </ul>
+
+<script>
+  (function() {
+    var cx = '014316853335343165598:-bgzniyqm3y';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div id="google-custom-search" class="nav">
+    <gcse:search></gcse:search>
+</div>
+                    </div>
+                </nav>
+            </header><!-- /#banner -->
+        </div>
+    </div>
+
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <div class="row-fluid">
+<div class="span10 offset1">
+  <section>
+    <article>
+      <header>
+        <h1 class="entry-title">
+          <a href="http://blog.popowa.com/2014/01/awsiam.html" rel="bookmark"
+             title="Permalink to 昔からAWSを使っている人はセキュリティ証明書をIAM側に移行させよう">昔からAWSを使っている人はセキュリティ証明書をIAM側に移行させよう</a></h1>
+<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="ayakomuro">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+      </header>
+      <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2014-01-30
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/aws.html">AWS</a>
+
+
+
+    
+</footer><!-- /.post-info -->
+        <div class="sharethis-top">
+          <span class='st_fblike_hcount' displayText='Facebook Like'></span>
+          <span class='st_plusone_hcount' displayText='Google +1'></span>
+          <span class='st_twitter_hcount' displayText='Tweet'></span>
+          <span class='st_email_hcount' displayText='Email'></span>
+        </div>
+
+        <p>IAMが出来る前は、AWSマネージメントコンソールではなくアカウントサイトにてセキュリティ証明書を発行出来るページがあって（今もある）、X509証明書や今で言うアクセスキーの発行を行っていたのですが、どうやら今後そのセキュリティ証明書のページが閲覧出来なくなるらしいので、IAMに移行しましょう。</p>
+<p><a href="https://portal.aws.amazon.com/gp/aws/securityCredentials">https://portal.aws.amazon.com/gp/aws/securityCredentials</a><br>
+ここにアクセスするとこんな警告が出る（理解しました、をチェックいれても毎回出る）</p>
+<p><a href="http://4.bp.blogspot.com/-YabHPwqrobk/UuoKAme1VvI/AAAAAAAAZHs/II3oUObHo_s/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88+2014-01-30+17.09.33.png"><img alt="" src="http://4.bp.blogspot.com/-YabHPwqrobk/UuoKAme1VvI/AAAAAAAAZHs/II3oUObHo_s/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88+2014-01-30+17.09.33.png"></a></p>
+<p>IAM出来てからはセキュリティ証明書は無効にしてIAM側でまとめている人がほとんどだと思うけど、もしまだフルアクセス権のアクセスキー、X.509証明書、キーペア(EC2/Cloudfront用）を保持している人は、IAMや所定の箇所に移行するといいんじゃないかな。</p>
+<p><a href="http://1.bp.blogspot.com/-yJoMrzwWq8Y/UuoKK3LeKxI/AAAAAAAAZH0/nuLq4I1Eq2A/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88+2014-01-30+17.13.15.png"><img alt="" src="http://1.bp.blogspot.com/-yJoMrzwWq8Y/UuoKK3LeKxI/AAAAAAAAZH0/nuLq4I1Eq2A/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88+2014-01-30+17.13.15.png"></a></p>
+<p>このページも無くなるかもしれないので、記念にスクリーンショット載せておく（魚拓するまではないw)</p>
+<p>ここで証明書を発行していた時が遥か昔のような気持ちになる。<br>
+なんか時代を感じるね。</p>
+<p><a href="http://3.bp.blogspot.com/-LY1S_3tr11E/UuoLCLqhJqI/AAAAAAAAZH8/00SwmPED02Q/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88+2014-01-30+17.16.11.png"><img alt="" src="http://3.bp.blogspot.com/-LY1S_3tr11E/UuoLCLqhJqI/AAAAAAAAZH8/00SwmPED02Q/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88+2014-01-30+17.16.11.png"></a></p>
+<p><a href="http://2.bp.blogspot.com/-ybBgzjNp8Nc/UuoLCIqofgI/AAAAAAAAZIA/HQuMaQr5etg/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88+2014-01-30+17.16.19.png"><img alt="" src="http://2.bp.blogspot.com/-ybBgzjNp8Nc/UuoLCIqofgI/AAAAAAAAZIA/HQuMaQr5etg/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88+2014-01-30+17.16.19.png"></a></p>
+<p><a href="http://2.bp.blogspot.com/-L5P9vt20T1U/UuoLCEkpvoI/AAAAAAAAZIE/7qBmGbu5MJY/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88+2014-01-30+17.16.25.png"><img alt="" src="http://2.bp.blogspot.com/-L5P9vt20T1U/UuoLCEkpvoI/AAAAAAAAZIE/7qBmGbu5MJY/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88+2014-01-30+17.16.25.png"></a></p>
+<p><a href="http://2.bp.blogspot.com/-X8p0kw9Gdjo/UuoLC8hY1pI/AAAAAAAAZIM/UvmC_Wv4_Yc/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88+2014-01-30+17.16.41.png"><img alt="" src="http://2.bp.blogspot.com/-X8p0kw9Gdjo/UuoLC8hY1pI/AAAAAAAAZIM/UvmC_Wv4_Yc/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88+2014-01-30+17.16.41.png"></a></p>
+
+        <div class="sharethis-bottom">
+          <span class='st_fblike_hcount' displayText='Facebook Like'></span>
+          <span class='st_plusone_hcount' displayText='Google +1'></span>
+          <span class='st_twitter_hcount' displayText='Tweet'></span>
+          <span class='st_email_hcount' displayText='Email'></span>
+        </div>
+      </div><!-- /.entry-content -->
+
+    </article>
+  </section>
+</div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="site-footer">
+        <div class="row-fluid">
+            <div class="span10 offset1">
+                <address>
+                    <p>
+                        This blog is proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                    </p>
+                    <p>
+                        <a href="http://github.com/jsliang/pelican-fresh/">Fresh</a> is a responsive theme designed by <a href="http://jsliang.com/">jsliang</a> and <a href="https://github.com/jsliang/pelican-fresh/graphs/contributors">contributors</a>.
+                        Special thanks to <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a> and <a href="http://getbootstrap.com/">Twitter Bootstrap</a>.
+                    </p>
+                </address>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-845207-15']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+</body>
+</html>

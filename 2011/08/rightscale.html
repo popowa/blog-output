@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="author" content="ayakomuro" />
+    <meta name="robots" content="index, follow"/>
+
+    <meta property="og:title" content="番外編〜RightScaleが保守しているサーバイメージ〜"/>
+    <meta property="og:url" content="http://blog.popowa.com/2011/08/rightscale.html"/>
+    <meta property="og:site_name" content="popowa"/>
+    <meta property="og:type" content="article"/>
+
+    <link rel="canonical" href="http://blog.popowa.com/2011/08/rightscale.html" />
+
+    <title>番外編〜RightScaleが保守しているサーバイメージ〜 | popowa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />
+
+    <link rel="stylesheet" type="text/css" href="http://blog.popowa.com/theme/css/main.css" />
+
+    <script type="text/javascript">var switchTo5x=true;</script>
+    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript">
+        stLight.options({
+            publisher: "5a2ce781d0739000123acd73",
+            doNotHash: false,
+            doNotCopy: false,
+            hashAddressBar: false
+        });
+    </script>
+</head>
+
+<body id="index">
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <header id="banner" >
+                <h1>
+                    <a href="http://blog.popowa.com/">popowa </a>
+                </h1>
+                <nav class="navbar">
+                    <div class="navbar-inner">
+                        <ul class="nav">
+                        </ul>
+
+<script>
+  (function() {
+    var cx = '014316853335343165598:-bgzniyqm3y';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div id="google-custom-search" class="nav">
+    <gcse:search></gcse:search>
+</div>
+                    </div>
+                </nav>
+            </header><!-- /#banner -->
+        </div>
+    </div>
+
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <div class="row-fluid">
+<div class="span10 offset1">
+  <section>
+    <article>
+      <header>
+        <h1 class="entry-title">
+          <a href="http://blog.popowa.com/2011/08/rightscale.html" rel="bookmark"
+             title="Permalink to 番外編〜RightScaleが保守しているサーバイメージ〜">番外編〜RightScaleが保守しているサーバイメージ〜</a></h1>
+<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="ayakomuro">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+      </header>
+      <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2011-08-01
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/aws.html">AWS</a>
+        <a href="http://blog.popowa.com/tag/rightscale.html">RightScale</a>
+        <a href="http://blog.popowa.com/tag/rightscalejie-ti-xin-shu.html">RightScale解体新書</a>
+
+
+
+    
+</footer><!-- /.post-info -->
+        <div class="sharethis-top">
+          <span class='st_fblike_hcount' displayText='Facebook Like'></span>
+          <span class='st_plusone_hcount' displayText='Google +1'></span>
+          <span class='st_twitter_hcount' displayText='Tweet'></span>
+          <span class='st_email_hcount' displayText='Email'></span>
+        </div>
+
+        <p>無償サーバテンプレートに紐づいているサーバイメージの多くはRightScale社が作成、メンテナンスしているもので、何種類かあります。それらを一覧にして、サーバテンプレートを作る時の目安にしたいと思います。  </p>
+<p>[]  </p>
+<p>これとは別にRightScale
+OSSという名前で出しているサーバイメージもあります（<a href="http://support.rightscale.com/21-Community/RightScale_OSS">一覧はこちら</a>）。これはコミュニティ版として出ており、RightScaleがサポートしている物ではありません。<br>
+Windowsは有償になるので、フリーエディションには表示されません。。。  </p>
+<p>東京リージョン対応しているのは★をつけてます。  </p>
+<p><strong>RightImage Ubuntu_8.04_i386_v4.3.7 [rev 1]</strong>  </p>
+<ul>
+<li>対応クラウドAWS US-East,AWS EU,AWS US-West</li>
+<li>説明文Auto-generated</li>
+</ul>
+<p><strong>RightImage Ubuntu_9.10_i386_v4.5 [rev 4]</strong>  </p>
+<ul>
+<li>対応クラウドAWS US-East,AWS EU,AWS US-West</li>
+<li>説明文Pointers to the same S3-based RightImage (v4.5.x) published by
+    RightScale in the corresponding AWS regions. Built on Ubuntu 9.10
+    with 32-bit architecture (i386) for \'small\' and \'medium\' EC2
+    instance types.</li>
+</ul>
+<p><strong>RightImage Ubuntu_9.10_x64_v4.5 [rev 6]</strong>  </p>
+<ul>
+<li>対応クラウドAWS US-East,AWS EU,AWS US-West,AWS AP-Singapore</li>
+<li>説明文Pointers to the same S3-based RightImage (v4.5.x) published by
+    RightScale in the corresponding AWS regions. Built on Ubuntu 9.10
+    with 64-bit architecture (x64) for \'large\' and bigger EC2 instance
+    types.</li>
+</ul>
+<p><strong>RightImage_CentOS_5.4_i386_v5.6 - 11H1 [rev 16]★</strong>  </p>
+<ul>
+<li>対応クラウドAWS US-East,AWS EU,AWS US-West,AWS AP-Singapore,AWS
+    AP-Tokyo</li>
+<li>説明文CentOS 5.4 with 32-bit architecture (i386) for \'small\' and
+    \'medium\' EC2 instance types. References S3-based images.</li>
+</ul>
+<p><strong>RightImage_CentOS_5.4_i386_v5.6_EBS [rev 10]★</strong>  </p>
+<ul>
+<li>対応クラウドAWS US-East,AWS EU,AWS US-West,AWS AP-Singapore,AWS
+    AP-Tokyo</li>
+<li>説明文CentOS 5.4 with 32-bit architecture (i386) for \'small\' and
+    \'medium\' EC2 instance types. References EBS-based images.</li>
+</ul>
+<p><strong>RightImage_CentOS_5.4_x64_v5.6 - 11H1 [rev 16]★</strong>  </p>
+<ul>
+<li>対応クラウドAWS US-East,AWS EU,AWS US-West,AWS AP-Singapore,AWS
+    AP-Tokyo</li>
+<li>説明文CentOS 5.4 with 64-bit architecture (x64) for \'large\' and
+    bigger EC2 instance types. References S3-based images.</li>
+</ul>
+<p><strong>RightImage_CentOS_5.4_x64_v5.6_EBS [rev 10]★</strong>  </p>
+<ul>
+<li>対応クラウドAWS US-East,AWS EU,AWS US-West,AWS AP-Singapore,AWS
+    AP-Tokyo</li>
+<li>説明文CentOS 5.4 with 64-bit architecture (x64) for \'large\' and
+    bigger EC2 instance types. References EBS-based images.</li>
+</ul>
+<p><strong>RightImage_Ubuntu_10.04_i386_v5.5_EBS [rev 3]</strong>  </p>
+<ul>
+<li>対応クラウドAWS US-East,AWS EU,AWS US-West,AWS AP-Singapore</li>
+<li>説明文Ubuntu 10.04 with 32-bit architecture (i386) for \'small\' and
+    \'medium\' EC2 instance types.</li>
+</ul>
+<p><strong>RightImage_Ubuntu_10.04_i386_v5.6 - 11H1 [rev 13]★</strong>  </p>
+<ul>
+<li>対応クラウドAWS US-East,AWS EU,AWS US-West,AWS AP-Singapore,AWS
+    AP-Tokyo</li>
+<li>説明文Ubuntu 10.04 with 32-bit architecture (i386) for \'small\' and
+    \'medium\' EC2 instance types. References S3-based images.</li>
+</ul>
+<p><strong>RightImage_Ubuntu_10.04_i386_v5.6_EBS [rev 9]★</strong>  </p>
+<ul>
+<li>対応クラウドAWS US-East,AWS EU,AWS US-West,AWS AP-Singapore,AWS
+    AP-Tokyo</li>
+<li>説明文Ubuntu 10.04 with 32-bit architecture (i386) for \'small\' and
+    \'medium\' EC2 instance types. References EBS-based images.</li>
+</ul>
+<p><strong>RightImage_Ubuntu_10.04_x64_v5.6 - 11H1 [rev 12]★</strong>  </p>
+<ul>
+<li>対応クラウドAWS US-East,AWS EU,AWS US-West,AWS AP-Singapore,AWS
+    AP-Tokyo</li>
+<li>説明文Ubuntu 10.04 with 64-bit architecture (x64) for \'large\' and
+    bigger EC2 instance types. References S3-based images.</li>
+</ul>
+<p><strong>RightImage_Ubuntu_10.04_x64_v5.6_EBS [rev 10]★</strong>  </p>
+<ul>
+<li>対応クラウドAWS US-East,AWS EU,AWS US-West,AWS AP-Singapore,AWS
+    AP-Tokyo</li>
+<li>説明文Ubuntu 10.04 with 64-bit architecture (x64) for \'large\' and
+    bigger EC2 instance types. References EBS-based images.</li>
+</ul>
+
+        <div class="sharethis-bottom">
+          <span class='st_fblike_hcount' displayText='Facebook Like'></span>
+          <span class='st_plusone_hcount' displayText='Google +1'></span>
+          <span class='st_twitter_hcount' displayText='Tweet'></span>
+          <span class='st_email_hcount' displayText='Email'></span>
+        </div>
+      </div><!-- /.entry-content -->
+
+    </article>
+  </section>
+</div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="site-footer">
+        <div class="row-fluid">
+            <div class="span10 offset1">
+                <address>
+                    <p>
+                        This blog is proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                    </p>
+                    <p>
+                        <a href="http://github.com/jsliang/pelican-fresh/">Fresh</a> is a responsive theme designed by <a href="http://jsliang.com/">jsliang</a> and <a href="https://github.com/jsliang/pelican-fresh/graphs/contributors">contributors</a>.
+                        Special thanks to <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a> and <a href="http://getbootstrap.com/">Twitter Bootstrap</a>.
+                    </p>
+                </address>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-845207-15']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+</body>
+</html>

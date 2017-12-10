@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="author" content="ayakomuro" />
+    <meta name="robots" content="index, follow"/>
+
+    <meta property="og:title" content="サブドメインへのリクエストを、（別サブドメインの）サブディレクトリに仕向けたい時"/>
+    <meta property="og:url" content="http://blog.popowa.com/2012/04/blog-post.html"/>
+    <meta property="og:site_name" content="popowa"/>
+    <meta property="og:type" content="article"/>
+
+    <link rel="canonical" href="http://blog.popowa.com/2012/04/blog-post.html" />
+
+    <title>サブドメインへのリクエストを、（別サブドメインの）サブディレクトリに仕向けたい時 | popowa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />
+
+    <link rel="stylesheet" type="text/css" href="http://blog.popowa.com/theme/css/main.css" />
+
+    <script type="text/javascript">var switchTo5x=true;</script>
+    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript">
+        stLight.options({
+            publisher: "5a2ce781d0739000123acd73",
+            doNotHash: false,
+            doNotCopy: false,
+            hashAddressBar: false
+        });
+    </script>
+</head>
+
+<body id="index">
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <header id="banner" >
+                <h1>
+                    <a href="http://blog.popowa.com/">popowa </a>
+                </h1>
+                <nav class="navbar">
+                    <div class="navbar-inner">
+                        <ul class="nav">
+                        </ul>
+
+<script>
+  (function() {
+    var cx = '014316853335343165598:-bgzniyqm3y';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div id="google-custom-search" class="nav">
+    <gcse:search></gcse:search>
+</div>
+                    </div>
+                </nav>
+            </header><!-- /#banner -->
+        </div>
+    </div>
+
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <div class="row-fluid">
+<div class="span10 offset1">
+  <section>
+    <article>
+      <header>
+        <h1 class="entry-title">
+          <a href="http://blog.popowa.com/2012/04/blog-post.html" rel="bookmark"
+             title="Permalink to サブドメインへのリクエストを、（別サブドメインの）サブディレクトリに仕向けたい時">サブドメインへのリクエストを、（別サブドメインの）サブディレクトリに仕向けたい時</a></h1>
+<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="ayakomuro">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+      </header>
+      <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2012-04-22
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/s3.html">S3</a>
+
+
+
+    
+</footer><!-- /.post-info -->
+        <div class="sharethis-top">
+          <span class='st_fblike_hcount' displayText='Facebook Like'></span>
+          <span class='st_plusone_hcount' displayText='Google +1'></span>
+          <span class='st_twitter_hcount' displayText='Tweet'></span>
+          <span class='st_email_hcount' displayText='Email'></span>
+        </div>
+
+        <p>若さの過ちで、サブドメインを大量に作ってアプリを展開したのはいいものの、時が過ぎ閉じたいけどなかなか閉じれない時があると思います[（みんな賛同してくれると信じてる）]</p>
+<p>例えば<br>
+http://my-cool-app.popowa.com<br>
+というのがあったとします。</p>
+<p>サブドメインが動いているサーバーは落としたいけど、どこかにこのサブドメインとコンテンツを残しておきたい。<br>
+しかしその為にサーバを立てて、Virtual
+Host設定で別のサイトに転送するのは賢いやり方ではありません。そもそもサーバーを引っ越しする度に、そのVirtual
+Hostが何だったのかを思い出して適切な移行をしDNS設定も変更する必要があるからです。</p>
+<p>[]</p>
+<p><strong>[No 面倒！ ]</strong></p>
+<p>そんな時にS3のウェブサイト機能を使います。</p>
+<p>http://my-cool-app.popowa.com<br>
+に来たリクエストを<br>
+http://www.popowa.com/my-cool-app/index.html<br>
+というサブドメインからサブディレクトリに転送するのをサーバを立てずにします。</p>
+<p>まずS3で my-cool-app.popowa.comというバケットを作ります。</p>
+<p><a href="http://4.bp.blogspot.com/-xojwSnyxH_o/T5Nub2hy7fI/AAAAAAAAQoI/n4KqFjegAOQ/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%EF%BC%882012-04-22+11.27.50%EF%BC%89.png"><img alt="" src="http://4.bp.blogspot.com/-xojwSnyxH_o/T5Nub2hy7fI/AAAAAAAAQoI/n4KqFjegAOQ/s400/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%EF%BC%882012-04-22+11.27.50%EF%BC%89.png">{width="400"
+height="230"}</a></p>
+<p>バケットを作成後、権限設定で誰でもアクセス可能にします。  </p>
+<blockquote>
+<p>Grantee: Everyone : List を許可します。</p>
+</blockquote>
+<p><a href="http://2.bp.blogspot.com/-O2W4cXkPy7I/T5NuyaYzmHI/AAAAAAAAQoQ/UX99liJHkcA/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%EF%BC%882012-04-22+11.29.56%EF%BC%89.png"><img alt="" src="http://2.bp.blogspot.com/-O2W4cXkPy7I/T5NuyaYzmHI/AAAAAAAAQoQ/UX99liJHkcA/s400/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%EF%BC%882012-04-22+11.29.56%EF%BC%89.png">{width="400"
+height="101"} </a></p>
+<p>その後Websiteタブをクリックし、</p>
+<blockquote>
+<p>Enabled: クリック</p>
+<p>Index Document: index.html</p>
+<p>Error Document: index.html</p>
+<p>Endpoint: 自動で生成されるのでコピーしておきます。</p>
+</blockquote>
+<p><a href="http://3.bp.blogspot.com/-g9F8ZxSGB1U/T5NuzFxMkeI/AAAAAAAAQoU/K6SPhmxU57s/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%EF%BC%882012-04-22+11.30.24%EF%BC%89.png"><img alt="" src="http://3.bp.blogspot.com/-g9F8ZxSGB1U/T5NuzFxMkeI/AAAAAAAAQoU/K6SPhmxU57s/s400/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%EF%BC%882012-04-22+11.30.24%EF%BC%89.png">{width="400"
+height="112"} </a></p>
+<p>popowa.comのDNSはRoute 53を使っているので、Route
+53でレコードを編集します。<br>
+（ここはドメインが使っているDNSを変更します。）<br>
+先ほどコピーしたEndPointをCNAMEにします。</p>
+<blockquote>
+<p>my-cool-app.popowa.com CNAME
+my-cool-app.popowa.com.s3-website-ap-northeast-1.amazonaws.com</p>
+</blockquote>
+<p><a href="http://3.bp.blogspot.com/-xximfnARLuw/T5NuzpmQ5FI/AAAAAAAAQoc/p45y38zRhEY/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%EF%BC%882012-04-22+11.31.28%EF%BC%89.png"><img alt="" src="http://3.bp.blogspot.com/-xximfnARLuw/T5NuzpmQ5FI/AAAAAAAAQoc/p45y38zRhEY/s400/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%EF%BC%882012-04-22+11.31.28%EF%BC%89.png">{width="345"
+height="400"}</a></p>
+<p>その後以下のHTMLをindex.htmlとしてコピーして作成したバケットにアップロードします。S3には.htaccessは使えません。なので以下のようなHTML自体が転送をする処理を追加しておく必要があります。<br>
+もし分岐させたい場合は、リクエストのURLを見てそこから別のドメインに付け足して。。という事も出来ます。  </p>
+<blockquote>
+<p>\&lt;html xmlns=\"http://www.w3.org/1999/xhtml\"
+xmlns:og=\"http://ogp.me/ns#\" xml:lang=\"ja\" lang=\"ja\"><br>
+    \&lt;head><br>
+        \&lt;meta http-equiv=\"Content-Type\" content=\"text/html;
+charset=utf-8\" /><br>
+        \&lt;meta http-equiv=\"Content-Script-Type\"
+content=\"text/javascript\" /><br>
+        \&lt;title>Redirect to
+http://www.popowa.com/my-cool-app/index.html\&lt;/title><br>
+        \&lt;script type=\"text/javascript\" language=\"javascript\"><br>
+        \&lt;!--  </p>
+<p>location.href=\'http://www.popowa.com/my-cool-app/index.html\';<br>
+        // --><br>
+        \&lt;/script><br>
+    \&lt;/head><br>
+    \&lt;body><br>
+    See you Later!<br>
+    \&lt;/body><br>
+\&lt;/html></p>
+</blockquote>
+<p>これじゃなくても  </p>
+<blockquote>
+<p>\&lt;meta http-equiv=\"Refresh\"
+content=\"0;URL=http://www.popowa.com/my-cool-app/index.html\" /></p>
+</blockquote>
+<p>でもいいかもしれません。</p>
+<p>それではアクセスしてみましょう！<br>
+<a href="http://my-cool-app.popowa.com/">http://my-cool-app.popowa.com</a><br>
+あっという間に<br>
+<a href="http://www.popowa.com/my-cool-app/index.html">http://www.popowa.com/my-cool-app/index.html</a><br>
+に転送されていると思います。</p>
+<p>これで転送用のサーバを立てずして過去の遺産を新しいドメインに移す事が出来ましたね！</p>
+<p>という訳で過去よ永遠に、S3を使ったサブドメインからサブディレクトリへの転送でしたー</p>
+
+        <div class="sharethis-bottom">
+          <span class='st_fblike_hcount' displayText='Facebook Like'></span>
+          <span class='st_plusone_hcount' displayText='Google +1'></span>
+          <span class='st_twitter_hcount' displayText='Tweet'></span>
+          <span class='st_email_hcount' displayText='Email'></span>
+        </div>
+      </div><!-- /.entry-content -->
+
+    </article>
+  </section>
+</div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="site-footer">
+        <div class="row-fluid">
+            <div class="span10 offset1">
+                <address>
+                    <p>
+                        This blog is proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                    </p>
+                    <p>
+                        <a href="http://github.com/jsliang/pelican-fresh/">Fresh</a> is a responsive theme designed by <a href="http://jsliang.com/">jsliang</a> and <a href="https://github.com/jsliang/pelican-fresh/graphs/contributors">contributors</a>.
+                        Special thanks to <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a> and <a href="http://getbootstrap.com/">Twitter Bootstrap</a>.
+                    </p>
+                </address>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-845207-15']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+</body>
+</html>

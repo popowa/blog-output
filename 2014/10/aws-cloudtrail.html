@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="author" content="ayakomuro" />
+    <meta name="robots" content="index, follow"/>
+
+    <meta property="og:title" content="AWS CloudTrailを解析出来るログアプリ"/>
+    <meta property="og:url" content="http://blog.popowa.com/2014/10/aws-cloudtrail.html"/>
+    <meta property="og:site_name" content="popowa"/>
+    <meta property="og:type" content="article"/>
+
+    <link rel="canonical" href="http://blog.popowa.com/2014/10/aws-cloudtrail.html" />
+
+    <title>AWS CloudTrailを解析出来るログアプリ | popowa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />
+
+    <link rel="stylesheet" type="text/css" href="http://blog.popowa.com/theme/css/main.css" />
+
+    <script type="text/javascript">var switchTo5x=true;</script>
+    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript">
+        stLight.options({
+            publisher: "5a2ce781d0739000123acd73",
+            doNotHash: false,
+            doNotCopy: false,
+            hashAddressBar: false
+        });
+    </script>
+</head>
+
+<body id="index">
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <header id="banner" >
+                <h1>
+                    <a href="http://blog.popowa.com/">popowa </a>
+                </h1>
+                <nav class="navbar">
+                    <div class="navbar-inner">
+                        <ul class="nav">
+                        </ul>
+
+<script>
+  (function() {
+    var cx = '014316853335343165598:-bgzniyqm3y';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div id="google-custom-search" class="nav">
+    <gcse:search></gcse:search>
+</div>
+                    </div>
+                </nav>
+            </header><!-- /#banner -->
+        </div>
+    </div>
+
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <div class="row-fluid">
+<div class="span10 offset1">
+  <section>
+    <article>
+      <header>
+        <h1 class="entry-title">
+          <a href="http://blog.popowa.com/2014/10/aws-cloudtrail.html" rel="bookmark"
+             title="Permalink to AWS CloudTrailを解析出来るログアプリ">AWS CloudTrailを解析出来るログアプリ</a></h1>
+<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="ayakomuro">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+      </header>
+      <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2014-10-17
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/cloudtrail.html">cloudtrail</a>
+
+
+
+    
+</footer><!-- /.post-info -->
+        <div class="sharethis-top">
+          <span class='st_fblike_hcount' displayText='Facebook Like'></span>
+          <span class='st_plusone_hcount' displayText='Google +1'></span>
+          <span class='st_twitter_hcount' displayText='Tweet'></span>
+          <span class='st_email_hcount' displayText='Email'></span>
+        </div>
+
+        <p>AWS CloudTrail</p>
+<p>はそのままで見づらいので、すでにパートナーとして提供されているアプリを試してみます。</p>
+<p>参考URL</p>
+<p><a href="http://aws.amazon.com/jp/cloudtrail/">http://aws.amazon.com/jp/cloudtrail/</a></p>
+<ul>
+<li><a href="http://aws.typepad.com/aws_japan/2013/11/aws-cloudtrail-capture-aws-api-activity.html">【AWS発表】 AWS CloudTrail - AWS
+    APIコールの記録を保存 </a></li>
+<li><a href="http://aws.typepad.com/aws_japan/2014/07/cloudtrail-expands-again.html">【AWS発表】CloudTrailが再び拡大 -
+    リージョンとサービスの拡張、素晴らしいビジネスパートナー </a></li>
+</ul>
+<p><a href="http://www.slideshare.net/kani_b/cloudtrail">CloudTrail
+でログとれ〜る</a> </p>
+<p><a href="http://blog.serverworks.co.jp/tech/2013/11/14/cloudtrail/">AWSの操作履歴を記録するCloudTrailを試してみた « サーバーワークス
+エンジニアブログ</a> </p>
+<p><a href="http://blog.serverworks.co.jp/tech/2014/10/10/loggly/">【驚愕】CloudTrailログ解析にlogglyを使ってみた結果ｗｗｗ【使わないと損！】
+« サーバーワークス
+エンジニアブログ </a></p>
+<p><a href="http://qiita.com/inokappa/items/660303d87af6d2e2dbd4">AWS 白帯シリーズ(5) CloudTrail のログを可視化する試み（1） by @inokara
+on @Qiita</a> </p>
+<p><a href="http://dev.classmethod.jp/cloud/excel_aws_cloudtrail/">【Excel改造】AWSへのアクセスログをExcelで表示してみた【CloudTrail編】｜クラスメソッドブログ</a> </p>
+<p>今回試したのは</p>
+<ul>
+<li>CloudCheckr</li>
+<li>Stackdriver</li>
+<li>Sumologic</li>
+<li>Alert Logic</li>
+</ul>
+<p>で大半は有料プランじゃないと見れないのが多かったので選んで再度検証を続けたい所。</p>
+<p>その他のサービスはまた何か別の機会に試したい。</p>
+<p>-----------------------------</p>
+<p>[<strong>CloudCheckr</strong>]</p>
+<p><a href="http://cloudcheckr.com/">http://cloudcheckr.com/</a></p>
+<p>提供パターン</p>
+<p>金額</p>
+<ul>
+<li>CloudTrailが使えるのはCloudCheckr Proから。 \$75/mon</li>
+<li>CloudCheckr Proが14日間お試しで使える</li>
+<li><a href="http://cloudcheckr.com/pricing-features/">http://cloudcheckr.com/pricing-features/</a></li>
+<li><a href="http://cloudcheckr.com/wp-content/uploads/2014/04/CloudCheckr-Breakdown.pdf">http://cloudcheckr.com/wp-content/uploads/2014/04/CloudCheckr-Breakdown.pdf</a></li>
+</ul>
+<p>ドキュメント: <a href="http://support.cloudcheckr.com/configure-aws-cloudtrail-to-log-trails-in-a-single-s3-bucket/">http://support.cloudcheckr.com/configure-aws-cloudtrail-to-log-trails-in-a-single-s3-bucket/</a></p>
+<ul>
+<li><a href="http://aws.typepad.com/aws_japan/2014/05/aws-cloudtrail-update-new-services-support-from-cloudcheckr.html">【AWS発表】AWS CloudTrail アップデート - 7つの新サービス
+    &amp;　CloudCheckr </a></li>
+<li></li>
+</ul>
+<p>使える様になるまでのフロー</p>
+<ul>
+<li>CloudCheckrにアカウントを作る</li>
+<li>S3のGetObject権限があるIAMを作る ->
+    <a href="http://support.cloudcheckr.com/enabling-cloudtrail-reports/">設定方法</a></li>
+<li>CloudCheckr内にアカウントを作り上記IAMを設定する</li>
+<li>左側メニューのSecurity > CloudTrailの所から見る。</li>
+</ul>
+<p><a href="http://4.bp.blogspot.com/-30Oi1lywYGA/VEBxpIJcreI/AAAAAAAAcew/OYGGup50PjI/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%2B2014-10-17%2B10.31.36.png"><img alt="" src="http://4.bp.blogspot.com/-30Oi1lywYGA/VEBxpIJcreI/AAAAAAAAcew/OYGGup50PjI/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%2B2014-10-17%2B10.31.36.png">{width="169"
+height="400"}</a></p>
+<p>データの収集は定時か強制に行う事が可能</p>
+<p><a href="http://1.bp.blogspot.com/-wRIHXN2_utw/VEByIdVsewI/AAAAAAAAce4/aTvzpW8q-dk/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%2B2014-10-17%2B10.33.46.png"><img alt="" src="http://1.bp.blogspot.com/-wRIHXN2_utw/VEByIdVsewI/AAAAAAAAce4/aTvzpW8q-dk/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%2B2014-10-17%2B10.33.46.png"></a></p>
+<p>感想</p>
+<ul>
+<li>設定自体は簡単だった</li>
+<li>CloudCheckrがTrusted Advisorとほとんど同じ機能であった</li>
+<li>CloudTrail用じゃなくてもCloudCheckr便利だった</li>
+</ul>
+<p><a href="http://3.bp.blogspot.com/-Vp7oZgX4ydw/VEB2L8ROHsI/AAAAAAAAcfQ/Bra2FzeeSA4/s1600/cloudcheckr_cloudtrail_most_active_ip_addresses_1.png"><img alt="" src="http://3.bp.blogspot.com/-Vp7oZgX4ydw/VEB2L8ROHsI/AAAAAAAAcfQ/Bra2FzeeSA4/s1600/cloudcheckr_cloudtrail_most_active_ip_addresses_1.png">{width="640"
+height="310"}</a></p>
+<p><a href="http://aws.typepad.com/aws_japan/2014/05/aws-cloudtrail-update-new-services-support-from-cloudcheckr.html">[【AWS発表】AWS CloudTrail アップデート - 7つの新サービス
+&amp;　CloudCheckr ]</a></p>
+<p>[<strong>この機能いいね！ - Alert Builder</strong>]<br>
+CloudCheckrの機能にAlert
+Builderというのがあって以下の内容をアラートとして送ってくれる</p>
+<ol>
+<li>AWS Costs</li>
+<li>CloudTrail(beta)</li>
+<li>EC2 Number of Instances</li>
+<li>EC2 Resources Utilization</li>
+<li>S3 Storage Used (less than/greater than)</li>
+<li>S3 Total Objects</li>
+</ol>
+<p>AWSの機能を使えば5と6以外は出来るけど、5と6は自分で組む以外は出来なかった気がする。SNSやPagerDutyと連携も出来るので便利〜</p>
+<p><a href="http://2.bp.blogspot.com/-NroV2DNcM8A/VEBzwVjorII/AAAAAAAAcfE/dVI_v9OUUjI/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%2B2014-10-17%2B10.41.10.png"><img alt="" src="http://2.bp.blogspot.com/-NroV2DNcM8A/VEBzwVjorII/AAAAAAAAcfE/dVI_v9OUUjI/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%2B2014-10-17%2B10.41.10.png">{width="640"
+height="134"}</a></p>
+<p>-----------------------------</p>
+<p>[<strong>Stackdriver</strong>]</p>
+<p><a href="http://www.stackdriver.com/">http://www.stackdriver.com/</a></p>
+<p><a href="https://app.stackdriver.com/">https://app.stackdriver.com/</a></p>
+<p>提供パターン: SaaS</p>
+<p>金額: 無料もあるがEliteコースじゃないとCloudTrail使えない　</p>
+<ul>
+<li>Elite: \$12/mo/per server or hosted AWS service</li>
+<li><a href="http://www.stackdriver.com/pricing/">http://www.stackdriver.com/pricing/</a></li>
+</ul>
+<p>ドキュメント: <a href="http://support.stackdriver.com/customer/portal/articles/1491719-integrating-with-cloudtrail">http://support.stackdriver.com/customer/portal/articles/1491719-integrating-with-cloudtrail</a></p>
+<p>使える様になるまでのフロー</p>
+<p>StackDriverのアカウント作成</p>
+<p>IAM roleを作成
+-><a href="https://app.stackdriver.com/settings/add_cloud_account/aws">設定方法</a></p>
+<ul>
+<li>上記の画面で一緒にIAM
+    RoleのARNを入力する箇所がありStackDriverと連携をする</li>
+</ul>
+<p>instanceの監視もしたいのであればagentインストールを行う</p>
+<p>CloudTrailをOnにする</p>
+<p>SNSでトピックを作る</p>
+<p>SQSのキューを作り、上記のSNSのトピックをSubcribeする</p>
+<p>感想</p>
+<ul>
+<li>有料だったので結局試せなかったのでなし</li>
+<li>でも設定は簡単だった。</li>
+<li>Googleアカウントでログイン出来るし、別のクラウドも一緒に管理出来るのはいいね</li>
+<li>UIもネルフみたいで中二病を感じさせる</li>
+</ul>
+<p>TODO</p>
+<ul>
+<li>後でEliteコースにしてみる</li>
+</ul>
+<p>-----------------------------</p>
+<p>[<strong>Sumologic</strong>]</p>
+<ul>
+<li><a href="http://www.sumologic.com/applications/aws-cloudtrail/">http://www.sumologic.com/applications/aws-cloudtrail/</a></li>
+<li>提供パターン: SaaS(Sumo Logic Professional or Sumo Logic Enterprise
+    customeじゃないと使えない）</li>
+<li>金額: Sumo Logic Professional
+    (min\$90/mon\~max\$1800/mon:利用するデータ量による)</li>
+<li>出来る事</li>
+<li>ドキュメント:
+    <a href="https://service.sumologic.com/help/Default.htm#CloudTrail_App.htm">https://service.sumologic.com/help/Default.htm#CloudTrail_App.htm</a></li>
+</ul>
+<p>使える様になるまでのフロー</p>
+<p>Sumologicのアカウントを作る</p>
+<p>CloudTrailをOnにする</p>
+<p>S3の読み込み専用のIAMを作る（Access KeyとSecret Keyが必要）</p>
+<p>Hosted Collectorを作る ->
+<a href="https://service.sumologic.com/help/Default.htm#Setting_up_a_Hosted_Collector.htm">設定方法</a></p>
+<ul>
+<li>自分の環境にCollectorを作る事も可能（Installed Collector)</li>
+</ul>
+<p>LibraryからCloudTrailのappを入れる ->
+<a href="https://service.sumologic.com/help/Default.htm#Installing__the_AWS_Cloud_Trail_App.htm">設定方法</a></p>
+<p><a href="http://4.bp.blogspot.com/-drxxMa74t1s/VEA2xkXb8lI/AAAAAAAAceg/6cWlImW3yG4/s1600/CloudTrail_Network_690x374.png"><img alt="" src="http://4.bp.blogspot.com/-drxxMa74t1s/VEA2xkXb8lI/AAAAAAAAceg/6cWlImW3yG4/s1600/CloudTrail_Network_690x374.png"></a></p>
+<p>感想</p>
+<ul>
+<li>有料だったので結局試せなかったのでなし</li>
+<li>設定は簡単</li>
+<li>Sumologic自体は操作が簡単に出来るのでCloudTrailもいい感じのはず。。。</li>
+</ul>
+<p>-----------------------------</p>
+<p>[<strong>Alert Logic</strong>]</p>
+<ul>
+<li><a href="http://www.alertlogic.com/products-services/public-cloud-security/cloud-security-for-aws/">http://www.alertlogic.com/products-services/public-cloud-security/cloud-security-for-aws/</a></li>
+<li><a href="https://aws.amazon.com/marketplace/pp/B00LAJJ2MW">https://aws.amazon.com/marketplace/pp/B00LAJJ2MW</a></li>
+<li>提供パターン：Marketplace経由でのAMI利用課金（選択するスペックによって金額が変わる）Alert
+    Log Managerと呼ばれる</li>
+<li>金額：\$0.15/hr\~\$0.72/hr</li>
+<li>出来る事</li>
+<li>ドキュメント: <a href="http://docs.alertlogic.com/#docs/install_and_configure/alert_logic_log_manager/how_to_install_lm_for_log_collection.htm">http://docs.alertlogic.com/#docs/install_and_configure/alert_logic_log_manager/how_to_install_lm_for_log_collection.htm</a></li>
+</ul>
+<p>使える様になるまでのフロー</p>
+<p>上記のMarketplaceからAlert Logic Managerを起動</p>
+<p>Alert
+Logicにアカウントを作る（起動したインスタンスのFQDNにアクセスすればその旨表示されるのでそこからアカウント作ると良い）</p>
+<p>CloudTrailをOnにする-> <a href="http://cloud.docs.alertlogic.com/#cloud_partner/aws/lm/cloudtrail/enable_cloudtrail.htm">リンク</a></p>
+<p>SNSでトピックを作る</p>
+<p>SQSのキューを作り、上記のSNSのトピックをSubcribeする</p>
+<p>IAM Roleを作る(Alert LogicのAWSアカウントがアクセスする為にcross-account
+accessがしたいらしい）割と設定が面倒なので<a href="http://cloud.docs.alertlogic.com/#cloud_partner/aws/lm/cloudtrail/create_an_iam_role.htm">こちらを参考</a>に作る</p>
+<ol>
+<li>Alert LogicのAWSアカウント: 239734009475</li>
+</ol>
+<p>CloudTrail Logソースを作る
+-><a href="http://cloud.docs.alertlogic.com/#docs/log_manager/work_with_collection__alert_rules__and_policies/log_sources/collect_aws_cloudtrail_logs.htm">リンク</a> ←<strong>[今ここで挫折中]</strong></p>
+<p>感想</p>
+<ul>
+<li><a href="https://invision.alertlogic.net/">https://invision.alertlogic.net</a>
+    が遅延が凄いあるのでちょっと辛い。。</li>
+<li>ドキュメント通りクリックしても別の画面に遷移する(涙</li>
+<li><a href="https://invision.alertlogic.net/logs.php">https://invision.alertlogic.net/logs.php</a>　はダミーページなので無視する</li>
+</ul>
+<p>TODO</p>
+<ul>
+<li>サポートに問い合わせる....</li>
+</ul>
+<p>-----------------------------</p>
+<p>まとめ</p>
+<ul>
+<li>CloudTrailは大体有料プラン側に入っている</li>
+<li>如何に簡単に設定出来るか、というのは大事</li>
+<li>他のインスタンスの監視やコストの監視などまとめてみれると確かに嬉しい</li>
+<li>遅延があるのは結構辛いなと思った</li>
+</ul>
+
+        <div class="sharethis-bottom">
+          <span class='st_fblike_hcount' displayText='Facebook Like'></span>
+          <span class='st_plusone_hcount' displayText='Google +1'></span>
+          <span class='st_twitter_hcount' displayText='Tweet'></span>
+          <span class='st_email_hcount' displayText='Email'></span>
+        </div>
+      </div><!-- /.entry-content -->
+
+    </article>
+  </section>
+</div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="site-footer">
+        <div class="row-fluid">
+            <div class="span10 offset1">
+                <address>
+                    <p>
+                        This blog is proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                    </p>
+                    <p>
+                        <a href="http://github.com/jsliang/pelican-fresh/">Fresh</a> is a responsive theme designed by <a href="http://jsliang.com/">jsliang</a> and <a href="https://github.com/jsliang/pelican-fresh/graphs/contributors">contributors</a>.
+                        Special thanks to <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a> and <a href="http://getbootstrap.com/">Twitter Bootstrap</a>.
+                    </p>
+                </address>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-845207-15']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+</body>
+</html>

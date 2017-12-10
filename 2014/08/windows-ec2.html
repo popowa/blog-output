@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="author" content="ayakomuro" />
+    <meta name="robots" content="index, follow"/>
+
+    <meta property="og:title" content=""/>
+    <meta property="og:url" content="http://blog.popowa.com/2014/08/windows-ec2.html"/>
+    <meta property="og:site_name" content="popowa"/>
+    <meta property="og:type" content="article"/>
+
+    <link rel="canonical" href="http://blog.popowa.com/2014/08/windows-ec2.html" />
+
+    <title> | popowa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />
+
+    <link rel="stylesheet" type="text/css" href="http://blog.popowa.com/theme/css/main.css" />
+
+    <script type="text/javascript">var switchTo5x=true;</script>
+    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript">
+        stLight.options({
+            publisher: "5a2ce781d0739000123acd73",
+            doNotHash: false,
+            doNotCopy: false,
+            hashAddressBar: false
+        });
+    </script>
+</head>
+
+<body id="index">
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <header id="banner" >
+                <h1>
+                    <a href="http://blog.popowa.com/">popowa </a>
+                </h1>
+                <nav class="navbar">
+                    <div class="navbar-inner">
+                        <ul class="nav">
+                        </ul>
+
+<script>
+  (function() {
+    var cx = '014316853335343165598:-bgzniyqm3y';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div id="google-custom-search" class="nav">
+    <gcse:search></gcse:search>
+</div>
+                    </div>
+                </nav>
+            </header><!-- /#banner -->
+        </div>
+    </div>
+
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <div class="row-fluid">
+<div class="span10 offset1">
+  <section>
+    <article>
+      <header>
+        <h1 class="entry-title">
+          <a href="http://blog.popowa.com/2014/08/windows-ec2.html" rel="bookmark"
+             title="Permalink to "></a></h1>
+<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="ayakomuro">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+      </header>
+      <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2014-08-02
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/windows-server.html">Windows Server</a>
+
+
+
+    
+</footer><!-- /.post-info -->
+        <div class="sharethis-top">
+          <span class='st_fblike_hcount' displayText='Facebook Like'></span>
+          <span class='st_plusone_hcount' displayText='Google +1'></span>
+          <span class='st_twitter_hcount' displayText='Tweet'></span>
+          <span class='st_email_hcount' displayText='Email'></span>
+        </div>
+
+        <p>EC2で速度を計測するまでの設定+Windowsとか全然分からないのですが、機会があったのでWindows
+EC2でiperfを使って速度計測してみました。</p>
+<p>このブログは、本当にWindowsとかWIndows
+Server触った事ない、MSの製品の設計思考を知らない人が操作したログなので知っている人からすればそんなの（ryという感じです。</p>
+<p>[ローカルのMacにipefを入れる]  </p>
+<blockquote>
+<p>brew install iperf</p>
+</blockquote>
+<p>なんて簡単！</p>
+<p>[Windows EC2を起動する]</p>
+<p>まずWindows EC2を起動します。起動するAMIはMicrosoft Windows Server 2012
+R2 Base で良いでしょう。<br>
+起動方法はこちらにあるのでここは省略します。Security
+Groupで5001を開けておいてください。</p>
+<ul>
+<li><a href="http://www.slideshare.net/AmazonWebServicesJapan/aws-windows-14943091">AWS 初級トレーニング （Windows Server 2012編） #aws
+    #ec2</a> </li>
+</ul>
+<p>[Windows EC2に接続する]</p>
+<p>Mac OS からログインするときはRemote Desktop
+Connectionだとエラーで何故かログイン出来ないので、<a href="http://cord.sourceforge.net/">CoRD</a>をダウンロードします。ホスト名とUsername,
+passwordを設定すればログインが可能です。<br>
+Mac OS 10.9.4だとこのアプリでWindows OSにログイン出来なかった<br>
+（参考記事: <a href="http://ameblo.jp/nekocat2/entry-11494736515.html">http://ameblo.jp/nekocat2/entry-11494736515.html</a>)</p>
+<p><a href="http://2.bp.blogspot.com/-Oo-wRg9tF0M/U9w09iUU7hI/AAAAAAAAcMQ/98UlH4aaTFQ/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88+2014-08-02+9.45.50.png"><img alt="" src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F2.bp.blogspot.com%2F-Oo-wRg9tF0M%2FU9w09iUU7hI%2FAAAAAAAAcMQ%2F98UlH4aaTFQ%2Fs1600%2F%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2014-08-02%2B9.45.50.png&amp;container=blogger&amp;gadget=a&amp;rewriteMime=image%2F*"></a>　←この人だとエラーでRDP出来ない</p>
+<p>[Windows EC2の設定をする]<br>
+ログイン後、まずiperfをダウンロードしたいので、IEの設定を変更します。左側の四角いアイコン（多分スタートボタンだと思います）をクリックします。</p>
+<p><a href="http://1.bp.blogspot.com/-E7a9R9o3lGA/U9w2zO-5ZnI/AAAAAAAAcMc/za76YTbscOo/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88+2014-08-02+9.53.55.png"><img alt="" src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F1.bp.blogspot.com%2F-E7a9R9o3lGA%2FU9w2zO-5ZnI%2FAAAAAAAAcMc%2Fza76YTbscOo%2Fs1600%2F%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2014-08-02%2B9.53.55.png&amp;container=blogger&amp;gadget=a&amp;rewriteMime=image%2F*"></a></p>
+<p>クリックすると、このようなタイルみたいなのが出てくるので、Internet
+Explorerをクリックします。ちなにこのページから最初のデスクトップ画面に戻りたいときは右上にあるDesktopをクリックすれば戻れました。</p>
+<p><a href="http://3.bp.blogspot.com/-lYC0iLVu6RM/U9w3vWZ0K4I/AAAAAAAAcMk/OQFgBHNwH00/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88+2014-08-02+9.57.07.png"><img alt="" src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F3.bp.blogspot.com%2F-lYC0iLVu6RM%2FU9w3vWZ0K4I%2FAAAAAAAAcMk%2FOQFgBHNwH00%2Fs1600%2F%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2014-08-02%2B9.57.07.png&amp;container=blogger&amp;gadget=a&amp;rewriteMime=image%2F*"></a></p>
+<p>クリックすると、IEが立ち上がるので、右上にある車輪マーク？をクリックします。</p>
+<p><a href="http://1.bp.blogspot.com/-bWuXYNmQ054/U9w4CnC9awI/AAAAAAAAcMs/pTa165yGyJ8/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88+2014-08-02+9.59.17.png"><img alt="" src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F1.bp.blogspot.com%2F-bWuXYNmQ054%2FU9w4CnC9awI%2FAAAAAAAAcMs%2FpTa165yGyJ8%2Fs1600%2F%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2014-08-02%2B9.59.17.png&amp;container=blogger&amp;gadget=a&amp;rewriteMime=image%2F*"></a></p>
+<p>クリックするとメニューが出てくるのでInternet Optionsを選択します。</p>
+<p><a href="http://2.bp.blogspot.com/-VJD2GgS9s7g/U9w4R89IAvI/AAAAAAAAcM0/ethssahlZRc/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88+2014-08-02+10.00.06.png"><img alt="" src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F2.bp.blogspot.com%2F-VJD2GgS9s7g%2FU9w4R89IAvI%2FAAAAAAAAcM0%2FethssahlZRc%2Fs1600%2F%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2014-08-02%2B10.00.06.png&amp;container=blogger&amp;gadget=a&amp;rewriteMime=image%2F*"></a></p>
+<p>ポップアップが出てくるので、Securityタブを選択し、Internetアイコンを選択した後、Custom
+Levelをクリックします。<br>
+<img alt="" src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F1.bp.blogspot.com%2F-9_sB3oQ4WjE%2FU9w6bivNELI%2FAAAAAAAAcNA%2FY6bAnpeuBls%2Fs1600%2F%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2014-08-02%2B10.01.26.png&amp;container=blogger&amp;gadget=a&amp;rewriteMime=image%2F*"><br>
+Settingsの所で、Downloads > File Download をDisable から
+Enableにします。その後OKをクリックします。<br>
+<img alt="" src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F2.bp.blogspot.com%2F-63k1akGzg_M%2FU9w6tdiU7ZI%2FAAAAAAAAcNI%2Fsh2JjyNKX4c%2Fs1600%2F%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2014-08-02%2B10.03.19.png&amp;container=blogger&amp;gadget=a&amp;rewriteMime=image%2F*"><br>
+Warningのポップアップが出てくるので、Yesをクリックした後、Internet
+Optionsの画面に戻るので、Applyをクリックした後、OKをクリックします。</p>
+<p>その後Windows EC2内のファイヤーウォールの設定をします。<br>
+まず最初のスタートページに戻り、今度はControl
+Panelをクリックします。その後に設定項目が出るので、System and Security
+> Windows
+Firewallを選択します（もし見つからなかったら、WF.mscというキーワードで検索してみてください）。</p>
+<p>その後Advanced Settingsをクリックして設定画面を開きます。</p>
+<p><img alt="" src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F4.bp.blogspot.com%2F-x7FbDpy1gYU%2FU9w9WqMs9_I%2FAAAAAAAAcNU%2F65K4pZzuQU8%2Fs1600%2F%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2014-08-02%2B10.21.34.png&amp;container=blogger&amp;gadget=a&amp;rewriteMime=image%2F*"><br>
+Windows Firewall with Advanced
+Securityという画面が出てくるので、左側メニューにあるInbound
+Rulesを選択し、上のメニューバーからAction > New
+Rules....をクリックします。<br>
+<img alt="" src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F4.bp.blogspot.com%2F-RUxe_9vM2ck%2FU9w-VEkROXI%2FAAAAAAAAcNg%2Fj7Jk9Kfj9GI%2Fs1600%2F%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2014-08-02%2B10.24.30.png&amp;container=blogger&amp;gadget=a&amp;rewriteMime=image%2F*"></p>
+<p>New Inbound Rule Wizardが出てくるので、Portを選択後、Next
+を押して、TCPを選択し、Specific local ports; にて5001を入力します。</p>
+<p><img alt="" src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F3.bp.blogspot.com%2F-qpnOg81z9Ic%2FU9w-VC7VCjI%2FAAAAAAAAcNc%2FU4YOmJPu6lk%2Fs1600%2F%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2014-08-02%2B10.26.21.png&amp;container=blogger&amp;gadget=a&amp;rewriteMime=image%2F*"><br>
+次の画面で、Allow the connectionを選択します。<br>
+その後、適応する箇所について聞かれるので、Doamin/Private/Public
+全部を選びます。全部じゃなくてPublicだけでもいいのですが、何となく。<br>
+最後は設定に名前を付けてFinish, 保存します。<br>
+追加されました。<br>
+<img alt="" src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F2.bp.blogspot.com%2F-o7AE5-OJALk%2FU9xBE0FnLDI%2FAAAAAAAAcNw%2FE1mS81vwd_k%2Fs1600%2F%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2014-08-02%2B10.37.56.png&amp;container=blogger&amp;gadget=a&amp;rewriteMime=image%2F*"></p>
+<p>[Windows EC2にアプリ設定をする]</p>
+<p>次はiperfのダウンロードと、Javaのダウロードをして設定します。</p>
+<p>[iperf]<br>
+スタートページからIEに戻ってこちらのリンクにアクセスします。<br>
+<a href="https://code.google.com/p/xjperf/">https://code.google.com/p/xjperf/</a><br>
+このページのDownloads からFeatured jperf
+iperfをダウンロードします（2014/8/2時点ではjperf-2.0.2.zipでした。<br>
+<a href="https://code.google.com/p/xjperf/downloads/list">https://code.google.com/p/xjperf/downloads/list</a><br>
+ダウンロード後、zip解凍します。</p>
+<p>[Java]<br>
+次にJavaをダウンロードします。<br>
+<a href="http://www.java.com/ja/">http://www.java.com/ja/</a><br>
+上記ページにアクセスして、<strong>あなたとJava</strong>という文言に何とも言えない気持ちになりました。</p>
+<p>ダウンロードするとThis PC >
+Downloadsに、JavaSetup7u65というファイルがダウンロードされるので、ダブルクリックしてインストールします。ウィザードが立ちあがりますが、基本はディフォルトでよいでしょう。</p>
+<p>Javaインストール後、Pathの設定をする必要があります。これをしないとiperfを起動してもjavawがないと怒られます（ちなみにjavawを見た時、w->ﾜﾗの方がと思ってしまいました。javaﾜﾗ）<br>
+参考リンク: <a href="http://wp2.trojanbear.net/708.html">http://wp2.trojanbear.net/708.html</a></p>
+<p>スタートページからControl Panelに移動し、System and Security > System
+からbasic information about your computerの画面に遷移します。<br>
+<img alt="" src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F1.bp.blogspot.com%2F-OFqZVAOC_6E%2FU9xDQtE-IjI%2FAAAAAAAAcN8%2FKb5KrdwLYTQ%2Fs1600%2F%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2014-08-02%2B10.45.49.png&amp;container=blogger&amp;gadget=a&amp;rewriteMime=image%2F*"></p>
+<p>↓<br>
+<img alt="" src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F3.bp.blogspot.com%2F-VxAF15djZa0%2FU9xDQlhlH-I%2FAAAAAAAAcOE%2F4gCQmoig-9M%2Fs1600%2F%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2014-08-02%2B10.45.58.png&amp;container=blogger&amp;gadget=a&amp;rewriteMime=image%2F*"></p>
+<p>↓<br>
+以下のChange
+settingsをクリックします（随分分かり辛い場所にあると思いません？？）<br>
+<img alt="" src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F1.bp.blogspot.com%2F-3Fn2Ia0o7x0%2FU9xDQtstlfI%2FAAAAAAAAcOA%2F9D2D_2Rn798%2Fs1600%2F%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2014-08-02%2B10.46.09.png&amp;container=blogger&amp;gadget=a&amp;rewriteMime=image%2F*"></p>
+<p>System Properties画面が立ちがあるので、AdvancedタブにあるEnvironment
+Variablesをクリックします。<br>
+<img alt="" src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F4.bp.blogspot.com%2F-ZFYX79DnTgc%2FU9xEL5W26eI%2FAAAAAAAAcOU%2F0jmgIaJO2cM%2Fs1600%2F%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2014-08-02%2B10.49.31.png&amp;container=blogger&amp;gadget=a&amp;rewriteMime=image%2F*"><br>
+Environment
+Variables画面が出てくるので、TEMPをハイライトし、その下に出てくるSystem
+variablesにあるPathを選択し、Editします。<br>
+<img alt="" src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F1.bp.blogspot.com%2F-mBjHK7-Vu3Y%2FU9xF4mwr_3I%2FAAAAAAAAcOg%2F_ia3u4Tf5Ak%2Fs1600%2F%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2014-08-02%2B10.58.08.png&amp;container=blogger&amp;gadget=a&amp;rewriteMime=image%2F*"></p>
+<p>Pathの値の末尾に、Javaがインストールされたパスを書きます。多分こんな感じになるでしょう。  </p>
+<blockquote>
+<p>;C:Program Files (x86)Javajre7bin</p>
+</blockquote>
+<p>これで設定は終わりです。</p>
+<p>[計測]</p>
+<p>iperfを立ち上げます。クリックするとSecurity
+Warningが出ますがRunさせます。<br>
+起動させたら、Serverを選択し、Run iperfします。<br>
+<img alt="" src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F2.bp.blogspot.com%2F-C31Cy285Cn4%2FU9xIYjXNFUI%2FAAAAAAAAcOs%2F_mu84NN2sWk%2Fs1600%2F%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2014-08-02%2B11.08.04.png&amp;container=blogger&amp;gadget=a&amp;rewriteMime=image%2F*"><br>
+手元にあるPCから接続をします。<br>
+コマンドは  </p>
+<blockquote>
+<p>iperf -c Windows EC2の固定IP</p>
+</blockquote>
+<p>です。このような感じになると思います。<br>
+<img alt="" src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F3.bp.blogspot.com%2F-3Fth4RtNh50%2FU9xJojDRowI%2FAAAAAAAAcO4%2FBugMt4ziVqo%2Fs1600%2F%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2014-08-02%2B11.11.49.png&amp;container=blogger&amp;gadget=a&amp;rewriteMime=image%2F*"></p>
+<blockquote>
+<p>aya-2:\~ komuro\$ iperf -c 54.210.217.54<br>
+------------------------------------------------------------<br>
+Client connecting to 54.210.217.54, TCP port 5001<br>
+TCP window size:  129 KByte (default)<br>
+------------------------------------------------------------<br>
+[  4] local 192.168.11.3 port 51824 connected with 54.210.217.54
+port 5001<br>
+[ ID] Interval       Transfer     Bandwidth<br>
+[  4]  0.0-14.3 sec  <strong>15.2 MBytes  8.93 Mbits/sec</strong></p>
+</blockquote>
+<p>今回Windows
+EC2をUS-East-1に立てたので、東京リージョンよりは1/3ぐらいの速度かなぁと思いました。</p>
+<p>後この検証している時、子どもが横でYoutube見ていたのでそれも影響しそうです。</p>
+<p>朝3時に家族が寝ている時に同じ環境で検証したときは以下のような結果でした。</p>
+<blockquote>
+<p>aya-2:\~ komuro\$ iperf -c 54.210.217.54<br>
+------------------------------------------------------------<br>
+Client connecting to 54.210.217.54, TCP port 5001<br>
+TCP window size: 129 KByte (default)<br>
+------------------------------------------------------------<br>
+[ 4] local 192.168.11.3 port 61719 connected with 54.210.217.54 port
+5001<br>
+[ ID] Interval Transfer Bandwidth<br>
+[ 4] 0.0-10.1 sec <strong>20.6 MBytes 17.2 Mbits/sec</strong></p>
+</blockquote>
+<p>ここまでやって思った事は毎度ですけど、サーバにGUIはどうしても慣れないなぁという事でした。サーバと思わないで全く違うものだと思って使えばいいのかもしれません。</p>
+<p>何はともあれWindows Serverの勉強になりました！</p>
+<p>今回参考になったページ</p>
+<ul>
+<li><a href="http://onlineconsultant.jp/pukiwiki/?%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF%E3%81%AE%E9%80%9A%E4%BF%A1%E9%80%9F%E5%BA%A6%E3%82%92%E6%B8%AC%E5%AE%9A%E3%81%99%E3%82%8B">http://onlineconsultant.jp/pukiwiki/?%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF%E3%81%AE%E9%80%9A%E4%BF%A1%E9%80%9F%E5%BA%A6%E3%82%92%E6%B8%AC%E5%AE%9A%E3%81%99%E3%82%8B</a></li>
+<li><a href="http://ameblo.jp/mac-begin3/entry-10768602467.html">http://ameblo.jp/mac-begin3/entry-10768602467.html</a></li>
+<li><a href="http://wp2.trojanbear.net/708.html">http://wp2.trojanbear.net/708.html</a></li>
+<li><a href="http://inokara.hateblo.jp/entry/2014/01/03/105023">http://inokara.hateblo.jp/entry/2014/01/03/105023</a></li>
+</ul>
+
+        <div class="sharethis-bottom">
+          <span class='st_fblike_hcount' displayText='Facebook Like'></span>
+          <span class='st_plusone_hcount' displayText='Google +1'></span>
+          <span class='st_twitter_hcount' displayText='Tweet'></span>
+          <span class='st_email_hcount' displayText='Email'></span>
+        </div>
+      </div><!-- /.entry-content -->
+
+    </article>
+  </section>
+</div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="site-footer">
+        <div class="row-fluid">
+            <div class="span10 offset1">
+                <address>
+                    <p>
+                        This blog is proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                    </p>
+                    <p>
+                        <a href="http://github.com/jsliang/pelican-fresh/">Fresh</a> is a responsive theme designed by <a href="http://jsliang.com/">jsliang</a> and <a href="https://github.com/jsliang/pelican-fresh/graphs/contributors">contributors</a>.
+                        Special thanks to <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a> and <a href="http://getbootstrap.com/">Twitter Bootstrap</a>.
+                    </p>
+                </address>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-845207-15']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+</body>
+</html>

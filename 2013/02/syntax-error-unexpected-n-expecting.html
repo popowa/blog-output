@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="author" content="ayakomuro" />
+    <meta name="robots" content="index, follow"/>
+
+    <meta property="og:title" content="syntax error, unexpected \'n\', expecting tCOLON2 or \'\[\' or \'.\'"/>
+    <meta property="og:url" content="http://blog.popowa.com/2013/02/syntax-error-unexpected-n-expecting.html"/>
+    <meta property="og:site_name" content="popowa"/>
+    <meta property="og:type" content="article"/>
+
+    <link rel="canonical" href="http://blog.popowa.com/2013/02/syntax-error-unexpected-n-expecting.html" />
+
+    <title>syntax error, unexpected \'n\', expecting tCOLON2 or \'\[\' or \'.\' | popowa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />
+
+    <link rel="stylesheet" type="text/css" href="http://blog.popowa.com/theme/css/main.css" />
+
+    <script type="text/javascript">var switchTo5x=true;</script>
+    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript">
+        stLight.options({
+            publisher: "5a2ce781d0739000123acd73",
+            doNotHash: false,
+            doNotCopy: false,
+            hashAddressBar: false
+        });
+    </script>
+</head>
+
+<body id="index">
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <header id="banner" >
+                <h1>
+                    <a href="http://blog.popowa.com/">popowa </a>
+                </h1>
+                <nav class="navbar">
+                    <div class="navbar-inner">
+                        <ul class="nav">
+                        </ul>
+
+<script>
+  (function() {
+    var cx = '014316853335343165598:-bgzniyqm3y';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div id="google-custom-search" class="nav">
+    <gcse:search></gcse:search>
+</div>
+                    </div>
+                </nav>
+            </header><!-- /#banner -->
+        </div>
+    </div>
+
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <div class="row-fluid">
+<div class="span10 offset1">
+  <section>
+    <article>
+      <header>
+        <h1 class="entry-title">
+          <a href="http://blog.popowa.com/2013/02/syntax-error-unexpected-n-expecting.html" rel="bookmark"
+             title="Permalink to syntax error, unexpected \'n\', expecting tCOLON2 or \'\[\' or \'.\'">syntax error, unexpected \'n\', expecting tCOLON2 or \'\[\' or \'.\'</a></h1>
+<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="ayakomuro">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+      </header>
+      <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2013-02-11
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/error.html">error</a>
+        <a href="http://blog.popowa.com/tag/rails.html">Rails</a>
+
+
+
+    
+</footer><!-- /.post-info -->
+        <div class="sharethis-top">
+          <span class='st_fblike_hcount' displayText='Facebook Like'></span>
+          <span class='st_plusone_hcount' displayText='Google +1'></span>
+          <span class='st_twitter_hcount' displayText='Tweet'></span>
+          <span class='st_email_hcount' displayText='Email'></span>
+        </div>
+
+        <p>急にdb:migrateしようとしたら怒られる様になった。</p>
+<p>20130211061203_create_settings.rbを見ても特に普段と変わらない様子。</p>
+<blockquote>
+<p>\$rake db:migrate<br>
+rake aborted!<br>
+/Users/komuro/rails-demo/db/migrate/20130211061203_create_settings.rb:4:
+syntax error, unexpected \'n\', expecting tCOLON2 or \'[\' or \'.\'</p>
+</blockquote>
+<p>何だろうと思ったらどうやら  </p>
+<blockquote>
+<p>\$ rails generate scaffold Setting accesskey:string[,
+]secretkey:string</p>
+</blockquote>
+<p>設定のカンマ(,)がいらなかったようです。</p>
+<p>そのような場合は一度作成した一式を削除しましょう。</p>
+<blockquote>
+<p>\$ rails destroy scaffold Setting</p>
+</blockquote>
+<p>それから再度カンマ無しで作成。</p>
+<blockquote>
+<p>\$ rails generate scaffold Setting accesskey:string secretkey:string</p>
+</blockquote>
+<p>--<br>
+english<br>
+--</p>
+<p>Suddenly, db:migrate gave me a error (see below)</p>
+<p>20130211061203_create_settings.rb doesn\'t look so strange from
+path..hmmm</p>
+<blockquote>
+<p>\$rake db:migrate<br>
+rake aborted!<br>
+/Users/komuro/rails-demo/db/migrate/20130211061203_create_settings.rb:4:
+syntax error, unexpected \'n\', expecting tCOLON2 or \'[\' or \'.\'</p>
+</blockquote>
+<p>I googled and found out that I typed comma when I generate scaffold.  </p>
+<blockquote>
+<p>\$ rails generate scaffold Setting
+accesskey:string[, ]secretkey:string</p>
+</blockquote>
+<p>No comma!</p>
+<p>If you type it with comma, delete scaffold first.  </p>
+<blockquote>
+<p>\$ rails destroy scaffold Setting</p>
+</blockquote>
+<p>Then type again w/o comma.</p>
+<blockquote>
+<p>\$ rails generate scaffold Setting accesskey:string secretkey:string</p>
+</blockquote>
+
+        <div class="sharethis-bottom">
+          <span class='st_fblike_hcount' displayText='Facebook Like'></span>
+          <span class='st_plusone_hcount' displayText='Google +1'></span>
+          <span class='st_twitter_hcount' displayText='Tweet'></span>
+          <span class='st_email_hcount' displayText='Email'></span>
+        </div>
+      </div><!-- /.entry-content -->
+
+    </article>
+  </section>
+</div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="site-footer">
+        <div class="row-fluid">
+            <div class="span10 offset1">
+                <address>
+                    <p>
+                        This blog is proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                    </p>
+                    <p>
+                        <a href="http://github.com/jsliang/pelican-fresh/">Fresh</a> is a responsive theme designed by <a href="http://jsliang.com/">jsliang</a> and <a href="https://github.com/jsliang/pelican-fresh/graphs/contributors">contributors</a>.
+                        Special thanks to <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a> and <a href="http://getbootstrap.com/">Twitter Bootstrap</a>.
+                    </p>
+                </address>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-845207-15']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+</body>
+</html>

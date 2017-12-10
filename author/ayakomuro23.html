@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="author" content="ayakomuro" />
+    <meta name="robots" content="index, follow"/>
+
+    <meta property="og:title" content="popowa - ayakomuro"/>
+    <meta property="og:url" content="http://blog.popowa.com/author/ayakomuro.html"/>
+    <meta property="og:site_name" content="popowa"/>
+    <meta property="og:type" content="website"/>
+
+    <link rel="canonical" href="http://blog.popowa.com/author/ayakomuro.html" />
+
+    <title>popowa - ayakomuro | popowa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />
+
+    <link rel="stylesheet" type="text/css" href="http://blog.popowa.com/theme/css/main.css" />
+
+    <script type="text/javascript">var switchTo5x=true;</script>
+    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript">
+        stLight.options({
+            publisher: "5a2ce781d0739000123acd73",
+            doNotHash: false,
+            doNotCopy: false,
+            hashAddressBar: false
+        });
+    </script>
+</head>
+
+<body id="index">
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <header id="banner" >
+                <h1>
+                    <a href="http://blog.popowa.com/">popowa </a>
+                </h1>
+                <nav class="navbar">
+                    <div class="navbar-inner">
+                        <ul class="nav">
+                        </ul>
+
+<script>
+  (function() {
+    var cx = '014316853335343165598:-bgzniyqm3y';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div id="google-custom-search" class="nav">
+    <gcse:search></gcse:search>
+</div>
+                    </div>
+                </nav>
+            </header><!-- /#banner -->
+        </div>
+    </div>
+
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <div class="row-fluid">
+<div class="span9">
+                <section>
+                    <ol id="posts-list" class="hfeed" start="9">
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2012/03/less-money-more-options.html" rel="bookmark" title="Permalink to お金を(なるべく)かけずにサーバー運用出来るか試してみた">
+                                       お金を(なるべく)かけずにサーバー運用出来るか試してみた
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2012-03-19
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/uncategorized.html">Uncategorized</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>最初に結論</p>
+<ul>
+<li><strong>[ドメイン周りをスムーズに扱えるPaaSは売れる！]</strong></li>
+</ul>
+<p>ドメイン
+popowa.comに付随する過去のサブドメイン遺産をどれだけ安く運営出来るか試してみました。</p>
+<p>過去のサブドメイン遺産はほとんどアクセスがない、もしくは自分しか使っていないのでここではスケールが出来るかどうかは重要視しない事にします。</p>
+<p>このドメイン(popowa.com)には、</p>
+<ol>
+<li>ネームサーバ</li>
+<li>メールサーバ</li>
+<li>ブログサーバ</li>
+<li>レポジトリサーバ</li>
+<li>ウェブサーバ</li>
+<li>検証で試したOSSなアプリ（主にWordpressなど）用検証サーバ</li>
+</ol>
+<p>がありました。<br>
+過去使っていた有償環境としては</p>
+<ol>
+<li>自宅サーバー</li>
+<li>さくらVPS</li>
+<li>ムームードメイン</li>
+<li>Lolipop</li>
+<li>AWS</li>
+<li>VPSLink</li>
+<li>Tektonic</li>
+<li>Xrea</li>
+<li>RackSpace</li>
+</ol>
+<p>とかで運営していました(順不同)。</p>
+<h3>■ネームサーバー</h3>
+<p>まずネームサーバーをAWSが提供している<a href="http://aws.amazon.com/jp/route53/">Route
+53</a>に移します。Bindも脆弱性が多いので、これでBindのパッチ当てを気にする必要がなくなります(ﾉ´▽｀)ﾉ
+。<br>
+Route 53は有償ですが、気にするに値しないほど安いです。本当に。</p>
+<blockquote>
+<p>★ネームサーバーはRoute 53で決まり！</p>
+</blockquote>
+<h3>■メールサーバー</h3>
+<p>メールは、スパムしか受けないので …</p>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2012/03/less-money-more-options.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2012/03/w.html" rel="bookmark" title="Permalink to 福岡インフラ勉強会第一回報告〜トラブル自慢、受験前対策〜">
+                                       福岡インフラ勉強会第一回報告〜トラブル自慢、受験前対策〜
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2012-03-18
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/apache.html">Apache</a>
+        <a href="http://blog.popowa.com/tag/infra.html">infra</a>
+        <a href="http://blog.popowa.com/tag/mysql.html">MySQL</a>
+        <a href="http://blog.popowa.com/tag/php.html">php</a>
+        <a href="http://blog.popowa.com/tag/guo-nei-ibento.html">国内イベント</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>福岡インフラ勉強会がAIP
+Cafeで行われました！<a href="http://atnd.org/events/26166">http://atnd.org/events/26166</a></p>
+<p><a href="http://4.bp.blogspot.com/-Illjm-LN8H4/T2ROTnDHKRI/AAAAAAAAPqM/TI54mJTRX1o/s1600/IMAG0027.jpg"><img alt="" src="http://4.bp.blogspot.com/-Illjm-LN8H4/T2ROTnDHKRI/AAAAAAAAPqM/TI54mJTRX1o/s320/IMAG0027.jpg">{width="320"
+height="191"}</a></p>
+<p><a href="http://atnd.org/events/26166"></a>  </p>
+<h2>■私のトラブル自慢</h2>
+<p>ほとんどオフレコなので書けません。。</p>
+<ul>
+<li>サーバー監視はなるべく常時行うようにする（特定の時間のみの確認だと、それ以外の時に問題が一時的に起こっても知りようが無い->問題を見逃してしまう可能性あり）</li>
+<li>トラブルは人が起こす</li>
+<li><a href="http://spring-mt.tumblr.com/post/18842191135/kvm-lvm">KVMとLVMで仮想環境を構築(改)
+    【ゲストマシン拡張編】</a></li>
+<li>ReiserFSもう止めたい;;</li>
+<li>edというエディタを知った~~（viの親みたいなものらしい）~~</li>
+</ul>
+<p>トラブル自慢はあんなことやこんな事まで出て来て、それに対しての対策方法なども一緒に協議されました。</p>
+<h2>■チューニンガソン対策</h2>
+<p>チューニンガソンがリモート参加OKになったので、その対策を話し合いました。</p>
+<p><a href="http://www.zusaar.com/event/218004">第3弾！いろいろチューニングしてパフォーマンスを競うバトルイベント「チューニンガソン」3月24日(土)
+開催！ #tuningathon</a></p>
+<p>現在出ている条件</p>
+<ul>
+<li>当日渡された環境を使い、OSやサーバ周りのチューニングでパフォーマンスを競う</li>
+<li>サーバ環境がAWS(EC2)でOSはAmazon Linux AMI<br>
+   (現在の最新は<a href="http://aws.amazon.com/jp/amazon-linux-ami/latest-release-notes/">Amazon Linux AMI
+    2011.09 …</a></li></ul>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2012/03/w.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2012/03/it.html" rel="bookmark" title="Permalink to IT飲み会に行ってみた">
+                                       IT飲み会に行ってみた
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2012-03-15
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/guo-nei-ibento.html">国内イベント</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>前から行ってみたかったIT飲み会＠福岡、があるという事で行ってみた。</p>
+<ul>
+<li><a href="http://www.it-nomikai.jp/"> IT飲み会</a></li>
+</ul>
+<p>ITの飲み会だから、ギークな人とかが来るのかしら、と思っていたけど、IT企業の営業や採用、人材紹介な人達が多くて一瞬間違えた！！と思ってしまったw</p>
+<blockquote>
+<p>みんなスーツだよ！あわわ</p>
+<p>--- 小室 文 Aya Komuroさん (@ayakomuro) <a href="https://twitter.com/ayakomuro/status/179514759417315328">3月 13,
+2012</a></p>
+</blockquote>
+<p>でも<a href="https://twitter.com/#%21/ggaoki">@ggaoki</a>（<a href="http://www.guildcafe.jp/">GuildCafe</a>）さんの話を聞けてよかった！前から聞きたいと思っていた事も話せたし♪</p>
+<p><a href="https://p.twimg.com/An3G35tCIAIuF1U.jpg"><img alt="" src="https://p.twimg.com/An3G35tCIAIuF1U.jpg">{width="600"
+height="359"}</a></p>
+<p>後めっちゃ面白い人にも遭う事が出来た！</p>
+<ul>
+<li><a href="http://ataru.in/">ATARU.in</a></li>
+<li><a href="https://twitter.com/#%21/araco55">ブロスネット</a></li>
+</ul>
+<p>IT飲み会＠福岡はこんな感じでした  </p>
+<ul>
+<li>TwitterとかFBをやっている人が参加者の半分ぐらい</li>
+<li>スーツ多し</li>
+<li>女性は少ない</li>
+<li>ギークな飲み会ではない \&lt;\&lt;　重要</li>
+<li>初めての参加者が多かった</li>
+</ul>
+<p>こうあってほしいなぁという要望編</p>
+<ul>
+<li>Twitterのハッシュタグを認知させる（始まるまでの画面で表示させておくか、ハッシュタグが付いているツイートを流しておくなど）</li>
+<li>BGMを押さえ気味にする（=>話に来たのにBGMがちょっとうるさかった）</li>
+<li>本編がだらだら気味だったのでタイムキーパーを設けるとよいかも？</li>
+<li>可能ならばスタッフの方はひとりぼっちになっている人を会話に入れるような事をしてあげるといいんじゃないかなーと思った。</li>
+<li>見知らぬ人が集まる会は …</li></ul>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2012/03/it.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2012/03/changelog-201236.html" rel="bookmark" title="Permalink to 言語別Changelog 2012/3/6時点">
+                                       言語別Changelog 2012/3/6時点
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2012-03-06
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/tuningathon.html">tuningathon</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>Ruby 1.9.3-p125  リリース分Changelog</p>
+<ul>
+<li><a href="http://svn.ruby-lang.org/repos/ruby/tags/v1_9_3_125/ChangeLog">[prod]http://svn.ruby-lang.org/repos/ruby/tags/v1_9_3_125/ChangeLog</a></li>
+</ul>
+<p>PHP 5.4.0 2012/3/1リリース分Changelog</p>
+<ul>
+<li><a href="http://php.net/ChangeLog-5.php">[prod]http://php.net/ChangeLog-5.php</a></li>
+</ul>
+<p>Python 3.2.2 2011/9/4リリース分Changelog</p>
+<ul>
+<li><a href="http://www.python.org/getit/releases/3.2.2/">[prod]http://www.python.org/getit/releases/3.2.2/</a></li>
+</ul>
+<p>Python 3.3.0 alpha …</p>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2012/03/changelog-201236.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2012/03/in.html" rel="bookmark" title="Permalink to ">
+                                       
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2012-03-05
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/amazon.html">Amazon</a>
+        <a href="http://blog.popowa.com/tag/tuningathon.html">tuningathon</a>
+        <a href="http://blog.popowa.com/tag/guo-nei-ibento.html">国内イベント</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>福岡サテライト+ついに、、、ついに参加出来るチャンスが回ってきました<br>
+[<a href="http://www.zusaar.com/event/227001">>>「チューニンガソン」in
+福岡サテライト</a>]<br>
+[]初めての参加になるので、過去のチューニンガ<em>ソン</em>を振り返ってみましょう。</p>
+<p>[ 1回目]</p>
+<p>お題：
+WordPressのコメント書き込み回数（20並列で1,000回実行にかかる時間）<br>
+参加者に提供される環境：</p>
+<ul>
+<li>AWS ap-northeast-1でmedium instance</li>
+<li>Amazon Linux 2011-02</li>
+<li>WordPress 3.1.4ja（/var/www/html/wordpress）</li>
+</ul>
+<p>条件：</p>
+<ul>
+<li>Apacheをフロントにすること</li>
+<li>データベースはMySQL</li>
+<li>/var/www/html/wordpress以下の改変はNG</li>
+<li>Apache，MySQL，PHPの入れ替えはOK</li>
+</ul>
+<p>記事、まとめなど：</p>
+<ul>
+<li><a href="http://pr.zero-start.jp/archives/65588426.html">【前編：バトル！】いろいろチューニングしてパフォーマンスを競うバトルイベント！「Tuningathon」
+    #tuningathon</a> </li>
+<li><a href="http://gihyo.jp/news/report/2011/07/1301">バリバリチューニングするぜ！Webシステムのパフォーマンスを争った一日―第1回チューニンガソン開催 …</a></li></ul>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2012/03/in.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2012/02/blog-post_27.html" rel="bookmark" title="Permalink to レゴ・シリアスプレイを体験して思った事">
+                                       レゴ・シリアスプレイを体験して思った事
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2012-02-27
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/lego.html">Lego</a>
+        <a href="http://blog.popowa.com/tag/thought.html">thought</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>先週、FBで知った「レゴ・シリアスプレイ」という手法を使ったイベントに参加してきました。</p>
+<hr>
+<p><a href="http://1.bp.blogspot.com/-dcxPbp8GWLk/T0rYuzdFykI/AAAAAAAAPbg/eEgy46l0d4k/s1600/lego.jpg"><img alt="" src="http://1.bp.blogspot.com/-dcxPbp8GWLk/T0rYuzdFykI/AAAAAAAAPbg/eEgy46l0d4k/s1600/lego.jpg"></a>   <a href="http://www.facebook.com/events/341587372528059/">☆「レゴ・ブロックを使った"ビジョン創りから組織改革"」☆<br>
+                                                                                                                                                                                                            　〜そのサワリを体験できる勉強会を開催！〜<br>
+                                                                                                                                                                                                            http://www.facebook.com/events/341587372528059/</a></p>
+<hr>
+<p>参加して知った事、思った事をレポートします。長いです。<br>
+[]</p>
+<ul>
+<li>シリアスプレイ : <a href="http://www.seriousplay.jp/">http://www.seriousplay.jp/</a></li>
+</ul>
+<p>レゴ・ブロックを道具に使う、ユニークなアプローチで、</p>
+<ul>
+<li>組織のビジョンや将来像創り</li>
+<li>新たな戦略立案</li>
+<li>創造性の開発</li>
+<li>個人のキャリア開発</li>
+<li>チームビルディング</li>
+</ul>
+<p>といった、組織の抱える課題を可視化し、組織に内在する知恵を結集して、解決へと導くそうです。<br>
+レゴ・シリアスプレイは<strong>コンストラクショニズム</strong>という考えが元になっているそうです。</p>
+<ul>
+<li><a href="http://www.steer0508.com/lego/constructionism.html">コンストラクショニズムとは</a></li>
+</ul>
+<p>---- <br>
+まず登録者は事前に決められたグループに入ります。個々にジップロックに入ったレゴを渡されます。レゴは45個。</p>
+<p>レゴを数える時から個人差が出ます。</p>
+<p>一つ一つ数えて行く人と、レゴを形、色でペアにして数えて行く人。。
+分かり易さで言えば同じパーツをペアにしてあるべきパーツを確認した方が良さげでした。</p>
+<p><a href="http://2.bp.blogspot.com/-ch3MEpepn2U/T0daGKBLJTI/AAAAAAAAPZc/UkBTl4Q4t2Y/s1600/1330076151760.jpg"><img alt="" src="http://2.bp.blogspot.com/-ch3MEpepn2U/T0daGKBLJTI/AAAAAAAAPZc/UkBTl4Q4t2Y/s320/1330076151760.jpg">{width="320 …</a></p>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2012/02/blog-post_27.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2012/02/pythondjango.html" rel="bookmark" title="Permalink to PythonとDjangoを勉強する為のサイト一覧">
+                                       PythonとDjangoを勉強する為のサイト一覧
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2012-02-23
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/django.html">Django</a>
+        <a href="http://blog.popowa.com/tag/python.html">Python</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>Pythonとそれを使うフレームワークDjangoを勉強した際に読んだサイト一覧をメモ</p>
+<p>以下を3日かけてすると、何となくDjangoが使えるようになります（いや、夢かもしれないが</p>
+<p>[]<strong>[Django]</strong></p>
+<p>Django ドキュメント</p>
+<ul>
+<li><a href="http://djangoproject.jp/doc/ja/1.0/">http://djangoproject.jp/doc/ja/1.0/</a></li>
+</ul>
+<p>>> チュートリアル 1 \~ 4を実際にやってみる<br>
+※何か問題があれば、このページ↑に戻ってくる。<br>
+またQuick Searchで単語を検索する。</p>
+<ul>
+<li><a href="http://djangoproject.jp/doc/ja/1.0/search.html">http://djangoproject.jp/doc/ja/1.0/search.html </a></li>
+</ul>
+<p>英語ドキュメントも読む</p>
+<ul>
+<li><a href="https://docs.djangoproject.com/en/1.3/">https://docs.djangoproject.com/en/1.3/</a></li>
+</ul>
+<p><strong>[Python]</strong></p>
+<ul>
+<li><a href="http://www.pythonweb.jp/">http://www.pythonweb.jp/</a></li>
+<li><a href="http://www.python.jp/doc/release/%20">http://www.python.jp/doc …</a></li></ul>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2012/02/pythondjango.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2012/02/itunes-storepart1.html" rel="bookmark" title="Permalink to ">
+                                       
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2012-02-21
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/itunes-store.html">iTunes Store</a>
+        <a href="http://blog.popowa.com/tag/ying-hua.html">映画</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>Storeで「ハリーポッターと謎のプリンス」と「ハリーポッターと死の秘宝Part1」だけレンタルが無い+最近、ハリーポッターをiTunes
+Storeで見ているんだけど、</p>
+<p><a href="http://itunes.apple.com/jp/movie/id395594526">ハリーポッターと謎のプリンス</a><br>
+<a href="http://itunes.apple.com/jp/movie/id418110939">ハリーポッターと死の秘宝Part1</a></p>
+<p>がレンタル出来ない。</p>
+<p><a href="http://3.bp.blogspot.com/-UZU62rKlVlY/T0MBwel6vTI/AAAAAAAAPPw/qvQuYcw5b98/s1600/harryonitunes.png"><img alt="" src="http://3.bp.blogspot.com/-UZU62rKlVlY/T0MBwel6vTI/AAAAAAAAPPw/qvQuYcw5b98/s320/harryonitunes.png">{width="320"
+height="186"}</a></p>
+<ol>
+<li>ハリー・ポッターと賢者の石 \&lt;---レンタル300円</li>
+<li>ハリー・ポッターと秘密の部屋 \&lt;---レンタル300円</li>
+<li>ハリー・ポッターとアズカバンの囚人 \&lt;---レンタル300円</li>
+<li>ハリー・ポッターと炎のゴブレット \&lt;---レンタル300円</li>
+<li>ハリー・ポッターと不死鳥の騎士団 \&lt;---レンタル300円</li>
+<li><strong>ハリー・ポッターと謎のプリンス \&lt;-- レンタルなし</strong></li>
+<li><strong>ハリー・ポッターと死の秘宝 Part 1 \&lt;--レンタルなし</strong></li>
+<li>ハリー・ポッターと死の秘宝 Part 2 \&lt;-- レンタル300円</li>
+</ol>
+<p>なんで？<br>
+カテゴリーが新作だからかしら。。うむ、困った。</p>
+<p>しかも死の秘宝のPart1は2000円購入で、Part2はレンタル出来るとは！<br>
+もうDVDプレイヤー買うか …</p>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2012/02/itunes-storepart1.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2012/02/blog-post_15.html" rel="bookmark" title="Permalink to 連絡先変わりました">
+                                       連絡先変わりました
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2012-02-15
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/ozhi-rase.html">お知らせ</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>携帯電話番号が変わりました。</p>
+<p>こちら >><a href="http://www.popowa.com/">http://www.popowa.com/</a></p>
+<p>電話は気づかない場合は多いので、twitter とかの方がよいと思います！</p>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2012/02/blog-post_15.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2012/02/ebs.html" rel="bookmark" title="Permalink to EBSのスナップショットについて">
+                                       EBSのスナップショットについて
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2012-02-12
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/amazon.html">Amazon</a>
+        <a href="http://blog.popowa.com/tag/ebs.html">EBS</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>先日の #jawsug 福岡の会で、  </p>
+<p><a href="https://twitter.com/#%21/kaz_goto/status/167571575296634881">https://twitter.com/#!/kaz_goto/status/167571575296634881</a></p>
+<p><a href="http://2.bp.blogspot.com/-69900MMDsjE/TzXgL2bibrI/AAAAAAAAPMU/7bRhxxUO8UE/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%EF%BC%882012-02-11+12.27.14%EF%BC%89.png"><img alt="" src="http://2.bp.blogspot.com/-69900MMDsjE/TzXgL2bibrI/AAAAAAAAPMU/7bRhxxUO8UE/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%EF%BC%882012-02-11+12.27.14%EF%BC%89.png"></a></p>
+<p>へーほーふー、知らなかったわーと思ってEBSのスナップショットだけにフォーカスして見ました。</p>
+<p>記事</p>
+<ul>
+<li><a href="http://aws.amazon.com/jp/ebs/">Amazon Elastic Block Store (EBS)->日本語 by
+    AWS</a></li>
+<li><a href="http://aws.amazon.com/articles/1667">Feature Guide: Elastic Block Store ->英語 by
+    AWS</a></li>
+<li><a href="http://blog.rightscale.com/2008/08/20/amazon-ebs-explained/">Amazon's Elastic Block Store explained ->英語 by
+    RightScale</a></li>
+<li><a href="http://support.rightscale.com/12-Guides/Dashboard_Users_Guide/Clouds/AWS_Region/EBS_Volumes/Concepts/About_EBS_Volumes">About Elastic Block Store (EBS) ->英語 by
+    RightScale</a></li>
+</ul>
+<p>今更感なEBSの機能おさらい☆</p>
+<ul>
+<li>外付け出来るブロックストレージ</li>
+<li>1Gから1Tまでのストレージ領域を作成出来る</li>
+<li>同じアベーラビリティゾーン内のインスタンスにマウント出来る</li>
+<li>マウントしたインスタンスが落ちたら（障害なども含む …</li></ul>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2012/02/ebs.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    </ol><!-- /#posts-list -->
+<p class="paginator">
+        <a href="http://blog.popowa.com/author/ayakomuro22.html">&laquo;</a>
+    Page 23 / 35
+        <a href="http://blog.popowa.com/author/ayakomuro24.html">&raquo;</a>
+</p>
+                </section><!-- /#content -->
+</div>
+<div class="span3">
+    <section id="sidebar">
+            <div>
+                <h2>Browse content by</h2>
+                <ul class="fa-ul">
+                <li><a href="http://blog.popowa.com/categories.html"><i class="fa-li fa fa-tags"></i> Categories</a></li>
+                <li><a href="http://blog.popowa.com/archives.html"><i class="fa-li fa fa-calendar"></i> Dates</a></li>
+                <li><a href="http://blog.popowa.com/tags.html"><i class="fa-li fa fa-tag"></i> Tags</a></li>
+
+                </ul>
+            </div><!-- /.browse -->
+            <div>
+                <h2>Social</h2>
+                <ul>
+                    <li><a href="https://twitter.com/ayakomuro">Twitter</a></li>
+                    <li><a href="http://www.popowa.com">popowa</a></li>
+                </ul>
+            </div><!-- /.social -->
+<!-- /.Tags -->
+    </section><!-- /#sidebar -->
+</div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="site-footer">
+        <div class="row-fluid">
+            <div class="span10 offset1">
+                <address>
+                    <p>
+                        This blog is proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                    </p>
+                    <p>
+                        <a href="http://github.com/jsliang/pelican-fresh/">Fresh</a> is a responsive theme designed by <a href="http://jsliang.com/">jsliang</a> and <a href="https://github.com/jsliang/pelican-fresh/graphs/contributors">contributors</a>.
+                        Special thanks to <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a> and <a href="http://getbootstrap.com/">Twitter Bootstrap</a>.
+                    </p>
+                </address>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-845207-15']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="author" content="ayakomuro" />
+    <meta name="robots" content="index, follow"/>
+
+    <meta property="og:title" content="popowa"/>
+    <meta property="og:url" content="http://blog.popowa.com"/>
+    <meta property="og:site_name" content="popowa"/>
+    <meta property="og:type" content="website"/>
+
+    <link rel="canonical" href="http://blog.popowa.com" />
+
+    <title>popowa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />
+
+    <link rel="stylesheet" type="text/css" href="http://blog.popowa.com/theme/css/main.css" />
+
+    <script type="text/javascript">var switchTo5x=true;</script>
+    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript">
+        stLight.options({
+            publisher: "5a2ce781d0739000123acd73",
+            doNotHash: false,
+            doNotCopy: false,
+            hashAddressBar: false
+        });
+    </script>
+</head>
+
+<body id="index">
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <header id="banner" >
+                <h1>
+                    <a href="http://blog.popowa.com/">popowa </a>
+                </h1>
+                <nav class="navbar">
+                    <div class="navbar-inner">
+                        <ul class="nav">
+                        </ul>
+
+<script>
+  (function() {
+    var cx = '014316853335343165598:-bgzniyqm3y';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div id="google-custom-search" class="nav">
+    <gcse:search></gcse:search>
+</div>
+                    </div>
+                </nav>
+            </header><!-- /#banner -->
+        </div>
+    </div>
+
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <div class="row-fluid">
+<div class="span9">
+                <section>
+                    <ol id="posts-list" class="hfeed" start="9">
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2013/02/syntax-error-unexpected-n-expecting.html" rel="bookmark" title="Permalink to syntax error, unexpected \'n\', expecting tCOLON2 or \'\[\' or \'.\'">
+                                       syntax error, unexpected \'n\', expecting tCOLON2 or \'\[\' or \'.\'
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2013-02-11
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/error.html">error</a>
+        <a href="http://blog.popowa.com/tag/rails.html">Rails</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>急にdb:migrateしようとしたら怒られる様になった。</p>
+<p>20130211061203_create_settings.rbを見ても特に普段と変わらない様子。</p>
+<blockquote>
+<p>\$rake db:migrate<br>
+rake aborted!<br>
+/Users/komuro/rails-demo/db/migrate/20130211061203_create_settings.rb:4:
+syntax error, unexpected \'n\', expecting tCOLON2 or \'[\' or \'.\'</p>
+</blockquote>
+<p>何だろうと思ったらどうやら  </p>
+<blockquote>
+<p>\$ rails generate scaffold Setting accesskey:string[,
+]secretkey:string</p>
+</blockquote>
+<p>設定のカンマ(,)がいらなかったようです。</p>
+<p>そのような場合は一度作成した一式を削除しましょう。</p>
+<blockquote>
+<p>\$ rails destroy scaffold Setting</p>
+</blockquote>
+<p>それから再度カンマ無しで作成。</p>
+<blockquote>
+<p>\$ rails generate scaffold Setting accesskey:string secretkey:string …</p></blockquote>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2013/02/syntax-error-unexpected-n-expecting.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2013/02/security-warning-no-secret-option.html" rel="bookmark" title="Permalink to ">
+                                       
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2013-02-11
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/rails.html">Rails</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>と出たら+<br>
+Rails関連で何かコマンドを打つと以下の様に出るようになった。</p>
+<p>SECURITY WARNING: No secret option provided to Rack::Session::Cookie.<br>
+        This poses a security threat. It is strongly recommended that
+you<br>
+        provide a secret to prevent exploits that may be possible from
+crafted<br>
+        cookies. This will not be supported in future versions of Rack,
+and<br>
+        future versions will …</p>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2013/02/security-warning-no-secret-option.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2013/02/backlogapiruby.html" rel="bookmark" title="Permalink to BacklogのAPIをRubyでアクセスしてみる">
+                                       BacklogのAPIをRubyでアクセスしてみる
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2013-02-11
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/api.html">API</a>
+        <a href="http://blog.popowa.com/tag/backlog.html">backlog</a>
+        <a href="http://blog.popowa.com/tag/ruby.html">ruby</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>Backlogのwikiを取得出来るかと思ってAPIを使ってみたら、そもそもwikiのデータは取れないという事が分かった（当たり前だけど、APIのページをよく読めば取れない事が分かるね。。。）</p>
+<ul>
+<li><a href="http://www.backlog.jp/api/">http://www.backlog.jp/api/</a></li>
+</ul>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2013/02/backlogapiruby.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2013/01/magic-mouse.html" rel="bookmark" title="Permalink to Magic mouseが認識出来なくなったら。。。">
+                                       Magic mouseが認識出来なくなったら。。。
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2013-01-31
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/mac.html">Mac</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>Magic</p>
+<p>mouseが時々接続出来なくなる事が発生して、本格的に繋がらなくなったので調べてみた。</p>
+<p>[]存在は認識はするのに。。。</p>
+<p><a href="http://4.bp.blogspot.com/-uPQ9ai5y3ls/UQp5BiwFUdI/AAAAAAAAWtQ/38O88PNAM84/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88+2013-01-31+14.24.09.png"><img alt="" src="http://4.bp.blogspot.com/-uPQ9ai5y3ls/UQp5BiwFUdI/AAAAAAAAWtQ/38O88PNAM84/s400/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88+2013-01-31+14.24.09.png">{width="400"
+height="342"}</a></p>
+<p>繋がらない >\&lt;</p>
+<p><a href="http://4.bp.blogspot.com/-PkaeGI19YcQ/UQp5KnMhooI/AAAAAAAAWtY/sza5k_aewHY/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88+2013-01-31+14.24.17.png"><img alt="" src="http://4.bp.blogspot.com/-PkaeGI19YcQ/UQp5KnMhooI/AAAAAAAAWtY/sza5k_aewHY/s400/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88+2013-01-31+14.24.17.png">{width="400"
+height="312"}</a></p>
+<p>どうやらよく分からないが、再起動しながら、P+R+Option+Commandを押して起動を待つといいらしい、、という事でやってみた。</p>
+<p><a href="http://4.bp.blogspot.com/-PZZ5aLU8kFA/UQp5fcl0F6I/AAAAAAAAWtg/MoogCvOBYw4/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88+2013-01-31+23.02.23.png"><img alt="" src="http://4.bp.blogspot.com/-PZZ5aLU8kFA/UQp5fcl0F6I/AAAAAAAAWtg/MoogCvOBYw4/s320/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88+2013-01-31+23.02.23.png">{width="320"
+height="157"}</a></p>
+<p>バーン、という音とがなったら、P+R+Option+Commandを押し続けていると、再起動がまたバーンとなるので、その後手を離して待っていると通常通りに起動する。</p>
+<p>すると。。。</p>
+<p><a href="http://2.bp.blogspot.com/-HBRTvU03vuI/UQp5uSIpm0I/AAAAAAAAWto/4hjLqSKkPeY/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88+2013-01-31+14.26.48.png"><img alt="" src="http://2.bp.blogspot.com/-HBRTvU03vuI/UQp5uSIpm0I/AAAAAAAAWto/4hjLqSKkPeY/s400/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88+2013-01-31+14.26.48.png">{width="400"
+height="63"}</a></p>
+<p>∩(´∀｀∩)</p>
+<p>原因はこれらしい。面倒なのでよく見ていない</p>
+<ul>
+<li><a href="http://support.apple.com/kb/HT1379?viewlocale=ja_JP&amp;locale=ja_JP">http://support.apple.com/kb/HT1379?viewlocale=ja_JP&amp;locale=ja_JP</a></li>
+</ul>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2013/01/magic-mouse.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2013/01/2debian.html" rel="bookmark" title="Permalink to 第2回福岡Debian勉強会に参加した">
+                                       第2回福岡Debian勉強会に参加した
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2013-01-28
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/debian.html">Debian</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>第2回福岡Debian勉強会に参加というか開催してきました！</p>
+<p><a href="http://fukuoka-debian.github.com/web/img/fukuoka_debian.jpg"><img alt="" src="http://fukuoka-debian.github.com/web/img/fukuoka_debian.jpg">{width="320"
+height="320"}</a></p>
+<p>[]詳細はこちら！</p>
+<ul>
+<li><a href="http://fukuoka-debian.github.com/web/history/event02.html">http://fukuoka-debian.github.com/web/history/event02.html</a></li>
+</ul>
+<p><a href="http://1.bp.blogspot.com/-J-TGQpAGczc/UQak2EArTiI/AAAAAAAAWYo/bgNJuymtO40/s1600/IMAG1089.jpg"><img alt="" src="http://1.bp.blogspot.com/-J-TGQpAGczc/UQak2EArTiI/AAAAAAAAWYo/bgNJuymtO40/s400/IMAG1089.jpg">{width="400"
+height="238"}</a></p>
+<h3>Debian初心者向け内容「Debianに片足も両足も突っ込んだ皆さん、こんにちは」by 小室(@ayakomuro)</h3>
+<p><strong><a href="http://www.slideshare.net/popowa/fukuoka-debianstudy02" title="Fukuoka debianstudy02 / 福岡Debian勉強会 02">Fukuoka debianstudy02 / 福岡Debian勉強会
+02</a></strong>
+from <strong><a href="http://www.slideshare.net/popowa">Aya Komuro</a></strong></p>
+<h3>Debian中級者向け内容「Debian WheezyとDebian Installerのはなし」by やまださん (@minimum2scp)</h3>
+<p><strong><a href="http://www.slideshare.net/minimum2scp/20130126-2debian-debian-wheezydebian-installer" title="20130126 第2回福岡debian勉強会 debian wheezyとdebian installerのはなし">20130126 第2回福岡debian勉強会 debian wheezyとdebian
+installerのはなし</a></strong>
+from <strong><a href="http://www.slideshare.net/minimum2scp">Tsuyoshi Yamada</a></strong></p>
+<h3>今後の福岡Debian勉強会について by みんなで</h3>
+<p>決まった事 …</p>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2013/01/2debian.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2013/01/ruby-url.html" rel="bookmark" title="Permalink to Ruby で URL を デコードする">
+                                       Ruby で URL を デコードする
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2013-01-28
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/uncategorized.html">Uncategorized</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>調べたら簡単だった。</p>
+<div class="highlight"><pre><span></span>require &#39;uri&#39;
+url = &#39;http%3A%2F%2Fblog.popowa.com&#39;
+decodedUrl = URI.decode(url)
+print decodedUrl
+</pre></div>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2013/01/ruby-url.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2013/01/cross2013.html" rel="bookmark" title="Permalink to CROSS2013で頂いた資料をじっくり読んでみる">
+                                       CROSS2013で頂いた資料をじっくり読んでみる
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2013-01-26
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/cross2013.html">Cross2013</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>#Cross2013</p>
+<p>で頂いた資料はじっくり読まなければ！と思い、まずはデータ化してみました。<br>
+基本資料は目を通すのですが、手元に残しておきたくないので、私は大体スキャンしたら資料は捨てます。<br>
+公開されては困るという方はお手数ですがご連絡頂けると有り難いです。</p>
+<p>※転記云々禁止とあったのは外しました。</p>
+<p>[]目次  </p>
+<h3>Yahoo! Japan クラウドストレージ</h3>
+<ul>
+<li>99.99999999999999999(19ナイン)の堅牢性、99.9999%(6ナイン)の可用性<br>
+   こりゃすごいね。正式リリース（今春）までは無償で使えるそう。</li>
+<li><a href="http://basho.com/">Basho
+    technologies社の分散データベースRiak</a>は面白そうだ。後でドキュメント読んでみよう</li>
+<li><a href="https://docs.google.com/file/d/0B6YMJut9ccjYcDR3b3JURHo0azQ/edit">https://docs.google.com/file/d/0B6YMJut9ccjYcDR3b3JURHo0azQ/edit</a></li>
+</ul>
+<h3>MKTインターナショナル</h3>
+<ul>
+<li><a href="http://mktredwell.hatenablog.jp/">赤井さん</a>の<a href="http://www.mkt-i.jp/">マーケティング会社</a>。介護セッションにも来て頂いてありがたき幸せ♩</li>
+<li><a href="https://docs.google.com/file/d/0B6YMJut9ccjYZmgydUQ3VnhJOG8/edit">https://docs.google.com/file/d/0B6YMJut9ccjYZmgydUQ3VnhJOG8/edit …</a></li></ul>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2013/01/cross2013.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2013/01/blog-post_2183.html" rel="bookmark" title="Permalink to 第二回明星和楽">
+                                       第二回明星和楽
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2013-01-25
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/fukuoka.html">fukuoka</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>感想を書いたのに公開していなかったので今更ですけど公開。</p>
+<p>[]<br>
+-------------------</p>
+<p>第二回明星和楽に参加してきました。</p>
+<p><a href="http://3.bp.blogspot.com/-7A4kA6Z7ZzQ/UFXZ5TRXPmI/AAAAAAAAT78/bKcDCYmPn-E/s1600/myojowaraku.png"><img alt="" src="http://3.bp.blogspot.com/-7A4kA6Z7ZzQ/UFXZ5TRXPmI/AAAAAAAAT78/bKcDCYmPn-E/s400/myojowaraku.png">{width="400"
+height="71"}</a></p>
+<p>今回は何か結果を出す、というより（Androidで何かアプリを作るとか）、ワークショップ等参加者のレベルを上げる、という感じでした。</p>
+<p>参加したのは、</p>
+<ul>
+<li><a href="http://atnd.org/event/awswordpressinmyojowaraku">WordPress on クラウド(AWS)
+    ～ブラウザだけでサイトを作ろう～</a></li>
+<li>スタートアップショーケース</li>
+<li><a href="http://myojowaraku.net/news/archives/47">チューニンガソン
+    明星和楽2012編</a></li>
+</ul>
+<p>です。</p>
+<p>WordPress on
+AWSでは、デジタルキューブさんが提供している網元AMIを使ってWordPressを起動しました。</p>
+<p><a href="http://3.bp.blogspot.com/-AGmcSkdh_i8/UFXeuIegq9I/AAAAAAAAT8s/-7CJMCQjtYk/s1600/megumi.gif"><img alt="" src="http://3.bp.blogspot.com/-AGmcSkdh_i8/UFXeuIegq9I/AAAAAAAAT8s/-7CJMCQjtYk/s1600/megumi.gif"></a></p>
+<p><a href="http://ja.megumi-cloud.com/">http://ja.megumi-cloud.com/</a></p>
+<p>WordPressはCMSとしてはよく使われているものですので、AMIに含まれているもの、CloudFormationを使ったサービスの立ち上げるのは賢いやり方ですよね♩</p>
+<p>AMI名に「WordPress」という名前が入っているからといって単純に選択するのは危険なので、上記のように提供元が明確なAMIのみを使いましょう。</p>
+<ul>
+<li><a href="http://blog.serverworks.co.jp/tech/2012/08/09/checklist-for-using-public-amis/">参考URL:
+    公開AMIを選択する際のチェックリスト</a></li>
+</ul>
+<p>翌日はスタートアップショーケースで司会をしました。</p>
+<p>全編英語でどうなる事かと思いましたが、意外とうまく行きました。</p>
+<p>その後チューニンガソンに遅れて参加したのですが、頭をフルに使ったのでまったく出来ませんでした
+> \&lt;</p>
+<p>明星和楽に参加する際にお勧めな順番は</p>
+<p>・スポンサーになる</p>
+<p>・参加費を払って参加する</p>
+<p>・運営者/ボランティアになる</p>
+<p>明星和楽で充実感を得たいのだらば</p>
+<p>・運営者 …</p>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2013/01/blog-post_2183.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2013/01/blog-post_26.html" rel="bookmark" title="Permalink to オイル/ガス業界のデーターセンター">
+                                       オイル/ガス業界のデーターセンター
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2013-01-25
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/hai-wai-niyusu.html">海外ニュース</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>相当前の記事で、どこまで訳したのか分からなくなったので、まずは公開してみます。</p>
+<p>[]--------</p>
+<p>ちょっと前の記事ですが、データーセンター好きにはとても興味深かったので訳してみました。</p>
+<p><a href="http://www.zdnet.co.uk/news/infrastructure/2011/02/28/inside-an-oil-industry-datacentre-40091874/">Inside an oil industry
+datacentre</a>
+2011/2/27 by <a href="http://twitter.com/mappingbabel">Jack Clark</a></p>
+<p>--------</p>
+<p>２月初旬、ZDNet
+UKはオイルとガス業界の地質情報を処理するデーターセンターを訪れるチャンスがありました。この施設はPetroleum
+Geo-Services
+(PGS)によって運営されており、世界中を渡り地底から船までの距離をセンサーで測る事で地震データなどを解析しています。</p>
+<p>Ramform
+Sovereign（以下の地図）は、PGSの１６番目の地震計測用の船です。この船は地震計測用に使われ、地底にたまっている原油やガスを探し当てる為に使われます。<br>
+取得されたデータは3D画像に生成されて、小さな正方形に分解されて解析されます（地図を正方形のグリッドで分割するのと似ています）。</p>
+<p>PGSのグローバルデンターセンター管理者のMike
+Turffは「生成されたデータは地球のスキャンしたCATのようだよ、一つの3Dキューブにはものすごいデータがあり、内部イメージとして処理をして、それからスライスしたり、四角に切ったり自分の好きなようにする事も出来るんだ」 とZDNet
+UKに話してくれmした。 「医療スキャンに似ているかも知れないね。でも僕たちはもっと大きな側面からするんだ。内部イメージをよりよくすれば、もっと正確なデータを得る事が出来るんだ」</p>
+<p>各船舶は探検データを集めて溜めており、「収集方法が正しい方法かどうかを適度に確認しています。もちろん集めるデータの質に関しては管理をしたいですし …</p>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2013/01/blog-post_26.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2013/01/blog-post_25.html" rel="bookmark" title="Permalink to ワンクリックでメルマガ退会出来たらいいと思う">
+                                       ワンクリックでメルマガ退会出来たらいいと思う
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2013-01-25
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/thought.html">thought</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>前から思っていたけど、日本の会社のメルマガってワンクリックで退会出来ないのが圧倒的に多いよね。</p>
+<p>[]こんなの↓</p>
+<blockquote>
+<p>※メールマガジンの配信停止を希望される方は、○○マイページログイン後、「メールマガジンの変更」より設定を行ってください。</p>
+</blockquote>
+<p>でもユーザーからすれば面倒くさいんですよ、ログインアカウントも探さないと分からないし。それとか  </p>
+<blockquote>
+<p>このメールは、過去 ○○にご登録いただいた方にお送りしております。<br>
+今後、メールによるご案内が不要な方は、件名を「配信停止」として、<br>
+本メールにご返信ください。</p>
+</blockquote>
+<p>それtか  </p>
+<blockquote>
+<p>メール配信停止手続きに３～４日お時間を頂戴するため、メールが配信される場合がございます。何卒、ご了承ください</p>
+</blockquote>
+<p>なんでこの時代に手動の顧客管理システムを使っているんだろう？？[
+]メール配信システムのSaaSなんてゴロゴロ転がっていると思うのに。
+それから顧客管理システムは一元化しようよ。</p>
+<p>多分サイト運営者からすれば</p>
+<ul>
+<li>ログイン後にメルマガ変更が出来なければメルマガ購読し続ける人がある程度キープ出来るのではないか？</li>
+</ul>
+<p>と思うのかもしれませんが、ユーザーからすれば</p>
+<ul>
+<li>メルマガを受け取りたくないけど、ログインして変更するのも面倒、わざわざ先方にメールまでして退会するのは嫌だ</li>
+</ul>
+<p>となる訳です。</p>
+<p>その結果、どうするかというと</p>
+<p><a href="http://1.bp.blogspot.com/-9HaYI7iVLwQ/UQHbVPXe7rI/AAAAAAAAWPs/sE7BchcTWZ8/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88+2013-01-25+10.09.16.png"><img alt="" src="http://1.bp.blogspot.com/-9HaYI7iVLwQ/UQHbVPXe7rI/AAAAAAAAWPs/sE7BchcTWZ8/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88+2013-01-25+10.09.16.png"></a></p>
+<p>これはGmailのだけど迷惑メールフラグを立てる訳です。<br>
+そうしたらメールは受信するけど、迷惑メールボックスに入るので受信箱に入る事がないので有り難い機能ですね♥</p>
+<p>という訳で、ユーザーにオプトメールをする為に解約を困難にして迷惑メールフラグが立つよりは簡単にメルマガ「だけ」解約出来るように仕組みを作った方がいいですよ。</p>
+<p>英語圏のメルマガは大体HTMLメールが多いのでこんなのがフッターに必ず入っている（確か法律でそうしないといけなかった気がする）</p>
+<p><a href="http://1.bp.blogspot.com/-HOfBLiLnOGw/UQHcTdJfFeI/AAAAAAAAWP4/upar-Zl6uuw/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88+2013-01-25+10.12.34.png"><img alt="" src="http://1.bp.blogspot.com/-HOfBLiLnOGw/UQHcTdJfFeI/AAAAAAAAWP4/upar-Zl6uuw/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88+2013-01-25+10.12.34.png">{width="400"
+height …</a></p>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2013/01/blog-post_25.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    </ol><!-- /#posts-list -->
+<p class="paginator">
+        <a href="http://blog.popowa.com/index16.html">&laquo;</a>
+    Page 17 / 35
+        <a href="http://blog.popowa.com/index18.html">&raquo;</a>
+</p>
+                </section><!-- /#content -->
+</div>
+<div class="span3">
+    <section id="sidebar">
+            <div>
+                <h2>Browse content by</h2>
+                <ul class="fa-ul">
+                <li><a href="http://blog.popowa.com/categories.html"><i class="fa-li fa fa-tags"></i> Categories</a></li>
+                <li><a href="http://blog.popowa.com/archives.html"><i class="fa-li fa fa-calendar"></i> Dates</a></li>
+                <li><a href="http://blog.popowa.com/tags.html"><i class="fa-li fa fa-tag"></i> Tags</a></li>
+
+                </ul>
+            </div><!-- /.browse -->
+            <div>
+                <h2>Social</h2>
+                <ul>
+                    <li><a href="https://twitter.com/ayakomuro">Twitter</a></li>
+                    <li><a href="http://www.popowa.com">popowa</a></li>
+                </ul>
+            </div><!-- /.social -->
+<!-- /.Tags -->
+    </section><!-- /#sidebar -->
+</div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="site-footer">
+        <div class="row-fluid">
+            <div class="span10 offset1">
+                <address>
+                    <p>
+                        This blog is proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                    </p>
+                    <p>
+                        <a href="http://github.com/jsliang/pelican-fresh/">Fresh</a> is a responsive theme designed by <a href="http://jsliang.com/">jsliang</a> and <a href="https://github.com/jsliang/pelican-fresh/graphs/contributors">contributors</a>.
+                        Special thanks to <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a> and <a href="http://getbootstrap.com/">Twitter Bootstrap</a>.
+                    </p>
+                </address>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-845207-15']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+</body>
+</html>

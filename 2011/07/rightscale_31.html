@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="author" content="ayakomuro" />
+    <meta name="robots" content="index, follow"/>
+
+    <meta property="og:title" content="RightScaleを解き明かす\~ライトスクリプトを見てみよう\~"/>
+    <meta property="og:url" content="http://blog.popowa.com/2011/07/rightscale_31.html"/>
+    <meta property="og:site_name" content="popowa"/>
+    <meta property="og:type" content="article"/>
+
+    <link rel="canonical" href="http://blog.popowa.com/2011/07/rightscale_31.html" />
+
+    <title>RightScaleを解き明かす\~ライトスクリプトを見てみよう\~ | popowa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />
+
+    <link rel="stylesheet" type="text/css" href="http://blog.popowa.com/theme/css/main.css" />
+
+    <script type="text/javascript">var switchTo5x=true;</script>
+    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript">
+        stLight.options({
+            publisher: "5a2ce781d0739000123acd73",
+            doNotHash: false,
+            doNotCopy: false,
+            hashAddressBar: false
+        });
+    </script>
+</head>
+
+<body id="index">
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <header id="banner" >
+                <h1>
+                    <a href="http://blog.popowa.com/">popowa </a>
+                </h1>
+                <nav class="navbar">
+                    <div class="navbar-inner">
+                        <ul class="nav">
+                        </ul>
+
+<script>
+  (function() {
+    var cx = '014316853335343165598:-bgzniyqm3y';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div id="google-custom-search" class="nav">
+    <gcse:search></gcse:search>
+</div>
+                    </div>
+                </nav>
+            </header><!-- /#banner -->
+        </div>
+    </div>
+
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <div class="row-fluid">
+<div class="span10 offset1">
+  <section>
+    <article>
+      <header>
+        <h1 class="entry-title">
+          <a href="http://blog.popowa.com/2011/07/rightscale_31.html" rel="bookmark"
+             title="Permalink to RightScaleを解き明かす\~ライトスクリプトを見てみよう\~">RightScaleを解き明かす\~ライトスクリプトを見てみよう\~</a></h1>
+<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="ayakomuro">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+      </header>
+      <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2011-07-31
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/chef.html">Chef</a>
+        <a href="http://blog.popowa.com/tag/puppet.html">Puppet</a>
+        <a href="http://blog.popowa.com/tag/rightlink.html">RightLink</a>
+        <a href="http://blog.popowa.com/tag/rightscale.html">RightScale</a>
+        <a href="http://blog.popowa.com/tag/rightscalejie-ti-xin-shu.html">RightScale解体新書</a>
+
+
+
+    
+</footer><!-- /.post-info -->
+        <div class="sharethis-top">
+          <span class='st_fblike_hcount' displayText='Facebook Like'></span>
+          <span class='st_plusone_hcount' displayText='Google +1'></span>
+          <span class='st_twitter_hcount' displayText='Tweet'></span>
+          <span class='st_email_hcount' displayText='Email'></span>
+        </div>
+
+        <p>前回サーバテンプレートを使ってサーバを立ててみました。それではサーバテンプレートを構成している個々のスクリプトを見てみたいと思います。  </p>
+<p>[]「デザイン」から「サーバテンプレート」を選択します。  </p>
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/server_template.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/server_template.png" title="server_template">{.alignnone
+.size-full .wp-image-1322 width="153"
+height="66"}</a>  </p>
+<p>対象サーバサーバテンプレートを選択します。スクリプトタブを選択します。  </p>
+<p>スクリプトの書き方  </p>
+<ul>
+<li>シェルスクリプトです。</li>
+<li>perlとか使えます。</li>
+<li>Inputで入力した値は \"\$DB_PASSWORD\"になります。</li>
+<li>実行した値を変数として使いたい場合は \"[\$(grep -lir \"missingok\"
+    \$logrotate_file)]\"という風にします</li>
+<li>直前に実行したコマンドの値は \"(\$?)\"になる</li>
+<li>パッケージ毎の起動は、/etc/init.d/パッケージ
+    restart（Debian系特有）ではなく、serviceを使って起動する</li>
+<li>スクリプト内で設定された関数や、変数は引き継がれない事を前提にする。他のスクリプトに依存はせず、面倒でもスクリプト単体で、動くようにしておく</li>
+<li>サーバテンプレートに対応させるサーバイメージを複数ディストリビューションにする場合は、分岐を入れる<br>
+   （Debian系だとapt-get、CentOS系だとyumなど）</li>
+<li>同じディストリビューションでもバージョンによってパッケージの依存関係が違っていたりするので、もし依存関係が違っていたら、個別にバージョンを確認し、必要なパッケージのインストール等を行う必要がある</li>
+</ul>
+<p><strong>日本語化してみたライトスクリプト（随時追加）</strong>  </p>
+<ul>
+<li><a href="http://www.popowa.com/archives/1326" title="ライトスクリプト: SYS Timezone set – 11H1 JST [rev 2]">SYS Timezone set - 11H1
+    JST</a></li>
+<li><a href="http://www.popowa.com/archives/1329" title="ライトスクリプト：SYS Syslog remote logging client">SYS Syslog remote logging
+    client</a></li>
+<li><a href="http://www.popowa.com/archives/1332" title="ライトスクリプト：MAIL Postfix local delivery">MAIL Postfix local
+    delivery</a></li>
+</ul>
+<p>[<strong>RightLink</strong>]  </p>
+<p>RightScaleが提供するサーバイメージ(v5以上)にはRightLinkというパッケージがはいっています。<br>
+RightLinkは
+ライトスクリプトとChefを動かす為のエージェントです。拡張してPuppetとかも動かす事が出来ます。  </p>
+<p>MITライセンスで公開されているオープンソースです（<a href="https://github.com/rightscale/right_link">レポジトリはこちら</a>）  </p>
+<p>RightLink込みのサーバイメージの作り方はまた今度記事を書きたいと思います。  </p>
+<p>個々のコマンドのバイナリは /usr/bin/rs_のprefixであります。  </p>
+<p>[<strong>RightLinkのコマンド</strong>]  </p>
+<p>ほとんどのコマンドには以下のオプションがついています。  </p>
+<ul>
+<li>--verbose, -v  #デバック情報を出力する</li>
+<li>--help #ヘルプを出す</li>
+<li>--version #パッケージのログを出す</li>
+</ul>
+<p>rs_log_level（<a href="http://support.rightscale.com/12-Guides/RightLink/RightLink_Command_Line_Utilities#rs_log_level">サポートページ</a>）  </p>
+<ul>
+<li>ログレベルの設定</li>
+<li>オプション<br>
+   --identify, -l #ログ出力レベルを設定する<br>
+   例：rs_log_level --log-level debug</li>
+</ul>
+<p>rs_run_recipe（<a href="http://support.rightscale.com/12-Guides/RightLink/RightLink_Command_Line_Utilities#rs_run_recipe">サポートページ</a>）  </p>
+<ul>
+<li>rs_run_right_script（ライトスクリプト用）
+    rs_run_recipe（Chef用）</li>
+<li>
+<p>スクリプトを実行させる  </p>
+<ul>
+<li>rs_run_recipe --identity, -i ID [--json, -j JSON_FILE]
+    [--verbose, -v]</li>
+<li>rs_run_recipe --name, -n NAME [--json, -j JSON_FILE]
+    [--verbose, -v]</li>
+</ul>
+</li>
+<li>
+<p>オプション<br>
+   --identity, -i ID #
+    ライトスクリプトもしくはサーバテンプレートに設定されているChefのレシピのIDを取得する<br>
+   --name, -n 名前
+    #ライトスクリプトもしくはChefレシピ名(IDで上書きされている)<br>
+   --json, -j JSON_FILE
+    #レシピを実行する前にJSONファイルを属性として取り込む<br>
+   --parameter, -p NAME=type:VALUE
+    #ライトスクリプトのInputを定義、もしくは上書きする（run_right_scriptのみ利用可能）</p>
+</li>
+</ul>
+<p>rs_shutdown（サポートページ）  </p>
+<ul>
+<li>インスタンスに対して再起動、停止、終了のリクエストを送ります</li>
+<li>オプション<br>
+   --reboot, -r #再起動のリクエストを送る<br>
+   --stop, -s
+    #停止のリクエストを送る（ルートディバイスがEBS等である際に利用出来ます）<br>
+   --terminate, -t #終了リクエストを送る<br>
+   --immediately, -i #リクエストを今すぐに実行させる<br>
+   --deferred, -d #他のスクリプトが終了するまで待つ</li>
+</ul>
+<p>rs_tag（<a href="http://support.rightscale.com/12-Guides/RightLink/RightLink_Command_Line_Utilities#rs_tag">サポートページ</a>）  </p>
+<ul>
+<li>タグの一覧、追加、削除を現在のインスタンスや、クエリに対して行う事が出来る</li>
+<li>
+<p>オプション<br>
+   --list, -l #現在のインスタンスのタグ一覧を表示する<br>
+   --add, -a タグ #タグを追加する<br>
+   例：rs_tag --add \'options:tags=awesome\'<br>
+   --remove -r タグ #タグを削除する<br>
+   例: rs_tag --remove \'options:tag=awesome\'<br>
+   --query, -q タグリスト
+    #デプロイメントのインスタンスのタグ情報を取得する</p>
+<p>一般的なパッケージ</p>
+<p>lsb_release</p>
+</li>
+<li>
+<p>Linuxのバージョンを確認する</p>
+</li>
+<li>
+<p>オプション<br>
+   -v, --help #ヘルプを出力<br>
+   -v, --version  #システムがサポートしているLSBモジュール
+    を表示する<br>
+   -i, --id #ディストリビューターの名前<br>
+   出力例：Distributor ID: Ubuntu<br>
+   -d, --description #ディストリビューションの説明を表示<br>
+   出力例：Description: Ubuntu 10.04.2 LTS<br>
+   -r, --release #ディストリビューションのリリース番号を表示<br>
+   出力例：Release: 10.04<br>
+   -c, --codename #コードネームを表示<br>
+   出力例：Codename: lucid<br>
+   -a, --all #上記情報を全部出す<br>
+   -s,--short #短くして表示</p>
+<p>mknod（manページ）</p>
+</li>
+<li>
+<p>指定したタイプのスペシャルファイルを作成します</p>
+</li>
+</ul>
+
+        <div class="sharethis-bottom">
+          <span class='st_fblike_hcount' displayText='Facebook Like'></span>
+          <span class='st_plusone_hcount' displayText='Google +1'></span>
+          <span class='st_twitter_hcount' displayText='Tweet'></span>
+          <span class='st_email_hcount' displayText='Email'></span>
+        </div>
+      </div><!-- /.entry-content -->
+
+    </article>
+  </section>
+</div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="site-footer">
+        <div class="row-fluid">
+            <div class="span10 offset1">
+                <address>
+                    <p>
+                        This blog is proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                    </p>
+                    <p>
+                        <a href="http://github.com/jsliang/pelican-fresh/">Fresh</a> is a responsive theme designed by <a href="http://jsliang.com/">jsliang</a> and <a href="https://github.com/jsliang/pelican-fresh/graphs/contributors">contributors</a>.
+                        Special thanks to <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a> and <a href="http://getbootstrap.com/">Twitter Bootstrap</a>.
+                    </p>
+                </address>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-845207-15']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+</body>
+</html>

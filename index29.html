@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="author" content="ayakomuro" />
+    <meta name="robots" content="index, follow"/>
+
+    <meta property="og:title" content="popowa"/>
+    <meta property="og:url" content="http://blog.popowa.com"/>
+    <meta property="og:site_name" content="popowa"/>
+    <meta property="og:type" content="website"/>
+
+    <link rel="canonical" href="http://blog.popowa.com" />
+
+    <title>popowa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />
+
+    <link rel="stylesheet" type="text/css" href="http://blog.popowa.com/theme/css/main.css" />
+
+    <script type="text/javascript">var switchTo5x=true;</script>
+    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript">
+        stLight.options({
+            publisher: "5a2ce781d0739000123acd73",
+            doNotHash: false,
+            doNotCopy: false,
+            hashAddressBar: false
+        });
+    </script>
+</head>
+
+<body id="index">
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <header id="banner" >
+                <h1>
+                    <a href="http://blog.popowa.com/">popowa </a>
+                </h1>
+                <nav class="navbar">
+                    <div class="navbar-inner">
+                        <ul class="nav">
+                        </ul>
+
+<script>
+  (function() {
+    var cx = '014316853335343165598:-bgzniyqm3y';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div id="google-custom-search" class="nav">
+    <gcse:search></gcse:search>
+</div>
+                    </div>
+                </nav>
+            </header><!-- /#banner -->
+        </div>
+    </div>
+
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <div class="row-fluid">
+<div class="span9">
+                <section>
+                    <ol id="posts-list" class="hfeed" start="9">
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2011/07/rightscale.html" rel="bookmark" title="Permalink to RightScaleを解き明かす\~クラウド登録、諸設定をしよう\~">
+                                       RightScaleを解き明かす\~クラウド登録、諸設定をしよう\~
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2011-07-22
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/aws.html">AWS</a>
+        <a href="http://blog.popowa.com/tag/rightscale.html">RightScale</a>
+        <a href="http://blog.popowa.com/tag/rightscalejie-ti-xin-shu.html">RightScale解体新書</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>時間が経ってしまいましたが、RightScale解体新書の続きを書きたいと思います！前回はRightScale登録でしたので、ログイン後のクラウド登録、諸設定を説明します。  </p>
+<p>[]  </p>
+<ul>
+<li>ダッシュボード日本語化</li>
+<li>クラウド追加(AWS)</li>
+<li>セキュリティグループ設定</li>
+<li>credentialsの設定</li>
+</ul>
+<h3>◆ダッシュボード日本語化</h3>
+<p>アカウント作成後、ログインをするとダッシュボードに遷移します。  </p>
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/login1.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/login1-300x106.png" title="login1">{.alignnone
+.size-medium .wp-image-1168 width="300"
+height="106"}</a>  </p>
+<p>最初は英語表示なので、左下にある言語選択プルダウンから日本語を選びます。  </p>
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/login2.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/login2.png" title="login2">{.alignnone
+.size-full .wp-image-1169 width="170"
+height="97"}</a>  </p>
+<p>選択をすると、自動でリロードし、ダッシュボードが日本語化します。  </p>
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/login3.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/login3-300x85.png" title="login3">{.alignnone
+.size-medium .wp-image-1170 width="300"
+height="85"}</a>  </p>
+<h2>◆クラウドを紐付ける</h2>
+<p>ダッシュボードにある「Add one or more clouds to your
+account」をクリックするか …</p>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2011/07/rightscale.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2011/07/rightscalerightscaleaws-iam.html" rel="bookmark" title="Permalink to ">
+                                       
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2011-07-22
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/aws.html">AWS</a>
+        <a href="http://blog.popowa.com/tag/rightscale.html">RightScale</a>
+        <a href="http://blog.popowa.com/tag/rightscalejie-ti-xin-shu.html">RightScale解体新書</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>アカウントをIAMを使って作ろう\~+RightScaleはAWSのAPIを使ってクラウドを操作するのですが、IAMが出来たため、通常の方法でAPI用のアカウントを作れなくなりました。IAMからRightScale用のアカウントを作成する方法を記述します。  </p>
+<p>[]<a href="https://console.aws.amazon.com/iam/home">AWSのマネージメントコンソール</a>にログインします。IAMのタブをクリックします。<br>
+<a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/aws_iam.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/aws_iam.png" title="aws_iam">{.alignnone
+.size-full .wp-image-1184 width="207"
+height="71"}</a>  </p>
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/aws_iam.png"></a>ユーザーを作成します。  </p>
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/aws_1.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/aws_1.png" title="aws_1">{.alignnone
+.size-full .wp-image-1178 width="132"
+height="57"}</a>  </p>
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/aws_create_user_2.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/aws_create_user_2-300x192.png" title="aws_create_user_2">{.alignnone
+.size-medium .wp-image-1185 width="300"
+height="192"}</a>  </p>
+<p>名前を入力する所が出てくるので、分かり易い名前にします。「Generate an
+access key for each
+User」にチェックをつけておきます（これはチェックがなくてもいいですが、面倒でも個別管理しておいた方が後々ユーザー管理をきちんとする上ではいいと思います）。  </p>
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/aws_2.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/aws_2-300x87.png" title="aws_2">{.alignnone
+.size-medium .wp-image-1179 width="300"
+height="87"}</a>  </p>
+<p>作成すると公開鍵と …</p>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2011/07/rightscalerightscaleaws-iam.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2011/07/rightscale_20.html" rel="bookmark" title="Permalink to ">
+                                       
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2011-07-20
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/rightscale.html">RightScale</a>
+        <a href="http://blog.popowa.com/tag/rightscalejie-ti-xin-shu.html">RightScale解体新書</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>RightScaleアカウントのパスワードを忘れた時+皆さん、パスワード忘れますよね？自分はPassPackで保存してますが、登録し忘れていた物などはパスワードリマインダーを使わざるを得ません。PassPackにログインするぐらいなら、パスワードリマインダー使った方が早い、という声も聞こえてきそうですけど（笑)  </p>
+<p>今回見事にRightScaleのあるアカウントのパスワードをメモし忘れ居たので、パスワードリマインダーのフローを書きます。  </p>
+<p>[]<a href="https://my.rightscale.com/session/new">ログイン画面</a>にアクセスします。パスワードは覚えてないので、右下にある「forgot
+password?」をクリックします。  </p>
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/0.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/0-300x57.png" title="0">{.alignnone
+.size-medium .wp-image-1156 width="300"
+height="57"}</a>  </p>
+<p>メールアドレスを入力する画面が出るので、そこで登録しているメールアドレスを入れます。「Reset
+and Email」というボタンを押します。確認画面はありません。  </p>
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/11.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/11-300x202.png" title="1">{.alignnone
+.size-medium .wp-image-1157 width="300"
+height="202"}</a>  </p>
+<p>登録メールアドレス宛に、新しいパスワードを送ったよ！とメッセージが出ます。メールボックスを確認しましょう。  </p>
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/22.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/22-300x199.png" title="2">{.alignnone
+.size-medium .wp-image-1158 width="300"
+height="199 …</a></p>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2011/07/rightscale_20.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2011/07/android.html" rel="bookmark" title="Permalink to Androidを始める時に参考サイト一覧">
+                                       Androidを始める時に参考サイト一覧
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2011-07-18
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/android.html">Android</a>
+        <a href="http://blog.popowa.com/tag/tsurushao-jie.html">ツール紹介</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>Androidを使い始めたひよっ子ですが、世の中には色んなAndroidについてのサイトがあるので、それを自分のメモも兼ねて公開してみます。  </p>
+<p>[]  </p>
+<h2>開発者向け</h2>
+<ul>
+<li><a href="http://www.android.com/">http://www.android.com/</a></li>
+<li><a href="http://developer.android.com/">http://developer.android.com/</a></li>
+</ul>
+<h2>Androidアプリ紹介＆検索</h2>
+<ul>
+<li><a href="http://andronavi.com/">http://andronavi.com/</a></li>
+<li><a href="http://www.gapsis.jp/">http://www.gapsis.jp/</a></li>
+<li><a href="http://appllio.com/">http://appllio.com/</a></li>
+<li><a href="http://octoba.net/">http://octoba.net/</a></li>
+<li><a href="http://android.giveapp.jp/">http://android.giveapp.jp/</a></li>
+<li><a href="http://www.appbrain.com/">http://www.appbrain.com/</a></li>
+<li><a href="http://jp.androlib.com/">http://jp.androlib.com/</a></li>
+<li><a href="http://pandroid.jp/">http://pandroid.jp/</a></li>
+<li><a href="http://applizoo.com/">http://applizoo.com/</a></li>
+<li><a href="http://androapp.jp/">http://androapp.jp/</a></li>
+<li><a href="http://www.meetroid.com/">http://www …</a></li></ul>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2011/07/android.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2011/07/vol8.html" rel="bookmark" title="Permalink to ">
+                                       
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2011-07-18
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/jin-zhou-noqi-ninatsutaniyusu.html">今週の気になったニュース</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>vol.8+個人的に気になるニュース！ほぼ週刊クラウド日和８回目の内容です。  </p>
+<p>[]  </p>
+<ul>
+<li><a href="http://markezine.jp/article/detail/14076">ツイッター、日本語ハッシュタグが利用可能に</a></li>
+<li><a href="http://jp.techcrunch.com/archives/20110712y-combinator-alum-memsql-raises-2-1-million-from-ashton-kutcher-sv-angel-and-more/">MySQLを完全オンメモリ化（スピード30倍）したMemSQLが\$2.1Mのシード資金を調達</a></li>
+<li><a href="http://ascii.jp/elem/000/000/619/619405/summary.html?rss">7/13から各社のケータイ同士でSMSの送受信開始</a></li>
+<li><a href="http://www.atmarkit.co.jp/news/201107/13/citrix.html">シトリックスがCloud.com買収、OpenStackとの関係は？</a></li>
+<li><a href="http://cloud.watch.impress.co.jp/docs/news/20110714_460373.html">北海道大学で構築中の大規模学術クラウドにXenServerを採用</a></li>
+<li><a href="http://ascii.jp/elem/000/000/619/619499/">クラウドのデータを防護するTrend Micro
+    SecureCloud</a></li>
+<li><a href="http://www.rbbtoday.com/article/2011/07/14/78937.html">まつもとゆきひろ氏、セールスフォース傘下のHeroku社に入社......Rubyチーフアーキテクトに就任</a></li>
+<li><a href="http://cloud.watch.impress.co.jp/docs/news/20110714_460571.html">クラウドを重視するレッドハット、RHEL7ではOpenStackなどに代わる管理機能も</a></li>
+<li><a href="http://markezine.jp/article/detail/14091">グリー、中国に子会社を設立</a></li>
+<li><a href="http://jp.techcrunch.com/archives/20110713not-so-crazy-rumor-amazon-to-release-an-android-tablet-and-two-new-kindles-this-fall/">Amazon
+    がタブレットを出す、という噂</a></li>
+<li><a href="http://itpro.nikkeibp.co.jp/article/NEWS/20110714/362465/">コロプラが「位置ゲーム」の基本特許を取得、不正行為を防止</a></li>
+<li><a href="http://aws.typepad.com/aws_japan/2011/07/introducing-the-aws-sdk-for-ruby.html">AWS SDK for
+    Rubyがリリース</a></li>
+<li><a href="http://jp.techcrunch.com/archives/20110714breath-bird-new-twitter-client-lets-handicapped-users-tweet-with-their-breath/">Breath
+    Bird〔息鳥〕―呼吸で作動するハンディキャップ・ユーザー向けTwitter入力アプリ、日本から登場</a></li>
+<li><a href="http://www.itmedia.co.jp/news/articles/1107/14/news020.html">レディーガガのyoutubeアカウントが、停止</a></li>
+<li><a href="http://thenextweb.com/apple/2011/07/14/new-macbook-airs-arriving-next-week/?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+TheNextWeb+%28The+Next+Web+All+Stories%252">新しいMac Book
+    Airが２１日か２２日に出荷されるらしい</a></li>
+<li><a href="http://www.itproportal.com/2011/07/14/netflix-comes-nintendo-3ds/">Netflix …</a></li></ul>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2011/07/vol8.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2011/07/blog-post.html" rel="bookmark" title="Permalink to ">
+                                       
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2011-07-18
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/jawsug.html">JAWSUG</a>
+        <a href="http://blog.popowa.com/tag/guo-nei-ibento.html">国内イベント</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>開催報告+楽天で行われたMetaconの女子会枠で意気投合したJAWS-UGクラウド女子会、JAZUG女子部、Linux女子会が発起人となって、IT業界にある女子会の運営者を集めた女子会運営サミットを行いました！  </p>
+<p>[]  </p>
+<p>日時：2011/7/15 19:00-<br>
+参加者：  </p>
+<ol>
+<li><a href="http://cloudgirls.blogspot.com/">JAWS-UGクラウド女子会</a>
+    @petachさん/@bond_honeyさん / @ayakomuro</li>
+<li><a href="http://r.jazug.jp/wiki/jaz/girls">JAZUG女子部</a> @sao_aさん /
+    @mihotakusariさん</li>
+<li><a href="https://sites.google.com/site/linuxjoshi/">Linux女子会</a>
+    @mana_catさん</li>
+<li><a href="http://www.fxug.net/modules/bwiki/index.php?FxUG%CA%D9%B6%AF%B2%F1%C2%E8147%B2%F3%A1%F7%C2%E7%BA%E5">Flex User Group
+    大阪女子部</a>
+    @ofuku3fさん</li>
+<li><a href="http://tokyogirlgeekdinners.wordpress.com/">東京ガールギークディナー</a>
+    @lhugaさん</li>
+<li><a href="http://oracletech.jp/campaign/vivadeveloper/000225.html">Oracle Grid
+    Center</a>
+    女子会 Fさん</li>
+<li>関西Coffee女子会 @satomicchyさん</li>
+</ol>
+<p>取材もありました</p>
+<p><a href="http://engineer.typemag.jp/">エンジニアType</a>(現在女性エンジニア応援特集をされているそうです)</p>
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/IMG_1806.jpg"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/IMG_1806-300x225.jpg" title="IMG_1806">{.alignnone
+.size-medium .wp-image-1132 width="300"
+height="225"}</a>  </p>
+<p>１人ずつ、現在の会の状況と、運営時の悩み事top3をLTしてもらいました。  </p>
+<ul>
+<li>キャンセル人数の数が読めない</li>
+<li>お金をかけたくないので …</li></ul>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2011/07/blog-post.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2011/07/vol7.html" rel="bookmark" title="Permalink to ほぼ週刊クラウド日和 vol.7">
+                                       ほぼ週刊クラウド日和 vol.7
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2011-07-02
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/jin-zhou-noqi-ninatsutaniyusu.html">今週の気になったニュース</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>久しぶりにほぼ週刊クラウド日和をしました。  </p>
+<p>身内に不幸があったりと、ドタバタしていたのですが、さすがに自分としてもいけないと思い、時間変更して行いました。<br>
+[]  </p>
+<p>気になった記事はこちら  </p>
+<h2><a href="http://journal.mycom.co.jp/news/2011/07/01/011/index.html">米Yahoo!がHadoop特化企業「Hortonworks」を設立</a></h2>
+<blockquote>
+<p>Yahoo!は6月28日(米国時間)、Benchmark
+Capitalと共同でHadoopの標準化および商業化に従事する新会社「Hortonworks」を設立することを発表した。<br>
+エンタープライズ市場を対象とした企業で、Hadoopを活用したシステムの開発やHadoopの標準化および企業ユースの推進などを実施することになるものとみられる。</p>
+</blockquote>
+<p>Yahoo!ブログから分かった事。  </p>
+<ul>
+<li>Hadoopプロジェクトへの支援は継続する</li>
+<li>Hadoopは６歳、２人のエンジニアから始まった</li>
+<li>Hadoop summitには1600人のエンジニアが集まる予定</li>
+<li>Raymie
+    StataによればYahooでは一ヶ月で50億のタスクを処理し、hadoopを40,000台以上のサーバーインストールした</li>
+</ul>
+<h2><a href="http://ascii.jp/elem/000/000/616/616300/">KDDI、法人向けクラウドの新ブランド「KDDI MULTI CLOUD」</a></h2>
+<blockquote>
+<p>法人のお客さま向けの新ブランド「KDDI MULTI
+CLOUD」を立ち上げ、デバイスからネットワーク、データセンター、アプリケーションまでをシームレスに統合する新たなクラウドソリューションを提供</p>
+</blockquote>
+<p>そもそもクラウドとは？というスライドがあり、KDDIの強みを打ち出していたが、具体的な方法などが詳細に書かれていなかったので、今後どのように進めて行くのか要注目  </p>
+<h2><a href="http://itpro.nikkeibp.co.jp/article/NEWS/20110629/361866/">Microsoft のOffice …</a></h2>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2011/07/vol7.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2011/06/rightscale-user-conferenceamazon.html" rel="bookmark" title="Permalink to RightScale User Conferenceに参加したら、Amazonギフト貰った">
+                                       RightScale User Conferenceに参加したら、Amazonギフト貰った
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2011-06-29
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/amazon.html">Amazon</a>
+        <a href="http://blog.popowa.com/tag/rightscale.html">RightScale</a>
+        <a href="http://blog.popowa.com/tag/hai-wai-saito.html">海外サイト</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>RightScale</p>
+<p>User Conference in
+NYに参加したら、今日Amazonから\$15分のギフトコードが届きました。  </p>
+<p>私としては参加させてもらったのに！？という気分。  </p>
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/06/awsrs.jpg"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/06/awsrs-259x300.jpg" title="awsrs">{.alignnone
+.size-medium .wp-image-1091 width="259"
+height="300"}</a>  </p>
+<p>嬉しいなぁ。  </p>
+<p>RightScale User
+Conferenceの<a href="http://www.rightscale.com/lp/user-conference.php">動画の一部はすでにアップ</a>されていて、<a href="http://www.flickr.com/photos/rightscale/sets/72157626934132370/">写真もFlickr</a>にアップロードされています。<a href="http://www.rightscale.com/lp/user-conference-agenda.php">発表資料もアップ</a>されているので、興味のある方、参加して復習されたい方はぜひご覧ください。  </p>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2011/06/rightscale-user-conferenceamazon.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2011/06/blog-post_29.html" rel="bookmark" title="Permalink to 遅くなりましたがレポートとイベント発表資料をアップしました">
+                                       遅くなりましたがレポートとイベント発表資料をアップしました
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2011-06-29
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/cloudexpo.html">CloudExpo</a>
+        <a href="http://blog.popowa.com/tag/cloudstack.html">CloudStack</a>
+        <a href="http://blog.popowa.com/tag/event.html">Event</a>
+        <a href="http://blog.popowa.com/tag/report.html">Report</a>
+        <a href="http://blog.popowa.com/tag/rightscale.html">RightScale</a>
+        <a href="http://blog.popowa.com/tag/ozhi-rase.html">お知らせ</a>
+        <a href="http://blog.popowa.com/tag/guo-nei-ibento.html">国内イベント</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>遅くなりましたが、技術評論社のサイトのレポートを上げさせて頂きました。  </p>
+<ul>
+<li>[gihyo.jp]<a href="http://gihyo.jp/news/report/2011/06/2001">AWS Summit 2011 New York
+    レポート</a></li>
+<li>[gihyo.jp]<a href="http://gihyo.jp/news/report/2011/06/1701">第4回RightScale User
+    Conferenceレポート</a></li>
+<li>[gihyo.jp]<a href="http://gihyo.jp/news/report/2011/06/1601">北米のクラウド状況，日本の違い，クラウド促進への進む道筋とは～Cloud
+    Computing Expo 2011 New York
+    レポート</a></li>
+</ul>
+<p>また雲屋・クリエーションライン・ライトスケールジャパン主催<br>
+<a href="http://www.kumoya.co.jp/events/new-world-of-cloud-by-cloudcom-n-rightscale.html">CloudStackとRightScaleが拓く次世代クラウド基盤の世界</a>  </p>
+<p>でも発表をさせていただきましたので、その時の資料をアップします。  </p>
+<p><strong><a href="http://www.slideshare.net/popowa/cloud-expo-2011nyrightscalecloudstack" title="「CLOUD EXPO 2011NY」最新レポートとユーザーコミュニティー（RightScale・CloudStack）">「CLOUD EXPO
+2011NY」最新レポートとユーザーコミュニティー（RightScale・CloudStack）</a></strong></p>
+<p>View more <a href="http://www.slideshare.net/">presentations</a> from <a href="http://www.slideshare.net/popowa">Aya
+Komuro</a>.</p>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2011/06/blog-post_29.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2011/06/aws-summit.html" rel="bookmark" title="Permalink to AWS Summit で発表された資料">
+                                       AWS Summit で発表された資料
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2011-06-17
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/aws.html">AWS</a>
+        <a href="http://blog.popowa.com/tag/hai-wai-niyusu.html">海外ニュース</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>AWS</p>
+<p>Summitで発表された資料がアップされていたので、一覧を載せます。  </p>
+<p>[]  </p>
+<p>9:45am -- 10:30am: Opening Keynote: "State of the Cloud", Werner Vogels,
+CTO, Amazon.com  </p>
+<ul>
+<li><a href="https://s3.amazonaws.com/aws001/trailhead/OpeningKeynote_State_of_the_Cloud_Werner_Vogels_Keynote.pdf">資料</a></li>
+</ul>
+<p>10:30am -- 11:20am: Customer Presentations <em>(</em>Alcatel-Lucent社Allon
+Gladstone氏、Medidata社のGlenn Watt氏,Vimeo社Peter ??, NYTimes社<em>)</em>  </p>
+<p>11:20am -- 11:45am: Customer &amp; Q&amp;A Panel  </p>
+<ul>
+<li>ビデオ＆スライド：<a href="http://psav.mediasite.com/mediasite/Viewer/?peid=dc1c4baff4434151b64df74a2f971b721d">AWS Summit 2011 Opening
+    Session</a></li>
+<li><a href="http://www.slideshare.net/ptrmcrthr/vimeo-ec2">Vimeoスライド</a></li>
+</ul>
+<p>12:45pm -- 4 …</p>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2011/06/aws-summit.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    </ol><!-- /#posts-list -->
+<p class="paginator">
+        <a href="http://blog.popowa.com/index28.html">&laquo;</a>
+    Page 29 / 35
+        <a href="http://blog.popowa.com/index30.html">&raquo;</a>
+</p>
+                </section><!-- /#content -->
+</div>
+<div class="span3">
+    <section id="sidebar">
+            <div>
+                <h2>Browse content by</h2>
+                <ul class="fa-ul">
+                <li><a href="http://blog.popowa.com/categories.html"><i class="fa-li fa fa-tags"></i> Categories</a></li>
+                <li><a href="http://blog.popowa.com/archives.html"><i class="fa-li fa fa-calendar"></i> Dates</a></li>
+                <li><a href="http://blog.popowa.com/tags.html"><i class="fa-li fa fa-tag"></i> Tags</a></li>
+
+                </ul>
+            </div><!-- /.browse -->
+            <div>
+                <h2>Social</h2>
+                <ul>
+                    <li><a href="https://twitter.com/ayakomuro">Twitter</a></li>
+                    <li><a href="http://www.popowa.com">popowa</a></li>
+                </ul>
+            </div><!-- /.social -->
+<!-- /.Tags -->
+    </section><!-- /#sidebar -->
+</div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="site-footer">
+        <div class="row-fluid">
+            <div class="span10 offset1">
+                <address>
+                    <p>
+                        This blog is proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                    </p>
+                    <p>
+                        <a href="http://github.com/jsliang/pelican-fresh/">Fresh</a> is a responsive theme designed by <a href="http://jsliang.com/">jsliang</a> and <a href="https://github.com/jsliang/pelican-fresh/graphs/contributors">contributors</a>.
+                        Special thanks to <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a> and <a href="http://getbootstrap.com/">Twitter Bootstrap</a>.
+                    </p>
+                </address>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-845207-15']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+</body>
+</html>
