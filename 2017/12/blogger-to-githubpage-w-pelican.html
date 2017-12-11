@@ -118,8 +118,8 @@ https://wordpress.com/</p>
 <p>WordPressインストール、設定等は割愛
 Permalinks設定を Post name設定にします。
 <a href="https://codex.wordpress.org/Using_Permalinks">Using Permalinks « WordPress Codex </a></p>
-<p>Bloggerを取り込むプラグイン<a href="https://ja.wordpress.org/plugins/blogger-importer/">Blogger Importer — WordPress プラグイン </a>をインストールしたのち、importファイルを少し修正します。
-[blog/blogger-entry.php at master · popowa/blog] (https://github.com/popowa/blog/blob/master/migration/wordpress/wp-content/plugins/blogger-importer/blogger-entry.php)</p>
+<p>Bloggerを取り込むプラグイン<a href="https://ja.wordpress.org/plugins/blogger-importer/">Blogger Importer — WordPress プラグイン </a>をインストールしたのち、importファイルを少し修正します。</p>
+<p><a href="https://github.com/popowa/blog/blob/master/migration/wordpress/wp-content/plugins/blogger-importer/blogger-entry.php">blog/blogger-entry.php at master · popowa/blog</a></p>
 <h2>WordPressからデータをエクスポートする</h2>
 <p>Blogger importプラグイン経由でBlogger XMLをImportしたのち、すぐにWordPressからExportします。
 出力する際は<code>Posts</code>で<code>Status: Published</code>のみとします
@@ -136,6 +136,7 @@ Permalinks設定を Post name設定にします。
 </pre></div>
 
 
+<p><a href="https://github.com/popowa/blog/blob/master/migration/xml-convert.py">blog/xml-convert.py at master · popowa/blog</a></p>
 <h2>そしてPelicanのOutput機能を使って静的HTMLに出力します。</h2>
 <div class="highlight"><pre><span></span>$ pelican path_content
 </pre></div>
