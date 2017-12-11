@@ -24,7 +24,7 @@
     <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
     <script type="text/javascript">
         stLight.options({
-            publisher: "5a2ce781d0739000123acd73",
+            publisher: "",
             doNotHash: false,
             doNotCopy: false,
             hashAddressBar: false
@@ -42,20 +42,10 @@
                 <nav class="navbar">
                     <div class="navbar-inner">
                         <ul class="nav">
+                            <li ><a href="http://blog.popowa.com/category/misc.html">misc</a></li>
+                            <li ><a href="http://blog.popowa.com/category/tech.html">tech</a></li>
                         </ul>
 
-<script>
-  (function() {
-    var cx = '014316853335343165598:-bgzniyqm3y';
-    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
-    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-        '//www.google.com/cse/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
-  })();
-</script>
-<div id="google-custom-search" class="nav">
-    <gcse:search></gcse:search>
-</div>
                     </div>
                 </nav>
             </header><!-- /#banner -->
@@ -573,7 +563,7 @@ Gateway1.0</a>  </p>
                         <article>
                             <header>
                                 <h1 class="entry-title">
-                                    <a href="http://blog.popowa.com/2011/05/rightscale-rightscale_27.html" rel="bookmark" title="Permalink to ">
+                                    <a href="http://blog.popowa.com/2011/05/rightscale-rightscale_24.html" rel="bookmark" title="Permalink to ">
                                        
                                     </a>
                                 </h1>
@@ -586,27 +576,57 @@ Gateway1.0</a>  </p>
 
     in <a href="http://blog.popowa.com/category/misc.html">misc</a>
 
-    on 2011-05-27
+    on 2011-05-23
 
         |
         tags:         <a href="http://blog.popowa.com/tag/rightscale.html">RightScale</a>
         <a href="http://blog.popowa.com/tag/rightscalejie-ti-xin-shu.html">RightScale解体新書</a>
+        <a href="http://blog.popowa.com/tag/tsurushao-jie.html">ツール紹介</a>
 
 
 
     
-</footer><!-- /.post-info -->                                <p>〜RightScaleの概念図〜+それではRightScaleは何なのか、何が出来るのか、の次に、概念図を描こうと思います。  </p>
+</footer><!-- /.post-info -->                                <p>〜RightScaleで何が出来るか〜+次はRightScaleは「クラウド管理が出来るSaaS型のサービスである」と前回書きましたが、それじゃそのサービスで何が出来るの！？と列挙していきたいと思います。  </p>
 <p>[]  </p>
-<p><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/05/f3cc45eeaa31a158461bc389cbbb23e4.jpg" title="RightScale図.001-1">{.alignnone
-.size-full .wp-image-911 width="500" height="326"}  </p>
-<h2>RightScaleの全体の概念図</h2>
-<p>※上記のクラウドリソースは有名どころしか描きませんでしたが、これ以外にも多くのクラウド（IaaS/PaaS）を扱う事が出来ます。  </p>
-<p><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/05/e781649a5b1979a54eca79e8ca6f0d62.jpg" title="RightScale図.002-1">{.alignnone
-.size-full .wp-image-918 width="500" height="375"}  </p>
-<h2>RightScale内の概念図</h2>
-<p>※上記は分かり易く分けて表示していますが、すべてが深く紐付け、関係性を持っています。こんな感じか、と思って頂けると幸いです。  </p>
+<p>もちろん以下列挙している事の多くは個々のクラウドのAPI経由やダッシュボード（マネージメントコンソール等）で行う事が出来ますが、RightScaleを使い自動化設定をする事でより簡単に、インフラエンジニア大量雇用しなくても、また既存資源を使いつつ、よりスケールアウトや自動化などクラウドの利点を活用する事が出来ます。  </p>
+<h2>出来る事（順不同）</h2>
+<ol>
+<li>
+<p>マルチクラウドを[一元的に管理]出来る  </p>
+<ol>
+<li>ここで言うマルチクラウド、というのは、世の中に出ているクラウド（パブリック、プライベート）を一元的に同じように管理出来る（対応クラウドに関しては以下を参照）</li>
+<li>IaaSだけではなく、PaaSと呼ばれるようなクラウドも扱う事が出来る</li>
+<li>一つのクラウドにベンダーロックされない</li>
+</ol>
+</li>
+<li>
+<p>ハイブリット構成が構築出来る  </p>
+<ol>
+<li>データーベースだけはオンプレミスやプライベートクラウドに配置し、レスポンス返すHttpdサーバはパブリッククラウドに置く等</li>
+</ol>
+</li>
+<li>
+<p>サーバーテンプレートと呼ばれるインフラ（サーバーやアプリ）構成についてのレシピ集が多数あり、選ぶだけでサーバー構築が出来る  </p>
+<ol>
+<li>サーバーテンプレートは自前で作る事が出来る</li>
+<li>面倒ならばRightScaleにサーバーテンプレートを作ってもらう事が出来る</li>
+<li>作ったテンプレートを公開する事が出来る</li>
+<li>公開したテンプレートを課金対象とする事が出来る</li>
+</ol>
+</li>
+<li>
+<p>個々のサーバー管理ではなく構成を管理する事が出来る  </p>
+<ol>
+<li>サーバーが落ちれば自動で他のサーバーで立て直す事も可能</li>
+<li>構成はバージョン管理されており、バージョンを戻したり、一部のスクリプトだけ上げたりという事が出来る</li>
+</ol>
+</li>
+<li>
+<p>サーバー構築だけではなく保守もする事が出来る  </p>
+<ol>
+<li>例えばパッケージ（PHPやRuby等）のアップデートを行ったり、設定ファイルを書き換えたり、アプリを展開して再配置したりする事が出来る …</li></ol></li></ol>
                                 <p class="readmore">
-                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2011/05/rightscale-rightscale_27.html">Read more...</a>
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2011/05/rightscale-rightscale_24.html">Read more...</a>
                                 </p>
                             </div><!-- /.entry-content -->
                             <hr/>
@@ -615,7 +635,7 @@ Gateway1.0</a>  </p>
                     </ol><!-- /#posts-list -->
 <p class="paginator">
         <a href="http://blog.popowa.com/author/ayakomuro29.html">&laquo;</a>
-    Page 30 / 35
+    Page 30 / 34
         <a href="http://blog.popowa.com/author/ayakomuro31.html">&raquo;</a>
 </p>
                 </section><!-- /#content -->
@@ -661,16 +681,6 @@ Gateway1.0</a>  </p>
         </div>
     </footer>
 
-    <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-845207-15']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-    </script>
     <script src="//code.jquery.com/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
 </body>
