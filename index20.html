@@ -62,6 +62,59 @@
                         <article>
                             <header>
                                 <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2012/10/elb.html" rel="bookmark" title="Permalink to ELBのドメインの扱い方">
+                                       ELBのドメインの扱い方
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2012-10-30
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/elb.html">ELB</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>ELBで扱えるドメイン</p>
+<h3>Zone Apex</h3>
+<p>ELB(example.com)</p>
+<p>_EC2</p>
+<p>_EC2</p>
+<p>_EC2....</p>
+<p>=> Zone ApexをRoute53を利用してのみ可能</p>
+<h3>サブドメイン</h3>
+<p>ELB(www.example.com)</p>
+<p>_EC2</p>
+<p>_EC2</p>
+<p>_EC2....</p>
+<p>=> NSはどこでもよい</p>
+<h3>サブディレクトリ</h3>
+<p>ELB(www.example.com)</p>
+<p>_EC2(Apache/Varnish/Nginx等のProxyサーバ)</p>
+<p>_EC2(www.example.com/dir)</p>
+<p>_EC2(www.example.com/dir2)</p>
+<p>_EC2....</p>
+<p>=> ELBの下にProxyサーバを置く事で可能</p>
+<p>ELBがサブディレクトリの処理をするのは違うとは思うが、機能としては欲しいなぁと思う今日この頃</p>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2012/10/elb.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
                                     <a href="http://blog.popowa.com/2012/10/0.html" rel="bookmark" title="Permalink to 新人研修等の金銭的負担を0にする方法">
                                        新人研修等の金銭的負担を0にする方法
                                     </a>
@@ -470,52 +523,6 @@ height="238"}</p>
 <p><img alt="" src="http://lh6.ggpht.com/-KzxBtfMC-k8/UGeK1fJ1yeI/AAAAAAAAT-0/HaH0lVr_9Sk/1348962954384.png"></p>
                                 <p class="readmore">
                                     <a class="btn btn-small btn-info" href="http://blog.popowa.com/2012/09/blog-post_30.html">Read more...</a>
-                                </p>
-                            </div><!-- /.entry-content -->
-                            <hr/>
-                        </article>
-                    </li>
-                    <li>
-                        <article>
-                            <header>
-                                <h1 class="entry-title">
-                                    <a href="http://blog.popowa.com/2012/09/amazonui.html" rel="bookmark" title="Permalink to AmazonのUIが変わったなんて全然知らなかったよ">
-                                       AmazonのUIが変わったなんて全然知らなかったよ
-                                    </a>
-                                </h1>
-                            </header>
-                            <div class="entry-content">
-<footer class="post-info">
-    <address class="vcard author">
-        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
-    </address>
-
-    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
-
-    on 2012-09-28
-
-        |
-        tags:         <a href="http://blog.popowa.com/tag/amazon.html">Amazon</a>
-        <a href="http://blog.popowa.com/tag/ui.html">UI</a>
-
-
-
-    
-</footer><!-- /.post-info -->                                <p>この間別のPCからAmazonのサイトを見たらUIが変わっててびっくりした。</p>
-<p>[]<br>
-びっくりしたのでつぶやいたら、そんなのずいぶん前から変わってるよーと言われてハテ？と。</p>
-<p>メインで使っているPCを確認したら、古いUIのまま。</p>
-<p><a href="http://3.bp.blogspot.com/-JoRrFVjLiVk/UGT9zFwbmvI/AAAAAAAAT-Q/-3QQ0tN39B8/s1600/amazon.png"><img alt="" src="http://3.bp.blogspot.com/-JoRrFVjLiVk/UGT9zFwbmvI/AAAAAAAAT-Q/-3QQ0tN39B8/s320/amazon.png">{width="320"
-height="204"}</a></p>
-<p>ほえーと思ってログアウトしたら、新しいデザインになった。</p>
-<p><a href="http://2.bp.blogspot.com/-7pAArCw78LE/UGT9_X1B2bI/AAAAAAAAT-U/R6m75IvLITk/s1600/amazon2.png"><img alt="" src="http://2.bp.blogspot.com/-7pAArCw78LE/UGT9_X1B2bI/AAAAAAAAT-U/R6m75IvLITk/s320/amazon2.png">{width="320"
-height="180"}</a></p>
-<p>元々のクッキーの有効期限を見とけばよかった。</p>
-<p>現在発行されているAmazon.co.jpのクッキーの有効期間は、発行されてから20年〜24年の模様。<br>
-なので今のクッキーは2032年まで有効のようです。</p>
-<p>なんでそんなに有効期限長いんだろう？</p>
-                                <p class="readmore">
-                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2012/09/amazonui.html">Read more...</a>
                                 </p>
                             </div><!-- /.entry-content -->
                             <hr/>

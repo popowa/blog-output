@@ -62,6 +62,72 @@
                         <article>
                             <header>
                                 <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2012/06/pylot.html" rel="bookmark" title="Permalink to pylot">
+                                       pylot
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2012-06-11
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/python.html">Python</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p><a href="http://4.bp.blogspot.com/-yVGC5kzs3yw/T9X2fNOjKrI/AAAAAAAASPo/RLMfFzDlNcE/s1600/pylot_logo_main.gif"><img alt="" src="http://4.bp.blogspot.com/-yVGC5kzs3yw/T9X2fNOjKrI/AAAAAAAASPo/RLMfFzDlNcE/s1600/pylot_logo_main.gif"></a></p>
+<p>Pylot</p>
+<ul>
+<li>Pythonで書かれたウェブパフォーマンスツール</li>
+<li><a href="http://pylot.org/">http://pylot.org/</a></li>
+<li>2009年で開発が終わっている模様 =>
+    現在開発されている負荷テストツール:
+    <a href="http://testutils.org/multi-mechanize/">Multi-Mechanize</a></li>
+</ul>
+<p>[] 出来る事</p>
+<ul>
+<li>HTTP と HTTPS (SSL) サポート</li>
+<li>マルチスレッドのロードジェネレーター</li>
+<li>自動でクッキ処理</li>
+<li>正規表現でのレスポンス検証</li>
+<li>実行/監視コンソール</li>
+<li>リアルタイム統計</li>
+<li>グラフ月の結果レポート</li>
+<li>カスタムタイマー</li>
+<li>GUIモード</li>
+<li>シェル/コンソールモード</li>
+<li>クロスプラットフォーム</li>
+</ul>
+<p>ダウンロード</p>
+<ul>
+<li><a href="http://pylot.org/download.html">http://pylot.org/download.html</a></li>
+</ul>
+<p>使い方</p>
+<ul>
+<li>Python2.5以上 </li>
+<li>wxPython => GUIモードを使いたい場合</li>
+<li>Matplotlib / NumPy => グラフを使いたい場合</li>
+</ul>
+<!-- -->
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2012/06/pylot.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
                                     <a href="http://blog.popowa.com/2012/05/scansnap-s1500-for-mac.html" rel="bookmark" title="Permalink to ScanSnap S1500 for Mac のドライバー">
                                        ScanSnap S1500 for Mac のドライバー
                                     </a>
@@ -519,56 +585,6 @@ OlympusというOpenStackをベースとしたオールインワンなサービ�
 <li>参考URL: <a href="http://servicesangle.com/blog/2012/04/05/3-reasons-why-a-vmwarerackspace-acquisition-would-be-bad-for-customers/">3 Reasons Why a VMware/Rackspace Acquisition Would be …</a></li></ul>
                                 <p class="readmore">
                                     <a class="btn btn-small btn-info" href="http://blog.popowa.com/2012/04/weekly-cloud-news-2012-4-6.html">Read more...</a>
-                                </p>
-                            </div><!-- /.entry-content -->
-                            <hr/>
-                        </article>
-                    </li>
-                    <li>
-                        <article>
-                            <header>
-                                <h1 class="entry-title">
-                                    <a href="http://blog.popowa.com/2012/04/cowardly-refusing-to-sudo-brew-install.html" rel="bookmark" title="Permalink to ">
-                                       
-                                    </a>
-                                </h1>
-                            </header>
-                            <div class="entry-content">
-<footer class="post-info">
-    <address class="vcard author">
-        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
-    </address>
-
-    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
-
-    on 2012-04-05
-
-        |
-        tags:         <a href="http://blog.popowa.com/tag/brew.html">brew</a>
-        <a href="http://blog.popowa.com/tag/python.html">Python</a>
-
-
-
-    
-</footer><!-- /.post-info -->                                <p>install\'って言われたよ+brewでpythonを入れようと思ったらこんなのが出た</p>
-<blockquote>
-<p>Komuro-no-MacBook-Air:\~ komuro\$ sudo brew install python<br>
-Password:<br>
-Cowardly refusing to `sudo brew install\'</p>
-</blockquote>
-<p>sudoじゃだめなのか？と思ってsuになってやってみた</p>
-<p>[]  </p>
-<blockquote>
-<p>Komuro-no-MacBook-Air:\~ komuro\$ sudo su<br>
-sh-3.2# brew install python<br>
-Cowardly refusing to `sudo brew install\'</p>
-</blockquote>
-<p>調べたところ、brewは権限を昇格させる必要がないように設計されており、むしろsudo権限がある状態でのbrew操作しないようにしているそうです。</p>
-<p><a href="https://github.com/mxcl/homebrew/wiki/FAQ">https://github.com/mxcl/homebrew/wiki/FAQ</a>  </p>
-<blockquote>
-<h2>Why does Homebrew say sudo is bad …</h2></blockquote>
-                                <p class="readmore">
-                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2012/04/cowardly-refusing-to-sudo-brew-install.html">Read more...</a>
                                 </p>
                             </div><!-- /.entry-content -->
                             <hr/>

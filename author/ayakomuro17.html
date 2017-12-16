@@ -62,6 +62,49 @@
                         <article>
                             <header>
                                 <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2013/02/route53hosted-zone-delete-hosted-zone.html" rel="bookmark" title="Permalink to ">
+                                       
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2013-02-13
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/aws.html">AWS</a>
+        <a href="http://blog.popowa.com/tag/route53.html">Route53</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>Route53+既知な事かもしれないけど、Hosted Zone(ドメイン）を消す時はRecord
+Setを消す必要があるんだけど、NSとSOAは消せない。<br>
+You might already know this, but I didn\'t.<br>
+Before deleting hosted zone, you need to delete record sets first. But
+you can\'t with NS and SOA.</p>
+<p><a href="http://4.bp.blogspot.com/-A7tZ7VW6txI/URrrDZ8pBgI/AAAAAAAAWu8/zsO2DQdkKA8/s1600/1.png"><img alt="" src="http://4.bp.blogspot.com/-A7tZ7VW6txI/URrrDZ8pBgI/AAAAAAAAWu8/zsO2DQdkKA8/s1600/1.png"></a></p>
+<p>[]</p>
+<p>例えばNS/SOA/CNAMEがあった場合、全部を選択したら、Delete Record
+Setはクリック出来る状態。</p>
+<p>eg. there are 3 record sets, NS …</p>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2013/02/route53hosted-zone-delete-hosted-zone.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
                                     <a href="http://blog.popowa.com/2013/02/syntax-error-unexpected-n-expecting.html" rel="bookmark" title="Permalink to syntax error, unexpected \'n\', expecting tCOLON2 or \'\[\' or \'.\'">
                                        syntax error, unexpected \'n\', expecting tCOLON2 or \'\[\' or \'.\'
                                     </a>
@@ -496,73 +539,6 @@ UKに話してくれmした。 「医療スキャンに似ているかも知れ
 <p>各船舶は探検データを集めて溜めており、「収集方法が正しい方法かどうかを適度に確認しています。もちろん集めるデータの質に関しては管理をしたいですし …</p>
                                 <p class="readmore">
                                     <a class="btn btn-small btn-info" href="http://blog.popowa.com/2013/01/blog-post_26.html">Read more...</a>
-                                </p>
-                            </div><!-- /.entry-content -->
-                            <hr/>
-                        </article>
-                    </li>
-                    <li>
-                        <article>
-                            <header>
-                                <h1 class="entry-title">
-                                    <a href="http://blog.popowa.com/2013/01/blog-post_25.html" rel="bookmark" title="Permalink to ワンクリックでメルマガ退会出来たらいいと思う">
-                                       ワンクリックでメルマガ退会出来たらいいと思う
-                                    </a>
-                                </h1>
-                            </header>
-                            <div class="entry-content">
-<footer class="post-info">
-    <address class="vcard author">
-        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
-    </address>
-
-    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
-
-    on 2013-01-25
-
-        |
-        tags:         <a href="http://blog.popowa.com/tag/thought.html">thought</a>
-
-
-
-    
-</footer><!-- /.post-info -->                                <p>前から思っていたけど、日本の会社のメルマガってワンクリックで退会出来ないのが圧倒的に多いよね。</p>
-<p>[]こんなの↓</p>
-<blockquote>
-<p>※メールマガジンの配信停止を希望される方は、○○マイページログイン後、「メールマガジンの変更」より設定を行ってください。</p>
-</blockquote>
-<p>でもユーザーからすれば面倒くさいんですよ、ログインアカウントも探さないと分からないし。それとか  </p>
-<blockquote>
-<p>このメールは、過去 ○○にご登録いただいた方にお送りしております。<br>
-今後、メールによるご案内が不要な方は、件名を「配信停止」として、<br>
-本メールにご返信ください。</p>
-</blockquote>
-<p>それtか  </p>
-<blockquote>
-<p>メール配信停止手続きに３～４日お時間を頂戴するため、メールが配信される場合がございます。何卒、ご了承ください</p>
-</blockquote>
-<p>なんでこの時代に手動の顧客管理システムを使っているんだろう？？[
-]メール配信システムのSaaSなんてゴロゴロ転がっていると思うのに。
-それから顧客管理システムは一元化しようよ。</p>
-<p>多分サイト運営者からすれば</p>
-<ul>
-<li>ログイン後にメルマガ変更が出来なければメルマガ購読し続ける人がある程度キープ出来るのではないか？</li>
-</ul>
-<p>と思うのかもしれませんが、ユーザーからすれば</p>
-<ul>
-<li>メルマガを受け取りたくないけど、ログインして変更するのも面倒、わざわざ先方にメールまでして退会するのは嫌だ</li>
-</ul>
-<p>となる訳です。</p>
-<p>その結果、どうするかというと</p>
-<p><a href="http://1.bp.blogspot.com/-9HaYI7iVLwQ/UQHbVPXe7rI/AAAAAAAAWPs/sE7BchcTWZ8/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88+2013-01-25+10.09.16.png"><img alt="" src="http://1.bp.blogspot.com/-9HaYI7iVLwQ/UQHbVPXe7rI/AAAAAAAAWPs/sE7BchcTWZ8/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88+2013-01-25+10.09.16.png"></a></p>
-<p>これはGmailのだけど迷惑メールフラグを立てる訳です。<br>
-そうしたらメールは受信するけど、迷惑メールボックスに入るので受信箱に入る事がないので有り難い機能ですね♥</p>
-<p>という訳で、ユーザーにオプトメールをする為に解約を困難にして迷惑メールフラグが立つよりは簡単にメルマガ「だけ」解約出来るように仕組みを作った方がいいですよ。</p>
-<p>英語圏のメルマガは大体HTMLメールが多いのでこんなのがフッターに必ず入っている（確か法律でそうしないといけなかった気がする）</p>
-<p><a href="http://1.bp.blogspot.com/-HOfBLiLnOGw/UQHcTdJfFeI/AAAAAAAAWP4/upar-Zl6uuw/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88+2013-01-25+10.12.34.png"><img alt="" src="http://1.bp.blogspot.com/-HOfBLiLnOGw/UQHcTdJfFeI/AAAAAAAAWP4/upar-Zl6uuw/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88+2013-01-25+10.12.34.png">{width="400"
-height …</a></p>
-                                <p class="readmore">
-                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2013/01/blog-post_25.html">Read more...</a>
                                 </p>
                             </div><!-- /.entry-content -->
                             <hr/>

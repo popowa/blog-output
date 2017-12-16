@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="author" content="ayakomuro" />
+    <meta name="robots" content="index, follow"/>
+
+    <meta property="og:title" content="2017年のAWSリリース一覧"/>
+    <meta property="og:url" content="http://blog.popowa.com/2017/12/2017-aws-release.html"/>
+    <meta property="og:site_name" content="popowa"/>
+    <meta property="og:type" content="article"/>
+
+    <link rel="canonical" href="http://blog.popowa.com/2017/12/2017-aws-release.html" />
+
+    <title>2017年のAWSリリース一覧 | popowa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />
+
+    <link rel="stylesheet" type="text/css" href="http://blog.popowa.com/theme/css/main.css" />
+
+    <script type="text/javascript">var switchTo5x=true;</script>
+    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript">
+        stLight.options({
+            publisher: "",
+            doNotHash: false,
+            doNotCopy: false,
+            hashAddressBar: false
+        });
+    </script>
+</head>
+
+<body id="index">
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <header id="banner" >
+                <h1>
+                    <a href="http://blog.popowa.com/">popowa </a>
+                </h1>
+                <nav class="navbar">
+                    <div class="navbar-inner">
+                        <ul class="nav">
+                            <li class="active"><a href="http://blog.popowa.com/category/misc.html">misc</a></li>
+                            <li ><a href="http://blog.popowa.com/category/tech.html">tech</a></li>
+                        </ul>
+
+                    </div>
+                </nav>
+            </header><!-- /#banner -->
+        </div>
+    </div>
+
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <div class="row-fluid">
+<div class="span10 offset1">
+  <section>
+    <article>
+      <header>
+        <h1 class="entry-title">
+          <a href="http://blog.popowa.com/2017/12/2017-aws-release.html" rel="bookmark"
+             title="Permalink to 2017年のAWSリリース一覧">2017年のAWSリリース一覧</a></h1>
+      </header>
+      <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2017-12-16
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/aws.html">AWS</a>
+
+
+
+    
+</footer><!-- /.post-info -->
+
+        <p>まずリリースはここで詳細を見ることが可能
+- <a href="https://aws.amazon.com/jp/about-aws/whats-new/2017/">2017 年（日本語)</a>
+- <a href="https://aws.amazon.com/about-aws/whats-new/2017/">2017(英語)</a></p>
+<p>日本語のページは4月以前のリストが表示されていないので全部みたいなら英語ページしかない。</p>
+<p>まずはタグクラウドみたいに単語を出せたらいいな、と思い、調べたら簡単に出来そうだったので、すぐに作成する事が出来た。
+- [blog/graph-wordcloud.py at master · popowa/blog] (https://github.com/popowa/blog/blob/master/code/aws-release/graph-wordcloud.py)</p>
+<p>（Githubのコンテンツをembedする方法が分からない・・・）</p>
+<p>その後より分かりやすく形態素解析からの文字出現率計算してグラフにしようと以下を試したが。
+- <a href="http://mocobeta.github.io/janome/">Janome</a>: 英語対応してないことに2時間ぐらいやって気づいたのは痛い
+- <a href="http://polyglot.readthedocs.io/en/latest/index.html">polyglot</a>: AWSの製品名って汎用的な単語を使っている事が多く、正しく名詞、固有名詞として取り出せない事がまたもや判明！
+- <a href="https://matplotlib.org/">Matplotlib: Python plotting</a>：簡単にグラフ化出来た。これすごい。これからこのツール触っていきたい</p>
+<p>もしかしたら<a href="https://github.com/neologd">neologd</a>みたいに自分で辞書を追加すればよかったかもしれないけど、とりあえずは公式の製品一覧を基準に数の出現率を数えた。</p>
+<ul>
+<li>[blog/graph-piechart.py at master · popowa/blog] (https://github.com/popowa/blog/blob/master/code/aws-release/graph-piechart.py)</li>
+</ul>
+<p>問題はタイトルで正式名称が使われていない可能性もあるし、必ずしも正しい訳ではないのはちょっと残念な所・・・</p>
+<p>次に期待！</p>
+<h1>めちゃくちゃ参考になったページ</h1>
+<ul>
+<li><a href="https://qiita.com/Kodaira_/items/1a3b801c7a5a41c9ce49">pyenvとvirtualenvで環境構築した時にmatplotlib.pyplotが使えなかった時の対処法</a></li>
+</ul>
+
+      </div><!-- /.entry-content -->
+
+    </article>
+  </section>
+</div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="site-footer">
+        <div class="row-fluid">
+            <div class="span10 offset1">
+                <address>
+                    <p>
+                        This blog is proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                    </p>
+                    <p>
+                        <a href="http://github.com/jsliang/pelican-fresh/">Fresh</a> is a responsive theme designed by <a href="http://jsliang.com/">jsliang</a> and <a href="https://github.com/jsliang/pelican-fresh/graphs/contributors">contributors</a>.
+                        Special thanks to <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a> and <a href="http://getbootstrap.com/">Twitter Bootstrap</a>.
+                    </p>
+                </address>
+            </div>
+        </div>
+    </footer>
+
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+</body>
+</html>
