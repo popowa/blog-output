@@ -81,24 +81,35 @@
     
 </footer><!-- /.post-info -->
 
-        <p>まずリリースはここで詳細を見ることが可能
-- <a href="https://aws.amazon.com/jp/about-aws/whats-new/2017/">2017 年（日本語)</a>
-- <a href="https://aws.amazon.com/about-aws/whats-new/2017/">2017(英語)</a></p>
+        <h2>動機</h2>
+<p><a href="https://kixs.connpass.com/event/69643/">九州インフラ交流勉強会(Kixs) Vol.006</a>で発表資料作成する為に色々調べたりまとめて見ました。</p>
+<h2>情報収集はpythonに任せた</h2>
+<p>まずリリースはここで詳細を見ることが可能</p>
+<ul>
+<li><a href="https://aws.amazon.com/jp/about-aws/whats-new/2017/">2017 年（日本語)</a></li>
+<li><a href="https://aws.amazon.com/about-aws/whats-new/2017/">2017(英語)</a></li>
+</ul>
 <p>日本語のページは4月以前のリストが表示されていないので全部みたいなら英語ページしかない。</p>
-<p>まずはタグクラウドみたいに単語を出せたらいいな、と思い、調べたら簡単に出来そうだったので、すぐに作成する事が出来た。
-- [blog/graph-wordcloud.py at master · popowa/blog] (https://github.com/popowa/blog/blob/master/code/aws-release/graph-wordcloud.py)</p>
+<p>まずはタグクラウドみたいに単語を出せたらいいな、と思い、調べたら簡単に出来そうだったので、すぐに作成する事が出来た。</p>
+<ul>
+<li><a href="https://github.com/popowa/blog/blob/master/code/aws-release/graph-wordcloud.py">blog/graph-wordcloud.py</a></li>
+</ul>
 <p>（Githubのコンテンツをembedする方法が分からない・・・）</p>
-<p>その後より分かりやすく形態素解析からの文字出現率計算してグラフにしようと以下を試したが。
-- <a href="http://mocobeta.github.io/janome/">Janome</a>: 英語対応してないことに2時間ぐらいやって気づいたのは痛い
-- <a href="http://polyglot.readthedocs.io/en/latest/index.html">polyglot</a>: AWSの製品名って汎用的な単語を使っている事が多く、正しく名詞、固有名詞として取り出せない事がまたもや判明！
-- <a href="https://matplotlib.org/">Matplotlib: Python plotting</a>：簡単にグラフ化出来た。これすごい。これからこのツール触っていきたい</p>
+<p>その後より分かりやすく形態素解析からの文字出現率計算してグラフにしようと以下を試した。</p>
+<ul>
+<li><a href="http://mocobeta.github.io/janome/">Janome</a>: 英語対応してないことに2時間ぐらいやって気づいたのは痛い</li>
+<li><a href="http://polyglot.readthedocs.io/en/latest/index.html">polyglot</a>: AWSの製品名って汎用的な単語を使っている事が多く、正しく名詞、固有名詞として取り出せない事がまたもや判明！</li>
+<li><a href="https://matplotlib.org/">Matplotlib: Python plotting</a>：簡単にグラフ化出来た。これすごい。これからこのツール触っていきたい</li>
+</ul>
 <p>もしかしたら<a href="https://github.com/neologd">neologd</a>みたいに自分で辞書を追加すればよかったかもしれないけど、とりあえずは公式の製品一覧を基準に数の出現率を数えた。</p>
 <ul>
-<li>[blog/graph-piechart.py at master · popowa/blog] (https://github.com/popowa/blog/blob/master/code/aws-release/graph-piechart.py)</li>
+<li><a href="https://github.com/popowa/blog/blob/master/code/aws-release/graph-piechart.py">blog/graph-piechart.py</a></li>
 </ul>
 <p>問題はタイトルで正式名称が使われていない可能性もあるし、必ずしも正しい訳ではないのはちょっと残念な所・・・</p>
 <p>次に期待！</p>
-<h1>めちゃくちゃ参考になったページ</h1>
+<h2>資料出来た！</h2>
+<p><a href="https://slideship.com/users/@popowa/presentations/2017/12/JjvQ18kV8p4BBkBPNTaWpo/">2017年AWSリリースここ掘れワンワン5分バージョン〜re:Inventは知らない子ですね〜</a></p>
+<h2>めちゃくちゃ参考になったページ</h2>
 <ul>
 <li><a href="https://qiita.com/Kodaira_/items/1a3b801c7a5a41c9ce49">pyenvとvirtualenvで環境構築した時にmatplotlib.pyplotが使えなかった時の対処法</a></li>
 </ul>
