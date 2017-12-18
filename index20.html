@@ -72,6 +72,47 @@
                         <article>
                             <header>
                                 <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2012/11/route53ns.html" rel="bookmark" title="Permalink to Route53へNSを移行する時気をつける事">
+                                       Route53へNSを移行する時気をつける事
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2012-11-05
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/aws.html">AWS</a>
+        <a href="http://blog.popowa.com/tag/dns.html">dns</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>そう入れ歯と思って、Route53に移行する場合に気をつける事を記載します。  </p>
+<h4>ムームードメイン -> Route53</h4>
+<p>NS切り替えを行なった際、TTLはまだムームードメインを見ているのに、ムームードメイン側でレコードが削除されてしまい、名前解決が出来なくなるという問題が発生する（らしい。会社で大騒ぎだった）。</p>
+<p>気をつけよう、てか気をつけられないよね。  </p>
+<h4>お名前.com -> Route53</h4>
+<p>ドメイン管理がお名前.comである限り、NSが移行したとしてもお名前.com側でレコードを削除するという事はないとの事。もしドメイン毎移行するのであれば、段階を踏んでやる必要がある</p>
+<p>NS移行->完全に移行 -> ドメインに移行</p>
+<p>他のNSからの移行の検証はまた追記する。</p>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2012/11/route53ns.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
                                     <a href="http://blog.popowa.com/2012/10/elb.html" rel="bookmark" title="Permalink to ELBのドメインの扱い方">
                                        ELBのドメインの扱い方
                                     </a>
@@ -504,44 +545,10 @@ height="238"}</p>
                             <hr/>
                         </article>
                     </li>
-                    <li>
-                        <article>
-                            <header>
-                                <h1 class="entry-title">
-                                    <a href="http://blog.popowa.com/2012/09/blog-post_30.html" rel="bookmark" title="Permalink to 折り紙">
-                                       折り紙
-                                    </a>
-                                </h1>
-                            </header>
-                            <div class="entry-content">
-<footer class="post-info">
-    <address class="vcard author">
-        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
-    </address>
-
-    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
-
-    on 2012-09-29
-
-        |
-        tags:         <a href="http://blog.popowa.com/tag/zhe-rizhi.html">折り紙</a>
-
-
-
-    
-</footer><!-- /.post-info -->                                <p>パピヨン。パピヨンをよく知らないから、似てるかどうか分からない</p>
-<p><img alt="" src="http://lh6.ggpht.com/-KzxBtfMC-k8/UGeK1fJ1yeI/AAAAAAAAT-0/HaH0lVr_9Sk/1348962954384.png"></p>
-                                <p class="readmore">
-                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2012/09/blog-post_30.html">Read more...</a>
-                                </p>
-                            </div><!-- /.entry-content -->
-                            <hr/>
-                        </article>
-                    </li>
                     </ol><!-- /#posts-list -->
 <p class="paginator">
         <a href="http://blog.popowa.com/index19.html">&laquo;</a>
-    Page 20 / 34
+    Page 20 / 35
         <a href="http://blog.popowa.com/index21.html">&raquo;</a>
 </p>
                 </section><!-- /#content -->

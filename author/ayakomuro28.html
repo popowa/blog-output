@@ -72,6 +72,62 @@
                         <article>
                             <header>
                                 <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2011/07/rightscale_31.html" rel="bookmark" title="Permalink to RightScaleを解き明かす\~ライトスクリプトを見てみよう\~">
+                                       RightScaleを解き明かす\~ライトスクリプトを見てみよう\~
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2011-07-31
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/chef.html">Chef</a>
+        <a href="http://blog.popowa.com/tag/puppet.html">Puppet</a>
+        <a href="http://blog.popowa.com/tag/rightlink.html">RightLink</a>
+        <a href="http://blog.popowa.com/tag/rightscale.html">RightScale</a>
+        <a href="http://blog.popowa.com/tag/rightscalejie-ti-xin-shu.html">RightScale解体新書</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>前回サーバテンプレートを使ってサーバを立ててみました。それではサーバテンプレートを構成している個々のスクリプトを見てみたいと思います。  </p>
+<p>[]「デザイン」から「サーバテンプレート」を選択します。  </p>
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/server_template.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/server_template.png" title="server_template">{.alignnone
+.size-full .wp-image-1322 width="153"
+height="66"}</a>  </p>
+<p>対象サーバサーバテンプレートを選択します。スクリプトタブを選択します。  </p>
+<p>スクリプトの書き方  </p>
+<ul>
+<li>シェルスクリプトです。</li>
+<li>perlとか使えます。</li>
+<li>Inputで入力した値は \"\$DB_PASSWORD\"になります。</li>
+<li>実行した値を変数として使いたい場合は \"[\$(grep -lir \"missingok\"
+    \$logrotate_file)]\"という風にします</li>
+<li>直前に実行したコマンドの値は \"(\$?)\"になる</li>
+<li>パッケージ毎の起動は、/etc/init.d/パッケージ
+    restart（Debian系特有）ではなく、serviceを使って起動する</li>
+<li>スクリプト内で設定された関数や、変数は引き継がれない事を前提にする。他のスクリプトに依存はせず、面倒でもスクリプト単体で、動くようにしておく</li>
+<li>サーバテンプレートに対応させるサーバイメージを複数ディストリビューションにする場合は、分岐を入れる<br>
+   （Debian系だとapt-get、CentOS系だとyumなど）</li>
+<li>同じディストリビューションでもバージョンによってパッケージの依存関係が違っていたりするので、もし依存関係が違っていたら、個別にバージョンを確認し …</li></ul>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2011/07/rightscale_31.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
                                     <a href="http://blog.popowa.com/2011/07/mail-postfix-local-delivery.html" rel="bookmark" title="Permalink to ライトスクリプト：MAIL Postfix local delivery">
                                        ライトスクリプト：MAIL Postfix local delivery
                                     </a>
@@ -605,64 +661,10 @@ Image」をクリックすると、警告が出た後、マルチクラウドを
                             <hr/>
                         </article>
                     </li>
-                    <li>
-                        <article>
-                            <header>
-                                <h1 class="entry-title">
-                                    <a href="http://blog.popowa.com/2011/07/rightscale_27.html" rel="bookmark" title="Permalink to RightScaleを解き明かす\~サーバーテンプレートのページの見方\~">
-                                       RightScaleを解き明かす\~サーバーテンプレートのページの見方\~
-                                    </a>
-                                </h1>
-                            </header>
-                            <div class="entry-content">
-<footer class="post-info">
-    <address class="vcard author">
-        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
-    </address>
-
-    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
-
-    on 2011-07-26
-
-        |
-        tags:         <a href="http://blog.popowa.com/tag/rightscalejie-ti-xin-shu.html">RightScale解体新書</a>
-
-
-
-    
-</footer><!-- /.post-info -->                                <p>RightScaleの醍醐味であるサーバーテンプレートですが、そのダッシュボード（マルチクラウド・マーケットプレイス・サーバーテンプレート）は最初どう使っていいのか迷う場合があります。そこでサーバーテンプレートのマーケットプレイスの使い方を説明します。  </p>
-<p>[]「デザイン」-> 「MultiCloud
-Marketplace」の配下にある「サーバーテンプレート」をクリックします。  </p>
-<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/ss_2.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/ss_2-300x117.png" title="ss_2">{.alignnone
-.size-medium .wp-image-1223 width="300"
-height="117"}</a>  </p>
-<p>左側にあるメニューから説明します。  </p>
-<h2>Browse</h2>
-<p>現在選択してるものが太文字になって表示されます。「サーバテンプレート」を選択しているので「ServerTemplates」が太文字になって表示されています。右側のコンテンツにはサーバテンプレートが表示されていると思います。  </p>
-<ul>
-<li>ServerTemplates (サーバテンプレート)</li>
-<li>RightScripts　（ライトスクリプト）</li>
-<li>MultiCloud Images　（マルチクラウドイメージ）</li>
-<li>Macros　（マクロ）</li>
-</ul>
-<p><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/browse.png" title="browse">{.size-full
-.wp-image-1226 .alignnone width="205" height="149"}  </p>
-<h2>Search</h2>
-<p>上記Browseで選択したスクリプトの種類の中を様々な条件で検索します。  </p>
-<p>ディフォルト  </p>
-<ul>
-<li>Keyword(s) : キーワード …</li></ul>
-                                <p class="readmore">
-                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2011/07/rightscale_27.html">Read more...</a>
-                                </p>
-                            </div><!-- /.entry-content -->
-                            <hr/>
-                        </article>
-                    </li>
                     </ol><!-- /#posts-list -->
 <p class="paginator">
         <a href="http://blog.popowa.com/author/ayakomuro27.html">&laquo;</a>
-    Page 28 / 34
+    Page 28 / 35
         <a href="http://blog.popowa.com/author/ayakomuro29.html">&raquo;</a>
 </p>
                 </section><!-- /#content -->

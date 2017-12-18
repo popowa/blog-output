@@ -72,6 +72,59 @@
                         <article>
                             <header>
                                 <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2013/01/fqdnwordpress.html" rel="bookmark" title="Permalink to FQDNが変わった時にWordpressでどう対処出来るか">
+                                       FQDNが変わった時にWordpressでどう対処出来るか
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2013-01-05
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/uncategorized.html">Uncategorized</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>よくAWSのハンズオンや学校の授業などでEC2にWordPressを入れて試してみよう！というのをやるのですが、毎回困るのが次の授業でAMIからEC2を立ち上げると、FQDNが変わっていて、Wordpressがちゃんと表示されない、という事です。</p>
+<p><a href="http://4.bp.blogspot.com/-dxwPvGthFbU/UOeP3uUABwI/AAAAAAAAV-g/4dkOnnxEXCg/s1600/wordpress-logo-stacked-rgb.png"><img alt="" src="http://4.bp.blogspot.com/-dxwPvGthFbU/UOeP3uUABwI/AAAAAAAAV-g/4dkOnnxEXCg/s320/wordpress-logo-stacked-rgb.png">{width="320"
+height="196"}</a></p>
+<p>[]<br>
+今まで起こっていた流れとしては</p>
+<ol>
+<li>EC2インスタンスで[<strong>WordPress立ち上げ成功</strong>]！（この時はEC2のFQDNを利用）</li>
+<li>EC2インスタンスを<strong>AMI化</strong>[、もしくは]<strong>[停止]</strong>にして<strong>[数日]</strong>寝かしておく</li>
+<li>AMIからまたWordPressをインストールしたEC2を起動する(先日とは違うFQDNになる)</li>
+<li>ブラウザーから新しいWordPressにアクセスをする（HTTPDはリクエストを受け付ける）</li>
+<li><strong>CSSが表示されず、管理画面にもログイン出来ない</strong></li>
+<li>＼(\^o\^)／ｵﾜﾀ</li>
+</ol>
+<p>という感じでした。<br>
+これを解決する方法を調べてみたので、記載します。<br>
+[もちろんEC2のハンズオンの前にDNSのRoute53か固定IPのEIPをやればいんでしょうけど、どうしてもサイドディッシュというか後回しになっちゃうですよねー（白目]</p>
+<h3>1. DB内の値を変える</h3>
+<div class="highlight"><pre><span></span>$ mysql -u アカウント名 -p <span class="c1">#MySQLにログイン</span>
+mysql &gt; use wordpress<span class="p">;</span>
+mysql&gt; UPDATE wp_options 
+ SET <span class="nv">option_value …</span></pre></div>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2013/01/fqdnwordpress.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
                                     <a href="http://blog.popowa.com/2013/01/nosql-couchdbsaas-cloudant.html" rel="bookmark" title="Permalink to ">
                                        
                                     </a>
@@ -578,51 +631,10 @@ Weekend
                             <hr/>
                         </article>
                     </li>
-                    <li>
-                        <article>
-                            <header>
-                                <h1 class="entry-title">
-                                    <a href="http://blog.popowa.com/2012/11/route53ns.html" rel="bookmark" title="Permalink to Route53へNSを移行する時気をつける事">
-                                       Route53へNSを移行する時気をつける事
-                                    </a>
-                                </h1>
-                            </header>
-                            <div class="entry-content">
-<footer class="post-info">
-    <address class="vcard author">
-        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
-    </address>
-
-    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
-
-    on 2012-11-05
-
-        |
-        tags:         <a href="http://blog.popowa.com/tag/aws.html">AWS</a>
-        <a href="http://blog.popowa.com/tag/dns.html">dns</a>
-
-
-
-    
-</footer><!-- /.post-info -->                                <p>そう入れ歯と思って、Route53に移行する場合に気をつける事を記載します。  </p>
-<h4>ムームードメイン -> Route53</h4>
-<p>NS切り替えを行なった際、TTLはまだムームードメインを見ているのに、ムームードメイン側でレコードが削除されてしまい、名前解決が出来なくなるという問題が発生する（らしい。会社で大騒ぎだった）。</p>
-<p>気をつけよう、てか気をつけられないよね。  </p>
-<h4>お名前.com -> Route53</h4>
-<p>ドメイン管理がお名前.comである限り、NSが移行したとしてもお名前.com側でレコードを削除するという事はないとの事。もしドメイン毎移行するのであれば、段階を踏んでやる必要がある</p>
-<p>NS移行->完全に移行 -> ドメインに移行</p>
-<p>他のNSからの移行の検証はまた追記する。</p>
-                                <p class="readmore">
-                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2012/11/route53ns.html">Read more...</a>
-                                </p>
-                            </div><!-- /.entry-content -->
-                            <hr/>
-                        </article>
-                    </li>
                     </ol><!-- /#posts-list -->
 <p class="paginator">
         <a href="http://blog.popowa.com/author/ayakomuro18.html">&laquo;</a>
-    Page 19 / 34
+    Page 19 / 35
         <a href="http://blog.popowa.com/author/ayakomuro20.html">&raquo;</a>
 </p>
                 </section><!-- /#content -->

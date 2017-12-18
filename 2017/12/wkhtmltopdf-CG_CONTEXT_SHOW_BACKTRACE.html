@@ -5,14 +5,14 @@
     <meta name="author" content="ayakomuro" />
     <meta name="robots" content="index, follow"/>
 
-    <meta property="og:title" content="popowa"/>
-    <meta property="og:url" content="http://blog.popowa.com"/>
+    <meta property="og:title" content="wkhtmltopdfで無限ループでPDFを作り出してしまうバグ"/>
+    <meta property="og:url" content="http://blog.popowa.com/2017/12/wkhtmltopdf-CG_CONTEXT_SHOW_BACKTRACE.html"/>
     <meta property="og:site_name" content="popowa"/>
-    <meta property="og:type" content="website"/>
+    <meta property="og:type" content="article"/>
 
-    <link rel="canonical" href="http://blog.popowa.com" />
+    <link rel="canonical" href="http://blog.popowa.com/2017/12/wkhtmltopdf-CG_CONTEXT_SHOW_BACKTRACE.html" />
 
-    <title>popowa</title>
+    <title>wkhtmltopdfで無限ループでPDFを作り出してしまうバグ | popowa</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
@@ -65,75 +65,91 @@
     <div class="row-fluid">
         <div class="span10 offset1">
             <div class="row-fluid">
-<div class="span9">
-                <section>
-                    <ol id="posts-list" class="hfeed" start="9">
-                    <li>
-                        <article>
-                            <header>
-                                <h1 class="entry-title">
-                                    <a href="http://blog.popowa.com/2007/02/blog-post_2173.html" rel="bookmark" title="Permalink to お知らせ">
-                                       お知らせ
-                                    </a>
-                                </h1>
-                            </header>
-                            <div class="entry-content">
+<div class="span10 offset1">
+  <section>
+    <article>
+      <header>
+        <h1 class="entry-title">
+          <a href="http://blog.popowa.com/2017/12/wkhtmltopdf-CG_CONTEXT_SHOW_BACKTRACE.html" rel="bookmark"
+             title="Permalink to wkhtmltopdfで無限ループでPDFを作り出してしまうバグ">wkhtmltopdfで無限ループでPDFを作り出してしまうバグ</a></h1>
+<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="ayakomuro">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+      </header>
+      <div class="entry-content">
 <footer class="post-info">
     <address class="vcard author">
         by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
     </address>
 
-    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+    in <a href="http://blog.popowa.com/category/tech.html">tech</a>
 
-    on 2007-02-26
+    on 2017-12-18
 
         |
-        tags:         <a href="http://blog.popowa.com/tag/guo-qu-buroguyayaayaya.html">過去ブログややあやや</a>
+        tags:         <a href="http://blog.popowa.com/tag/python.html">python</a>
 
 
 
     
-</footer><!-- /.post-info -->                                <p>今ですね、[引っ越し]をしてます。</p>
-<p>新しい所にネットが入るのは[3月12日]なので、まだまだ日記とかwikiとか使えないようです。Σ(ﾟÅﾟ)</p>
-<p>いつものメールアカウントはDyndnsでmailhopしている所なので、gmailで受信は出来てるんだけど、設定まで（なんせネットがなかったので）もれてるメールがあるかも(；´Д`A
-```</p>
-<p>生きてはいますが家でネットが出来ないので、とりあえず緊急連絡等は携帯にご連絡くださいな。</p>
-<p>引っ越しが落ち着いたら引っ越し案内送ります♪</p>
-<p>そういえばDebianティーシャツ届いたわよー</p>
-                                <p class="readmore">
-                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2007/02/blog-post_2173.html">Read more...</a>
-                                </p>
-                            </div><!-- /.entry-content -->
-                            <hr/>
-                        </article>
-                    </li>
-                    </ol><!-- /#posts-list -->
-<p class="paginator">
-        <a href="http://blog.popowa.com/index34.html">&laquo;</a>
-    Page 35 / 35
-</p>
-                </section><!-- /#content -->
-</div>
-<div class="span3">
-    <section id="sidebar">
-            <div>
-                <h2>Browse content by</h2>
-                <ul class="fa-ul">
-                <li><a href="http://blog.popowa.com/categories.html"><i class="fa-li fa fa-tags"></i> Categories</a></li>
-                <li><a href="http://blog.popowa.com/archives.html"><i class="fa-li fa fa-calendar"></i> Dates</a></li>
-                <li><a href="http://blog.popowa.com/tags.html"><i class="fa-li fa fa-tag"></i> Tags</a></li>
+</footer><!-- /.post-info -->
+        <div class="sharethis-top">
+          <span class='st_fblike_hcount' displayText='Facebook Like'></span>
+          <span class='st_plusone_hcount' displayText='Google +1'></span>
+          <span class='st_twitter_hcount' displayText='Tweet'></span>
+          <span class='st_email_hcount' displayText='Email'></span>
+        </div>
 
-                </ul>
-            </div><!-- /.browse -->
-            <div>
-                <h2>Social</h2>
-                <ul>
-                    <li><a href="https://twitter.com/ayakomuro">Twitter</a></li>
-                    <li><a href="http://www.popowa.com">popowa</a></li>
-                </ul>
-            </div><!-- /.social -->
-<!-- /.Tags -->
-    </section><!-- /#sidebar -->
+        <p>やりたい事はただ一つ、HTMLファイルをPDFにしたいだけだ。</p>
+<h1>set CG_CONTEXT_SHOW_BACKTRACE environmental variable</h1>
+<p>```python:
+import pdfkit</p>
+<h1>何かしらの方法で取得したHTMLがあるとする</h1>
+<p>pdfkit.from_file('201708.htm', '201708.pdf')</p>
+<div class="highlight"><pre><span></span>上記を実行すると
+</pre></div>
+
+
+<p>Dec 18 08:05:15  wkhtmltopdf[45102] <Error>: CGContextSetFillColor: invalid context 0x0.
+If you want to see the backtrace, please set CG_CONTEXT_SHOW_BACKTRACE environmental variable.</p>
+<div class="highlight"><pre><span></span>が大量に出力されて出力されたPDFファイルが1000ページぐらいになる
+調べたらまだバグとしては直っていない模様。
+
+[Infinite loop of errors · Issue #2196 · wkhtmltopdf/wkhtmltopdf](https://github.com/wkhtmltopdf/wkhtmltopdf/issues/2196)
+
+
+まずは他のツールがないかと探して見た
+
+# xhtml2pdf &lt;= 不採用
+
+[xhtml2pdf/xhtml2pdf: A library for converting HTML into PDFs using ReportLab](https://github.com/xhtml2pdf/xhtml2pdf)
+[Welcome to xhtml2pdf’s documentation! — xhtml2pdf 0.1b3 documentation](http://xhtml2pdf.readthedocs.io/en/latest/index.html)
+
+このツールはissues見ている限りバギーだし、実際に動かしてみてもバギーだった。まともに動かない
+
+# WeasyPrint &lt;= 採用
+
+[Kozea/WeasyPrint: WeasyPrint converts web documents (HTML with CSS, SVG, …) to PDF.](https://github.com/Kozea/WeasyPrint)
+[WeasyPrint — WeasyPrint 0.41 documentation](http://weasyprint.readthedocs.io/en/latest/index.html)
+
+```sh:
+pip install weasyprint
+brew install cairo pango gdk-pixbuf libffi
+</pre></div>
+
+
+<p>素直にいい感じに動いてくれた。</p>
+<h1>結論</h1>
+<p>pdfkit, wkhtmltopdfを捨ててweasyprint使おう</p>
+
+        <div class="sharethis-bottom">
+          <span class='st_fblike_hcount' displayText='Facebook Like'></span>
+          <span class='st_plusone_hcount' displayText='Google +1'></span>
+          <span class='st_twitter_hcount' displayText='Tweet'></span>
+          <span class='st_email_hcount' displayText='Email'></span>
+        </div>
+      </div><!-- /.entry-content -->
+
+    </article>
+  </section>
 </div>
             </div>
         </div>

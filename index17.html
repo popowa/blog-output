@@ -72,6 +72,61 @@
                         <article>
                             <header>
                                 <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2013/02/blog-post.html" rel="bookmark" title="Permalink to ロリポップのレンタルサーバのメールだけを使えないか調べてみた">
+                                       ロリポップのレンタルサーバのメールだけを使えないか調べてみた
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
+
+    on 2013-02-13
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/lolipop.html">lolipop</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>ロリポップのレンタルサーバのメール機能だけを使えないかどうか調べた見た。</p>
+<p>例えばexample.comというドメインがあった時</p>
+<ul>
+<li>example.comのドメイン取得はお名前.com</li>
+<li>example.comのネームサーバーはAWS Route53</li>
+<li>http://example.com、http://www.example.comのウェブサーバはさくらVPS</li>
+<li>メールアカウント@example.comをロリポップのレンタルサーバのメール機能</li>
+</ul>
+<p>という風にしたかった。</p>
+<p>[]<br>
+ロリポップのサービスを契約したりサポートに問い合わせてみたりしたけど、どうやらドップレベルの独自ドメインでしか利用出来ない模様。。<br>
+つまり</p>
+<ul>
+<li>ルートドメイン（example.com）のネームサーバーがロリポップ側にある</li>
+</ul>
+<p>以外はレンタルサーバがうまく利用出来ないという事のようです。</p>
+<p>それならばサブドメインで出来るかな、と思って調べてみた結果のメモです（ルートドメインて自分で書いておきながら少し矛盾もある気がするが。。）</p>
+<ul>
+<li>example.comのドメイン取得はお名前.com</li>
+<li>example.comのネームサーバーはAWS Route53</li>
+<li>http://example.com、http://www.example.comのウェブサーバはさくらVPS</li>
+<li>メールアカウント@[mail.]example.comをロリポップのレンタルサーバのメール機能<br>
+   ↑mail.example …</li></ul>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2013/02/blog-post.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
                                     <a href="http://blog.popowa.com/2013/02/route53hosted-zone-delete-hosted-zone.html" rel="bookmark" title="Permalink to ">
                                        
                                     </a>
@@ -504,60 +559,10 @@ AWSでは、デジタルキューブさんが提供している網元AMIを使�
                             <hr/>
                         </article>
                     </li>
-                    <li>
-                        <article>
-                            <header>
-                                <h1 class="entry-title">
-                                    <a href="http://blog.popowa.com/2013/01/blog-post_26.html" rel="bookmark" title="Permalink to オイル/ガス業界のデーターセンター">
-                                       オイル/ガス業界のデーターセンター
-                                    </a>
-                                </h1>
-                            </header>
-                            <div class="entry-content">
-<footer class="post-info">
-    <address class="vcard author">
-        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
-    </address>
-
-    in <a href="http://blog.popowa.com/category/misc.html">misc</a>
-
-    on 2013-01-25
-
-        |
-        tags:         <a href="http://blog.popowa.com/tag/hai-wai-niyusu.html">海外ニュース</a>
-
-
-
-    
-</footer><!-- /.post-info -->                                <p>相当前の記事で、どこまで訳したのか分からなくなったので、まずは公開してみます。</p>
-<p>[]--------</p>
-<p>ちょっと前の記事ですが、データーセンター好きにはとても興味深かったので訳してみました。</p>
-<p><a href="http://www.zdnet.co.uk/news/infrastructure/2011/02/28/inside-an-oil-industry-datacentre-40091874/">Inside an oil industry
-datacentre</a>
-2011/2/27 by <a href="http://twitter.com/mappingbabel">Jack Clark</a></p>
-<p>--------</p>
-<p>２月初旬、ZDNet
-UKはオイルとガス業界の地質情報を処理するデーターセンターを訪れるチャンスがありました。この施設はPetroleum
-Geo-Services
-(PGS)によって運営されており、世界中を渡り地底から船までの距離をセンサーで測る事で地震データなどを解析しています。</p>
-<p>Ramform
-Sovereign（以下の地図）は、PGSの１６番目の地震計測用の船です。この船は地震計測用に使われ、地底にたまっている原油やガスを探し当てる為に使われます。<br>
-取得されたデータは3D画像に生成されて、小さな正方形に分解されて解析されます（地図を正方形のグリッドで分割するのと似ています）。</p>
-<p>PGSのグローバルデンターセンター管理者のMike
-Turffは「生成されたデータは地球のスキャンしたCATのようだよ、一つの3Dキューブにはものすごいデータがあり、内部イメージとして処理をして、それからスライスしたり、四角に切ったり自分の好きなようにする事も出来るんだ」 とZDNet
-UKに話してくれmした。 「医療スキャンに似ているかも知れないね。でも僕たちはもっと大きな側面からするんだ。内部イメージをよりよくすれば、もっと正確なデータを得る事が出来るんだ」</p>
-<p>各船舶は探検データを集めて溜めており、「収集方法が正しい方法かどうかを適度に確認しています。もちろん集めるデータの質に関しては管理をしたいですし …</p>
-                                <p class="readmore">
-                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2013/01/blog-post_26.html">Read more...</a>
-                                </p>
-                            </div><!-- /.entry-content -->
-                            <hr/>
-                        </article>
-                    </li>
                     </ol><!-- /#posts-list -->
 <p class="paginator">
         <a href="http://blog.popowa.com/index16.html">&laquo;</a>
-    Page 17 / 34
+    Page 17 / 35
         <a href="http://blog.popowa.com/index18.html">&raquo;</a>
 </p>
                 </section><!-- /#content -->
