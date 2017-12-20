@@ -108,7 +108,8 @@
 </td></tr></table>
 
 <p>上記を実行すると</p>
-<p><code>Dec 18 08:05:15  wkhtmltopdf[45102] &lt;Error&gt;: CGContextSetFillColor: invalid context 0x0.If you want to see the backtrace, please set CG_CONTEXT_SHOW_BACKTRACE environmental variable.</code></p>
+<p><code>Dec 18 08:05:15  wkhtmltopdf[45102] &lt;Error&gt;: CGContextSetFillColor: invalid context 0x0.
+If you want to see the backtrace, please set CG_CONTEXT_SHOW_BACKTRACE environmental variable.</code></p>
 <p>が大量に出力されて出力されたPDFファイルが1000ページぐらいになる
 調べたらまだバグとしては直っていない模様。</p>
 <p><a href="https://github.com/wkhtmltopdf/wkhtmltopdf/issues/2196">Infinite loop of errors · Issue #2196 · wkhtmltopdf/wkhtmltopdf</a></p>
@@ -124,9 +125,12 @@
 <li><a href="https://github.com/Kozea/WeasyPrint">Kozea/WeasyPrint: WeasyPrint converts web documents (HTML with CSS, SVG, …) to PDF.</a></li>
 <li><a href="http://weasyprint.readthedocs.io/en/latest/index.html">WeasyPrint — WeasyPrint 0.41 documentation</a></li>
 </ul>
-<p><code>sh:
-pip install weasyprint
-brew install cairo pango gdk-pixbuf libffi</code></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>pip install weasyprint
+brew install cairo pango gdk-pixbuf libffi
+</pre></div>
+</td></tr></table>
+
 <p>素直にいい感じに動いてくれた。</p>
 <h1>結論</h1>
 <p>pdfkit, wkhtmltopdfを捨ててweasyprint使おう</p>
