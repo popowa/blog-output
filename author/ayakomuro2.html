@@ -42,8 +42,9 @@
                 <nav class="navbar">
                     <div class="navbar-inner">
                         <ul class="nav">
-                            <li ><a href="http://www.popowa.com">Profile</a></li>
+                            <li ><a href="http://www.popowa.com">About Aya</a></li>
                             <li ><a href="https://twitter.com/ayakomuro">Twitter</a></li>
+                            <li ><a href="https://github.com/popowa">Github</a></li>
                         </ul>
 
 <script>
@@ -70,6 +71,174 @@
 <div class="span9">
                 <section>
                     <ol id="posts-list" class="hfeed" start="9">
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2017/09/sierrakeychain-accessunixoperation-not.html" rel="bookmark" title="Permalink to SierraのKeychain AccessでUNIX[Operation not permitted] と言われた時の対応">
+                                       SierraのKeychain AccessでUNIX[Operation not permitted] と言われた時の対応
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/blog.html">blog</a>
+
+    on 2017-09-11
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/mac.html">Mac</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>Mac Book Air, Sierraで、Wifiパスワードをなかなか覚えてくれない事象があったので、調べて解決した。</p>
+<p>現象</p>
+<ul>
+<li>Wifiのパスワードを何度入れても覚えてくれない</li>
+<li>Keychain
+    Accessで古いwifi情報を消そうとしたら（一見消せそうに見えるんだけど）UNIX[Operation
+    not permitted]と言われて、結局消せない</li>
+</ul>
+<p>解決方法</p>
+<ol>
+<li>可能であればHDのバックアップをする（私は基本全部をWorkDocsか外部HDに入れているのでやらなかった）</li>
+<li>再起動しながらCommand&nbsp;+ Rを押し続ける</li>
+<li>リカバリーモードが出て、言語を聞かれるので好きな言語を選ぶ</li>
+<li>OS再起動、ディスクユーティリティーとかのウィンドウが出るが、メニューバーからコマンドプロンプトを選択する</li>
+<li>以下のコマンドを入れて、実行する（エンターキーを押す）<br/>
+   csrutil disable</li>
+<li>特にアウトプットはないので、再度再起動</li>
+<li>Keychain accessで古い情報が消せるのを確認</li>
+<li>再度再起動しながらCommand+R</li>
+<li>先ほどと同じようにコマンドプロンプトを出して以下のコマンドを実行する<br/>
+   csrutil enable</li>
+<li>また再起動。これでKeychain accessがうまく動くようになる</li>
+</ol>
+<p>参考記事</p>
+<ul>
+<li><a href="https://discussions.apple.com/thread/7357200?start=0&amp;tstart=0">Cannot Delete Key from System …</a></li></ul>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2017/09/sierrakeychain-accessunixoperation-not.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2017/06/google-cloud-next-17-in-tokyo-1.html" rel="bookmark" title="Permalink to [Google Cloud Next '17] GKE/機械学習/ネットワークインフラ技術セッションのメモ #googlenext17">
+                                       [Google Cloud Next '17] GKE/機械学習/ネットワークインフラ技術セッションのメモ #googlenext17
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/blog.html">blog</a>
+
+    on 2017-06-14
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/google.html">Google</a>
+        <a href="http://blog.popowa.com/tag/googlenext.html">googlenext</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>Google Cloud Next '17 in Tokyoに参加した。</p>
+<p>福岡からの参加だったので、残念ながら午前中の基調講演は聞き逃した。しょうがない。<br/>
+クラウド関連のイベントは大体出展側に居る事がほとんどだったし、今回はGoogleで専門外なので、初心者として参加中。</p>
+<p>まず所感だけ言うと、楽しい。やっぱり知らない事を知るのは楽しいし、技術を使った事例を聞くだけでもこう言う使い方があるのか！とかニーズがあれば技術はあとで付いてくるんだな〜とか色々考える。</p>
+<p>もっとみんな専門外の技術イベントに参加すればいいのにね。</p>
+<p>以下は聞いたセッションのメモ(長い）</p>
+<h3 id="google-container-engine-ru-men-hintotobesuto-purakuteisu">Google Container Engine 入門 : ヒントとベスト プラクティス</h3>
+<p>Kubernetes　<a href="https://kubernetes.io/">https://kubernetes.io/</a></p>
+<ul>
+<li>Containerのオーケストレーションの仕組み</li>
+<li>監視やスケーリングも一緒に出来るOSS</li>
+<li>元々Google開発&rarr;OSSになった</li>
+</ul>
+<p>ポッドとは</p>
+<p>コンテナとボリュームの小さいなグループ</p>
+<p><a href="https://kubernetes.io/docs/concepts/workloads/pods/pod/#what-is-a-pod">Pods |
+Kubernetes</a></p>
+<ul>
+<li>ポッドはEC2とEIPの組み合わせっぽい、と聞いてて思ったがドキュメント見たらやはり少し違うもののようだ</li>
+<li><a href="https://platform9.com/blog/compare-kubernetes-vs-ecs/">Compare Kubernetes vs ECS (EC2 Container Service) |
+    Platform9&nbsp;</a></li>
+</ul>
+<p>デプロイメント …</p>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2017/06/google-cloud-next-17-in-tokyo-1.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2017/06/blog-post.html" rel="bookmark" title="Permalink to ハンドメイド、ノベルティ作る時のお店一覧">
+                                       ハンドメイド、ノベルティ作る時のお店一覧
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/blog.html">blog</a>
+
+    on 2017-06-07
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/noberutei.html">ノベルティ</a>
+        <a href="http://blog.popowa.com/tag/handomeido.html">ハンドメイド</a>
+        <a href="http://blog.popowa.com/tag/memo.html">メモ</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>ハンドメイド、ノベルティなどを作った際に利用したお店一覧をただ列挙するだけの記事。随時更新予定</p>
+<p>マグカップ
+-   <a href="http://www.123mugcup.jp/">http://www.123mugcup.jp/</a></p>
+<p>Tシャツ・トートーバッグ関連（布）</p>
+<ul>
+<li><a href="http://www.robinfactory.com/">http://www.robinfactory.com/</a></li>
+<li><a href="http://www.totebag.jp/">http://www.totebag.jp/</a></li>
+</ul>
+<p>缶バッチ</p>
+<ul>
+<li><a href="https://www.secondpress.us/">https://www.secondpress.us/</a></li>
+</ul>
+<p>色々印刷をベースとしたノベルティ
+-   <a href="http://mydoogoods.com/">http://mydoogoods.com/</a></p>
+<p>ビーズ・チャーム関連</p>
+<ul>
+<li><a href="http://pinkgold-hiroba.com/">http://pinkgold-hiroba.com/</a></li>
+<li><a href="http://www.rakuten.co.jp/sozomi/">http://www.rakuten.co.jp/sozomi/</a></li>
+<li><a href="http://uniquegemstone.com/">http://uniquegemstone.com/</a></li>
+<li><a href="https://www.amazon.co.jp/s?ie=UTF8&amp;me=A6F2K5W4WQH3Z&amp;page=5">https://www.amazon.co.jp/s?ie=UTF8 …</a></li></ul>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2017/06/blog-post.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
                     <li>
                         <article>
                             <header>
@@ -131,13 +300,13 @@
 
 
     
-</footer><!-- /.post-info -->                                <h2>Sense HATで出来る事</h2>
+</footer><!-- /.post-info -->                                <h2 id="sense-hatdechu-lai-rushi">Sense HATで出来る事</h2>
 <p>[✔︎]Gyroscope、ジャイロスコープ</p>
 <ul>
 <li>ボードがどちら上を向いているか</li>
 <li>角速度計</li>
 </ul>
-<p>Accelerometer </p>
+<p>Accelerometer&nbsp;</p>
 <ul>
 <li>加速度計</li>
 </ul>
@@ -157,17 +326,17 @@
 <ul>
 <li>湿度</li>
 </ul>
-<p><a href="http://code.popowa.com/damdum/wp-content/uploads/2017/05/image-1444117187018.jpg"><img alt="" src="http://code.popowa.com/damdum/wp-content/uploads/2017/05/image-1444117187018-300x218.jpg">{width="320"
+<p><a href="http://code.popowa.com/damdum/wp-content/uploads/2017/05/image-1444117187018.jpg"><img alt="" src="http://code.popowa.com/damdum/wp-content/uploads/2017/05/image-1444117187018-300x218.jpg"/>{width="320"
 height="232"}</a></p>
 <p>Raspberry PiにSense hat
 を取り付けると、元々Raspiに付いていたケースに綺麗にフィットしなくなる。作った方がいいのかもしれない....👀</p>
-<h3>参考リンク</h3>
+<h3 id="can-kao-rinku">参考リンク</h3>
 <ul>
-<li>製品ページ <a href="https://www.raspberrypi.org/products/sense-hat/">https://www.raspberrypi.org/products/sense-hat/</a></li>
+<li>製品ページ&nbsp;<a href="https://www.raspberrypi.org/products/sense-hat/">https://www.raspberrypi.org/products/sense-hat/</a></li>
 <li>Raspberry Pi上でのSense
-     Hatの扱い　<a href="https://www.raspberrypi.org/documentation/hardware/sense-hat/">https://www.raspberrypi.org/documentation/hardware/sense-hat/</a> </li>
+    &nbsp;Hatの扱い　<a href="https://www.raspberrypi.org/documentation/hardware/sense-hat/">https://www.raspberrypi.org/documentation/hardware/sense-hat/</a>&nbsp;</li>
 </ul>
-<h3>コード関連</h3>
+<h3 id="kodoguan-lian">コード関連</h3>
 <p>SenseHat</p>
 <ul>
 <li><a href="https://pythonhosted.org/sense-hat/">https://pythonhosted.org …</a></li></ul>
@@ -204,7 +373,7 @@ height="232"}</a></p>
 
     
 </footer><!-- /.post-info -->                                <p>Raspberry Piを買ったので、初回設定をした時もメモ  </p>
-<p>インターネットにドキュメントが沢山転がっているので、簡単に出来る( ˇωˇ )b</p>
+<p>インターネットにドキュメントが沢山転がっているので、簡単に出来る( ˇ&omega;ˇ )b</p>
 <p><a href="http://code.popowa.com/damdum/wp-content/uploads/2017/05/25E3-2582-25BF-25E3-2582-2599-25E3-2582-25A6-25E3-2583-25B3-25E3-2583-25AD-25E3-2583-25BC-25E3-2583-2588-25E3-2582-2599.png">!</a>
 <a href="http://code.popowa.com/damdum/wp-content/uploads/2017/05/25E3-2582-25BF-25E3-2582-2599-25E3-2582-25A6-25E3-2583-25B3-25E3-2583-25AD-25E3-2583-25BC-25E3-2583-2588-25E3-2582-2599.png">!</a></p>
 <p>Raspberry
@@ -256,29 +425,29 @@ Piの箱に入っていたマニュアルに設定方法が記載してあるの
 
 
     
-</footer><!-- /.post-info -->                                <p>経験したことがない事はリスト化して人生かけてリスト消化をしている小室です。<br>
+</footer><!-- /.post-info -->                                <p>経験したことがない事はリスト化して人生かけてリスト消化をしている小室です。<br/>
 小さい事でも積み重ねが大事と言いますよね、なので、同人即売会に出店してみました。</p>
 <p>経験したいリストは、基本しなくても生きていけるものが多いです。例えばスカイダイビングしてみるとか。アクセサリーなどは基本minneとか同人即売会で買うのですが、そういえば出店した事がないなぁと思いまして、出店するを目標に体験してみました。</p>
-<h1>売る場所を決める</h1>
+<h1 id="mai-ruchang-suo-wojue-meru">売る場所を決める</h1>
 <p>幸いなことに福岡にCollage EventAdeがあったので、そちらに申し込みをしました。
 -   <a href="http://ridel.dojin.com/Ade/index.html">福岡創作系同人＆ハンドメイドオンリーイベント Collage Event
-    Ade </a></p>
-<p>コミティアとかコミケなどは規模を大きいですし、申し込み金額がまず高いんですよね。あれ、どうにかならないのでしょうか・・・<br>
+    Ade&nbsp;</a></p>
+<p>コミティアとかコミケなどは規模を大きいですし、申し込み金額がまず高いんですよね。あれ、どうにかならないのでしょうか・・・<br/>
 そういえば同人販売界隈は需要がないが供給がある変わった構造である、というツイートを思い出します。ツルハシの理論を思い出しますね。  </p>
-<h1>売るものを決める</h1>
-<p>一次創作で、なおかつ自分が出来そうな事を考え、馬をベースにしたグッズや絵を描いてみました。オフ本と言うのがあるらしいので、同人誌も作ってみたいですね〜<br>
+<h1 id="mai-rumonowojue-meru">売るものを決める</h1>
+<p>一次創作で、なおかつ自分が出来そうな事を考え、馬をベースにしたグッズや絵を描いてみました。オフ本と言うのがあるらしいので、同人誌も作ってみたいですね〜<br/>
 グッズは業者委託および自作してみました。</p>
 <ul>
 <li><a href="https://www.secondpress.us/">SECONDPRESS.US |
-    国内最大級の激安缶バッジ製造サービス </a></li>
+    国内最大級の激安缶バッジ製造サービス&nbsp;</a></li>
 <li><a href="http://www.robinfactory.com/">無地Tシャツ・パーカー通販
-    無地ロビン（Tシャツ1枚37円～で激安！）東京から発送 </a></li>
-<li><a href="http://www.123mugcup.jp/">短期即納でオリジナルマグカップを簡単作成！｜123トロフィーのマグカップマーケット </a></li>
+    無地ロビン（Tシャツ1枚37円～で激安！）東京から発送&nbsp;</a></li>
+<li><a href="http://www.123mugcup.jp/">短期即納でオリジナルマグカップを簡単作成！｜123トロフィーのマグカップマーケット&nbsp;</a></li>
 </ul>
 <p>チャームなどのお店</p>
 <ul>
 <li><a href="http://pinkgold-hiroba.com/">レジンパーツとピンクゴールドのアクセサリーパーツ専門店
-    【ピンクゴールド通販広場】</a> </li>
+    【ピンクゴールド通販広場】</a>&nbsp;</li>
 <li><a href="http://uniquegemstone.com/">天然石問屋UGS｜14KGF（ゴールドフィルド …</a></li></ul>
                                 <p class="readmore">
                                     <a class="btn btn-small btn-info" href="http://blog.popowa.com/2017/04/ade8.html">Read more...</a>
@@ -321,20 +490,20 @@ Piの箱に入っていたマニュアルに設定方法が記載してあるの
 <p>2月の利用料はこんな感じ。それを上記の一緒にするとこれだけ安くなるよ！！という金額に当てはめて計算して見た。</p>
 <p>2月の利用料</p>
 <ul>
-<li>電気： ¥ 10,058.66</li>
-<li>ガス： ¥ 10,285.28</li>
+<li>電気： &yen; 10,058.66</li>
+<li>ガス： &yen; 10,285.28</li>
 </ul>
 <p>九電に寄せた場合（年額）</p>
 <ul>
-<li>¥ 234,527.28 </li>
+<li>&yen; 234,527.28&nbsp;</li>
 </ul>
 <p>西部ガスに寄せた場合（年額）</p>
 <ul>
-<li>¥ 238,424.02</li>
+<li>&yen; 238,424.02</li>
 </ul>
 <p>年額差額</p>
 <ul>
-<li>¥ 3,896.74</li>
+<li>&yen; 3,896.74</li>
 </ul>
 <p>現在九電に寄せると4000円弱安くなる模様。でも金額以上にサービスなどが変わらずなのかはまだ見ていない。4000円弱なら驚くほどの割引率ではなくまず通常の利用を節約した方が良さそうだ。</p>
                                 <p class="readmore">
@@ -371,18 +540,18 @@ Piの箱に入っていたマニュアルに設定方法が記載してあるの
     
 </footer><!-- /.post-info -->                                <p>仕事柄見積もりをよく作るのですが、Excelで値を変更した時、微妙にずれるのをどうやって直したらいいか調べて解決策を見つけたので、思い出したようにブログに残しておきます。</p>
 <p>例えばこういうシートがあります。既存のシートに入っていたり別の人が作ったシートだったりします。</p>
-<p><a href="https://2.bp.blogspot.com/-WI5mAhnGtYY/WObZXEPKKAI/AAAAAAAAgag/AYJ7ZQliayQlZKp-9UKYW0VanNqmKxhYwCLcB/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2017-04-07%2B9.07.58.png"><img alt="" src="https://2.bp.blogspot.com/-WI5mAhnGtYY/WObZXEPKKAI/AAAAAAAAgag/AYJ7ZQliayQlZKp-9UKYW0VanNqmKxhYwCLcB/s320/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2017-04-07%2B9.07.58.png">{width="320"
+<p><a href="https://2.bp.blogspot.com/-WI5mAhnGtYY/WObZXEPKKAI/AAAAAAAAgag/AYJ7ZQliayQlZKp-9UKYW0VanNqmKxhYwCLcB/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2017-04-07%2B9.07.58.png"><img alt="" src="https://2.bp.blogspot.com/-WI5mAhnGtYY/WObZXEPKKAI/AAAAAAAAgag/AYJ7ZQliayQlZKp-9UKYW0VanNqmKxhYwCLcB/s320/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2017-04-07%2B9.07.58.png"/>{width="320"
 height="163"}</a></p>
 <p>値を変えたり新しい行を追加して、値を入れるとこんな感じで微妙にズレます。これがとても気になります。セルの設定を全て同じにしても発生したりします。</p>
-<p><a href="https://1.bp.blogspot.com/-DOrATlLtU70/WObZoo3Jh9I/AAAAAAAAgak/vQYl9GGHmnwVhz8McCcfP5AYQ4yAU6cRQCLcB/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2017-04-07%2B9.09.23.png"><img alt="" src="https://1.bp.blogspot.com/-DOrATlLtU70/WObZoo3Jh9I/AAAAAAAAgak/vQYl9GGHmnwVhz8McCcfP5AYQ4yAU6cRQCLcB/s320/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2017-04-07%2B9.09.23.png">{width="320"
+<p><a href="https://1.bp.blogspot.com/-DOrATlLtU70/WObZoo3Jh9I/AAAAAAAAgak/vQYl9GGHmnwVhz8McCcfP5AYQ4yAU6cRQCLcB/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2017-04-07%2B9.09.23.png"><img alt="" src="https://1.bp.blogspot.com/-DOrATlLtU70/WObZoo3Jh9I/AAAAAAAAgak/vQYl9GGHmnwVhz8McCcfP5AYQ4yAU6cRQCLcB/s320/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2017-04-07%2B9.09.23.png"/>{width="320"
 height="168"}</a></p>
 <p>そういう時は揃えたいセルを選択して、%に変換します。</p>
-<p><a href="https://4.bp.blogspot.com/-khxoL87YMuY/WObZzK-o9LI/AAAAAAAAgao/qCOt7LcumUwGlOPyWyV4apkpViKPzCY5gCLcB/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2017-04-07%2B9.09.36.png"><img alt="" src="https://4.bp.blogspot.com/-khxoL87YMuY/WObZzK-o9LI/AAAAAAAAgao/qCOt7LcumUwGlOPyWyV4apkpViKPzCY5gCLcB/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2017-04-07%2B9.09.36.png"></a>　→<a href="https://3.bp.blogspot.com/-D_Gs9wR9_Qg/WObalwJp5CI/AAAAAAAAgaw/vRnOOAp_VPcbPfdU2Hjx91N4T_mC1tuRQCLcB/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2017-04-07%2B9.09.48.png"><img alt="" src="https://3.bp.blogspot.com/-D_Gs9wR9_Qg/WObalwJp5CI/AAAAAAAAgaw/vRnOOAp_VPcbPfdU2Hjx91N4T_mC1tuRQCLcB/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2017-04-07%2B9.09.48.png"></a></p>
+<p><a href="https://4.bp.blogspot.com/-khxoL87YMuY/WObZzK-o9LI/AAAAAAAAgao/qCOt7LcumUwGlOPyWyV4apkpViKPzCY5gCLcB/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2017-04-07%2B9.09.36.png"><img alt="" src="https://4.bp.blogspot.com/-khxoL87YMuY/WObZzK-o9LI/AAAAAAAAgao/qCOt7LcumUwGlOPyWyV4apkpViKPzCY5gCLcB/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2017-04-07%2B9.09.36.png"/></a>　&rarr;<a href="https://3.bp.blogspot.com/-D_Gs9wR9_Qg/WObalwJp5CI/AAAAAAAAgaw/vRnOOAp_VPcbPfdU2Hjx91N4T_mC1tuRQCLcB/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2017-04-07%2B9.09.48.png"><img alt="" src="https://3.bp.blogspot.com/-D_Gs9wR9_Qg/WObalwJp5CI/AAAAAAAAgaw/vRnOOAp_VPcbPfdU2Hjx91N4T_mC1tuRQCLcB/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2017-04-07%2B9.09.48.png"/></a></p>
 <p>その後揃えたいセルを選択して、指定の通貨に変更します。</p>
-<p><a href="https://2.bp.blogspot.com/-faHXq6MWj6k/WObaO3hgazI/AAAAAAAAgas/LZLidARfMgkFW9W1PeEHPTnda2jtrR5EgCLcB/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2017-04-07%2B9.09.58.png"><img alt="" src="https://2.bp.blogspot.com/-faHXq6MWj6k/WObaO3hgazI/AAAAAAAAgas/LZLidARfMgkFW9W1PeEHPTnda2jtrR5EgCLcB/s320/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2017-04-07%2B9.09.58.png">{width="294"
+<p><a href="https://2.bp.blogspot.com/-faHXq6MWj6k/WObaO3hgazI/AAAAAAAAgas/LZLidARfMgkFW9W1PeEHPTnda2jtrR5EgCLcB/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2017-04-07%2B9.09.58.png"><img alt="" src="https://2.bp.blogspot.com/-faHXq6MWj6k/WObaO3hgazI/AAAAAAAAgas/LZLidARfMgkFW9W1PeEHPTnda2jtrR5EgCLcB/s320/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2017-04-07%2B9.09.58.png"/>{width="294"
 height="320"}</a></p>
 <p>わーい、やったね！あとは、小数点表示を0にすれば大体やりたい事は出来ます。</p>
-<p><a href="https://4.bp.blogspot.com/-aH_bEKKHX78/WObayvCRdOI/AAAAAAAAga0/GrKkg4psKJsC-1eCyfFPwZV3eYCwHQcNwCLcB/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2017-04-07%2B9.10.10.png"><img alt="" src="https://4.bp.blogspot.com/-aH_bEKKHX78/WObayvCRdOI/AAAAAAAAga0/GrKkg4psKJsC-1eCyfFPwZV3eYCwHQcNwCLcB/s320/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2017-04-07%2B9.10.10.png">{width="275"
+<p><a href="https://4.bp.blogspot.com/-aH_bEKKHX78/WObayvCRdOI/AAAAAAAAga0/GrKkg4psKJsC-1eCyfFPwZV3eYCwHQcNwCLcB/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2017-04-07%2B9.10.10.png"><img alt="" src="https://4.bp.blogspot.com/-aH_bEKKHX78/WObayvCRdOI/AAAAAAAAga0/GrKkg4psKJsC-1eCyfFPwZV3eYCwHQcNwCLcB/s320/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2017-04-07%2B9.10.10.png"/>{width="275"
 height="320"}</a></p>
                                 <p class="readmore">
                                     <a class="btn btn-small btn-info" href="http://blog.popowa.com/2017/04/excel.html">Read more...</a>
@@ -438,182 +607,10 @@ height="320"}</a></p>
 <ul>
 <li><a href="https://family-it.connpass.com/event/54750/">親の本気を見せてやれシリーズその1：タブレット</a></li>
 </ul>
-<p><a href="https://1.bp.blogspot.com/-wx_32vDpX-A/WOXjHtnB9tI/AAAAAAAAgaM/i2LHHiL9h2EDbRdYxgVpU2LNQ7SljiZ1wCLcB/s1600/s512_f_event_92_0bg.png"><img alt="" src="https://1.bp.blogspot.com/-wx_32vDpX-A/WOXjHtnB9tI/AAAAAAAAgaM/i2LHHiL9h2EDbRdYxgVpU2LNQ7SljiZ1wCLcB/s320/s512_f_event_92_0bg.png">{width="320"
+<p><a href="https://1.bp.blogspot.com/-wx_32vDpX-A/WOXjHtnB9tI/AAAAAAAAgaM/i2LHHiL9h2EDbRdYxgVpU2LNQ7SljiZ1wCLcB/s1600/s512_f_event_92_0bg.png"><img alt="" src="https://1.bp.blogspot.com/-wx_32vDpX-A/WOXjHtnB9tI/AAAAAAAAgaM/i2LHHiL9h2EDbRdYxgVpU2LNQ7SljiZ1wCLcB/s320/s512_f_event_92_0bg.png"/>{width="320"
 height="320"}</a></p>
                                 <p class="readmore">
                                     <a class="btn btn-small btn-info" href="http://blog.popowa.com/2017/04/itt.html">Read more...</a>
-                                </p>
-                            </div><!-- /.entry-content -->
-                            <hr/>
-                        </article>
-                    </li>
-                    <li>
-                        <article>
-                            <header>
-                                <h1 class="entry-title">
-                                    <a href="http://blog.popowa.com/2017/04/macworkspaces.html" rel="bookmark" title="Permalink to MacユーザーがWorkSpacesを使ってみた感想と学び">
-                                       MacユーザーがWorkSpacesを使ってみた感想と学び
-                                    </a>
-                                </h1>
-                            </header>
-                            <div class="entry-content">
-<footer class="post-info">
-    <address class="vcard author">
-        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
-    </address>
-
-    in <a href="http://blog.popowa.com/category/blog.html">blog</a>
-
-    on 2017-04-04
-
-        |
-        tags:         <a href="http://blog.popowa.com/tag/aws.html">AWS</a>
-        <a href="http://blog.popowa.com/tag/workspaces.html">workspaces</a>
-
-
-
-    
-</footer><!-- /.post-info -->                                <p>15年程度Macを使っていた、Macユーザーがどこまで現在の端末を使ってWorkSpacesを使えるか試してみました。</p>
-<h4>手元の端末</h4>
-<p>Mac Book Air (英語キーボード）</p>
-<p><a href="https://3.bp.blogspot.com/-lnhqtQrcPY8/WMX1DbYRAXI/AAAAAAAAfpU/UI6z4oa_8gMpRMiq411YeS6b85GCM19mQCLcB/s1600/macbook-air-gallery2-2014_GEO_JP.jpeg"><img alt="" src="https://3.bp.blogspot.com/-lnhqtQrcPY8/WMX1DbYRAXI/AAAAAAAAfpU/UI6z4oa_8gMpRMiq411YeS6b85GCM19mQCLcB/s320/macbook-air-gallery2-2014_GEO_JP.jpeg">{width="320"
-height="189"}</a></p>
-<p>外付けキーボード（英語）</p>
-<p><a href="https://1.bp.blogspot.com/-nmiLrAfvX1A/WOL0e9ae_LI/AAAAAAAAgZo/SVDVuW3GWogROTqgXCdTIxoVYIomlqrmACLcB/s1600/us.jpg"><img alt="" src="https://1.bp.blogspot.com/-nmiLrAfvX1A/WOL0e9ae_LI/AAAAAAAAgZo/SVDVuW3GWogROTqgXCdTIxoVYIomlqrmACLcB/s320/us.jpg">{width="320"
-height="87"}</a></p>
-<p>MagicMouse(オフィス） and/or Touchpad（家）</p>
-<p><a href="https://3.bp.blogspot.com/-sayGIPn1uvs/WOL0qPBDZoI/AAAAAAAAgZs/xh5vgBCwfsAKMCwsQOLgh6075KloZm5LwCLcB/s1600/apple-magic-mouse.jpg"><img alt="" src="https://3.bp.blogspot.com/-sayGIPn1uvs/WOL0qPBDZoI/AAAAAAAAgZs/xh5vgBCwfsAKMCwsQOLgh6075KloZm5LwCLcB/s200/apple-magic-mouse.jpg">{width="200"
-height="112"}</a><a href="https://2.bp.blogspot.com/-ypv8QzqjsZ0/WOL03NDNrpI/AAAAAAAAgZw/UqNtAkjtFToKjuWUR6Ddcysblq4_JWiGQCLcB/s1600/41mi36PRTTL._SL1210_.jpg"><img alt="" src="https://2.bp.blogspot.com/-ypv8QzqjsZ0/WOL03NDNrpI/AAAAAAAAgZw/UqNtAkjtFToKjuWUR6Ddcysblq4_JWiGQCLcB/s200/41mi36PRTTL._SL1210_.jpg">{width="200"
-height="75"}</a></p>
-<p>[]  </p>
-<h4>用意したAWS WorkSpaces</h4>
-<ul>
-<li>Microsoft Windows 7 ＋Microsoft Office Professional 2010 </li>
-<li>プロフェッショナルプラン</li>
-<li>特にVPNなどは貼っておらず通常の利用方法</li>
-<li>あとで時間課金に変更した</li>
-</ul>
-<h3>解決した課題 - WorkSpaces特有の問題</h3>
-<p>音声・画像共有を行えるかどうか</p>
-<p>スカイプが利用出来た（音声は可能である。カメラは対応していない …</p>
-                                <p class="readmore">
-                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2017/04/macworkspaces.html">Read more...</a>
-                                </p>
-                            </div><!-- /.entry-content -->
-                            <hr/>
-                        </article>
-                    </li>
-                    <li>
-                        <article>
-                            <header>
-                                <h1 class="entry-title">
-                                    <a href="http://blog.popowa.com/2017/03/blog-post.html" rel="bookmark" title="Permalink to 旅行しないでホテル泊まるの楽しいね">
-                                       旅行しないでホテル泊まるの楽しいね
-                                    </a>
-                                </h1>
-                            </header>
-                            <div class="entry-content">
-<footer class="post-info">
-    <address class="vcard author">
-        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
-    </address>
-
-    in <a href="http://blog.popowa.com/category/blog.html">blog</a>
-
-    on 2017-03-20
-
-        |
-        tags:         <a href="http://blog.popowa.com/tag/travel.html">Travel</a>
-
-
-
-    
-</footer><!-- /.post-info -->                                <p>最近旅行の醍醐味は旅行先であれこれ観光する事じゃなくて、ホテル（もしくは現地）で何もせずにぼーっとする事だなって思うようになった小室です。</p>
-<p>三連休だからどこか行こうかと思いつつも、遊び始めたラズパイ続きしたいし、ジャンパーワイヤー買いに<a href="http://www.kahoparts.co.jp/">カホパーツセンター</a>にも行きたいなー、大きなお風呂にも入りたい・・・など考えている時に、福岡のホテルに泊まればいいじゃない！となって、子供と二人で家からバスで15分、10階に大浴場が付いているホテルに泊まってきました。</p>
-<p><a href="https://3.bp.blogspot.com/-izX0HzAKYkM/WM8r9gZagtI/AAAAAAAAfsE/mOqb_4TzK74de8lqrjNRPQmKiEqkSoWFgCLcB/s1600/IMG_20170319_174855%2B%25282017-03-20T01_09_29.019%2529.jpg"><img alt="" src="https://3.bp.blogspot.com/-izX0HzAKYkM/WM8r9gZagtI/AAAAAAAAfsE/mOqb_4TzK74de8lqrjNRPQmKiEqkSoWFgCLcB/s320/IMG_20170319_174855%2B%25282017-03-20T01_09_29.019%2529.jpg">{width="320"
-height="230"}</a></p>
-<p>[]<br>
-今回泊まったホテルは南天神にある<a href="https://www.candeohotels.com/tenjin/">カンデオホテルズ福岡天神 </a>。<br>
-こんな場所にホテルあるなんて知りませんでした。</p>
-<p>ホテルを選んだポイントとしては</p>
-<ul>
-<li>そこそこ安い（〜1万程度/人）</li>
-<li>朝ごはんがある</li>
-<li>大浴場がある</li>
-<li>天神に近い</li>
-</ul>
-<p>として選んでみました。</p>
-<p>ホテルの評価も良さげです。</p>
-<ul>
-<li><a href="https://www.tripadvisor.jp/Hotel_Review-g298207-d7340832-Reviews-Candeo_Hotels_Fukuoka_Tenjin-Fukuoka_Fukuoka_Prefecture_Kyushu_Okinawa.html">カンデオホテルズ 福岡天神【 2017年の口コミ・価格比較・宿泊予約
-    】-
-    トリップアドバイザー </a></li>
-<li><a href="http://www.jalan.net/yad393394/">CANDEO　HOTELS（カンデオホテルズ）福岡天神 -
-    宿泊予約は＜じゃらん＞ </a></li>
-</ul>
-<p>泊まってみての子供の感想</p>
-<ul>
-<li>ベッドがあるので楽しい（家は布団）</li>
-<li>大きな大浴場があるのがよい</li>
-<li>露天風呂があるのも楽しい。カラスが飛んでいるのが見えた …</li></ul>
-                                <p class="readmore">
-                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2017/03/blog-post.html">Read more...</a>
-                                </p>
-                            </div><!-- /.entry-content -->
-                            <hr/>
-                        </article>
-                    </li>
-                    <li>
-                        <article>
-                            <header>
-                                <h1 class="entry-title">
-                                    <a href="http://blog.popowa.com/2017/03/datadogworkspaces.html" rel="bookmark" title="Permalink to DatadogでWorkSpacesを監視する">
-                                       DatadogでWorkSpacesを監視する
-                                    </a>
-                                </h1>
-                            </header>
-                            <div class="entry-content">
-<footer class="post-info">
-    <address class="vcard author">
-        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
-    </address>
-
-    in <a href="http://blog.popowa.com/category/blog.html">blog</a>
-
-    on 2017-03-15
-
-        |
-        tags:         <a href="http://blog.popowa.com/tag/aws.html">AWS</a>
-        <a href="http://blog.popowa.com/tag/datadog.html">Datadog</a>
-        <a href="http://blog.popowa.com/tag/workspaces.html">workspaces</a>
-
-
-
-    
-</footer><!-- /.post-info -->                                <p>前DatadogがWorkSpaces（Win10）に入らない！とブログ書いたのですが、Windows</p>
-<p>7には入りました。</p>
-<p><a href="https://4.bp.blogspot.com/-NZyPadh184g/WMkPuPXPO6I/AAAAAAAAfqQ/W32gSwu-n_8UNTn2bMqf8sCPaZZf9vw1gCLcB/s1600/datadog_logo_share_tt.png"><img alt="" src="https://4.bp.blogspot.com/-NZyPadh184g/WMkPuPXPO6I/AAAAAAAAfqQ/W32gSwu-n_8UNTn2bMqf8sCPaZZf9vw1gCLcB/s320/datadog_logo_share_tt.png">{width="320"
-height="160"}</a></p>
-<p>こんな感じ。</p>
-<p><a href="https://2.bp.blogspot.com/-EA8Ul2nHnXg/WMkCX2--dCI/AAAAAAAAfp4/5umPGDw8p4wOZ0oyvYoD_RmnFfyVavlOQCLcB/s1600/list.jpg"><img alt="" src="https://2.bp.blogspot.com/-EA8Ul2nHnXg/WMkCX2--dCI/AAAAAAAAfp4/5umPGDw8p4wOZ0oyvYoD_RmnFfyVavlOQCLcB/s640/list.jpg">{width="640"
-height="162"}</a></p>
-<p>[]</p>
-<p><a href="https://1.bp.blogspot.com/-uo9E0jQfcdI/WMkCTg_mqDI/AAAAAAAAfp0/TUKWkwsMhtwCiO-_96iux_Mf5o4FJz2QwCLcB/s1600/hostinfo.jpg"><img alt="" src="https://1.bp.blogspot.com/-uo9E0jQfcdI/WMkCTg_mqDI/AAAAAAAAfp0/TUKWkwsMhtwCiO-_96iux_Mf5o4FJz2QwCLcB/s640/hostinfo.jpg">{width="574"
-height="640"}</a></p>
-<p><a href="https://3.bp.blogspot.com/-sQn4gmBASQA/WMkCMdf-vhI/AAAAAAAAfpw/99QVoXeNVfAZezUgZf3G3xJEvn75y3b0QCLcB/s1600/dashboard.jpg"><img alt="" src="https://3.bp.blogspot.com/-sQn4gmBASQA/WMkCMdf-vhI/AAAAAAAAfpw/99QVoXeNVfAZezUgZf3G3xJEvn75y3b0QCLcB/s640/dashboard.jpg">{width="640"
-height="341"}</a></p>
-<p>WorkSpaces内</p>
-<p><a href="https://1.bp.blogspot.com/-JXti9bRFWMg/WMkCe0jhfxI/AAAAAAAAfp8/U3dgWeXMWt8NoxIiInhEjKbGBmoML0S_QCLcB/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2017-03-15%2B13.20.37.png"><img alt="" src="https://1.bp.blogspot.com/-JXti9bRFWMg/WMkCe0jhfxI/AAAAAAAAfp8/U3dgWeXMWt8NoxIiInhEjKbGBmoML0S_QCLcB/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2017-03-15%2B13.20.37.png"></a></p>
-<p>言いたかったのはそれだけ。Datadogはエージェントが動くと課金されるので、CloudWatch側でのWorkSpacesの値を取ってきてDashboard作るのいいかもしれないですね。ダッシュボード一覧にはWorkSpaces用のダッシュボードがないので、自分作る必要がありますが、値が少ないので簡単に作れるかと。</p>
-<ul>
-<li><a href="http://docs.aws.amazon.com/ja_jp/workspaces/latest/adminguide/monitoring.html">Amazon WorkSpaces メトリクスのモニタリング - Amazon
-    WorkSpaces</a> </li>
-</ul>
-<p>WorkSpacesでGoogle Hangoutで会議している時の状態</p>
-<p><a href="https://2.bp.blogspot.com/-tlPSknffuOE/WMoAi-G9nfI/AAAAAAAAfqg/v4SEgIyXS2E0mzQ6s6Qq5Flforx5dAn4ACLcB/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2017-03-16%2B12.02.50.png"><img alt="" src="https://2.bp.blogspot.com/-tlPSknffuOE/WMoAi-G9nfI/AAAAAAAAfqg/v4SEgIyXS2E0mzQ6s6Qq5Flforx5dAn4ACLcB/s640/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%2B2017-03-16%2B12.02.50.png">{width="640"
-height="328"}</a></p>
-                                <p class="readmore">
-                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2017/03/datadogworkspaces.html">Read more...</a>
                                 </p>
                             </div><!-- /.entry-content -->
                             <hr/>
