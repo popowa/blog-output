@@ -42,8 +42,9 @@
                 <nav class="navbar">
                     <div class="navbar-inner">
                         <ul class="nav">
-                            <li ><a href="http://www.popowa.com">Profile</a></li>
+                            <li ><a href="http://www.popowa.com">About Aya</a></li>
                             <li ><a href="https://twitter.com/ayakomuro">Twitter</a></li>
+                            <li ><a href="https://github.com/popowa">Github</a></li>
                         </ul>
 
 <script>
@@ -74,6 +75,179 @@
                         <article>
                             <header>
                                 <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2011/10/rightscale_23.html" rel="bookmark" title="Permalink to RightScaleでハマる事">
+                                       RightScaleでハマる事
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/blog.html">blog</a>
+
+    on 2011-10-23
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/rightscale.html">RightScale</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>最近RightScaleを触る機会があり、よくハマる事にまたハマったので　~~前から思っている欠点にまたぶつかったので~~、メモします。  </p>
+<p>[]<br/>
+RightScaleには向き不向きがあると思います。</p>
+<p>例えばインフラエンジニアにとっては、もどかしい管理ツールだと思います。<br/>
+逆に、インフラエンジニアがいないけど、今すぐサーバーを用意しなくてはいけない（そしてお金もある）という人には向いていると思います。</p>
+<p>なぜRightScaleがもどかしい管理ツールなのか？</p>
+<p>それは、RightScaleをよく理解しないと、RightScript単体がこける理由が分からず、実際の起動に至るのに何度も試行錯誤しないければいけないからです。<br/>
+RightScriptは並び順に実行され、個々のScriptが成功値を返さないと、次のScriptが実行されません。</p>
+<p>確かに色んな機能を兼ね備え簡単に使えると歌っているServerTemplateは沢山あります。<br/>
+でもそのServerTemplateと、RightScript、そして入力（input)がどのように関連ついているか理解しないと大体ハマります。
+つまり、InputからRightScriptを読むはめになるのです。</p>
+<p>通常は<br/>
+ServerTemplate =&nbsp; RightScript + Inputですが、よく理解する為には、Input
+--&gt; RightScript --&gt;
+ServerTemplateを読み解いていかなければいけません。</p>
+<p>一つ一つのRightScriptが何の為に存在するのか、実際にどういう動きをするのかをコードを読んで理解しないと、エラーになった時に対処が出来ない。</p>
+<p>RightScriptを書いた人が、どんな考えを持ってそのコードを書いたのかを理解しないと、Inputも正しく理解出来ない。</p>
+<p>公開されているServerTemplateを組み合わせてサーバ構成を組む場合は、それぞれを理解しないと希望の構成が出来るかどうか念入りに検証しなければいけない。インフラエンジニアならば気になる所だし、気にすべき所ですよね。<br/>
+バックアップ取れます！と言っているけど本当に取れるか、ちゃんと検証しないと有事に取れてない事が分かっても困る。</p>
+<p>使ってもいい予算も限られているだろうし …</p>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2011/10/rightscale_23.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2011/10/blog-post_19.html" rel="bookmark" title="Permalink to \[アイディア\]その２">
+                                       \[アイディア\]その２
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/blog.html">blog</a>
+
+    on 2011-10-19
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/idea.html">Idea</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>昔のノートをあさったら出て来たのでメモ</p>
+<p><a href="http://www.sony.co.jp/Products/felica/">Felica</a></p>
+<ul>
+<li>FeliCaを使ってモールス信号をする事でメールとかコマンド的な物が出来る</li>
+<li>Felicaを使ったアーケード的なゲーム。携帯内でのアバター育成プログラム</li>
+<li>Virtual breading:
+    店頭にあるreaderで読み取りをすると、インコが端末で買ったり、売ったりする事が出来る。インコの管理や、育成が出来る</li>
+</ul>
+<p><a href="http://www.sony.jp/bravia/technology/internet/applicast.html">アプリキャスト</a></p>
+<ul>
+<li>Google
+    trendからキーワードを取って来て、そのキーワードに関する情報を垂れ流す</li>
+<li>テレビを見ながら、テレビに関するUstしている番組を持って来て、同時放映する（テレビでUst見る）</li>
+<li>あっちむいてほいゲーム</li>
+</ul>
+<p>NHK</p>
+<ul>
+<li>１人の人物にそったニュースを時系列に見る事が出来る</li>
+<li>ニュースを収集して、強弱をつけて表示してくれる</li>
+<li>朝の７時にニュースサイトから一覧を取得してメールで送ってくれる or
+    音声ファイルで送ってくれる（読み上げAPIとか使って）。</li>
+</ul>
+<p>Evernote</p>
+<ul>
+<li>取り込んだ名刺を紐付けて、ネットワーク図や時系列で表示出来る。TwitterとかBlogのFeedの表示が出来る</li>
+</ul>
+<p>自分の見た夢を投稿するサイト<br/>
+未来に居る場所を設定すると、天気予報情報を時間になったら送ってくれる<br/>
+Lifelog: 心の中をためておけるサイト（誰にも見られない）<br/>
+SESを使ったメルマガ配信アプリ<br/>
+絵本プラットフォーム<br/>
+色んなカテゴリの標準チャンピョンシップ戦<br/>
+画像検証用の画像downloadサイト（ランダム、幅を設定が出来る）<br/>
+サーバイメージ検索サイト<br/>
+地図とスケジュールとメールorTwitterを紐付けられる<br/>
+フリーのプログラマ、エンジニアが仕事出来るサイト（twitter …</p>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2011/10/blog-post_19.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2011/10/blog-post.html" rel="bookmark" title="Permalink to \[アイディア\]これから思いついたアイディアをメモしていく">
+                                       \[アイディア\]これから思いついたアイディアをメモしていく
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/blog.html">blog</a>
+
+    on 2011-10-15
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/idea.html">Idea</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>突然ですが、今後このブログに思いついたアイディアを書き出して行こうと思います。  </p>
+<p>[]<br/>
+昔はアイディアは大事に秘密に取っておいて、いつか開発する。。。と思っていましたが、思いつく数の割には、全然開発出来ていない状況に愕然としました（気づくの遅すぎ</p>
+<p>アイディアは開発し形にならなければ意味がないのです。</p>
+<p>なので、アイディアはこのブログにアウトプットとして出して行き、それを見た方が何かさらにアイディアを得たり、~~パクリ~~
+インスパイア出来たら、嬉しいです。</p>
+<p>きっとすでに似たアプリや、サイトもあると思います。それは私が単純に知らないだけでしょう。</p>
+<p>アイディアというよりこういうのが欲しい、というのもあります。実装レベルまで考えていたのもあります。何か参考になれば！</p>
+<p>ってか誰か作って！</p>
+<p>タイトル：AllMyDashBoard<br/>
+難易度：そんなに難しくない<br/>
+概要：すべてのSNSが一つのダッシュボードで見れたらいいな  </p>
+<hr/>
+<p><a href="http://4.bp.blogspot.com/-SHOmnd3ryRk/TpjmoV-yJ0I/AAAAAAAANvE/RpiLUb-7N9Y/s1600/Allmydashboard.001.png"><img alt="" src="http://4.bp.blogspot.com/-SHOmnd3ryRk/TpjmoV-yJ0I/AAAAAAAANvE/RpiLUb-7N9Y/s320/Allmydashboard.001.png"/></a>
+                                                                                                                     説明を追加</p>
+<hr/>
+<p>タイトル：じじばば.com<br/>
+難易度：中程度<br/>
+概要：遠くには慣れて住んでいる孫の成長度合いや、毎日の写真などを一つのページで、難しいログインなどがなく簡単に見せれたらいいな</p>
+<p>携帯に送られたURLをクリックすると、孫の連絡帳ページに遷移する。<br/>
+このページでは、子どもの成長度合い（体重や身長）、親（爺婆から見れば子ども）による孫に関するツイートや、投稿表示、flickrやhatenaなどの写真投稿サイトからの孫の写真表示、孫によるおねだり表 …</p>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2011/10/blog-post.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
                                     <a href="http://blog.popowa.com/2011/10/facebook1.html" rel="bookmark" title="Permalink to Facebookのいいね！を変えたいだけどなー/その1">
                                        Facebookのいいね！を変えたいだけどなー/その1
                                     </a>
@@ -97,21 +271,21 @@
 
     
 </footer><!-- /.post-info -->                                <p>Facebookのいいね！ボタンが日本のポータルサイトに始まり、ブログ、企業サイト、至る所に出没するようになったのは、ほんの最近のように思います。  </p>
-<p>でもあるのが当たり前な毎日になって無い方が不思議なくらいに、日本でのFacebookは普及しました。<br>
-でもなんでいつも青色バックのいいね！なんだろう？と思った事はありませんか。<br>
-いいね！じゃなくて、カワイイ！とか日本人向けなんじゃないのとか、tdiaryのプラグインでもあるへー！ボタンとかでもいいんじゃないのかな、と思って調べてみました<br>
-[]<br>
-それをChromeのExtentionで実装出来ないだろうか？調査とその結果にいたるまでの内容です、というかまだ終わってません。orz<br>
+<p>でもあるのが当たり前な毎日になって無い方が不思議なくらいに、日本でのFacebookは普及しました。<br/>
+でもなんでいつも青色バックのいいね！なんだろう？と思った事はありませんか。<br/>
+いいね！じゃなくて、カワイイ！とか日本人向けなんじゃないのとか、tdiaryのプラグインでもあるへー！ボタンとかでもいいんじゃないのかな、と思って調べてみました<br/>
+[]<br/>
+それをChromeのExtentionで実装出来ないだろうか？調査とその結果にいたるまでの内容です、というかまだ終わってません。orz<br/>
 やりたい事としてはFacebook Like
 Buttonを実装するサイト側じゃなくて、そのButtonを見ている側がそれを自分のブラウザーだけでカスタマイズ出来ないかなーと思ったのです。greasemonkeyとかで出来そうな気もするんだけど。</p>
-<p>まずChrome のextentionの作り方についてはこのページが参考になりました。<br>
-<a href="http://code.google.com/chrome/extensions/getstarted.html">>> Tutorial: Getting Started (Hello,
+<p>まずChrome のextentionの作り方についてはこのページが参考になりました。<br/>
+<a href="http://code.google.com/chrome/extensions/getstarted.html">&gt;&gt; Tutorial: Getting Started (Hello,
 World!)</a></p>
 <p>よくある echo
 \'hello\'とかじゃなくて、とても実践的なチュートリアルです。</p>
-<p>上記を一通りやってみてから、Facebookのいいね！ボタンについて調べてみます。<br>
-<a href="http://developers.facebook.com/docs/reference/plugins/like/">>> Facebook Like
-Box</a><br>
+<p>上記を一通りやってみてから、Facebookのいいね！ボタンについて調べてみます。<br/>
+<a href="http://developers.facebook.com/docs/reference/plugins/like/">&gt;&gt; Facebook Like
+Box</a><br/>
 例えばblog.popowa.comに対していいね！ボタンを付ける場合、コードとしては …</p>
                                 <p class="readmore">
                                     <a class="btn btn-small btn-info" href="http://blog.popowa.com/2011/10/facebook1.html">Read more...</a>
@@ -146,9 +320,9 @@ Box</a><br>
 
     
 </footer><!-- /.post-info -->                                <p>NOHAクラウドに関して速度とか検証してみた。  </p>
-<p>[][<strong><br>
-</strong>]<br>
-[<strong>外のサーバに対してpingしてみた(平均値)</strong>]<br>
+<p>[][<strong><br/>
+</strong>]<br/>
+[<strong>外のサーバに対してpingしてみた(平均値)</strong>]<br/>
 30リクエストを３回して平均を取りました。msです。</p>
 <p>site</p>
 <p>min</p>
@@ -206,12 +380,12 @@ Box</a><br>
 
     
 </footer><!-- /.post-info -->                                <p>システム情報(見ても今は面白くない)+立ち上げたばっかりだから、とても静か。</p>
-<p>root@ubuntu:\~# iostat -x<br>
-Linux 2.6.32-33-server (ubuntu)     10/04/2011     _x86_64_    (1
+<p>root@ubuntu:\~# iostat -x<br/>
+Linux 2.6.32-33-server (ubuntu) &nbsp;&nbsp;&nbsp; 10/04/2011 &nbsp;&nbsp;&nbsp; _x86_64_&nbsp;&nbsp;&nbsp; (1
 CPU)</p>
-<p>avg-cpu:  %user   %nice %system %iowait  %steal   %idle<br>
-           0.01    0.00    0.02    0.02    0.00   99.95</p>
-<p>Device:         rrqm/s   wrqm/s     r/s     w/s   rsec/s   wsec …</p>
+<p>avg-cpu:&nbsp; %user&nbsp;&nbsp; %nice %system %iowait&nbsp; %steal&nbsp;&nbsp; %idle<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.01&nbsp;&nbsp;&nbsp; 0.00&nbsp;&nbsp;&nbsp; 0.02&nbsp;&nbsp;&nbsp; 0.02&nbsp;&nbsp;&nbsp; 0.00&nbsp;&nbsp; 99.95</p>
+<p>Device:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rrqm/s&nbsp;&nbsp; wrqm/s&nbsp;&nbsp;&nbsp;&nbsp; r/s&nbsp;&nbsp;&nbsp;&nbsp; w/s&nbsp;&nbsp; rsec/s&nbsp;&nbsp; wsec …</p>
                                 <p class="readmore">
                                     <a class="btn btn-small btn-info" href="http://blog.popowa.com/2011/10/noah_04.html">Read more...</a>
                                 </p>
@@ -244,24 +418,24 @@ CPU)</p>
 
 
     
-</footer><!-- /.post-info -->                                <p>ポートの設定、SSHログイン+NOAHクラウドの登録、仮想マシンの起動は簡単だったのですが、ポートを開ける方法が分からずあれこれしたので、メモとして残しておきます。<br>
-[]<br>
+</footer><!-- /.post-info -->                                <p>ポートの設定、SSHログイン+NOAHクラウドの登録、仮想マシンの起動は簡単だったのですが、ポートを開ける方法が分からずあれこれしたので、メモとして残しておきます。<br/>
+[]<br/>
 追加した仮想マシンは、ダッシュボードの横にあるリソースから見る事が出来ます。</p>
-<p><a href="http://4.bp.blogspot.com/-8QzoyXQiv5Y/Topq_vnzaUI/AAAAAAAANks/sWB8KszGpt8/s1600/resource.png"><img alt="" src="http://4.bp.blogspot.com/-8QzoyXQiv5Y/Topq_vnzaUI/AAAAAAAANks/sWB8KszGpt8/s1600/resource.png"></a></p>
+<p><a href="http://4.bp.blogspot.com/-8QzoyXQiv5Y/Topq_vnzaUI/AAAAAAAANks/sWB8KszGpt8/s1600/resource.png"><img alt="" src="http://4.bp.blogspot.com/-8QzoyXQiv5Y/Topq_vnzaUI/AAAAAAAANks/sWB8KszGpt8/s1600/resource.png"/></a></p>
 <p>リソースをクリックすると、仮想マシン一覧が表示されますが、そこに表示されているIPアドレスはSSHやHTTPなどで外からアクセス出来る物はありません。</p>
-<p><a href="http://2.bp.blogspot.com/-txnO7pieK-U/TopsH6WYV_I/AAAAAAAANkw/6rML1EhHDVI/s1600/machine.png"><img alt="" src="http://2.bp.blogspot.com/-txnO7pieK-U/TopsH6WYV_I/AAAAAAAANkw/6rML1EhHDVI/s400/machine.png">{width="400"
+<p><a href="http://2.bp.blogspot.com/-txnO7pieK-U/TopsH6WYV_I/AAAAAAAANkw/6rML1EhHDVI/s1600/machine.png"><img alt="" src="http://2.bp.blogspot.com/-txnO7pieK-U/TopsH6WYV_I/AAAAAAAANkw/6rML1EhHDVI/s400/machine.png"/>{width="400"
 height="108"}</a></p>
 <p>左側メニューにあるIPアドレス、というのをクリックすると、IPアドレス一覧が表示されます(AWSでいうとElastic
 IP)。</p>
-<p><a href="http://1.bp.blogspot.com/-W9Of-R3ipwU/Topss2YFBoI/AAAAAAAANk0/8J8q_ooucMM/s1600/ip.png"><img alt="" src="http://1.bp.blogspot.com/-W9Of-R3ipwU/Topss2YFBoI/AAAAAAAANk0/8J8q_ooucMM/s400/ip.png">{width="400"
+<p><a href="http://1.bp.blogspot.com/-W9Of-R3ipwU/Topss2YFBoI/AAAAAAAANk0/8J8q_ooucMM/s1600/ip.png"><img alt="" src="http://1.bp.blogspot.com/-W9Of-R3ipwU/Topss2YFBoI/AAAAAAAANk0/8J8q_ooucMM/s400/ip.png"/>{width="400"
 height="83"}</a></p>
 <p>その下に選択したIPアドレスの詳細、ファイヤーウォール、ポートフォワーディング、ロードバランサーのタブが表示されます。</p>
-<p><a href="http://1.bp.blogspot.com/-5h754JC8LKg/ToptHZtE14I/AAAAAAAANk4/zsHDY-t5Dts/s1600/tab.png"><img alt="" src="http://1.bp.blogspot.com/-5h754JC8LKg/ToptHZtE14I/AAAAAAAANk4/zsHDY-t5Dts/s1600/tab.png"></a></p>
-<p>SSHで接続出来るようにしてみます。<br>
+<p><a href="http://1.bp.blogspot.com/-5h754JC8LKg/ToptHZtE14I/AAAAAAAANk4/zsHDY-t5Dts/s1600/tab.png"><img alt="" src="http://1.bp.blogspot.com/-5h754JC8LKg/ToptHZtE14I/AAAAAAAANk4/zsHDY-t5Dts/s1600/tab.png"/></a></p>
+<p>SSHで接続出来るようにしてみます。<br/>
 まずファイヤーウォールに22ポートを開けます。接続元が動的IPなので、ソースCIDRは0.0.0.0/0にします。会社など固定IPならそのように設定した方がいいでしょう。</p>
-<p><a href="http://3.bp.blogspot.com/-fgJLwy3BxOM/TopuGzWkdAI/AAAAAAAANk8/kQodmZLrm14/s1600/sshfw.png"><img alt="" src="http://3.bp.blogspot.com/-fgJLwy3BxOM/TopuGzWkdAI/AAAAAAAANk8/kQodmZLrm14/s1600/sshfw.png"></a></p>
+<p><a href="http://3.bp.blogspot.com/-fgJLwy3BxOM/TopuGzWkdAI/AAAAAAAANk8/kQodmZLrm14/s1600/sshfw.png"><img alt="" src="http://3.bp.blogspot.com/-fgJLwy3BxOM/TopuGzWkdAI/AAAAAAAANk8/kQodmZLrm14/s1600/sshfw.png"/></a></p>
 <p>その後ポートフォワーディングタブをクリックし、外部の22ポートを個別仮想マシンのポートを紐付けます。</p>
-<p><a href="http://2.bp.blogspot.com/-_TWmbSrWRWM/TopughqIiGI/AAAAAAAANlA/xEqnp7AuTOM/s1600/sshpf.png"><img alt="" src="http://2.bp.blogspot.com/-_TWmbSrWRWM/TopughqIiGI/AAAAAAAANlA/xEqnp7AuTOM/s1600/sshpf.png"></a></p>
+<p><a href="http://2.bp.blogspot.com/-_TWmbSrWRWM/TopughqIiGI/AAAAAAAANlA/xEqnp7AuTOM/s1600/sshpf.png"><img alt="" src="http://2.bp.blogspot.com/-_TWmbSrWRWM/TopughqIiGI/AAAAAAAANlA/xEqnp7AuTOM/s1600/sshpf.png"/></a></p>
 <p>その後、ターミナルを開き、先ほど保存した秘密鍵を使ってSSH接続してみます。</p>
 <blockquote>
 <p>aya-air:AccountInfo aya\$ ls -la | grep tangerine.pem …</p></blockquote>
@@ -299,10 +473,10 @@ height="83"}</a></p>
     
 </footer><!-- /.post-info -->                                <p>提供OS一覧と仮想マシン起動フロー+Noahクラウドに登録したら、早速インスタンスを立ち上げてみよう！という事で、どんなOS（テンプレートと言うらしいです）が提供されているのか見てみました。</p>
 <p>[]ホームのクイックスタート、か</p>
-<p><a href="http://1.bp.blogspot.com/-JQTq68zY0r8/TooW0pRYNKI/AAAAAAAANkE/6E9dz8ibS3k/s1600/quickstart.png"><img alt="" src="http://1.bp.blogspot.com/-JQTq68zY0r8/TooW0pRYNKI/AAAAAAAANkE/6E9dz8ibS3k/s1600/quickstart.png"></a></p>
-<p>サービス >>
+<p><a href="http://1.bp.blogspot.com/-JQTq68zY0r8/TooW0pRYNKI/AAAAAAAANkE/6E9dz8ibS3k/s1600/quickstart.png"><img alt="" src="http://1.bp.blogspot.com/-JQTq68zY0r8/TooW0pRYNKI/AAAAAAAANkE/6E9dz8ibS3k/s1600/quickstart.png"/></a></p>
+<p>サービス &gt;&gt;
 仮想マシン、をクリックするとテンプレート一覧ページに遷移します。</p>
-<p><a href="http://3.bp.blogspot.com/-M4y0vqfZVWc/TooW9VwcbKI/AAAAAAAANkI/aeSpVJsYJlk/s1600/template.png"><img alt="" src="http://3.bp.blogspot.com/-M4y0vqfZVWc/TooW9VwcbKI/AAAAAAAANkI/aeSpVJsYJlk/s400/template.png">{width="400"
+<p><a href="http://3.bp.blogspot.com/-M4y0vqfZVWc/TooW9VwcbKI/AAAAAAAANkI/aeSpVJsYJlk/s1600/template.png"><img alt="" src="http://3.bp.blogspot.com/-M4y0vqfZVWc/TooW9VwcbKI/AAAAAAAANkI/aeSpVJsYJlk/s400/template.png"/>{width="400"
 height="93"}</a></p>
 <p>現在のテンプレートには</p>
 <ul>
@@ -353,16 +527,16 @@ height="93"}</a></p>
 
 
     
-</footer><!-- /.post-info -->                                <p><a href="http://4.bp.blogspot.com/-GJD5iR8tKRI/TooQ-FOq4oI/AAAAAAAANj0/2SJac0ORpO0/s1600/noahcloud.png"><img alt="" src="http://4.bp.blogspot.com/-GJD5iR8tKRI/TooQ-FOq4oI/AAAAAAAANj0/2SJac0ORpO0/s1600/noahcloud.png"></a></p>
+</footer><!-- /.post-info -->                                <p><a href="http://4.bp.blogspot.com/-GJD5iR8tKRI/TooQ-FOq4oI/AAAAAAAANj0/2SJac0ORpO0/s1600/noahcloud.png"><img alt="" src="http://4.bp.blogspot.com/-GJD5iR8tKRI/TooQ-FOq4oI/AAAAAAAANj0/2SJac0ORpO0/s1600/noahcloud.png"/></a></p>
 <p>日本で初めてCloud.com（現Citirix)のCloudStackを導入したIDCFのNoah
 Cloudを使ってみました！</p>
-<p>[]まず登録までの画面遷移。<br>
+<p>[]まず登録までの画面遷移。<br/>
 登録に必要そうな内容を聞かれます。</p>
 <ol>
 <li>氏名</li>
 <li>メールアドレス</li>
 <li>ユーザー名</li>
-<li>パスワード<br>
+<li>パスワード<br/>
    ※パスワードは<strong>[1つ以上の数字と1つ以上の大文字英字を含む8文字が必須]</strong>らしいので気をつけよう！最初何も書いてないので分からなかった</li>
 <li>会社名</li>
 <li>都道府県</li>
@@ -371,17 +545,17 @@ Cloudを使ってみました！</p>
 <li>電話番号</li>
 <li>利用目的</li>
 <li>ウェブサイトURL</li>
-<li>案内メール<br>
+<li>案内メール<br/>
    ※これは最初から<strong>受け取らない</strong>にチェックボタンが入っているけど、TEDの<a href="http://www.ted.com/talks/lang/jpn/dan_ariely_asks_are_we_in_control_of_our_own_decisions.html">ダン・アリエリー：我々は本当に自分で決めているのか？</a>　に沿えばここは受け取る、にチェックボタンを入れておいた方が何かといい気がする。</li>
 <li>キャプチャ文字入力</li>
 </ol>
-<p><a href="http://4.bp.blogspot.com/-sdNvlmcEESM/TooRc_wiFTI/AAAAAAAANj4/HItU6GxfvLw/s1600/singup.png"><img alt="" src="http://4.bp.blogspot.com/-sdNvlmcEESM/TooRc_wiFTI/AAAAAAAANj4/HItU6GxfvLw/s320/singup.png">{width="320"
-height="298"} </a></p>
+<p><a href="http://4.bp.blogspot.com/-sdNvlmcEESM/TooRc_wiFTI/AAAAAAAANj4/HItU6GxfvLw/s1600/singup.png"><img alt="" src="http://4.bp.blogspot.com/-sdNvlmcEESM/TooRc_wiFTI/AAAAAAAANj4/HItU6GxfvLw/s320/singup.png"/>{width="320"
+height="298"}&nbsp;</a></p>
 <p>登録後、メール確認が来てメール内にあるURLをクリックしたら、登録完了！</p>
-<p><a href="http://4.bp.blogspot.com/-wQXSSgt9qxE/TooTkHiJ5TI/AAAAAAAANj8/s3Qqp8o00O4/s1600/email.jpg"><img alt="" src="http://4.bp.blogspot.com/-wQXSSgt9qxE/TooTkHiJ5TI/AAAAAAAANj8/s3Qqp8o00O4/s320/email.jpg">{width="317"
+<p><a href="http://4.bp.blogspot.com/-wQXSSgt9qxE/TooTkHiJ5TI/AAAAAAAANj8/s3Qqp8o00O4/s1600/email.jpg"><img alt="" src="http://4.bp.blogspot.com/-wQXSSgt9qxE/TooTkHiJ5TI/AAAAAAAANj8/s3Qqp8o00O4/s320/email.jpg"/>{width="317"
 height="320"}</a></p>
 <p>登録したユーザー名とパスワードでログインすると。。</p>
-<p><a href="http://1.bp.blogspot.com/-zP16X1E3m_M/TooUHyC1giI/AAAAAAAANkA/0cWzRrjzV90/s1600/login.jpg"><img alt="" src="http://1.bp.blogspot.com/-zP16X1E3m_M/TooUHyC1giI/AAAAAAAANkA/0cWzRrjzV90/s320/login.jpg">{width="320"
+<p><a href="http://1.bp.blogspot.com/-zP16X1E3m_M/TooUHyC1giI/AAAAAAAANkA/0cWzRrjzV90/s1600/login.jpg"><img alt="" src="http://1.bp.blogspot.com/-zP16X1E3m_M/TooUHyC1giI/AAAAAAAANkA/0cWzRrjzV90/s320/login.jpg"/>{width="320"
 height="300"}</a></p>
 <p>ログイン出来ました …</p>
                                 <p class="readmore">
@@ -419,8 +593,8 @@ height="300"}</a></p>
 
     
 </footer><!-- /.post-info -->                                <p>前はMODxを使って構築をしていたのですが、色々自由すぎて作り込むのが大変なので、MODxからWordPressにデータを移行してみました。  </p>
-<p>[]<br>
-MODxのTableは色々あるのですが、メインなTableはmodx_site_contentです。<br>
+<p>[]<br/>
+MODxのTableは色々あるのですが、メインなTableはmodx_site_contentです。<br/>
 そして今回は、MODx側で色々作り込んでいたので、以下の点をクリアしないといけません。</p>
 <p>気をつける事</p>
 <ul>
@@ -431,19 +605,19 @@ MODxのTableは色々あるのですが、メインなTableはmodx_site_content�
 </ul>
 <p>MODx側Table</p>
 <ul>
-<li>modx_site_content => メインコンテンツ</li>
-<li>modx_site_templates => テンプレート</li>
-<li>modx_site_tmplvars => テンプレート変数</li>
-<li>modx_site_tmplvar_contentvalues　=> 実際のテンプレート変数の値</li>
+<li>modx_site_content =&gt; メインコンテンツ</li>
+<li>modx_site_templates =&gt; テンプレート</li>
+<li>modx_site_tmplvars =&gt; テンプレート変数</li>
+<li>modx_site_tmplvar_contentvalues　=&gt; 実際のテンプレート変数の値</li>
 <li>modx_site_tmplvar_templates
-    =>テンプレートとテンプレート変数を紐付ける</li>
+    =&gt;テンプレートとテンプレート変数を紐付ける</li>
 </ul>
 <p>関係性</p>
 <ol>
-<li>modx_site_content.template = modx_site_templates.id<br>
+<li>modx_site_content.template = modx_site_templates.id<br/>
    コンテンツとテンプレートの紐付け</li>
 <li>modx_site_tmplvar_templates.templateid = modx_site_templates.id</li>
-<li>modx_site_tmplvar_templates.tmplvarid = modx_site_tmplvars.id<br>
+<li>modx_site_tmplvar_templates.tmplvarid = modx_site_tmplvars.id<br/>
    テンプレート変数とテンプレートの紐付け（２と３）</li>
 <li>modx_site_tmplvar_contentvalues.tmplvarid =
     modx_site_tmplvars.id</li>
@@ -451,186 +625,6 @@ MODxのTableは色々あるのですが、メインなTableはmodx_site_content�
     modx_site_content …</li></ol>
                                 <p class="readmore">
                                     <a class="btn btn-small btn-info" href="http://blog.popowa.com/2011/09/modxwordpress.html">Read more...</a>
-                                </p>
-                            </div><!-- /.entry-content -->
-                            <hr/>
-                        </article>
-                    </li>
-                    <li>
-                        <article>
-                            <header>
-                                <h1 class="entry-title">
-                                    <a href="http://blog.popowa.com/2011/09/on-s3.html" rel="bookmark" title="Permalink to ">
-                                       
-                                    </a>
-                                </h1>
-                            </header>
-                            <div class="entry-content">
-<footer class="post-info">
-    <address class="vcard author">
-        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
-    </address>
-
-    in <a href="http://blog.popowa.com/category/blog.html">blog</a>
-
-    on 2011-09-21
-
-        |
-        tags:         <a href="http://blog.popowa.com/tag/blogspot.html">blogspot</a>
-        <a href="http://blog.popowa.com/tag/wordpress.html">wordpress</a>
-
-
-
-    
-</footer><!-- /.post-info -->                                <p>S3+www.popowa.comのコンテンツ（Wordpress）をblog.popowa.com(BlogSpot)に移行して、www.popowa.comはS3のウェブホストに置いたのですが、www.popowa.comには、はてぶとかから来る人も多くリンク切れになるのは困るなーと思い、以下のように設定してみました。<br>
-[]※前提として旧www.popowa.comは新stock.popowa.comとして残しています。</p>
-<p>まずS3の静的ページのホスティングは動的なページを置く事は出来ません。なので、.htaccessを使ってmod_rewriteでURLを書き換える事が出来ません。</p>
-<p>S3にはエラーページを設定出来る所があり、</p>
-<p><a href="http://3.bp.blogspot.com/-Bioi-DfULrw/TnpHDSXPP9I/AAAAAAAANa8/JMuE39V00-g/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%25EF%25BC%25882011-09-22+5.18.57%25EF%25BC%2589.png"><img alt="" src="http://3.bp.blogspot.com/-Bioi-DfULrw/TnpHDSXPP9I/AAAAAAAANa8/JMuE39V00-g/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%25EF%25BC%25882011-09-22+5.18.57%25EF%25BC%2589.png"></a></p>
-<p>404.htmlに以下のコードを入れると旧www.popowa.com/archives/xxxxに来た人は新stock.popowa.com/archives/xxxxに転送されます。</p>
-<blockquote>
-<p>\&lt;script type=\"text/javascript\" language=\"javascript\"><br>
-        \&lt;!--<br>
-        var url=document.URL;<br>
-        if (url.match …</p></blockquote>
-                                <p class="readmore">
-                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2011/09/on-s3.html">Read more...</a>
-                                </p>
-                            </div><!-- /.entry-content -->
-                            <hr/>
-                        </article>
-                    </li>
-                    <li>
-                        <article>
-                            <header>
-                                <h1 class="entry-title">
-                                    <a href="http://blog.popowa.com/2011/09/deployment.html" rel="bookmark" title="Permalink to Deploymentの削除方法">
-                                       Deploymentの削除方法
-                                    </a>
-                                </h1>
-                            </header>
-                            <div class="entry-content">
-<footer class="post-info">
-    <address class="vcard author">
-        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
-    </address>
-
-    in <a href="http://blog.popowa.com/category/blog.html">blog</a>
-
-    on 2011-09-20
-
-        |
-        tags:         <a href="http://blog.popowa.com/tag/rightscale.html">RightScale</a>
-        <a href="http://blog.popowa.com/tag/rightscalejie-ti-xin-shu.html">RightScale解体新書</a>
-
-
-
-    
-</footer><!-- /.post-info -->                                <p>またRightScaleについてです。今回はDeploymentの削除方法です。  </p>
-<p>[]まずDeploymentを削除すると、完全に削除されるので、復元する事が出来ません。もしそれが嫌だけど、使ってないDeploymentでDashboardに表示されるのが嫌だ、という場合は、Deploymentをアーカイブするといいと思います。<br>
-またDefaultのDeploymentは削除出来ません（名前を変えていたとしても削除ボタンが出ません）</p>
-<p><strong>Deploymentのアーカイブ方法</strong></p>
-<p>Manage -> Deploymentを選択します。</p>
-<p><a href="http://4.bp.blogspot.com/-5yERn57tOmY/Tnf2GVb34eI/AAAAAAAANaE/LAIkvfxoa6c/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%25EF%25BC%25882011-09-20+11.10.15%25EF%25BC%2589.png"><img alt="" src="http://4.bp.blogspot.com/-5yERn57tOmY/Tnf2GVb34eI/AAAAAAAANaE/LAIkvfxoa6c/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%25EF%25BC%25882011-09-20+11.10.15%25EF%25BC%2589.png"></a></p>
-<p>アーカイブしたいDeploymentをクリックします。</p>
-<p><a href="http://2.bp.blogspot.com/-ddqdKgxa_hA/Tnf2ilFPzdI/AAAAAAAANaI/b_rKLyMfpm8/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%25EF%25BC%25882011-09-20+11.12.13%25EF%25BC%2589.png"><img alt="" src="http://2.bp.blogspot.com/-ddqdKgxa_hA/Tnf2ilFPzdI/AAAAAAAANaI/b_rKLyMfpm8/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%25EF%25BC%25882011-09-20+11.12.13%25EF%25BC%2589.png"> </a></p>
-<p>選択したDeploymentの「Archive」ボタンを押します。</p>
-<p><a href="http://2.bp.blogspot.com/-oFKLgbn8ikA/Tnf3EUF16kI/AAAAAAAANaM/f0CN_9uytiA/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%25EF%25BC%25882011-09-20+11.14.07%25EF%25BC%2589.png"><img alt="" src="http://2.bp.blogspot.com/-oFKLgbn8ikA/Tnf3EUF16kI/AAAAAAAANaM/f0CN_9uytiA/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%25EF%25BC%25882011-09-20+11.14.07%25EF%25BC%2589.png"></a></p>
-<p>アーカイブ化する事で、選択したDeploymentは、Deployment枠からArchive枠に移動します「Deployment
-was successfully archived.」と出ます。</p>
-<p><a href="http://2.bp.blogspot.com/-5Q-h8nAD0K0/Tnf3i9AnmrI/AAAAAAAANaQ/RoMaa0DASmE/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%25EF%25BC%25882011-09-20+11.12.47%25EF%25BC%2589.png"><img alt="" src="http://2.bp.blogspot.com/-5Q-h8nAD0K0/Tnf3i9AnmrI/AAAAAAAANaQ/RoMaa0DASmE/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%25EF%25BC%25882011-09-20+11.12.47%25EF%25BC%2589.png"></a></p>
-<p>Deployment一覧に戻るとアーカイブ化したDeploymentがアーカイブ枠に移動しているのが分かります。</p>
-<p><a href="http://2.bp.blogspot.com/-vYDxN3eW6Lo/Tnf38R-XdMI/AAAAAAAANaU/cYZCrmysxUY/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%25EF%25BC%25882011-09-20+11.17.39%25EF%25BC%2589.png"><img alt="" src="http://2.bp.blogspot.com/-vYDxN3eW6Lo/Tnf38R-XdMI/AAAAAAAANaU/cYZCrmysxUY/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%25EF%25BC%25882011-09-20+11.17.39%25EF%25BC%2589.png"></a></p>
-<p>アーカイブ化したDeploymentを元に戻すのは簡単で、「Unarchive」を押すだけです。</p>
-<p><a href="http://4.bp.blogspot.com/-41LhMJKhndA/Tnf4oLcLNXI/AAAAAAAANac/6lMmWnFLFl0/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%25EF%25BC%25882011-09-20+11.20.44%25EF%25BC%2589.png"><img alt="" src="http://4.bp.blogspot.com/-41LhMJKhndA/Tnf4oLcLNXI/AAAAAAAANac/6lMmWnFLFl0/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%25EF%25BC%25882011-09-20+11.20.44%25EF%25BC%2589.png"> </a></p>
-<p><a href="http://3.bp.blogspot.com/-8sK0OgLo14A/Tnf4n75MjzI/AAAAAAAANaY/QwOoHmOx9Vo/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%25EF%25BC%25882011-09-20+11.18.50%25EF%25BC%2589.png"><img alt="" src="http://3.bp.blogspot.com/-8sK0OgLo14A/Tnf4n75MjzI/AAAAAAAANaY/QwOoHmOx9Vo/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%25EF%25BC%25882011-09-20+11.18.50%25EF%25BC%2589.png"></a></p>
-<p><strong>Deploymentの削除方法</strong><br>
-Manage -> Deploymentを選択します。</p>
-<p><a href="http://4.bp.blogspot.com/-5yERn57tOmY/Tnf2GVb34eI/AAAAAAAANaE/LAIkvfxoa6c/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%25EF%25BC%25882011-09-20+11.10.15%25EF%25BC%2589.png"><img alt="" src="http://4.bp.blogspot.com/-5yERn57tOmY/Tnf2GVb34eI/AAAAAAAANaE/LAIkvfxoa6c/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%25EF%25BC%25882011-09-20+11.10.15%25EF%25BC%2589.png"></a></p>
-<p>削除したいDeploymentをクリックします。</p>
-<p><a href="http://2.bp.blogspot.com/-ddqdKgxa_hA/Tnf2ilFPzdI/AAAAAAAANaI/b_rKLyMfpm8/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%25EF%25BC%25882011-09-20+11.12.13%25EF%25BC%2589.png"><img alt="" src="http://2.bp.blogspot.com/-ddqdKgxa_hA/Tnf2ilFPzdI/AAAAAAAANaI/b_rKLyMfpm8/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%25EF%25BC%25882011-09-20+11.12.13%25EF%25BC%2589.png"></a></p>
-<p>「Delete」ボタンを押します。</p>
-<p><a href="http://4.bp.blogspot.com/-WZbAywMJ4Rk/Tnf5Gf-B7UI/AAAAAAAANag/MP9hLEFYBRI/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%25EF%25BC%25882011-09-20+11.22.59%25EF%25BC%2589.png"><img alt="" src="http://4.bp.blogspot.com/-WZbAywMJ4Rk/Tnf5Gf-B7UI/AAAAAAAANag/MP9hLEFYBRI/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%25EF%25BC%25882011-09-20+11.22.59%25EF%25BC%2589.png"></a></p>
-<p>確認画面が出来るので、「Yes」を選択します。</p>
-<p><a href="http://4.bp.blogspot.com/-JWx1rULbJjo/Tnf5RwcH84I/AAAAAAAANak/0nvPTILOZqc/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%25EF%25BC%25882011-09-20+11.23.37%25EF%25BC%2589.png"><img alt="" src="http://4.bp.blogspot.com/-JWx1rULbJjo/Tnf5RwcH84I/AAAAAAAANak/0nvPTILOZqc/s320/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%25EF%25BC%25882011-09-20+11.23.37%25EF%25BC%2589.png">{width="320"
-height="98"}</a></p>
-<p>Deploymentは削除されます。</p>
-                                <p class="readmore">
-                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2011/09/deployment.html">Read more...</a>
-                                </p>
-                            </div><!-- /.entry-content -->
-                            <hr/>
-                        </article>
-                    </li>
-                    <li>
-                        <article>
-                            <header>
-                                <h1 class="entry-title">
-                                    <a href="http://blog.popowa.com/2011/09/blog-post.html" rel="bookmark" title="Permalink to (要アップデート)クラウドを提供しているベンダー一覧">
-                                       (要アップデート)クラウドを提供しているベンダー一覧
-                                    </a>
-                                </h1>
-                            </header>
-                            <div class="entry-content">
-<footer class="post-info">
-    <address class="vcard author">
-        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
-    </address>
-
-    in <a href="http://blog.popowa.com/category/blog.html">blog</a>
-
-    on 2011-09-18
-
-        |
-        tags:         <a href="http://blog.popowa.com/tag/aws.html">AWS</a>
-        <a href="http://blog.popowa.com/tag/cloud.html">Cloud</a>
-        <a href="http://blog.popowa.com/tag/cloudisle.html">CloudIsle</a>
-        <a href="http://blog.popowa.com/tag/codero.html">Codero</a>
-        <a href="http://blog.popowa.com/tag/cuvic-ondemand.html">Cuvic OnDemand</a>
-        <a href="http://blog.popowa.com/tag/first-server.html">First Server</a>
-        <a href="http://blog.popowa.com/tag/gmo.html">GMO</a>
-        <a href="http://blog.popowa.com/tag/gogrid.html">GoGrid</a>
-        <a href="http://blog.popowa.com/tag/ibm.html">IBM</a>
-        <a href="http://blog.popowa.com/tag/iij-gio.html">IIJ GIO</a>
-        <a href="http://blog.popowa.com/tag/nifty-cloud-biglobe.html">Nifty Cloud Biglobe</a>
-        <a href="http://blog.popowa.com/tag/noah-cloud.html">Noah cloud</a>
-        <a href="http://blog.popowa.com/tag/rackspace.html">Rackspace</a>
-
-
-
-    
-</footer><!-- /.post-info -->                                <p>クラウドを提供しているベンダー一覧</p>
-<p>ブログ以降に伴い記事を移行させておきます。後日アップデートします。</p>
-<p>[]</p>
-<p><a href="http://www.popowa.com/cloud/aws" title="Amazon Web Services"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/03/amazon-web-services1-e1300250817998.png" title="amazon-web-services">{width="168"
-height="61"}</a></p>
-<ol>
-<li>AWS</li>
-<li>Hypervisor: Citrix Xen</li>
-<li>契約対応: 個人/法人</li>
-<li>対応言語: 日本語/英語あり</li>
-<li>日本法人有無: 日本法人あり</li>
-</ol>
-<p><a href="http://www.popowa.com/cloud/nifty-cloud"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/03/nifty.gif" title="nifty">{.alignnone
-.size-full .wp-image-82 width="278"
-height="27"}</a></p>
-<ol>
-<li>Nifty Cloud</li>
-<li>Hypervisor:VMware</li>
-<li>契約対応:法人</li>
-<li>対応言語:日本語</li>
-<li>日本法人有無:日本法人あり</li>
-</ol>
-<p><a href="http://www.popowa.com/cloud/c%E2%80%8Bl%E2%80%8Bo%E2%80%8Bu%E2%80%8Bd%E2%80%8Ba%E2%80%8Bg%E2%80%8Be%E2%80%8B-%E2%80%8Bc%E2%80%8Bu%E2%80%8Bv%E2%80%8Bi%E2%80%8Bc%E2%80%8B-%E2%80%8Bo%E2%80%8Bn%E2%80%8Bd%E2%80%8Be%E2%80%8Bm%E2%80%8B" title="c​l​o​u​d​a​g​e​ ​C​U​V​I​C​ ​O​n​D​e​m​a​n​d"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/03/cubicondemand-300x77.png" title="cubicondemand">{.alignnone
-.size-medium .wp-image-274 width="300"
-height="77"}</a></p>
-<ol>
-<li>Cuvic OnDemand</li>
-<li>Hypervisor:VMware</li>
-<li>契約対応:法人</li>
-<li>対応言語 …</li></ol>
-                                <p class="readmore">
-                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2011/09/blog-post.html">Read more...</a>
                                 </p>
                             </div><!-- /.entry-content -->
                             <hr/>

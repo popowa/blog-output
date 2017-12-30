@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="author" content="ayakomuro" />
+    <meta name="robots" content="index, follow"/>
+
+    <meta property="og:title" content="Pythonの正規表現：メタキャラクターとは何ぞや"/>
+    <meta property="og:url" content="http://blog.popowa.com/2017/12/python-regular-expression-1.html"/>
+    <meta property="og:site_name" content="popowa"/>
+    <meta property="og:type" content="article"/>
+
+    <link rel="canonical" href="http://blog.popowa.com/2017/12/python-regular-expression-1.html" />
+
+    <title>Pythonの正規表現：メタキャラクターとは何ぞや | popowa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />
+
+    <link rel="stylesheet" type="text/css" href="http://blog.popowa.com/theme/css/main.css" />
+
+    <script type="text/javascript">var switchTo5x=true;</script>
+    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript">
+        stLight.options({
+            publisher: "5a2ce781d0739000123acd73",
+            doNotHash: false,
+            doNotCopy: false,
+            hashAddressBar: false
+        });
+    </script>
+</head>
+
+<body id="index">
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <header id="banner" >
+                <h1>
+                    <a href="http://blog.popowa.com/">popowa </a>
+                </h1>
+                <nav class="navbar">
+                    <div class="navbar-inner">
+                        <ul class="nav">
+                            <li ><a href="http://www.popowa.com">About Aya</a></li>
+                            <li ><a href="https://twitter.com/ayakomuro">Twitter</a></li>
+                            <li ><a href="https://github.com/popowa">Github</a></li>
+                        </ul>
+
+<script>
+  (function() {
+    var cx = '014316853335343165598:-bgzniyqm3y';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div id="google-custom-search" class="nav">
+    <gcse:search></gcse:search>
+</div>
+                    </div>
+                </nav>
+            </header><!-- /#banner -->
+        </div>
+    </div>
+
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <div class="row-fluid">
+<div class="span10 offset1">
+  <section>
+    <article>
+      <header>
+        <h1 class="entry-title">
+          <a href="http://blog.popowa.com/2017/12/python-regular-expression-1.html" rel="bookmark"
+             title="Permalink to Pythonの正規表現：メタキャラクターとは何ぞや">Pythonの正規表現：メタキャラクターとは何ぞや</a></h1>
+<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="ayakomuro">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+      </header>
+      <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/tech.html">tech</a>
+
+    on 2017-12-30
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/python.html">python</a>
+
+
+
+    
+</footer><!-- /.post-info -->
+        <div class="sharethis-top">
+          <span class='st_fblike_hcount' displayText='Facebook Like'></span>
+          <span class='st_plusone_hcount' displayText='Google +1'></span>
+          <span class='st_twitter_hcount' displayText='Tweet'></span>
+          <span class='st_email_hcount' displayText='Email'></span>
+        </div>
+
+        <p><strong>正規表現から逃げちゃダメだ！！</strong></p>
+<p>ちゃんと勉強してなかった正規表現ですが、もしかしたら英語でドキュメント読んだら分かるかも！？と
+思ってこちらの記事を読んでみました。そう、つまり私なりの要約です。</p>
+<p><a href="https://docs.python.org/3.6/howto/regex.html#regular-expression-howto">Regular Expression HOWTO &mdash; Python 3.6.4 documentation</a></p>
+<h2 id="zheng-gui-biao-xian-noji-ben">正規表現の基本</h2>
+<ul>
+<li>正規表現ってすごいシンプルな仕組みで、"test"で探したら"test"が引っかかるだけなの。</li>
+<li>でもそれだと困る人がいるので、大文字小文字区別しないモード(case-insensitive)で実行すれば"Test"とか"TEST"が引っかかるわよ</li>
+</ul>
+<h2 id="metakiyarakutahax-men">メタキャラクターはX-MEN</h2>
+<ul>
+<li>ところが以下の文字は上記のルールに当てはまらない。文字というより役割を持っている</li>
+<li>つまり元々平凡な高校生だったのに、秘められた力が開花して世界を救う羽目になったX-MENと思って取り扱って頂きたい</li>
+</ul>
+<p>役割を持っている子達</p>
+<p><code>. ^ $ * + ? { } [ ] \ | ( )</code></p>
+<h3 id="zheng-gui-biao-xian-noxiang-wozuo-ru-to-jiao-gua-hu-square-bracket">正規表現の箱を作る：　<code>[</code> と <code>]</code> (角括弧/Square Bracket)</h3>
+<p>この<code>[</code> と <code>]</code> は正規表現の括りを作る為の箱の役割になる
+この中に入れる文字は、個別の文字を入れてもいいし、文字の範囲を入れてもいい</p>
+<ul>
+<li>個別の文字: <code>[abc]</code> =&gt; 'a', 'b', 'c'のどれか</li>
+<li>文字の範囲: <code>[a-c]</code> =&gt; 'a', 'b', 'c'のどれか<ul>
+<li>小文字のみ: <code>[a-z]</code> =&gt; 'a'~'z'のどれか</li>
+<li>小文字大文字: <code>[a-Z]</code> =&gt; 'a'~'z', 'A'~'Z'のどれか</li>
+</ul>
+</li>
+</ul>
+<p>この箱に入るメタキャラクターは自分の役割（メタ）じゃなくて、元々の文字として扱われる（例外あり）</p>
+<ul>
+<li><code>[abc$]</code> =&gt; 'a', 'b', 'c', '$'のどれか</li>
+</ul>
+<p>この箱に入るメタキャラクターで、元々の文字ではなく自分の役割を果たしてしまう子達</p>
+<ul>
+<li><code>^</code> (例外): <code>[^5]</code> =&gt; 5以外の文字</li>
+</ul>
+<h3 id="metanoyi-ge-wojie-chu-shiyuan-nowen-zi-nisuru-ni-xie-xian-batsukusuratsushiyu">メタの役割を解除し元々の文字にする： <code>\</code>(逆斜線/バックスラッシュ)</h3>
+<p>バックスラッシュの前ではどのメタキャラクターも自分自身に戻らないといけないのだ！！</p>
+<ul>
+<li><code>\[</code> =&gt; '['</li>
+<li><code>\\</code> =&gt; '\'</li>
+</ul>
+<h3 id="wen-zi-nozu-mihe-wasewozhao-huan-shiteshimau-ni-xie-xian-batsukusuratsushiyu">文字の組み合わせを召喚してしまう： <code>\</code> (逆斜線/バックスラッシュ)</h3>
+<p>文字と一緒になると文字の組み合わせを召喚出来る。
+バックスラッシュの後に続く文字が大文字だと、それ以外、というルールが適応される。
+多分大文字だと反抗期になっちゃうのね</p>
+<ul>
+<li><code>\d</code> == <code>[0-9]</code> =&gt; 0~9の数字のどれか</li>
+<li><code>\D</code> == <code>[^0-9]</code> =&gt; 0~9以外の文字</li>
+<li><code>\s</code> == <code>[\t\n\r\f\v]</code>　=&gt; スペース文字のどれか<ul>
+<li>スペース文字とは？</li>
+</ul>
+</li>
+<li><code>\S</code> == <code>[^\t\n\r\f\v]</code> ==&gt; スペース文字以外の文字</li>
+<li><code>\w</code> == <code>[a-zA-Z0-9_]</code> ==&gt; 英数字とアンダースコア(<code>_</code>)のどれか<ul>
+<li>英数字とは？： ラテン文字(a~z, A~Z)とアラビア数字(0~9)の集合である</li>
+<li><a href="https://hackernoon.com/understanding-the-underscore-of-python-309d1a029edc">Understanding the underscore( _ ) of Python</a></li>
+</ul>
+</li>
+<li><code>\W</code> ==  <code>[^a-zA-Z0-9_]</code> ==&gt; 英数字とアンダースコア(<code>_</code>)以外の文字</li>
+</ul>
+<p>上記の召喚文字と一緒に書かれた文字は特別扱いされない</p>
+<ul>
+<li><code>[\s,.]</code> == <code>\s</code>（スペース文字のどれか）, <code>,</code>, <code>.</code>のどれか</li>
+</ul>
+<h3 id="gai-xing-yi-wai-nara-nandemook">改行以外なら、なんでもOK: <code>.</code></h3>
+<p>改行も入れたい場合、re.DOTALLモードにすれば全てを受け入れる神になれる</p>
+<h3 id="he-du-mohe-du-mochen-mo-mohan-meteai-wojiao-bitai">何度も何度も沈黙も含めて愛を叫びたい: <code>*</code></h3>
+<p>直前にある文字を何度も繰り返すことが出来る。繰り返さなくてもいい。時には沈黙も愛の一つである。</p>
+<ul>
+<li><code>ca*t</code> == <code>c</code> と <code>t</code>の間に　<code>a</code>　が0個から何個でも繰り返すことが出来る ==&gt; ct, cat, caaat, caaaaaaaaaaaaaaaat</li>
+<li><code>a[bcd]*b</code> == <code>a</code>と<code>b</code>の間に <code>b</code>,<code>c</code>,<code>d</code>のどれかを何度も繰り返す<ul>
+<li>この処理についてはまた別途深く勉強せねば</li>
+</ul>
+</li>
+</ul>
+<h3 id="he-du-mohe-du-mozui-di-yi-hui-yi-shang-haai-wojiao-bitai">何度も何度も最低一回以上は愛を叫びたい： <code>+</code></h3>
+<p>直前にある文字を一回以上何度も繰り返すことが出来る</p>
+<ul>
+<li><code>ca+t</code> == <code>c</code> と <code>t</code>の間に　<code>a</code>　を1回以上〜何個でも繰り返すことが出来る ==&gt; cat, caaat, caaaaaaaaaaaaaaaat</li>
+</ul>
+<h3 id="chen-mo-moshikuha1du-dakeai-wojiao-bitai">沈黙もしくは1度だけ愛を叫びたい： <code>?</code></h3>
+<p>直前にある文字を、1回繰り返すか、もしくは繰り返さない、のどちらかが出来る</p>
+<ul>
+<li><code>home-?brew</code> == <code>homebrew</code> か <code>home-brew</code>のどちらかにマッチする</li>
+</ul>
+<h3 id="zhi-ding-nohui-shu-dakeai-wojiao-bitai-mn">指定の回数だけ愛を叫びたい: <code>{m,n}</code></h3>
+<p><code>m</code> 回以上 <code>n</code> 回以下の回数の文字を繰り返す事が出来る</p>
+<ul>
+<li><code>a/{1,3}b</code> == <code>a/b</code> か <code>a//b</code>　か <code>a///b</code>のどれかにマッチする</li>
+</ul>
+<p>どちらかの数字を省くことが出来るよ！</p>
+<ul>
+<li>m を入れなかった場合、0回か0回以上になる</li>
+<li>n を入れなかった場合、無制限（上限なし）になる</li>
+</ul>
+<p>その他の動き</p>
+<ul>
+<li><code>{0,}</code>== 0回も含めて無制に愛を叫びたい == <code>*</code> と同じ</li>
+<li><code>{1,}</code>== 1回以上無限に愛を叫びたい == <code>+</code>と同じ</li>
+<li><code>{0,1}</code> == 0回か1回だけ愛を叫びたい == <code>?</code>と同じ</li>
+</ul>
+<p>明日は具体的な使い方を勉強したい</p>
+
+        <div class="sharethis-bottom">
+          <span class='st_fblike_hcount' displayText='Facebook Like'></span>
+          <span class='st_plusone_hcount' displayText='Google +1'></span>
+          <span class='st_twitter_hcount' displayText='Tweet'></span>
+          <span class='st_email_hcount' displayText='Email'></span>
+        </div>
+      </div><!-- /.entry-content -->
+
+    </article>
+  </section>
+</div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="site-footer">
+        <div class="row-fluid">
+            <div class="span10 offset1">
+                <address>
+                    <p>
+                        This blog is proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                    </p>
+                    <p>
+                        <a href="http://github.com/jsliang/pelican-fresh/">Fresh</a> is a responsive theme designed by <a href="http://jsliang.com/">jsliang</a> and <a href="https://github.com/jsliang/pelican-fresh/graphs/contributors">contributors</a>.
+                        Special thanks to <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a> and <a href="http://getbootstrap.com/">Twitter Bootstrap</a>.
+                    </p>
+                </address>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-845207-15']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+</body>
+</html>

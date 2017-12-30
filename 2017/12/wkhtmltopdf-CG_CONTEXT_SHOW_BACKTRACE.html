@@ -102,40 +102,38 @@
         </div>
 
         <p>やりたい事はただ一つ、HTMLファイルをPDFにしたいだけだ。</p>
-<h1>set CG_CONTEXT_SHOW_BACKTRACE environmental variable</h1>
+<h1 id="set-cg_context_show_backtrace-environmental-variable">set CG_CONTEXT_SHOW_BACKTRACE environmental variable</h1>
 <p>何かしらの方法で取得したHTMLがあるとする</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pdfkit</span>
-<span class="n">pdfkit</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s1">&#39;201708.htm&#39;</span><span class="p">,</span> <span class="s1">&#39;201708.pdf&#39;</span><span class="p">)</span>
+<span class="n">pdfkit</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s1">'201708.htm'</span><span class="p">,</span> <span class="s1">'201708.pdf'</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
-
 <p>上記を実行すると</p>
 <p><code>Dec 18 08:05:15  wkhtmltopdf[45102] &lt;Error&gt;: CGContextSetFillColor: invalid context 0x0.
 If you want to see the backtrace, please set CG_CONTEXT_SHOW_BACKTRACE environmental variable.</code></p>
 <p>が大量に出力されて出力されたPDFファイルが1000ページぐらいになる
 調べたらまだバグとしては直っていない模様。</p>
-<p><a href="https://github.com/wkhtmltopdf/wkhtmltopdf/issues/2196">Infinite loop of errors · Issue #2196 · wkhtmltopdf/wkhtmltopdf</a></p>
+<p><a href="https://github.com/wkhtmltopdf/wkhtmltopdf/issues/2196">Infinite loop of errors &middot; Issue #2196 &middot; wkhtmltopdf/wkhtmltopdf</a></p>
 <p>まずは他のツールがないかと探して見た</p>
-<h1>xhtml2pdf &lt;= 不採用</h1>
+<h1 id="xhtml2pdf-bu-cai-yong">xhtml2pdf &lt;= 不採用</h1>
 <ul>
 <li><a href="https://github.com/xhtml2pdf/xhtml2pdf">xhtml2pdf/xhtml2pdf: A library for converting HTML into PDFs using ReportLab</a></li>
-<li><a href="http://xhtml2pdf.readthedocs.io/en/latest/index.html">Welcome to xhtml2pdf’s documentation! — xhtml2pdf 0.1b3 documentation</a></li>
+<li><a href="http://xhtml2pdf.readthedocs.io/en/latest/index.html">Welcome to xhtml2pdf&rsquo;s documentation! &mdash; xhtml2pdf 0.1b3 documentation</a></li>
 </ul>
 <p>このツールはissues見ている限りバギーだし、実際に動かしてみてもバギーだった。まともに動かない</p>
-<h1>WeasyPrint &lt;= 採用</h1>
+<h1 id="weasyprint-cai-yong">WeasyPrint &lt;= 採用</h1>
 <ul>
-<li><a href="https://github.com/Kozea/WeasyPrint">Kozea/WeasyPrint: WeasyPrint converts web documents (HTML with CSS, SVG, …) to PDF.</a></li>
-<li><a href="http://weasyprint.readthedocs.io/en/latest/index.html">WeasyPrint — WeasyPrint 0.41 documentation</a></li>
+<li><a href="https://github.com/Kozea/WeasyPrint">Kozea/WeasyPrint: WeasyPrint converts web documents (HTML with CSS, SVG, &hellip;) to PDF.</a></li>
+<li><a href="http://weasyprint.readthedocs.io/en/latest/index.html">WeasyPrint &mdash; WeasyPrint 0.41 documentation</a></li>
 </ul>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>pip install weasyprint
 brew install cairo pango gdk-pixbuf libffi
 </pre></div>
 </td></tr></table>
-
 <p>素直にいい感じに動いてくれた。</p>
-<h1>結論</h1>
+<h1 id="jie-lun">結論</h1>
 <p>pdfkit, wkhtmltopdfを捨ててweasyprint使おう</p>
 
         <div class="sharethis-bottom">

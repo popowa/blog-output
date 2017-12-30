@@ -122,55 +122,47 @@ WordPressは使いたくないし、かといって知らないサービスも�
 <li>手組みで少しmarkdown変更</li>
 <li>Pelicanで静的HTML出力</li>
 </ul>
-<h2>ローカルの事前準備</h2>
+<h2 id="rokarunoshi-qian-zhun-bei">ローカルの事前準備</h2>
 <p>ローカルにPelicanを入れます。</p>
 <div class="highlight"><pre><span></span>pip install lxml BeautifulSoup4 pelican
 </pre></div>
-
-
-<h2>Bloggerから投稿内容をエクスポートする</h2>
+<h2 id="bloggerkaratou-gao-nei-rong-woekusupotosuru">Bloggerから投稿内容をエクスポートする</h2>
 <p>やり方は以下の通り</p>
 <ul>
 <li><a href="https://support.google.com/blogger/answer/41387?hl=ja">ブログのバックアップ、読み込み、削除 - Blogger ヘルプ </a></li>
 </ul>
-<h2>Wordpressでデータをインポートする</h2>
+<h2 id="wordpressdedetawoinpotosuru">Wordpressでデータをインポートする</h2>
 <p>最初wordpress.comでやっていたのですが、Permalinks設定がなぜかSaaS版にはないので、
 自分のローカルか、サーバーにインストールする必要があります。
 https://wordpress.com/</p>
 <p>WordPressインストール、設定等は割愛
 Permalinks設定を Post name設定にします。
-<a href="https://codex.wordpress.org/Using_Permalinks">Using Permalinks « WordPress Codex </a></p>
-<p>Bloggerを取り込むプラグイン<a href="https://ja.wordpress.org/plugins/blogger-importer/">Blogger Importer — WordPress プラグイン </a>をインストールしたのち、importファイルを少し修正します。</p>
-<p><a href="https://github.com/popowa/blog/blob/master/migration/wordpress/wp-content/plugins/blogger-importer/blogger-entry.php">blog/blogger-entry.php at master · popowa/blog</a></p>
-<h2>WordPressからデータをエクスポートする</h2>
+<a href="https://codex.wordpress.org/Using_Permalinks">Using Permalinks &laquo; WordPress Codex </a></p>
+<p>Bloggerを取り込むプラグイン<a href="https://ja.wordpress.org/plugins/blogger-importer/">Blogger Importer &mdash; WordPress プラグイン </a>をインストールしたのち、importファイルを少し修正します。</p>
+<p><a href="https://github.com/popowa/blog/blob/master/migration/wordpress/wp-content/plugins/blogger-importer/blogger-entry.php">blog/blogger-entry.php at master &middot; popowa/blog</a></p>
+<h2 id="wordpresskaradetawoekusupotosuru">WordPressからデータをエクスポートする</h2>
 <p>Blogger importプラグイン経由でBlogger XMLをImportしたのち、すぐにWordPressからExportします。
 出力する際は<code>Posts</code>で<code>Status: Published</code>のみとします
 こういうファイル名のXMLがダウンロード出来ると思います。
 {Blog name}.wordpress.{YYYY-MM-DD}.xml</p>
-<h2>PelicanでWordPressファイルを変換する</h2>
+<h2 id="pelicandewordpresshuairuwobian-huan-suru">PelicanでWordPressファイルを変換する</h2>
 <p>ローカルにダウントードしたXMLファイルを変換します。</p>
 <div class="highlight"><pre><span></span>$ pelican-import --wpfile --strip-raw --markup markdown ./migration/wordpress.2017-12-09.xml -o ./content-markdown/
 </pre></div>
-
-
-<h2>その後少しMarkdownファイルを修正します。</h2>
+<h2 id="sonohou-shao-shimarkdownhuairuwoxiu-zheng-shimasu">その後少しMarkdownファイルを修正します。</h2>
 <div class="highlight"><pre><span></span>$ python xml-convert.py
 </pre></div>
-
-
-<p><a href="https://github.com/popowa/blog/blob/master/migration/xml-convert.py">blog/xml-convert.py at master · popowa/blog</a></p>
-<h2>そしてPelicanのOutput機能を使って静的HTMLに出力します。</h2>
+<p><a href="https://github.com/popowa/blog/blob/master/migration/xml-convert.py">blog/xml-convert.py at master &middot; popowa/blog</a></p>
+<h2 id="soshitepelicannooutputji-neng-woshi-tsutejing-de-htmlnichu-li-shimasu">そしてPelicanのOutput機能を使って静的HTMLに出力します。</h2>
 <div class="highlight"><pre><span></span>$ pelican path_content
 </pre></div>
-
-
-<h2>Github page + 独自ドメイン</h2>
+<h2 id="github-page-du-zi-domein">Github page + 独自ドメイン</h2>
 <p>あとはoutputされたコンテンツをGithub pageとして公開し、独自ドメインを設定します。</p>
 <ul>
 <li>[Custom domain redirects for GitHub Pages sites - User Documentation] (https://help.github.com/articles/custom-domain-redirects-for-github-pages-sites/)</li>
 <li>[Using a custom domain with GitHub Pages - User Documentation] (https://help.github.com/articles/using-a-custom-domain-with-github-pages/)</li>
 </ul>
-<h1>まとめ</h1>
+<h1 id="matome_1">まとめ</h1>
 <p>Blogger-&gt;WorkPress-&gt;Pelicanで簡単にいけるんじゃね！？と思ったのですが、意外とハマりどころがあったので、今思えば普通のBloggerのXMLを
 よしなにパースすればよかったなぁ・・というのが感想です🙈
 はてなブログ時代のコンテンツもあったので、完全に綺麗に持って行けた訳ではありませんが、ある程度時間帯短縮になったかと思います！</p>

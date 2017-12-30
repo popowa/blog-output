@@ -42,8 +42,9 @@
                 <nav class="navbar">
                     <div class="navbar-inner">
                         <ul class="nav">
-                            <li ><a href="http://www.popowa.com">Profile</a></li>
+                            <li ><a href="http://www.popowa.com">About Aya</a></li>
                             <li ><a href="https://twitter.com/ayakomuro">Twitter</a></li>
+                            <li ><a href="https://github.com/popowa">Github</a></li>
                         </ul>
 
 <script>
@@ -74,6 +75,185 @@
                         <article>
                             <header>
                                 <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2011/08/aws.html" rel="bookmark" title="Permalink to AWSが取得している第三者証明書について">
+                                       AWSが取得している第三者証明書について
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/blog.html">blog</a>
+
+    on 2011-08-24
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/aws.html">AWS</a>
+        <a href="http://blog.popowa.com/tag/security.html">Security</a>
+        <a href="http://blog.popowa.com/tag/hai-wai-saito.html">海外サイト</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>AWSのセキュリティで欠かす事が出来ないのは第三者証明書ですが、略語になっていてこれなんだろう！？と思う事がよくあります。日本の法律ではない事もあり、余計セキュリティはどうなっているのか分かりにくくしているのではないでしょうか。  </p>
+<p>概要として調べてみたので紹介します。  </p>
+<p>[]  </p>
+<h2 id="sas70-type-ii">SAS70 Type II</h2>
+<ul>
+<li>米国監査基準書70号 =&gt;
+    外部委託をする場合に米国監査に提出する事が出来る</li>
+<li>SAS70報告書にはType IとType IIの2種類がある</li>
+<li>Type Iは委託業務に関する内部統制の整備状況について、Type
+    IIはそれに加えて所定の期間を通じての内部統制の運用状況の有効性の評価を行う</li>
+<li>日本でも同様の基準として日本公認会計士協会の監査基準委員会報告書第18号「委託業務に係る統制リスクの評価」（通称「18号監査」）</li>
+<li>Type
+    II報告書の内容が適切でないと監査人が判断した場合には、委託先への直接監査を行うことがあり得る　=&gt;
+    これは結構重要事項では？</li>
+<li>報告書の内容が適切と監査人が判断した場合に初めて、委託業務についての統制リスクを中位もしくは低位であると評価できる</li>
+</ul>
+<p><a href="http://www.atmarkit.co.jp/im/cits/serial/soxfw/07/03.html">日本版SOX法に必要なセキュリティポリシーとは？ －
+＠IT情報マネジメント</a> </p>
+<p><a href="http://ameblo.jp/yamasan007/entry-10481706640.html">クラウド・コンピューティングで重要な用語の一つ「SAS 70 Type
+II」を探ってみよう！</a> </p>
+<h2 id="pci-dss-level-1">PCI DSS Level 1</h2>
+<ul>
+<li>PCI DSS（Payment Card Industry Data Security Standard）</li>
+<li>JCB …</li></ul>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2011/08/aws.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2011/08/rightscale_10.html" rel="bookmark" title="Permalink to （調査中..）RightScaleのエディションの違い">
+                                       （調査中..）RightScaleのエディションの違い
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/blog.html">blog</a>
+
+    on 2011-08-10
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/rightscale.html">RightScale</a>
+        <a href="http://blog.popowa.com/tag/rightscalejie-ti-xin-shu.html">RightScale解体新書</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>RightScaleには複数のエディションがありますが、具体的に何が違うのか調べてみます（調査中..）。  </p>
+<p>[]エディションの種類  </p>
+<h2 id="huriedeishiyon">フリーエディション</h2>
+<p>出来る事  </p>
+<ul>
+<li>制限付きのダッシュボードでのクラウドの利用</li>
+<li>無償サーバテンプレート利用でのクラウド管理</li>
+</ul>
+<p>出来ない事  </p>
+<ul>
+<li>有償サーバテンプレート、ライトスクリプトの購入</li>
+<li>オートスケール、アレイ、アラート、エスカレーション等の利用</li>
+</ul>
+<p>備考  </p>
+<ul>
+<li>クレジットカード等は聞かれない</li>
+</ul>
+<h2 id="sutandadoedeishiyon">スタンダードエディション</h2>
+<p>出来る事  </p>
+<p>出来ない事  </p>
+<p>備考  </p>
+<h2 id="guritsudoedeishiyon">グリッドエディション</h2>
+<p>出来る事  </p>
+<ul>
+<li></li>
+</ul>
+<p>出来ない事  </p>
+<ul>
+<li></li>
+</ul>
+<p>備考  </p>
+<ul>
+<li></li>
+</ul>
+<h2 id="puremiamuedeishiyon">プレミアムエディション</h2>
+<p>出来る事  </p>
+<p>出来ない事  </p>
+<p>備考  </p>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2011/08/rightscale_10.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2011/08/ustday.html" rel="bookmark" title="Permalink to ">
+                                       
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/blog.html">blog</a>
+
+    on 2011-08-05
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/jin-zhou-noqi-ninatsutaniyusu.html">今週の気になったニュース</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>Ustなしday+今日は会議の為ust出来なかったので、話そうと思って用意していた記事だけアップします。  </p>
+<p>[]  </p>
+<ul>
+<li><a href="http://japan.cnet.com/news/service/35005773/">＜CNET
+    Japan＞アップル、「iCloud」追加ストレージ料を明らかに--年額20ドル10Gバイトから3通り</a></li>
+<li><a href="http://feedproxy.google.com/~r/fastcompany/headlines/~3/wQ7bid31t2k/time-warner-profits-itunes-to-get-streaming-powers-microsofts-arduino-rival-sonys-vita-will-">Flickr Hits 6 Billion Photos, Mobile Ad Firms Grow, Time Warner
+    Profits, iTunes\' Streaming Powers, Microsoft\'s Arduino
+    Rival</a></li>
+<li><a href="http://aws.typepad.com/aws_japan/2011/08/new-aws-enterprise-features-vpc-everywhere-direct-connect-identity-federation.html">【AWS発表】 エンタープライズ向けの新発表：
+    東京リージョンを含む全リージョンでのVPCサポート、専用線でクラウドに直結できるDirect
+    Connect、
+    LDAP等でAWSアカウントへのアクセスを可能にする</a></li>
+<li><a href="http://www.itmedia.co.jp/enterprise/articles/1108/04/news103.html">アドビ、Web会議のマネージドサービスを提供　在宅勤務に効果</a></li>
+<li><a href="http://www.itmedia.co.jp/enterprise/articles/1107/29/news105.html">「箱売りから卒業」　仮想化とクラウドに軸足を移すDell</a></li>
+<li><a href="http://www.nec.co.jp/press/ja/1108/0201.html">沖縄県石垣市と竹富町に、住民サービスの向上や災害対策強化を支援する統合コミュニケーションシステムをクラウドサービスで提供</a></li>
+<li><a href="http://cloud.watch.impress.co.jp/docs/news/20110804_465299.html">CTC、大規模プライベートクラウド環境向けのコンサルティングサービス</a></li>
+<li><a href="http://ascii.jp/elem/000/000/625/625527/summary.html?">迅速な導入を実現！日本HPが仮想化支援の「Cloud検証センター」</a></li>
+</ul>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2011/08/ustday.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
                                     <a href="http://blog.popowa.com/2011/08/rightscale.html" rel="bookmark" title="Permalink to 番外編〜RightScaleが保守しているサーバイメージ〜">
                                        番外編〜RightScaleが保守しているサーバイメージ〜
                                     </a>
@@ -100,15 +280,15 @@
 </footer><!-- /.post-info -->                                <p>無償サーバテンプレートに紐づいているサーバイメージの多くはRightScale社が作成、メンテナンスしているもので、何種類かあります。それらを一覧にして、サーバテンプレートを作る時の目安にしたいと思います。  </p>
 <p>[]  </p>
 <p>これとは別にRightScale
-OSSという名前で出しているサーバイメージもあります（<a href="http://support.rightscale.com/21-Community/RightScale_OSS">一覧はこちら</a>）。これはコミュニティ版として出ており、RightScaleがサポートしている物ではありません。<br>
+OSSという名前で出しているサーバイメージもあります（<a href="http://support.rightscale.com/21-Community/RightScale_OSS">一覧はこちら</a>）。これはコミュニティ版として出ており、RightScaleがサポートしている物ではありません。<br/>
 Windowsは有償になるので、フリーエディションには表示されません。。。  </p>
 <p>東京リージョン対応しているのは★をつけてます。  </p>
-<p><strong>RightImage Ubuntu_8.04_i386_v4.3.7 [rev 1]</strong>  </p>
+<p><strong>RightImage Ubuntu_8.04_i386_v4.3.7 [rev 1]</strong> </p>
 <ul>
 <li>対応クラウドAWS US-East,AWS EU,AWS US-West</li>
 <li>説明文Auto-generated</li>
 </ul>
-<p><strong>RightImage Ubuntu_9.10_i386_v4.5 [rev 4]</strong>  </p>
+<p><strong>RightImage Ubuntu_9.10_i386_v4.5 [rev 4]</strong> </p>
 <ul>
 <li>対応クラウドAWS US-East,AWS EU,AWS US-West</li>
 <li>説明文Pointers to the same S3-based RightImage (v4.5.x) published …</li></ul>
@@ -150,9 +330,9 @@ Windowsは有償になるので、フリーエディションには表示され�
     
 </footer><!-- /.post-info -->                                <p>前回サーバテンプレートを使ってサーバを立ててみました。それではサーバテンプレートを構成している個々のスクリプトを見てみたいと思います。  </p>
 <p>[]「デザイン」から「サーバテンプレート」を選択します。  </p>
-<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/server_template.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/server_template.png" title="server_template">{.alignnone
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/server_template.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/server_template.png" title="server_template"/>{.alignnone
 .size-full .wp-image-1322 width="153"
-height="66"}</a>  </p>
+height="66"}</a> </p>
 <p>対象サーバサーバテンプレートを選択します。スクリプトタブを選択します。  </p>
 <p>スクリプトの書き方  </p>
 <ul>
@@ -165,7 +345,7 @@ height="66"}</a>  </p>
 <li>パッケージ毎の起動は、/etc/init.d/パッケージ
     restart（Debian系特有）ではなく、serviceを使って起動する</li>
 <li>スクリプト内で設定された関数や、変数は引き継がれない事を前提にする。他のスクリプトに依存はせず、面倒でもスクリプト単体で、動くようにしておく</li>
-<li>サーバテンプレートに対応させるサーバイメージを複数ディストリビューションにする場合は、分岐を入れる<br>
+<li>サーバテンプレートに対応させるサーバイメージを複数ディストリビューションにする場合は、分岐を入れる<br/>
    （Debian系だとapt-get、CentOS系だとyumなど）</li>
 <li>同じディストリビューションでもバージョンによってパッケージの依存関係が違っていたりするので、もし依存関係が違っていたら、個別にバージョンを確認し …</li></ul>
                                 <p class="readmore">
@@ -208,8 +388,6 @@ height="66"}</a>  </p>
 
 MAIL Postfix local delivery
 </pre></div>
-
-
 <blockquote>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -281,9 +459,9 @@ MAIL Postfix local delivery
 
     
 </footer><!-- /.post-info -->                                <p>client+個別のライトスクリプトを日本語化してみます：SYS Syslog remote
-logging client<br>
-[]<br>
-<strong>SYS Syslog remote logging client</strong>  </p>
+logging client<br/>
+[]<br/>
+<strong>SYS Syslog remote logging client</strong> </p>
 <blockquote>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
   2
@@ -358,7 +536,7 @@ logging client<br>
 </footer><!-- /.post-info -->                                <p>2]+個別のライトスクリプトを日本語化してみます。SYS Timezone set - 11H1
 JST [rev 2]  </p>
 <p>[]  </p>
-<p><strong>SYS Timezone set - 11H1 JST [rev 2]</strong>  </p>
+<p><strong>SYS Timezone set - 11H1 JST&nbsp;[rev 2]</strong> </p>
 <blockquote>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -433,15 +611,15 @@ Scriptで使うものだったので、困ったな、という事で中の人�
 <p>見逃し易いのはOperational ScriptやDecommission
 scriptで使うInputで、これは使う時にはって初めて抜けていた、という事に気がつきます。  </p>
 <p>そういう場合は、サーバテンプレートに入れても実稼働中のサーバには反映されません。なので、実稼働をしているサーバをInputに対して設定をする事で、デプロイメントでのスクリプト実行が出来るようになります。  </p>
-<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/640x480.jpg"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/640x480.jpg" title="640x480">{.alignnone
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/640x480.jpg"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/640x480.jpg" title="640x480"/>{.alignnone
 .size-full .wp-image-1316 width="448"
-height="280"}</a>  </p>
+height="280"}</a> </p>
 <p>変更したいデプロイメントを選択し、サーバテンプレートではなく、サーバを選択します。  </p>
-<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/input.jpg"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/input.jpg" title="input">{.alignnone
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/input.jpg"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/input.jpg" title="input"/>{.alignnone
 .size-full .wp-image-1317 width="453"
-height="84"}</a>  </p>
+height="84"}</a> </p>
 <p>そして個々のサーバページのInputで抜けていた内容を入力します。  </p>
-<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/server_input.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/server_input.png" title="server_input">{.alignnone
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/server_input.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/server_input.png" title="server_input"/>{.alignnone
 .size-full .wp-image-1318 width="233"
 height …</a></p>
                                 <p class="readmore">
@@ -483,7 +661,7 @@ height …</a></p>
 <p>[]  </p>
 <p>まず元々iPhoneを持っていました。でもiPhoneでちょっとやらかしてしまい、使えなくなったので、Android中心になった訳ですが、ゲーム系はしないので、アプリは違えど、FacebookやTwitter、Gmailなどに投稿、閲覧は出来ます。  </p>
 <p>で、今の所iPhoneじゃなくてAndroidでもいいじゃん！と思ったのが  </p>
-<h1><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/GoogleNavi.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/GoogleNavi.png" title="GoogleNavi"></a><a href="https://market.android.com/details?id=com.google.android.apps.maps">モバイルGoogleナビ</a></h1>
+<h1 id="mobairugooglenabi"><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/GoogleNavi.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/GoogleNavi.png" title="GoogleNavi"/></a><a href="https://market.android.com/details?id=com.google.android.apps.maps">モバイルGoogleナビ</a></h1>
 <p>です。  </p>
 <p>なーんだ、と思う方も居るかもしれませんが、車に乗る人間としては、これはとても便利！  </p>
 <p>Latitude機能はいまいちですが（何をどうすればポスト出来るのか、削除もやり方が面倒くさい等）、現在地からA地点までのナビゲーションは本当に車についているカーナビに劣りません。  </p>
@@ -492,166 +670,6 @@ height …</a></p>
 <p>東京だと車に乗る人はあまり居ないかも知れないので、使う機会がないかもしれませんが、地方や、旅行に行ったらとても便利です。初期設定に入っているので、是非使ってみてください！  </p>
                                 <p class="readmore">
                                     <a class="btn btn-small btn-info" href="http://blog.popowa.com/2011/07/iphoneandroid.html">Read more...</a>
-                                </p>
-                            </div><!-- /.entry-content -->
-                            <hr/>
-                        </article>
-                    </li>
-                    <li>
-                        <article>
-                            <header>
-                                <h1 class="entry-title">
-                                    <a href="http://blog.popowa.com/2011/07/blog-post_30.html" rel="bookmark" title="Permalink to ハンズオン＠佐賀大学でお手伝いをしてくださる方を募集します！">
-                                       ハンズオン＠佐賀大学でお手伝いをしてくださる方を募集します！
-                                    </a>
-                                </h1>
-                            </header>
-                            <div class="entry-content">
-<footer class="post-info">
-    <address class="vcard author">
-        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
-    </address>
-
-    in <a href="http://blog.popowa.com/category/blog.html">blog</a>
-
-    on 2011-07-30
-
-        |
-        tags:         <a href="http://blog.popowa.com/tag/ozhi-rase.html">お知らせ</a>
-        <a href="http://blog.popowa.com/tag/guo-nei-ibento.html">国内イベント</a>
-
-
-
-    
-</footer><!-- /.post-info -->                                <p>9/10(土曜日）に佐賀大学で行われるクラウド/AWSのハンズオンをお手伝いしてくださる方を募集します。  </p>
-<p>詳細は以下の通りです。  </p>
-<p>[]開催日時：2011/9/10 (土曜日）<br>
-開催場所：佐賀大学<br>
-スケジュール：  </p>
-<ul>
-<li>10時〜12時: クラウド、AWSとはなぞや</li>
-<li>12時\~13時：ランチ</li>
-<li>13時\~15時：AWS(EC2/S3)を触ってみよう！</li>
-</ul>
-<p>参加費：無料<br>
-ターゲット参加者：佐賀近辺のIT管理者、（佐賀）大学（院）生  </p>
-<p>スタッフとして手伝っていたく方には感謝の意しかお渡し出来ませんが、無償でもいいとやって頂ける方は是非ご連絡(
-ayakomuro (at) gmail.com ) ください。<br>
-#スタッフをやって頂く方は、Ec2、S3を触った事がある、というのが最低条件です。  </p>
-<p>以上宜しくお願い致します！！  </p>
-                                <p class="readmore">
-                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2011/07/blog-post_30.html">Read more...</a>
-                                </p>
-                            </div><!-- /.entry-content -->
-                            <hr/>
-                        </article>
-                    </li>
-                    <li>
-                        <article>
-                            <header>
-                                <h1 class="entry-title">
-                                    <a href="http://blog.popowa.com/2011/07/vol10.html" rel="bookmark" title="Permalink to ほぼ週刊クラウド日和 vol.10">
-                                       ほぼ週刊クラウド日和 vol.10
-                                    </a>
-                                </h1>
-                            </header>
-                            <div class="entry-content">
-<footer class="post-info">
-    <address class="vcard author">
-        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
-    </address>
-
-    in <a href="http://blog.popowa.com/category/blog.html">blog</a>
-
-    on 2011-07-29
-
-        |
-        tags:         <a href="http://blog.popowa.com/tag/jin-zhou-noqi-ninatsutaniyusu.html">今週の気になったニュース</a>
-
-
-
-    
-</footer><!-- /.post-info -->                                <p>ほぼ週刊クラウド日和</p>
-<p>vol.9を更新し忘れたまま、金曜日が来てしまいました。vol.10で話をしたクラウドニュースをお知らせします。  </p>
-<p>[]  </p>
-<p>クラウド関連ニュース  </p>
-<ul>
-<li><a href="http://itpro.nikkeibp.co.jp/article/NEWS/20110728/362994/">オープンなクラウド・サービスを認定する「Open Cloud
-    Initiative」が発足</a></li>
-<li><a href="http://www.computerworld.jp/topics/634/IT%E6%A5%AD%E7%95%8C%E5%8B%95%E5%90%91/200443/%E4%B8%96%E7%95%8C%E4%B8%AD%E3%81%A72%E5%B9%B4%E3%81%94%E3%81%A8%E3%81%AB%E3%83%87%E3%83%BC%E3%82%BF%E3%81%8C%E5%80%8D%E5%A2%97">【IDC調査】世界中で2年ごとにデータが倍増</a></li>
-<li><a href="http://www.dreamnews.jp/?action_press=1&amp;pid=0000036157">インフォリスクマネージ、『クラウド運用代行サービス』の提供を開始－障害1次対応を含めた業界最安値－</a></li>
-<li><a href="http://www.computerworld.jp/topics/601/%E3%82%AF%E3%83%A9%E3%82%A6%E3%83%89%E3%83%BB%E3%82%B3%E3%83%B3%E3%83%94%E3%83%A5%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0/200445/%E3%83%87%E3%83%AB%E3%80%81%E3%80%8COpenStack%E3%80%8D%E3%83%99%E3%83%BC%E3%82%B9%E3%81%AE%E3%82%AF%E3%83%A9%E3%82%A6%E3%83%89%E3%83%BB%E3%82%BD%E3%83%AA%E3%83%A5%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E7%99%BA%E8%A1%A8">デル、「OpenStack」ベースのクラウド・ソリューションを発表</a></li>
-<li><a href="http://dt.business.nifty.com/articles/5618.html">ニフティ、営業益1.5倍に、クラウド事業が拡大、利用は800社超に、4ー6月期</a></li>
-<li><a href="http://www.itmedia.co.jp/news/articles/1107/27/news019.html">Amazon決算、増収減益　広告付きで139ドルのKindle
-    3Gがベストセラーに</a></li>
-<li><a href="http://www.itmedia.co.jp/enterprise/articles/1107/26/news072.html">パブリッククラウド、利用率と認知度が大幅上昇　IDC調査</a></li>
-</ul>
-<p>その他  </p>
-<ul>
-<li><a href="http://www.godaddy.com/">GoDaddy</a>のイメージキャラクターがElla Koon</li>
-<li>クラウドのストレージに特化した日本企業がどんどん出てくるといいなぁ</li>
-<li>SaaSでよくクラウド～とか言っているけど、実際どのくらいクラウド対応しているのか、負荷分散や、HAしているのか示してほしいなぁ、と思う</li>
-</ul>
-                                <p class="readmore">
-                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2011/07/vol10.html">Read more...</a>
-                                </p>
-                            </div><!-- /.entry-content -->
-                            <hr/>
-                        </article>
-                    </li>
-                    <li>
-                        <article>
-                            <header>
-                                <h1 class="entry-title">
-                                    <a href="http://blog.popowa.com/2011/07/rightscale_4942.html" rel="bookmark" title="Permalink to ">
-                                       
-                                    </a>
-                                </h1>
-                            </header>
-                            <div class="entry-content">
-<footer class="post-info">
-    <address class="vcard author">
-        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
-    </address>
-
-    in <a href="http://blog.popowa.com/category/blog.html">blog</a>
-
-    on 2011-07-27
-
-        |
-        tags:         <a href="http://blog.popowa.com/tag/aws.html">AWS</a>
-        <a href="http://blog.popowa.com/tag/rightscale.html">RightScale</a>
-        <a href="http://blog.popowa.com/tag/rightscalejie-ti-xin-shu.html">RightScale解体新書</a>
-
-
-
-    
-</footer><!-- /.post-info -->                                <p>げてみよう\~+クラウドの追加、諸設定が終わったので、サーバーテンプレートを取り込んで、サーバを立ち上げます。このページでは、サーバーテンプレートの動き、とどのようにサーバーを立ち上げるスクリプトが機能するかを見て行きたいと思います。  </p>
-<p>[]  </p>
-<ul>
-<li>デプロイメントを作成する</li>
-<li>サーバーテンプレートを持ってくる</li>
-<li>サーバーテンプレートの諸設定する</li>
-<li>サーバーテンプレートで使うバケット、ファイルの用意をする</li>
-<li>サーバーテンプレートをデプロイメントに追加する</li>
-<li>サーバーを立てる</li>
-</ul>
-<h2>◆デプロイメントを作成する</h2>
-<p>まず、「管理」->
-「デプロイメント」の横にある「新規追加」をクリックします。  </p>
-<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/depoyment_1.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/depoyment_1.png" title="depoyment_1">{.alignnone
-.size-full .wp-image-1219 width="205"
-height="86"}</a>  </p>
-<p>Nickname:  デプロイメントの名前です（後で変えられます）<br>
-Description:　説明文<br>
-Default Availability
-Zone:　ディフォルトのアベイラビリティゾーン（これはサーバーレベルで上書きする事が出来ます。）<br>
-Default Placement Group:
- こちらは通常利用しないと思います（多分何も出てないかと）<br>
-これはCCI (クラスターコンピューティングインスタンス）をHPC(AWS High
-Performance …</p>
-                                <p class="readmore">
-                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2011/07/rightscale_4942.html">Read more...</a>
                                 </p>
                             </div><!-- /.entry-content -->
                             <hr/>
