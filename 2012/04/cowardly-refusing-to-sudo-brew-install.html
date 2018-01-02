@@ -42,8 +42,9 @@
                 <nav class="navbar">
                     <div class="navbar-inner">
                         <ul class="nav">
-                            <li ><a href="http://www.popowa.com">Profile</a></li>
+                            <li ><a href="http://www.popowa.com">About Aya</a></li>
                             <li ><a href="https://twitter.com/ayakomuro">Twitter</a></li>
+                            <li ><a href="https://github.com/popowa">Github</a></li>
                         </ul>
 
 <script>
@@ -103,33 +104,33 @@
 
         <p>install\'って言われたよ+brewでpythonを入れようと思ったらこんなのが出た</p>
 <blockquote>
-<p>Komuro-no-MacBook-Air:\~ komuro\$ sudo brew install python<br>
-Password:<br>
+<p>Komuro-no-MacBook-Air:\~ komuro\$ sudo brew install python<br/>
+Password:<br/>
 Cowardly refusing to `sudo brew install\'</p>
 </blockquote>
 <p>sudoじゃだめなのか？と思ってsuになってやってみた</p>
 <p>[]  </p>
 <blockquote>
-<p>Komuro-no-MacBook-Air:\~ komuro\$ sudo su<br>
-sh-3.2# brew install python<br>
+<p>Komuro-no-MacBook-Air:\~ komuro\$ sudo su<br/>
+sh-3.2# brew install python<br/>
 Cowardly refusing to `sudo brew install\'</p>
 </blockquote>
 <p>調べたところ、brewは権限を昇格させる必要がないように設計されており、むしろsudo権限がある状態でのbrew操作しないようにしているそうです。</p>
-<p><a href="https://github.com/mxcl/homebrew/wiki/FAQ">https://github.com/mxcl/homebrew/wiki/FAQ</a>  </p>
+<p><a href="https://github.com/mxcl/homebrew/wiki/FAQ">https://github.com/mxcl/homebrew/wiki/FAQ</a> </p>
 <blockquote>
-<h2>Why does Homebrew say sudo is bad?</h2>
+<h2 id="why-does-homebrew-say-sudo-is-bad">Why does Homebrew say sudo is bad?</h2>
 <p><strong>tl;dr</strong> Sudo is dangerous, and you installed TextMate.app without
 sudo anyway.</p>
 <p>Homebrew is designed to work without using sudo. You can decide to use
 it but we strongly recommend not to do so. If you have used sudo and
 run into a bug then it is likely to be the cause. Please don't file a
 bug report unless you can reproduce it after reinstalling Homebrew
-from scratch without using sudo.<br>
+from scratch without using sudo.<br/>
 You should only ever sudo a tool you trust. Of course, you can trust
 Homebrew ;) But do you trust the multi-megabyte Makefile that Homebrew
 runs? Developers often understand C++ far better than they understand
 make syntax. It's too high a risk to sudo such stuff. It could break
-your base system, or alter it subtly.<br>
+your base system, or alter it subtly.<br/>
 And indeed, we've seen some build scripts try to modify <code>/usr</code> even
 when the prefix was specified as something else entirely.</p>
 <p>Did you <code>chown root /Applications/TextMate.app</code>? Probably not. So is

@@ -42,8 +42,9 @@
                 <nav class="navbar">
                     <div class="navbar-inner">
                         <ul class="nav">
-                            <li ><a href="http://www.popowa.com">Profile</a></li>
+                            <li ><a href="http://www.popowa.com">About Aya</a></li>
                             <li ><a href="https://twitter.com/ayakomuro">Twitter</a></li>
+                            <li ><a href="https://github.com/popowa">Github</a></li>
                         </ul>
 
 <script>
@@ -104,8 +105,8 @@
         <p>急にdb:migrateしようとしたら怒られる様になった。</p>
 <p>20130211061203_create_settings.rbを見ても特に普段と変わらない様子。</p>
 <blockquote>
-<p>\$rake db:migrate<br>
-rake aborted!<br>
+<p>\$rake db:migrate<br/>
+rake aborted!<br/>
 /Users/komuro/rails-demo/db/migrate/20130211061203_create_settings.rb:4:
 syntax error, unexpected \'n\', expecting tCOLON2 or \'[\' or \'.\'</p>
 </blockquote>
@@ -123,22 +124,22 @@ syntax error, unexpected \'n\', expecting tCOLON2 or \'[\' or \'.\'</p>
 <blockquote>
 <p>\$ rails generate scaffold Setting accesskey:string secretkey:string</p>
 </blockquote>
-<p>--<br>
-english<br>
+<p>--<br/>
+english<br/>
 --</p>
 <p>Suddenly, db:migrate gave me a error (see below)</p>
 <p>20130211061203_create_settings.rb doesn\'t look so strange from
 path..hmmm</p>
 <blockquote>
-<p>\$rake db:migrate<br>
-rake aborted!<br>
+<p>\$rake db:migrate<br/>
+rake aborted!<br/>
 /Users/komuro/rails-demo/db/migrate/20130211061203_create_settings.rb:4:
 syntax error, unexpected \'n\', expecting tCOLON2 or \'[\' or \'.\'</p>
 </blockquote>
 <p>I googled and found out that I typed comma when I generate scaffold.  </p>
 <blockquote>
 <p>\$ rails generate scaffold Setting
-accesskey:string[, ]secretkey:string</p>
+accesskey:string[,&nbsp;]secretkey:string</p>
 </blockquote>
 <p>No comma!</p>
 <p>If you type it with comma, delete scaffold first.  </p>

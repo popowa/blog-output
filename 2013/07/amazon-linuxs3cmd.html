@@ -42,8 +42,9 @@
                 <nav class="navbar">
                     <div class="navbar-inner">
                         <ul class="nav">
-                            <li ><a href="http://www.popowa.com">Profile</a></li>
+                            <li ><a href="http://www.popowa.com">About Aya</a></li>
                             <li ><a href="https://twitter.com/ayakomuro">Twitter</a></li>
+                            <li ><a href="https://github.com/popowa">Github</a></li>
                         </ul>
 
 <script>
@@ -106,85 +107,85 @@
 <p>---</p>
 <p>Amazon
 Linuxにはs3cmdが入っていると聞いていたけど入っていなかったので、入れてみた。</p>
-<p>wget http://s3tools.org/repo/RHEL_6/s3tools.repo \~/<br>
-sudo cp s3tools.repo /etc/yum.repos.d/<br>
+<p>wget http://s3tools.org/repo/RHEL_6/s3tools.repo \~/<br/>
+sudo cp s3tools.repo /etc/yum.repos.d/<br/>
 sudo yum -y install s3cmd</p>
 <p>Loaded plugins: downloadonly, fastestmirror, priorities, security,
-update-motd, upgrade-helper<br>
-Loading mirror speeds from cached hostfile<br>
-* amzn-main: packages.ap-northeast-1.amazonaws.com<br>
-* amzn-updates: packages.ap-northeast-1.amazonaws.com<br>
-amzn-main | 2.1 kB 00:00<br>
-amzn-updates | 2.3 kB 00:00<br>
-s3tools | 1.3 kB 00:00<br>
-s3tools/primary | 1.0 kB 00:00<br>
-s3tools 3/3<br>
-Setting up Install Process<br>
-Resolving Dependencies<br>
---> Running transaction check<br>
----> Package s3cmd.i386 0:1.0.0-4.1 will be installed<br>
---> Finished Dependency Resolution<br>
-Dependencies Resolved<br>
-===================================================================================================================================================<br>
-Package Arch Version Repository Size<br>
-===================================================================================================================================================<br>
-Installing:<br>
-s3cmd i386 1.0.0-4.1 s3tools 91 k<br>
-Transaction Summary<br>
-===================================================================================================================================================<br>
-Install 1 Package(s)<br>
-Total download size: 91 k<br>
-Installed size: 296 k<br>
-Downloading Packages:<br>
-s3cmd-1.0.0-4.1.i386.rpm | 91 kB 00:01<br>
+update-motd, upgrade-helper<br/>
+Loading mirror speeds from cached hostfile<br/>
+* amzn-main: packages.ap-northeast-1.amazonaws.com<br/>
+* amzn-updates: packages.ap-northeast-1.amazonaws.com<br/>
+amzn-main | 2.1 kB 00:00<br/>
+amzn-updates | 2.3 kB 00:00<br/>
+s3tools | 1.3 kB 00:00<br/>
+s3tools/primary | 1.0 kB 00:00<br/>
+s3tools 3/3<br/>
+Setting up Install Process<br/>
+Resolving Dependencies<br/>
+--&gt; Running transaction check<br/>
+---&gt; Package s3cmd.i386 0:1.0.0-4.1 will be installed<br/>
+--&gt; Finished Dependency Resolution<br/>
+Dependencies Resolved<br/>
+===================================================================================================================================================<br/>
+Package Arch Version Repository Size<br/>
+===================================================================================================================================================<br/>
+Installing:<br/>
+s3cmd i386 1.0.0-4.1 s3tools 91 k<br/>
+Transaction Summary<br/>
+===================================================================================================================================================<br/>
+Install 1 Package(s)<br/>
+Total download size: 91 k<br/>
+Installed size: 296 k<br/>
+Downloading Packages:<br/>
+s3cmd-1.0.0-4.1.i386.rpm | 91 kB 00:01<br/>
 警告: rpmts_HdrFromFdno: ヘッダ V3 DSA/SHA1 Signature, key ID e612b227:
-NOKEY<br>
+NOKEY<br/>
 Retrieving key from
-http://s3tools.org/repo/RHEL_6/repodata/repomd.xml.key<br>
-Importing GPG key 0xE612B227:<br>
+http://s3tools.org/repo/RHEL_6/repodata/repomd.xml.key<br/>
+Importing GPG key 0xE612B227:<br/>
 Userid: \"home:mludvig OBS Project
-\&lt;home:mludvig@build.opensuse.org>\"<br>
-From : http://s3tools.org/repo/RHEL_6/repodata/repomd.xml.key<br>
-Running rpm_check_debug<br>
-Running Transaction Test<br>
-Transaction Test Succeeded<br>
-Running Transaction<br>
-Installing : s3cmd-1.0.0-4.1.i386 1/1<br>
-Verifying : s3cmd-1.0.0-4.1.i386 1/1<br>
-Installed:<br>
+\&lt;home:mludvig@build.opensuse.org&gt;\"<br/>
+From : http://s3tools.org/repo/RHEL_6/repodata/repomd.xml.key<br/>
+Running rpm_check_debug<br/>
+Running Transaction Test<br/>
+Transaction Test Succeeded<br/>
+Running Transaction<br/>
+Installing : s3cmd-1.0.0-4.1.i386 1/1<br/>
+Verifying : s3cmd-1.0.0-4.1.i386 1/1<br/>
+Installed:<br/>
 s3cmd.i386 0:1.0.0-4.1</p>
 <p>Complete!</p>
 <p>\$ s3cmd --configure</p>
-<p>Enter new values or accept defaults in brackets with Enter.<br>
+<p>Enter new values or accept defaults in brackets with Enter.<br/>
 Refer to user manual for detailed description of all options.</p>
-<p>Access key and Secret key are your identifiers for Amazon S3<br>
-Access Key: アクセスキー<br>
+<p>Access key and Secret key are your identifiers for Amazon S3<br/>
+Access Key: アクセスキー<br/>
 Secret Key: シークレットキー</p>
-<p>Encryption password is used to protect your files from reading<br>
-by unauthorized persons while in transfer to S3<br>
-Encryption password:<br>
+<p>Encryption password is used to protect your files from reading<br/>
+by unauthorized persons while in transfer to S3<br/>
+Encryption password:<br/>
 Path to GPG program [/usr/bin/gpg]:</p>
-<p>When using secure HTTPS protocol all communication with Amazon S3<br>
-servers is protected from 3rd party eavesdropping. This method is<br>
-slower than plain HTTP and can\'t be used if you\'re behind a proxy<br>
+<p>When using secure HTTPS protocol all communication with Amazon S3<br/>
+servers is protected from 3rd party eavesdropping. This method is<br/>
+slower than plain HTTP and can\'t be used if you\'re behind a proxy<br/>
 Use HTTPS protocol [No]:</p>
-<p>On some networks all internet access must go through a HTTP proxy.<br>
-Try setting it here if you can\'t conect to S3 directly<br>
+<p>On some networks all internet access must go through a HTTP proxy.<br/>
+Try setting it here if you can\'t conect to S3 directly<br/>
 HTTP Proxy server name:</p>
-<p>New settings:<br>
-Access Key: アクセスキー<br>
-Secret Key: シークレットキー<br>
-Encryption password:<br>
-Path to GPG program: /usr/bin/gpg<br>
-Use HTTPS protocol: False<br>
-HTTP Proxy server name:<br>
+<p>New settings:<br/>
+Access Key: アクセスキー<br/>
+Secret Key: シークレットキー<br/>
+Encryption password:<br/>
+Path to GPG program: /usr/bin/gpg<br/>
+Use HTTPS protocol: False<br/>
+HTTP Proxy server name:<br/>
 HTTP Proxy server port: 0</p>
-<p>Test access with supplied credentials? [Y/n] y<br>
-Please wait...<br>
-Success. Your access key and secret key worked fine :-)<br>
-Now verifying that encryption works...<br>
+<p>Test access with supplied credentials? [Y/n] y<br/>
+Please wait...<br/>
+Success. Your access key and secret key worked fine :-)<br/>
+Now verifying that encryption works...<br/>
 Not configured. Never mind.</p>
-<p>Save settings? [y/N] y<br>
+<p>Save settings? [y/N] y<br/>
 Configuration saved to \'/home/ec2-user/.s3cfg\'</p>
 
         <div class="sharethis-bottom">

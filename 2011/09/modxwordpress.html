@@ -42,8 +42,9 @@
                 <nav class="navbar">
                     <div class="navbar-inner">
                         <ul class="nav">
-                            <li ><a href="http://www.popowa.com">Profile</a></li>
+                            <li ><a href="http://www.popowa.com">About Aya</a></li>
                             <li ><a href="https://twitter.com/ayakomuro">Twitter</a></li>
+                            <li ><a href="https://github.com/popowa">Github</a></li>
                         </ul>
 
 <script>
@@ -103,8 +104,8 @@
         </div>
 
         <p>前はMODxを使って構築をしていたのですが、色々自由すぎて作り込むのが大変なので、MODxからWordPressにデータを移行してみました。  </p>
-<p>[]<br>
-MODxのTableは色々あるのですが、メインなTableはmodx_site_contentです。<br>
+<p>[]<br/>
+MODxのTableは色々あるのですが、メインなTableはmodx_site_contentです。<br/>
 そして今回は、MODx側で色々作り込んでいたので、以下の点をクリアしないといけません。</p>
 <p>気をつける事</p>
 <ul>
@@ -115,24 +116,24 @@ MODxのTableは色々あるのですが、メインなTableはmodx_site_content�
 </ul>
 <p>MODx側Table</p>
 <ul>
-<li>modx_site_content => メインコンテンツ</li>
-<li>modx_site_templates => テンプレート</li>
-<li>modx_site_tmplvars => テンプレート変数</li>
-<li>modx_site_tmplvar_contentvalues　=> 実際のテンプレート変数の値</li>
+<li>modx_site_content =&gt; メインコンテンツ</li>
+<li>modx_site_templates =&gt; テンプレート</li>
+<li>modx_site_tmplvars =&gt; テンプレート変数</li>
+<li>modx_site_tmplvar_contentvalues　=&gt; 実際のテンプレート変数の値</li>
 <li>modx_site_tmplvar_templates
-    =>テンプレートとテンプレート変数を紐付ける</li>
+    =&gt;テンプレートとテンプレート変数を紐付ける</li>
 </ul>
 <p>関係性</p>
 <ol>
-<li>modx_site_content.template = modx_site_templates.id<br>
+<li>modx_site_content.template = modx_site_templates.id<br/>
    コンテンツとテンプレートの紐付け</li>
 <li>modx_site_tmplvar_templates.templateid = modx_site_templates.id</li>
-<li>modx_site_tmplvar_templates.tmplvarid = modx_site_tmplvars.id<br>
+<li>modx_site_tmplvar_templates.tmplvarid = modx_site_tmplvars.id<br/>
    テンプレート変数とテンプレートの紐付け（２と３）</li>
 <li>modx_site_tmplvar_contentvalues.tmplvarid =
     modx_site_tmplvars.id</li>
 <li>modx_site_tmplvar_contentvalues.contentid =
-    modx_site_content.id<br>
+    modx_site_content.id<br/>
    実際の変数値とコンテンツの紐付け(4と5)</li>
 </ol>
 <p>になっており、
@@ -140,9 +141,9 @@ modx_site_tmplvar_templatesと、modx_site_tmplvar_contentvaluesがassociative
 entityになっております。</p>
 <p>Wordpress側Table</p>
 <ul>
-<li>wp_posts => コンテンツ</li>
-<li>wp_term_taxonomy　=> カテゴリ</li>
-<li>wp_term_relationships　=> カテゴリとコンテンツを紐付ける</li>
+<li>wp_posts =&gt; コンテンツ</li>
+<li>wp_term_taxonomy　=&gt; カテゴリ</li>
+<li>wp_term_relationships　=&gt; カテゴリとコンテンツを紐付ける</li>
 </ul>
 <p>関係性</p>
 <ol>
@@ -153,7 +154,7 @@ entityになっております。</p>
 <p>になっており、 wp_term_relationshipsがassociative
 entityになっております。</p>
 <p>このMODxからコンテンツをWordpressに移行するのをなるべくSQL上で簡潔させたく、色々調べたら結構出来る事が分かったのでやってみました。</p>
-<div class="highlight"><pre><span></span><span class="c">/* Procedure作成 </span>
+<div class="highlight"><pre><span></span><span class="c">/* Procedure作成</span>
 <span class="c"> * ここではWordpressのコンテンツとカテゴリを紐付けるProcudureを作成します。</span>
 <span class="c"> * wp_term_relationshipsに追加するカテゴリは既に作成されていてidが1である事を想定してます。</span>
 <span class="c">*/</span>
@@ -173,31 +174,31 @@ entityになっております。</p>
 <span class="nt">END</span><span class="o">//</span>
 <span class="nt">DELIMITER</span> <span class="o">;</span>
 
-<span class="c">/* Procedure作成 </span>
+<span class="c">/* Procedure作成</span>
 <span class="c"> * WPのtitleはURLエンコードされて入っているので、URLENCODEしてくれるProcedureを作成します。</span>
 <span class="c"> *</span>
 <span class="c">*/</span>
 <span class="nt">DELIMITER</span> <span class="o">//</span>
 <span class="nt">CREATE</span> <span class="nt">FUNCTION</span> <span class="nt">urlencode</span> <span class="o">(</span><span class="nt">s</span> <span class="nt">VARCHAR</span><span class="o">(</span><span class="nt">4096</span><span class="o">))</span> <span class="nt">RETURNS</span> <span class="nt">VARCHAR</span><span class="o">(</span><span class="nt">4096</span><span class="o">)</span>
-<span class="nt">DETERMINISTIC</span> 
-<span class="nt">CONTAINS</span> <span class="nt">SQL</span> 
+<span class="nt">DETERMINISTIC</span>
+<span class="nt">CONTAINS</span> <span class="nt">SQL</span>
 <span class="nt">BEGIN</span>
-       <span class="nt">DECLARE</span> <span class="nt">c</span> <span class="nt">VARCHAR</span><span class="o">(</span><span class="nt">4096</span><span class="o">)</span> <span class="nt">DEFAULT</span> <span class="s1">&#39;&#39;</span><span class="o">;</span>
+       <span class="nt">DECLARE</span> <span class="nt">c</span> <span class="nt">VARCHAR</span><span class="o">(</span><span class="nt">4096</span><span class="o">)</span> <span class="nt">DEFAULT</span> <span class="s1">''</span><span class="o">;</span>
        <span class="nt">DECLARE</span> <span class="nt">pointer</span> <span class="nt">INT</span> <span class="nt">DEFAULT</span> <span class="nt">1</span><span class="o">;</span>
-       <span class="nt">DECLARE</span> <span class="nt">s2</span> <span class="nt">VARCHAR</span><span class="o">(</span><span class="nt">4096</span><span class="o">)</span> <span class="nt">DEFAULT</span> <span class="s1">&#39;&#39;</span><span class="o">;</span>
+       <span class="nt">DECLARE</span> <span class="nt">s2</span> <span class="nt">VARCHAR</span><span class="o">(</span><span class="nt">4096</span><span class="o">)</span> <span class="nt">DEFAULT</span> <span class="s1">''</span><span class="o">;</span>
 
        <span class="nt">IF</span> <span class="nt">ISNULL</span><span class="o">(</span><span class="nt">s</span><span class="o">)</span> <span class="nt">THEN</span>
            <span class="nt">RETURN</span> <span class="nt">NULL</span><span class="o">;</span>
        <span class="nt">ELSE</span>
-       <span class="nt">SET</span> <span class="nt">s2</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">;</span>
+       <span class="nt">SET</span> <span class="nt">s2</span> <span class="o">=</span> <span class="s1">''</span><span class="o">;</span>
        <span class="nt">WHILE</span> <span class="nt">pointer</span> <span class="o">&lt;=</span> <span class="nt">length</span><span class="o">(</span><span class="nt">s</span><span class="o">)</span> <span class="nt">DO</span>
           <span class="nt">SET</span> <span class="nt">c</span> <span class="o">=</span> <span class="nt">MID</span><span class="o">(</span><span class="nt">s</span><span class="o">,</span><span class="nt">pointer</span><span class="o">,</span><span class="nt">1</span><span class="o">);</span>
-          <span class="nt">IF</span> <span class="nt">c</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span> <span class="nt">THEN</span>
-             <span class="nt">SET</span> <span class="nt">c</span> <span class="o">=</span> <span class="s1">&#39;+&#39;</span><span class="o">;</span>
-          <span class="nt">ELSEIF</span> <span class="nt">NOT</span> <span class="o">(</span><span class="nt">ASCII</span><span class="o">(</span><span class="nt">c</span><span class="o">)</span> <span class="nt">BETWEEN</span> <span class="nt">48</span> <span class="nt">AND</span> <span class="nt">57</span> <span class="nt">OR</span> 
-                <span class="nt">ASCII</span><span class="o">(</span><span class="nt">c</span><span class="o">)</span> <span class="nt">BETWEEN</span> <span class="nt">65</span> <span class="nt">AND</span> <span class="nt">90</span> <span class="nt">OR</span> 
+          <span class="nt">IF</span> <span class="nt">c</span> <span class="o">=</span> <span class="s1">' '</span> <span class="nt">THEN</span>
+             <span class="nt">SET</span> <span class="nt">c</span> <span class="o">=</span> <span class="s1">'+'</span><span class="o">;</span>
+          <span class="nt">ELSEIF</span> <span class="nt">NOT</span> <span class="o">(</span><span class="nt">ASCII</span><span class="o">(</span><span class="nt">c</span><span class="o">)</span> <span class="nt">BETWEEN</span> <span class="nt">48</span> <span class="nt">AND</span> <span class="nt">57</span> <span class="nt">OR</span>
+                <span class="nt">ASCII</span><span class="o">(</span><span class="nt">c</span><span class="o">)</span> <span class="nt">BETWEEN</span> <span class="nt">65</span> <span class="nt">AND</span> <span class="nt">90</span> <span class="nt">OR</span>
                 <span class="nt">ASCII</span><span class="o">(</span><span class="nt">c</span><span class="o">)</span> <span class="nt">BETWEEN</span> <span class="nt">97</span> <span class="nt">AND</span> <span class="nt">122</span><span class="o">)</span> <span class="nt">THEN</span>
-             <span class="nt">SET</span> <span class="nt">c</span> <span class="o">=</span> <span class="nt">concat</span><span class="o">(</span><span class="s2">&quot;%&quot;</span><span class="o">,</span><span class="nt">LPAD</span><span class="o">(</span><span class="nt">CONV</span><span class="o">(</span><span class="nt">ASCII</span><span class="o">(</span><span class="nt">c</span><span class="o">),</span><span class="nt">10</span><span class="o">,</span><span class="nt">16</span><span class="o">),</span><span class="nt">2</span><span class="o">,</span><span class="nt">0</span><span class="o">));</span>
+             <span class="nt">SET</span> <span class="nt">c</span> <span class="o">=</span> <span class="nt">concat</span><span class="o">(</span><span class="s2">"%"</span><span class="o">,</span><span class="nt">LPAD</span><span class="o">(</span><span class="nt">CONV</span><span class="o">(</span><span class="nt">ASCII</span><span class="o">(</span><span class="nt">c</span><span class="o">),</span><span class="nt">10</span><span class="o">,</span><span class="nt">16</span><span class="o">),</span><span class="nt">2</span><span class="o">,</span><span class="nt">0</span><span class="o">));</span>
           <span class="nt">END</span> <span class="nt">IF</span><span class="o">;</span>
           <span class="nt">SET</span> <span class="nt">s2</span> <span class="o">=</span> <span class="nt">CONCAT</span><span class="o">(</span><span class="nt">s2</span><span class="o">,</span><span class="nt">c</span><span class="o">);</span>
           <span class="nt">SET</span> <span class="nt">pointer</span> <span class="o">=</span> <span class="nt">pointer</span> <span class="o">+</span> <span class="nt">1</span><span class="o">;</span>
@@ -224,24 +225,24 @@ entityになっております。</p>
  <span class="nt">post_modified</span><span class="o">,</span>
  <span class="nt">post_modified_gmt</span>
 <span class="o">)</span>
-<span class="nt">SELECT</span> 
- <span class="s1">&#39;1&#39;</span><span class="o">,</span>
- <span class="nt">FROM_UNIXTIME</span><span class="o">(</span><span class="nt">c</span><span class="p">.</span><span class="nc">publishedon</span><span class="o">,</span><span class="s1">&#39;%Y-%m-%d %H:%i:%S&#39;</span><span class="o">)</span> <span class="nt">as</span> <span class="nt">post_date</span><span class="o">,</span> 
- <span class="nt">FROM_UNIXTIME</span><span class="o">(</span><span class="nt">c</span><span class="p">.</span><span class="nc">publishedon</span><span class="o">,</span><span class="s1">&#39;%Y-%m-%d %H:%i:%S&#39;</span><span class="o">)</span> <span class="nt">as</span> <span class="nt">post_date</span><span class="o">,</span>
+<span class="nt">SELECT</span>
+ <span class="s1">'1'</span><span class="o">,</span>
+ <span class="nt">FROM_UNIXTIME</span><span class="o">(</span><span class="nt">c</span><span class="p">.</span><span class="nc">publishedon</span><span class="o">,</span><span class="s1">'%Y-%m-%d %H:%i:%S'</span><span class="o">)</span> <span class="nt">as</span> <span class="nt">post_date</span><span class="o">,</span>
+ <span class="nt">FROM_UNIXTIME</span><span class="o">(</span><span class="nt">c</span><span class="p">.</span><span class="nc">publishedon</span><span class="o">,</span><span class="s1">'%Y-%m-%d %H:%i:%S'</span><span class="o">)</span> <span class="nt">as</span> <span class="nt">post_date</span><span class="o">,</span>
  <span class="nt">concat</span><span class="o">(</span><span class="nt">c</span><span class="p">.</span><span class="nc">content</span><span class="o">,</span> <span class="nt">u</span><span class="p">.</span><span class="nc">value</span><span class="o">),</span>
  <span class="nt">c</span><span class="p">.</span><span class="nc">pagetitle</span><span class="o">,</span>
  <span class="nt">urlencode</span><span class="o">(</span><span class="nt">c</span><span class="p">.</span><span class="nc">pagetitle</span><span class="o">),</span>
- <span class="nt">FROM_UNIXTIME</span><span class="o">(</span><span class="nt">c</span><span class="p">.</span><span class="nc">publishedon</span><span class="o">,</span><span class="s1">&#39;%Y-%m-%d %H:%i:%S&#39;</span><span class="o">)</span> <span class="nt">as</span> <span class="nt">post_date</span><span class="o">,</span> 
- <span class="nt">FROM_UNIXTIME</span><span class="o">(</span><span class="nt">c</span><span class="p">.</span><span class="nc">publishedon</span><span class="o">,</span><span class="s1">&#39;%Y-%m-%d %H:%i:%S&#39;</span><span class="o">)</span> <span class="nt">as</span> <span class="nt">post_date</span>
+ <span class="nt">FROM_UNIXTIME</span><span class="o">(</span><span class="nt">c</span><span class="p">.</span><span class="nc">publishedon</span><span class="o">,</span><span class="s1">'%Y-%m-%d %H:%i:%S'</span><span class="o">)</span> <span class="nt">as</span> <span class="nt">post_date</span><span class="o">,</span>
+ <span class="nt">FROM_UNIXTIME</span><span class="o">(</span><span class="nt">c</span><span class="p">.</span><span class="nc">publishedon</span><span class="o">,</span><span class="s1">'%Y-%m-%d %H:%i:%S'</span><span class="o">)</span> <span class="nt">as</span> <span class="nt">post_date</span>
 <span class="nt">FROM</span>
- <span class="nt">modx_site_content</span> <span class="nt">as</span> <span class="nt">c</span> 
+ <span class="nt">modx_site_content</span> <span class="nt">as</span> <span class="nt">c</span>
 <span class="nt">LEFT</span> <span class="nt">JOIN</span>
  <span class="nt">modx_site_tmplvar_contentvalues</span> <span class="nt">as</span> <span class="nt">u</span>
 <span class="nt">ON</span> <span class="nt">c</span><span class="p">.</span><span class="nc">id</span> <span class="o">=</span> <span class="nt">u</span><span class="p">.</span><span class="nc">contentid</span>
 <span class="nt">WHERE</span>
- <span class="nt">c</span><span class="p">.</span><span class="nc">type</span><span class="o">=</span><span class="s2">&quot;document&quot;</span> <span class="nt">AND</span> 
- <span class="nt">c</span><span class="p">.</span><span class="nc">context_key</span><span class="o">=</span><span class="s2">&quot;MyBlog&quot;</span> <span class="nt">AND</span> 
- <span class="nt">c</span><span class="p">.</span><span class="nc">published</span><span class="o">=</span><span class="nt">1</span> <span class="nt">AND</span> 
+ <span class="nt">c</span><span class="p">.</span><span class="nc">type</span><span class="o">=</span><span class="s2">"document"</span> <span class="nt">AND</span>
+ <span class="nt">c</span><span class="p">.</span><span class="nc">context_key</span><span class="o">=</span><span class="s2">"MyBlog"</span> <span class="nt">AND</span>
+ <span class="nt">c</span><span class="p">.</span><span class="nc">published</span><span class="o">=</span><span class="nt">1</span> <span class="nt">AND</span>
  <span class="nt">c</span><span class="p">.</span><span class="nc">parent</span><span class="o">=</span><span class="nt">5</span><span class="o">;</span>
 
 <span class="o">/</span> <span class="o">*</span> <span class="nt">WPに挿入しましたが</span><span class="err">、</span><span class="nt">WP側の記事のカテゴリと紐付けていないので</span><span class="err">、</span><span class="nt">紐付ける為にも</span>
@@ -249,14 +250,12 @@ entityになっております。</p>
  <span class="o">*</span> <span class="nt">MODxから挿入されたwp_postsの最新idを取得し</span><span class="err">、</span><span class="nt">loopします</span><span class="err">。</span>
 <span class="o">*/</span>
 
-<span class="nt">SET</span> <span class="p">@</span><span class="k">a1</span> <span class="o">=</span> <span class="s2">&quot;1&quot;</span><span class="p">;</span>
+<span class="nt">SET</span> <span class="p">@</span><span class="k">a1</span> <span class="o">=</span> <span class="s2">"1"</span><span class="p">;</span>
 <span class="nt">SELECT</span> <span class="p">@</span><span class="k">a1</span><span class="o">:=</span><span class="nt">MAX</span><span class="o">(</span><span class="nt">object_id</span><span class="o">)</span> <span class="nt">FROM</span> <span class="nt">wp_term_relationships</span><span class="p">;</span>
-<span class="nt">SET</span> <span class="p">@</span><span class="k">b1</span> <span class="o">=</span> <span class="s2">&quot;1&quot;</span><span class="p">;</span>
+<span class="nt">SET</span> <span class="p">@</span><span class="k">b1</span> <span class="o">=</span> <span class="s2">"1"</span><span class="p">;</span>
 <span class="nt">SELECT</span> <span class="p">@</span><span class="k">b1</span><span class="o">:=</span><span class="nt">MAX</span><span class="o">(</span><span class="nt">id</span><span class="o">)</span> <span class="nt">FROM</span> <span class="nt">wp_posts</span><span class="p">;</span>
 <span class="nt">call</span> <span class="nt">insertcategory</span><span class="o">(</span><span class="p">@</span><span class="k">a1</span><span class="o">,</span> <span class="p">@</span><span class="k">b1</span><span class="o">)</span><span class="p">;</span>
 </pre></div>
-
-
 <p>あまりにも特殊で誰も得をしないのではないか、と思ったのですが、とりあえずアップしておきます。</p>
 
         <div class="sharethis-bottom">

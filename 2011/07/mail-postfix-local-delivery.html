@@ -42,8 +42,9 @@
                 <nav class="navbar">
                     <div class="navbar-inner">
                         <ul class="nav">
-                            <li ><a href="http://www.popowa.com">Profile</a></li>
+                            <li ><a href="http://www.popowa.com">About Aya</a></li>
                             <li ><a href="https://twitter.com/ayakomuro">Twitter</a></li>
+                            <li ><a href="https://github.com/popowa">Github</a></li>
                         </ul>
 
 <script>
@@ -108,8 +109,6 @@
 
 MAIL Postfix local delivery
 </pre></div>
-
-
 <blockquote>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -157,16 +156,16 @@ cp <span class="nv">$postfix_file</span> <span class="nv">$postfix_file</span>.<
 
 
 
-<span class="k">if</span> <span class="o">[</span>  <span class="s2">&quot;</span><span class="nv">$RS_DISTRO</span><span class="s2">&quot;</span> <span class="o">==</span>  <span class="s2">&quot;ubuntu&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-  <span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="k">$(</span>lsb_release -rs<span class="k">)</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;8.04&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-    <span class="nb">export</span> <span class="nv">DEBIAN_FRONTEND</span><span class="o">=</span><span class="s2">&quot;noninteractive&quot;</span><span class="p">;</span> apt-get install  -y sysvconfig
+<span class="k">if</span> <span class="o">[</span>  <span class="s2">"</span><span class="nv">$RS_DISTRO</span><span class="s2">"</span> <span class="o">==</span>  <span class="s2">"ubuntu"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+  <span class="k">if</span> <span class="o">[</span> <span class="s2">"</span><span class="k">$(</span>lsb_release -rs<span class="k">)</span><span class="s2">"</span> <span class="o">==</span> <span class="s2">"8.04"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nb">export</span> <span class="nv">DEBIAN_FRONTEND</span><span class="o">=</span><span class="s2">"noninteractive"</span><span class="p">;</span> apt-get install  -y sysvconfig
   <span class="k">fi</span>
-  <span class="nb">echo</span> <span class="s2">&quot;Using Ubuntu default main.cf config&quot;</span>
+  <span class="nb">echo</span> <span class="s2">"Using Ubuntu default main.cf config"</span>
 <span class="k">else</span>
 <span class="c1"># Make the changes needed for centos</span>
-sed -i <span class="s1">&#39;s/inet_interfaces = localhost/#inet_interfaces = localhost/&#39;</span> <span class="nv">$postfix_file</span>
+sed -i <span class="s1">'s/inet_interfaces = localhost/#inet_interfaces = localhost/'</span> <span class="nv">$postfix_file</span>
 <span class="c1">#設定ファイルを書き換える（inet_interface=localhostを無効にする）</span>
-sed -i <span class="s1">&#39;s/#inet_interfaces = all/inet_interfaces = all/&#39;</span> <span class="nv">$postfix_file</span>
+sed -i <span class="s1">'s/#inet_interfaces = all/inet_interfaces = all/'</span> <span class="nv">$postfix_file</span>
 <span class="c1">#設定ファイルを書き換える（inet_interface=allを有効にする）</span>
 
 
@@ -175,14 +174,13 @@ sed -i <span class="s1">&#39;s/#inet_interfaces = all/inet_interfaces = all/&#39
 <span class="c1"># The host that this script added.  If there are other hosts added to this line by</span>
 <span class="c1"># some other script then this will break.  A specialized script must be written to</span>
 <span class="c1"># handle this case.</span>
-sed -i <span class="s2">&quot;s/^mydestination = </span><span class="nv">$myhostname</span><span class="s2">, localhost.</span><span class="nv">$mydomain</span><span class="s2">, localhost.*</span>$<span class="s2">/mydestination = </span><span class="nv">$myhostname</span><span class="s2">, localhost.</span><span class="nv">$mydomain</span><span class="s2">, localhost, </span><span class="nv">$EC2_LOCAL_HOSTNAME</span><span class="s2">/&quot;</span> <span class="nv">$postfix_file</span>
+sed -i <span class="s2">"s/^mydestination = </span><span class="nv">$myhostname</span><span class="s2">, localhost.</span><span class="nv">$mydomain</span><span class="s2">, localhost.*</span>$<span class="s2">/mydestination = </span><span class="nv">$myhostname</span><span class="s2">, localhost.</span><span class="nv">$mydomain</span><span class="s2">, localhost, </span><span class="nv">$EC2_LOCAL_HOSTNAME</span><span class="s2">/"</span> <span class="nv">$postfix_file</span>
 <span class="c1">#さらに設定を追加する</span>
 service postfix reload
 <span class="c1">#postfixをリロード</span>
 <span class="k">fi</span>
 </pre></div>
 </td></tr></table>
-
 </blockquote>
 
         <div class="sharethis-bottom">

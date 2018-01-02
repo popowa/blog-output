@@ -83,7 +83,7 @@
         by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
     </address>
 
-    in <a href="http://blog.popowa.com/category/blog.html">blog</a>
+    in <a href="http://blog.popowa.com/category/tech.html">tech</a>
 
     on 2017-05-07
 
@@ -101,13 +101,12 @@
           <span class='st_email_hcount' displayText='Email'></span>
         </div>
 
-        <p>Raspberry Piを買ったので、初回設定をした時もメモ  </p>
-<p>インターネットにドキュメントが沢山転がっているので、簡単に出来る( ˇ&omega;ˇ )b</p>
-<p><a href="http://code.popowa.com/damdum/wp-content/uploads/2017/05/25E3-2582-25BF-25E3-2582-2599-25E3-2582-25A6-25E3-2583-25B3-25E3-2583-25AD-25E3-2583-25BC-25E3-2583-2588-25E3-2582-2599.png">!</a>
-<a href="http://code.popowa.com/damdum/wp-content/uploads/2017/05/25E3-2582-25BF-25E3-2582-2599-25E3-2582-25A6-25E3-2583-25B3-25E3-2583-25AD-25E3-2583-25BC-25E3-2583-2588-25E3-2582-2599.png">!</a></p>
-<p>Raspberry
-Piの箱に入っていたマニュアルに設定方法が記載してあるのでまずそれを読みます。</p>
-<p><a href="https://www.raspberrypi.org/files/legacy/qsg.pdf">https://www.raspberrypi.org/files/legacy/qsg.pdf</a></p>
+        <p>Raspberry Piを買ったので、初回設定をした時もメモ<br/>
+インターネットにドキュメントが沢山転がっているので、簡単に出来る( ˇ&omega;ˇ )b</p>
+<p><img alt="RaspberryPi" src="http://blog.popowa.com/images/RaspberryPi.png"/></p>
+<h1 id="raspberry">Raspberry</h1>
+<p>Piの箱に入っていたマニュアルに設定方法が記載してあるのでまずそれを読みます。
+* <a href="https://www.raspberrypi.org/files/legacy/qsg.pdf">https://www.raspberrypi.org/files/legacy/qsg.pdf</a></p>
 <p>上記のフローをやれば簡単に出来るかと思います。legacyってあるから、もしかしたら今はもっと違う方法があるのかも？</p>
 <p>準備するものは上記に記載がある通り。後はあちらこちらに記事があるから、そこを見れば良いかと</p>
 <p>SDカードをフォーマットするアプリをダウンロード</p>
@@ -124,22 +123,21 @@ Piの箱に入っていたマニュアルに設定方法が記載してあるの
 </ul>
 <p>wifiを設定してapt-get
 updateやrpi-updateなどを実施しレポジトリやファームウェアをアップデートした後に、ローカルIPアドレスを固定させます。ここら辺はDebianやLinuxを使っていると一般的かと思われます。</p>
-<p>WLAN0設定</p>
+<h1 id="wlan0she-ding">WLAN0設定</h1>
 <ul>
-<li><a href="https://thepihut.com/blogs/raspberry-pi-tutorials/16683276-how-to-setup-a-static-ip-address-on-your-raspberry-pi">https://thepihut.com/blogs/raspberry-pi-tutorials/16683276-how-to-setup-a-static-ip-address-on-your-raspberry-pi</a></li>
-<li><a href="http://www.electroschematics.com/9496/static-manual-ip-wireless-raspberry-pi/">http://www.electroschematics.com/9496/static-manual-ip-wireless-raspberry-pi/</a></li>
+<li><a href="https://thepihut.com/blogs/raspberry-pi-tutorials/16683276-how-to-setup-a-static-ip-address-on-your-raspberry-pi">How to setup a static IP address on your Raspberry Pi</a></li>
+<li><a href="http://www.electroschematics.com/9496/static-manual-ip-wireless-raspberry-pi/">Raspberry PI: How to Add Static/Manual IP to Wireless wlan0 and eth0</a></li>
 </ul>
 <p>音が出るか確認します。スピーカーを差し込んで試してみます。</p>
 <ul>
-<li><a href="https://www.raspberrypi.org/documentation/usage/audio/README.md">https://www.raspberrypi.org/documentation/usage/audio/README.md</a></li>
+<li><a href="https://www.raspberrypi.org/documentation/usage/audio/README.md">PLAYING AUDIO ON THE RASPBERRY PI</a></li>
 </ul>
 <p>VNCも試してみたのですが、カクカクだったのと、sshしてvim使えたらとりあえずいいので、オフにしました。</p>
 <ul>
-<li>設定はこちら&nbsp;<a href="https://www.raspberrypi.org/documentation/remote-access/vnc/README.md">https://www.raspberrypi.org/documentation/remote-access/vnc/README.md</a></li>
-<li>RealVNCだと便利&nbsp;<a href="https://www.realvnc.com/download/viewer/macosx/">https://www.realvnc.com/download/viewer/macosx/</a></li>
+<li><a href="https://www.raspberrypi.org/documentation/remote-access/vnc/README.md">設定はこちら</a></li>
+<li><a href="https://www.realvnc.com/download/viewer/macosx/">RealVNCだと便利</a></li>
 </ul>
-<p>Raspberry
-Piの準備はとても簡単です。よく大変だーとかありますが、いつの時代もマニュアルを読んでそれに沿って進めれば半分ぐらい上手く行くので、素直にやるのがよいかと思いました。</p>
+<p>Raspberry Piの準備はとても簡単です。よく大変だーとかありますが、いつの時代もマニュアルを読んでそれに沿って進めれば半分ぐらい上手く行くので、素直にやるのがよいかと思いました。</p>
 
         <div class="sharethis-bottom">
           <span class='st_fblike_hcount' displayText='Facebook Like'></span>

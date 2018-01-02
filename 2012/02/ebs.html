@@ -42,8 +42,9 @@
                 <nav class="navbar">
                     <div class="navbar-inner">
                         <ul class="nav">
-                            <li ><a href="http://www.popowa.com">Profile</a></li>
+                            <li ><a href="http://www.popowa.com">About Aya</a></li>
                             <li ><a href="https://twitter.com/ayakomuro">Twitter</a></li>
+                            <li ><a href="https://github.com/popowa">Github</a></li>
                         </ul>
 
 <script>
@@ -103,17 +104,17 @@
 
         <p>先日の #jawsug 福岡の会で、  </p>
 <p><a href="https://twitter.com/#%21/kaz_goto/status/167571575296634881">https://twitter.com/#!/kaz_goto/status/167571575296634881</a></p>
-<p><a href="http://2.bp.blogspot.com/-69900MMDsjE/TzXgL2bibrI/AAAAAAAAPMU/7bRhxxUO8UE/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%EF%BC%882012-02-11+12.27.14%EF%BC%89.png"><img alt="" src="http://2.bp.blogspot.com/-69900MMDsjE/TzXgL2bibrI/AAAAAAAAPMU/7bRhxxUO8UE/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%EF%BC%882012-02-11+12.27.14%EF%BC%89.png"></a></p>
+<p><a href="http://2.bp.blogspot.com/-69900MMDsjE/TzXgL2bibrI/AAAAAAAAPMU/7bRhxxUO8UE/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%EF%BC%882012-02-11+12.27.14%EF%BC%89.png"><img alt="" src="http://2.bp.blogspot.com/-69900MMDsjE/TzXgL2bibrI/AAAAAAAAPMU/7bRhxxUO8UE/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%EF%BC%882012-02-11+12.27.14%EF%BC%89.png"/></a></p>
 <p>へーほーふー、知らなかったわーと思ってEBSのスナップショットだけにフォーカスして見ました。</p>
 <p>記事</p>
 <ul>
-<li><a href="http://aws.amazon.com/jp/ebs/">Amazon Elastic Block Store (EBS)->日本語 by
+<li><a href="http://aws.amazon.com/jp/ebs/">Amazon Elastic Block Store (EBS)-&gt;日本語 by
     AWS</a></li>
-<li><a href="http://aws.amazon.com/articles/1667">Feature Guide: Elastic Block Store ->英語 by
+<li><a href="http://aws.amazon.com/articles/1667">Feature Guide: Elastic Block Store -&gt;英語 by
     AWS</a></li>
-<li><a href="http://blog.rightscale.com/2008/08/20/amazon-ebs-explained/">Amazon's Elastic Block Store explained ->英語 by
+<li><a href="http://blog.rightscale.com/2008/08/20/amazon-ebs-explained/">Amazon's Elastic Block Store explained -&gt;英語 by
     RightScale</a></li>
-<li><a href="http://support.rightscale.com/12-Guides/Dashboard_Users_Guide/Clouds/AWS_Region/EBS_Volumes/Concepts/About_EBS_Volumes">About Elastic Block Store (EBS) ->英語 by
+<li><a href="http://support.rightscale.com/12-Guides/Dashboard_Users_Guide/Clouds/AWS_Region/EBS_Volumes/Concepts/About_EBS_Volumes">About Elastic Block Store (EBS) -&gt;英語 by
     RightScale</a></li>
 </ul>
 <p>今更感なEBSの機能おさらい☆</p>
@@ -137,12 +138,12 @@
 <p>☆初めてのわくわくドキドキのスナップショット ☆</p>
 <ol>
 <li>EBSを10Gで作ったとします。</li>
-<li>色々置いて4Gになりました☆(・ω\&lt;)</li>
+<li>色々置いて4Gになりました☆(・&omega;\&lt;)</li>
 <li>初めてのスナップショットでは、EBSでの使用分はブロックに分けられて、S3に全部コピー＆保存されます。</li>
 <li>保存されたブロックを管理するスナップショット管理表（=
     私たちが見るsnap-xxx）もS3に保存されます。</li>
 </ol>
-<p><a href="http://1.bp.blogspot.com/-pXJCCaRHz8o/TzYOnIt3SOI/AAAAAAAAPM0/9sGhGGqK2-I/s1600/ebs_first_backup.png"><img alt="" src="http://1.bp.blogspot.com/-pXJCCaRHz8o/TzYOnIt3SOI/AAAAAAAAPM0/9sGhGGqK2-I/s1600/ebs_first_backup.png"></a></p>
+<p><a href="http://1.bp.blogspot.com/-pXJCCaRHz8o/TzYOnIt3SOI/AAAAAAAAPM0/9sGhGGqK2-I/s1600/ebs_first_backup.png"><img alt="" src="http://1.bp.blogspot.com/-pXJCCaRHz8o/TzYOnIt3SOI/AAAAAAAAPM0/9sGhGGqK2-I/s1600/ebs_first_backup.png"/></a></p>
 <p>☆2回目のスナップショット ☆</p>
 <ol>
 <li>前回から、4G中1Gを変更して、さらに新しく1G追加しました。</li>
@@ -150,19 +151,19 @@
     S3に取り、さらに新しく追加された1GもS3にコピーをとります。</li>
 <li>そして<strong>スナップショット管理表2</strong>を作成し、前回S3に保存したブロック先３つ（以下の絵だと黄、緑、ピンク）と、変更、新規追加で作成したブロック先を一覧にしてS3に保存します。</li>
 </ol>
-<p><a href="http://4.bp.blogspot.com/-yFjr6cHvHeI/TzYOeigc3MI/AAAAAAAAPMc/58YdqDH_lAU/s1600/ebs_second_backup.png"><img alt="" src="http://4.bp.blogspot.com/-yFjr6cHvHeI/TzYOeigc3MI/AAAAAAAAPMc/58YdqDH_lAU/s640/ebs_second_backup.png">{width="640"
+<p><a href="http://4.bp.blogspot.com/-yFjr6cHvHeI/TzYOeigc3MI/AAAAAAAAPMc/58YdqDH_lAU/s1600/ebs_second_backup.png"><img alt="" src="http://4.bp.blogspot.com/-yFjr6cHvHeI/TzYOeigc3MI/AAAAAAAAPMc/58YdqDH_lAU/s640/ebs_second_backup.png"/>{width="640"
 height="506"}</a></p>
 <p>☆3回目のスナップショット ☆</p>
 <ol>
 <li>前回(2回目)から、5G中1G削除しました。</li>
 <li>最初に配置した緑、ピンク、２回目に配置した青、紫を一覧にした<strong>スナップショット管理表3</strong>を作成しS3に保存します。</li>
 </ol>
-<p><a href="http://3.bp.blogspot.com/-AFpvbcqjSvA/TzYOfwo-rBI/AAAAAAAAPMk/kYrkdJktXw8/s1600/ebs_third_backup.png"><img alt="" src="http://3.bp.blogspot.com/-AFpvbcqjSvA/TzYOfwo-rBI/AAAAAAAAPMk/kYrkdJktXw8/s640/ebs_third_backup.png">{width="640"
+<p><a href="http://3.bp.blogspot.com/-AFpvbcqjSvA/TzYOfwo-rBI/AAAAAAAAPMk/kYrkdJktXw8/s1600/ebs_third_backup.png"><img alt="" src="http://3.bp.blogspot.com/-AFpvbcqjSvA/TzYOfwo-rBI/AAAAAAAAPMk/kYrkdJktXw8/s640/ebs_third_backup.png"/>{width="640"
 height="340"}</a></p>
 <p>特記すべき点</p>
 <ul>
 <li>私たちがAPIで見ているスナップショット(例えば<strong>snap-xxxxx</strong>)は、実際にS3に配置されているバックアップされたデータブロックへのポインタ一覧である</li>
-<li>S3に取られたスナップショット単体を見る事が出来ない。S3のAPIではアクセスが不可能。EC2のAPI越しにスナップショットの詳細や、ボリューム作成を行う必要がある </li>
+<li>S3に取られたスナップショット単体を見る事が出来ない。S3のAPIではアクセスが不可能。EC2のAPI越しにスナップショットの詳細や、ボリューム作成を行う必要がある&nbsp;</li>
 <li>最初のスナップショットを消しても、保存したブロックを必要としている別のスナップショットがあれば削除されない。</li>
 <li>上記の逆を返すとどのスナップショットにも必要とされていないブロックは、紐付けようがないので削除される</li>
 <li>~~1インスタンスにマウント出来るEBSは20まで。（AWSに依頼すれば解除してくれる）~~</li>
@@ -181,34 +182,34 @@ height="340"}</a></p>
 <p>データーベースをEBS上で稼働させている場合</p>
 <ul>
 <li>EBSのスナップショットは非同期で行われるため、スナップショットが取られた瞬間に書き込みが発生すると誤差が生じる場合がある</li>
-<li>RightScaleお勧めの方法としては、DBやファイルシステムを止める->スナップショット->再開、という方法がよいらしい</li>
+<li>RightScaleお勧めの方法としては、DBやファイルシステムを止める-&gt;スナップショット-&gt;再開、という方法がよいらしい</li>
 </ul>
-<p>RightScaleのお勧めファイルフォーマット形式はxfs<br>
-xfsには、I/O処理を停止する機能が付いているのでそれを使うと楽との事。<br>
+<p>RightScaleのお勧めファイルフォーマット形式はxfs<br/>
+xfsには、I/O処理を停止する機能が付いているのでそれを使うと楽との事。<br/>
 XFS単体での停止方法の例：  </p>
 <blockquote>
-<p>xfs_freeze -f \&lt;mount-point>
-#実行中の処理が終わった後は新規書き込みは行われない<br>
-ec2-create-snapshot \&lt;volume><br>
-xfs_freeze -u \&lt;mount-point>  #再開する</p>
+<p>xfs_freeze -f \&lt;mount-point&gt;
+#実行中の処理が終わった後は新規書き込みは行われない<br/>
+ec2-create-snapshot \&lt;volume&gt;<br/>
+xfs_freeze -u \&lt;mount-point&gt;&nbsp; #再開する</p>
 </blockquote>
 <p>LVMとかを使用していたら:  </p>
 <blockquote>
-<p>dmsetup suspend \&lt;device><br>
-ec2-create-snapshot \&lt;volume><br>
-dmsetup resume \&lt;device></p>
+<p>dmsetup suspend \&lt;device&gt;<br/>
+ec2-create-snapshot \&lt;volume&gt;<br/>
+dmsetup resume \&lt;device&gt;</p>
 </blockquote>
-<p>なるほどー<br>
+<p>なるほどー<br/>
 I/Oが高いデータベースとかをEBSに置いてスナップショットを取っている場合は、きちんと取れるように気をつけないとですね。</p>
-<p>そう考えるとRDSのスナップショットも気になりますよね。どうなっているのかしら。<br>
+<p>そう考えるとRDSのスナップショットも気になりますよね。どうなっているのかしら。<br/>
 想像だけどRDSは多分内部EC2 on
-EBS上に構築されているのではないかしら、と思っているので、RDSのスナップショットもやはりS3?<br>
+EBS上に構築されているのではないかしら、と思っているので、RDSのスナップショットもやはりS3?<br/>
 気になる木。</p>
 <p>という訳でEBSのスナップショットについてでしたー！</p>
 <p>これ違うよーというのがあればご指摘くださいm(_ _)m</p>
-<p>追記2012/2/13:<br>
-EBSのマウント数は、Windowsだと12個まで、それ以外では無制限だそうです！<br>
-（赤で追記）<br>
+<p>追記2012/2/13:<br/>
+EBSのマウント数は、Windowsだと12個まで、それ以外では無制限だそうです！<br/>
+（赤で追記）<br/>
 <a href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html</a></p>
 
         <div class="sharethis-bottom">

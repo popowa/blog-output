@@ -5,14 +5,14 @@
     <meta name="author" content="ayakomuro" />
     <meta name="robots" content="index, follow"/>
 
-    <meta property="og:title" content=""/>
+    <meta property="og:title" content="S3のsettings気をつけようね！"/>
     <meta property="og:url" content="http://blog.popowa.com/2011/08/important-security-notification.html"/>
     <meta property="og:site_name" content="popowa"/>
     <meta property="og:type" content="article"/>
 
     <link rel="canonical" href="http://blog.popowa.com/2011/08/important-security-notification.html" />
 
-    <title> | popowa</title>
+    <title>S3のsettings気をつけようね！ | popowa</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
@@ -42,8 +42,9 @@
                 <nav class="navbar">
                     <div class="navbar-inner">
                         <ul class="nav">
-                            <li ><a href="http://www.popowa.com">Profile</a></li>
+                            <li ><a href="http://www.popowa.com">About Aya</a></li>
                             <li ><a href="https://twitter.com/ayakomuro">Twitter</a></li>
+                            <li ><a href="https://github.com/popowa">Github</a></li>
                         </ul>
 
 <script>
@@ -73,7 +74,7 @@
       <header>
         <h1 class="entry-title">
           <a href="http://blog.popowa.com/2011/08/important-security-notification.html" rel="bookmark"
-             title="Permalink to "></a></h1>
+             title="Permalink to S3のsettings気をつけようね！">S3のsettings気をつけようね！</a></h1>
 <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="ayakomuro">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
       </header>
       <div class="entry-content">
@@ -82,13 +83,12 @@
         by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
     </address>
 
-    in <a href="http://blog.popowa.com/category/blog.html">blog</a>
+    in <a href="http://blog.popowa.com/category/tech.html">tech</a>
 
     on 2011-08-24
 
         |
         tags:         <a href="http://blog.popowa.com/tag/aws.html">AWS</a>
-        <a href="http://blog.popowa.com/tag/hai-wai-saito.html">海外サイト</a>
 
 
 
@@ -101,13 +101,12 @@
           <span class='st_email_hcount' displayText='Email'></span>
         </div>
 
-        <p>settings+ちょっと前ですが、表題のメールがAmazonから来ました。  </p>
-<p>[]なぬ！？と思って見てみましたが、自分が設定した通りの設定で、はて？と思いました。  </p>
+        <p>ちょっと前ですが、表題のメールがAmazonから来ました。<br/>
+なぬ！？と思って見てみましたが、自分が設定した通りの設定で、はて？と思いました。  </p>
 <p>なんでこんなメールが来たんだろう、と考えた際に、元々S3は公開を前提としていない製品なのかなぁとまず思いました。DBのdumpファイル置いたり、アプリのソースを置いたりしてますもんね。  </p>
 <p>後、S3の用途はとても多岐に渡っていて、本当に機密情報をも保管出来てしまうため、AWSが対応出来る以外の対応策（ユーザー主導のセキュリティ対策）について喚起したのでしょう。  </p>
 <p>IAMが出来てからより細かな設定が出来るようになりましたので、ぜひよりセキュリアなデータをS3に起きつつも、公開用としての画像やファイルの配布などで適材適所の使い方をして行きたいですね。  </p>
 <blockquote>
-<p><a href="http://www.amazon.com/gp/r.html?R=O6R0FDUCS6A4&amp;C=3I9Y3TLVAZY0I&amp;H=OWFZXXG3XBZGVKTLLNEEBQONUCCA&amp;T=C&amp;U=http%3A%2F%2Faws.amazon.com%3Fref_%3Dpe_12300_20912970"><img alt="" src="http://g-ecx.images-amazon.com/images/G/01/webservices/AWS_LOGO._V2289989_.gif"></a>  </p>
 <p>[Dear Amazon S3 Customer,  </p>
 <p>We've noticed that your Amazon S3 account has a bucket where your
 permissions allow anonymous requestors to perform READ operations,
@@ -134,36 +133,21 @@ permissions across all or a subset of objects within a bucket. You can
 use wildcarding to define sets of objects within a bucket against
 which policy is applied, more granularly control the allowed
 operations, and even control access based on request properties.  </p>
-<p>You can apply bucket policies or ACLs to your bucket using the <a href="http://www.amazon.com/gp/r.html?R=O6R0FDUCS6A4&amp;C=3I9Y3TLVAZY0I&amp;H=WTOSANDX8CPTRE6WUCOHESL771UA&amp;T=C&amp;U=http%3A%2F%2Faws.amazon.com%2Fconsole%3Fref_%3Dpe_12300_20912970">AWS
+<p>You can apply bucket policies or ACLs to your bucket using the&nbsp;<a href="http://www.amazon.com/gp/r.html?R=O6R0FDUCS6A4&amp;C=3I9Y3TLVAZY0I&amp;H=WTOSANDX8CPTRE6WUCOHESL771UA&amp;T=C&amp;U=http%3A%2F%2Faws.amazon.com%2Fconsole%3Fref_%3Dpe_12300_20912970">AWS
 Management
 Console</a>
-or the <a href="http://www.amazon.com/gp/r.html?R=O6R0FDUCS6A4&amp;C=3I9Y3TLVAZY0I&amp;H=SZ99CBJ5VMJQLPRDLL53GSH4WE4A&amp;T=C&amp;U=http%3A%2F%2Faws.amazon.com%2Fcode%3Fref_%3Dpe_12300_20912970">AWS
+or the&nbsp;<a href="http://www.amazon.com/gp/r.html?R=O6R0FDUCS6A4&amp;C=3I9Y3TLVAZY0I&amp;H=SZ99CBJ5VMJQLPRDLL53GSH4WE4A&amp;T=C&amp;U=http%3A%2F%2Faws.amazon.com%2Fcode%3Fref_%3Dpe_12300_20912970">AWS
 SDK</a>.
 You can also monitor use of your buckets by setting up Server Access
-Logging, described in our Developer Guide under <a href="http://www.amazon.com/gp/r.html?R=O6R0FDUCS6A4&amp;C=3I9Y3TLVAZY0I&amp;H=SBI6OCDEPWAWBO8JANT7P6NPMKMA&amp;T=C&amp;U=http%3A%2F%2Fdocs.amazonwebservices.com%2FAmazonS3%2Flatest%2Fdev%2Findex.html%3FLoggingHowTo.html">Setting Up Server
-Access
-Logging</a>.
+Logging, described in our Developer Guide under&nbsp;<a href="http://www.amazon.com/gp/r.html?R=O6R0FDUCS6A4&amp;C=3I9Y3TLVAZY0I&amp;H=SBI6OCDEPWAWBO8JANT7P6NPMKMA&amp;T=C&amp;U=http%3A%2F%2Fdocs.amazonwebservices.com%2FAmazonS3%2Flatest%2Fdev%2Findex.html%3FLoggingHowTo.html">Setting Up Server Access Logging</a>.
 For further information on managing permissions on Amazon S3, please
-visit the <a href="http://www.amazon.com/gp/r.html?R=O6R0FDUCS6A4&amp;C=3I9Y3TLVAZY0I&amp;H=ROAU1KAKZQBCJPSUL9NTRPTDJWKA&amp;T=C&amp;U=http%3A%2F%2Fdocs.amazonwebservices.com%2FAmazonS3%2Flatest%2Fdev%2F">Amazon S3 Developer
-Guide</a>
-topics on <a href="http://www.amazon.com/gp/r.html?R=O6R0FDUCS6A4&amp;C=3I9Y3TLVAZY0I&amp;H=SBI6OCDEPWAWBO8JANT7P6NPMKMA&amp;T=C&amp;U=http%3A%2F%2Fdocs.amazonwebservices.com%2FAmazonS3%2Flatest%2Fdev%2Findex.html%3FLoggingHowTo.html">Amazon S3 Access
-Control</a>
-and the <a href="http://www.amazon.com/gp/r.html?R=O6R0FDUCS6A4&amp;C=3I9Y3TLVAZY0I&amp;H=KVRQBHTZXBVAJCDCCPR5CDUGYTQA&amp;T=C&amp;U=http%3A%2F%2Faws.amazon.com%2Fsecurity%2F%3Fref_%3Dpe_12300_20912970">AWS Security
-Center</a>.
-We also recommend Jeff Barr's blog post <a href="http://www.amazon.com/gp/r.html?R=O6R0FDUCS6A4&amp;C=3I9Y3TLVAZY0I&amp;H=TU3BK9JAFWASDZA3K56OXVZRMSGA&amp;T=C&amp;U=http%3A%2F%2Faws.typepad.com%2Faws%2F2010%2F07%2Famazon-s3-bucket-policies-another-way-to-protect-your-content.html">Amazon S3 Bucket Policies -
-Another Way to Protect Your
-Content</a>.  </p>
+visit the&nbsp;<a href="http://www.amazon.com/gp/r.html?R=O6R0FDUCS6A4&amp;C=3I9Y3TLVAZY0I&amp;H=ROAU1KAKZQBCJPSUL9NTRPTDJWKA&amp;T=C&amp;U=http%3A%2F%2Fdocs.amazonwebservices.com%2FAmazonS3%2Flatest%2Fdev%2F">Amazon S3 Developer Guide</a>
+topics on&nbsp;<a href="http://www.amazon.com/gp/r.html?R=O6R0FDUCS6A4&amp;C=3I9Y3TLVAZY0I&amp;H=SBI6OCDEPWAWBO8JANT7P6NPMKMA&amp;T=C&amp;U=http%3A%2F%2Fdocs.amazonwebservices.com%2FAmazonS3%2Flatest%2Fdev%2Findex.html%3FLoggingHowTo.html">Amazon S3 Access Control</a>
+and the&nbsp;<a href="http://www.amazon.com/gp/r.html?R=O6R0FDUCS6A4&amp;C=3I9Y3TLVAZY0I&amp;H=KVRQBHTZXBVAJCDCCPR5CDUGYTQA&amp;T=C&amp;U=http%3A%2F%2Faws.amazon.com%2Fsecurity%2F%3Fref_%3Dpe_12300_20912970">AWS Security Center</a>.
+We also recommend Jeff Barr's blog post&nbsp;<a href="http://www.amazon.com/gp/r.html?R=O6R0FDUCS6A4&amp;C=3I9Y3TLVAZY0I&amp;H=TU3BK9JAFWASDZA3K56OXVZRMSGA&amp;T=C&amp;U=http%3A%2F%2Faws.typepad.com%2Faws%2F2010%2F07%2Famazon-s3-bucket-policies-another-way-to-protect-your-content.html">Amazon S3 Bucket Policies -Another Way to Protect Your Content</a>.  </p>
 <p>Sincerely,  </p>
-<p>The Amazon S3 Team  </p>
-<p>If you wish to remove yourself from receiving future announcements and
-the monthly AWS Newsletter, please update your <a href="http://www.amazon.com/gp/r.html?R=O6R0FDUCS6A4&amp;C=3I9Y3TLVAZY0I&amp;H=72EADYAIWEQXALOVKIHOHPSNADKA&amp;T=C&amp;U=https%3A%2F%2Faws-portal.amazon.com%2Fgp%2Faws%2Fdeveloper%2Faccount%2Findex.html%2F104-4543842-2170300%3Fie%3DUTF8%26action%3Dedit-communication-preferences%26ref_%3Dpe_12300_20912970">communication
-preferences</a>.<br>
-[<br>
-Amazon Web Services LLC is a subsidiary of Amazon.com, Inc. Amazon.com
-is a registered trademark of Amazon.com, Inc. This message produced
-and distributed by Amazon Web Services, LLC, 410 Terry Avenue North,
-Seattle, WA
-98109. <img alt="" src="http://www.amazon.com/gp/r.html?R=O6R0FDUCS6A4&amp;C=3I9Y3TLVAZY0I&amp;H=44YX4N7JAWLHGO3ITF7L6P4QIV8A&amp;T=E&amp;U=http%3A%2F%2Fimages.amazon.com%2Fimages%2FG%2F01%2Fnav%2Ftransp.gif">]]</p>
+<p>The Amazon S3 Team<br/>
+</p>
 </blockquote>
 
         <div class="sharethis-bottom">

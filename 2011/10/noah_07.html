@@ -42,8 +42,9 @@
                 <nav class="navbar">
                     <div class="navbar-inner">
                         <ul class="nav">
-                            <li ><a href="http://www.popowa.com">Profile</a></li>
+                            <li ><a href="http://www.popowa.com">About Aya</a></li>
                             <li ><a href="https://twitter.com/ayakomuro">Twitter</a></li>
+                            <li ><a href="https://github.com/popowa">Github</a></li>
                         </ul>
 
 <script>
@@ -101,9 +102,9 @@
         </div>
 
         <p>NOHAクラウドに関して速度とか検証してみた。  </p>
-<p>[][<strong><br>
-</strong>]<br>
-[<strong>外のサーバに対してpingしてみた(平均値)</strong>]<br>
+<p>[][<strong><br/>
+</strong>]<br/>
+[<strong>外のサーバに対してpingしてみた(平均値)</strong>]<br/>
 30リクエストを３回して平均を取りました。msです。</p>
 <p>site</p>
 <p>min</p>
@@ -134,12 +135,12 @@
 <p>[<strong>3.5 MB（3,515,540
 バイト）のファイルをHTTPでwgetしてみた</strong>]</p>
 <ul>
-<li>NOAHクラウド---> さくらVPS　---> 平均2.20M/sぐらい</li>
-<li>NOAHクラウド---> AWSシンガポール　---> 平均1.83M/sぐらい </li>
+<li>NOAHクラウド---&gt; さくらVPS　---&gt; 平均2.20M/sぐらい</li>
+<li>NOAHクラウド---&gt; AWSシンガポール　---&gt; 平均1.83M/sぐらい&nbsp;</li>
 </ul>
-<p>~~pingは出来なかったので、~~スループットは分かりませんでした。やり方をちょっと調べてみます。->
+<p>~~pingは出来なかったので、~~スループットは分かりませんでした。やり方をちょっと調べてみます。-&gt;
 iperfで後日検証してアップします。</p>
-<p><strong>[詳細ログはこちら]</strong><br>
+<p><strong>[詳細ログはこちら]</strong><br/>
 gree.jp</p>
 <div class="highlight"><pre><span></span>root@ubuntu:~# ping gree.jp -c 30
 PING gree.jp (210.148.145.209) 56(84) bytes of data.
@@ -159,8 +160,6 @@ rtt min/avg/max/mdev = 1.650/1.783/1.957/0.073 ms
 30 packets transmitted, 30 received, 0% packet loss, time 29042ms
 rtt min/avg/max/mdev = 1.649/1.716/1.832/0.062 ms
 </pre></div>
-
-
 <p>ameblo.jp</p>
 <div class="highlight"><pre><span></span>root@ubuntu:~# ping ameblo.jp -c 30
 PING ameblo.jp (180.233.142.129) 56(84) bytes of data.
@@ -180,8 +179,6 @@ rtt min/avg/max/mdev = 1.613/1.768/2.051/0.120 ms
 30 packets transmitted, 30 received, 0% packet loss, time 29042ms
 rtt min/avg/max/mdev = 1.608/1.750/2.070/0.106 ms
 </pre></div>
-
-
 <p>www.hatena.ne.jp</p>
 <div class="highlight"><pre><span></span>root@ubuntu:~# ping www.hatena.ne.jp -c 30
 PING www.hatena.ne.jp (59.106.194.19) 56(84) bytes of data.
@@ -195,14 +192,12 @@ rtt min/avg/max/mdev = 1.525/1.741/4.199/0.468 ms
 ２回目
 --- www.hatena.ne.jp ping statistics ---
 30 packets transmitted, 30 received, 0% packet loss, time 29048ms
-rtt min/avg/max/mdev = 1.485/1.651/1.874/0.104 ms 
+rtt min/avg/max/mdev = 1.485/1.651/1.874/0.104 ms&nbsp;
 ３回目
 --- www.hatena.ne.jp ping statistics ---
 30 packets transmitted, 30 received, 0% packet loss, time 29051ms
 rtt min/avg/max/mdev = 1.503/1.646/1.780/0.071 ms
 </pre></div>
-
-
 <p>www.yahoo.co.jp</p>
 <div class="highlight"><pre><span></span>root@ubuntu:~# ping www.yahoo.co.jp -c 30
 PING www.ya.gl.yahoo.co.jp (124.83.187.140) 56(84) bytes of data.
@@ -223,77 +218,73 @@ rtt min/avg/max/mdev = 9.577/9.976/12.944/0.785 ms
 30 packets transmitted, 30 received, 0% packet loss, time 29040ms
 rtt min/avg/max/mdev = 8.866/10.601/19.808/3.082 ms
 </pre></div>
-
-
 <p>NOAHクラウドからさくらVPS</p>
 <div class="highlight"><pre><span></span>aya@www15147u:~$ wget 210.129.159.10/test.zip
 --2011-10-07 11:06:39--  http://210.129.159.10/test.zip
 Connecting to 210.129.159.10:80... connected.
 HTTP request sent, awaiting response... 200 OK
 Length: 3515540 (3.4M) [application/zip]
-Saving to: “test.zip”
+Saving to: &ldquo;test.zip&rdquo;
 
 100%[===============略===================&gt;] 3,515,540   2.62M/s   in 1.3s
 
-2011-10-07 11:06:40 (2.62 MB/s) - “test.zip” saved [3515540/3515540]
+2011-10-07 11:06:40 (2.62 MB/s) - &ldquo;test.zip&rdquo; saved [3515540/3515540]
 
 aya@www15147u:~$ wget 210.129.159.10/test.zip
 --2011-10-07 11:07:23--  http://210.129.159.10/test.zip
 Connecting to 210.129.159.10:80... connected.
 HTTP request sent, awaiting response... 200 OK
 Length: 3515540 (3.4M) [application/zip]
-Saving to: “test.zip.1”
+Saving to: &ldquo;test.zip.1&rdquo;
 
 100%[===============略===================&gt;] 3,515,540   2.14M/s   in 1.6s
 
-2011-10-07 11:07:24 (2.14 MB/s) - “test.zip.1” saved [3515540/3515540]
+2011-10-07 11:07:24 (2.14 MB/s) - &ldquo;test.zip.1&rdquo; saved [3515540/3515540]
 
 aya@www15147u:~$ wget 210.129.159.10/test.zip
 --2011-10-07 11:07:25--  http://210.129.159.10/test.zip
 Connecting to 210.129.159.10:80... connected.
 HTTP request sent, awaiting response... 200 OK
 Length: 3515540 (3.4M) [application/zip]
-Saving to: “test.zip.2”
+Saving to: &ldquo;test.zip.2&rdquo;
 
 100%[===============略===================&gt;] 3,515,540   1.85M/s   in 1.8s
 
-2011-10-07 11:07:27 (1.85 MB/s) - “test.zip.2” saved [3515540/3515540]
+2011-10-07 11:07:27 (1.85 MB/s) - &ldquo;test.zip.2&rdquo; saved [3515540/3515540]
 </pre></div>
-
-
-<p>NOAHクラウド--->AWSシンガポール</p>
+<p>NOAHクラウド---&gt;AWSシンガポール</p>
 <div class="highlight"><pre><span></span>aya@ip-X-X-X-X:/tmp$ wget 210.129.159.10/test.zip
 --2011-10-07 11:35:45--  http://210.129.159.10/test.zip
 Connecting to 210.129.159.10:80... connected.
 HTTP request sent, awaiting response... 200 OK
 Length: 3515540 (3.4M) [application/zip]
-Saving to: `test.zip&#39;
+Saving to: `test.zip'
 
 100%[===============略===================&gt;] 3,515,540   2.00M/s   in 1.7s
 
-2011-10-07 11:35:47 (2.00 MB/s) - `test.zip&#39; saved [3515540/3515540]
+2011-10-07 11:35:47 (2.00 MB/s) - `test.zip' saved [3515540/3515540]
 
 aya@ip-X-X-X-X:/tmp$ wget 210.129.159.10/test.zip
 --2011-10-07 11:35:49--  http://210.129.159.10/test.zip
 Connecting to 210.129.159.10:80... connected.
 HTTP request sent, awaiting response... 200 OK
 Length: 3515540 (3.4M) [application/zip]
-Saving to: `test.zip.1&#39;
+Saving to: `test.zip.1'
 
 100%[===============略===================&gt;] 3,515,540   1.76M/s   in 1.9s
 
-2011-10-07 11:35:52 (1.76 MB/s) - `test.zip.1&#39; saved [3515540/3515540]
+2011-10-07 11:35:52 (1.76 MB/s) - `test.zip.1' saved [3515540/3515540]
 
 aya@ip-X-X-X-X:/tmp$ wget 210.129.159.10/test.zip
 --2011-10-07 11:35:53--  http://210.129.159.10/test.zip
 Connecting to 210.129.159.10:80... connected.
 HTTP request sent, awaiting response... 200 OK
 Length: 3515540 (3.4M) [application/zip]
-Saving to: `test.zip.2&#39;
+Saving to: `test.zip.2'
 
 100%[===============略===================&gt;] 3,515,540   1.73M/s   in 1.9s
 
-2011-10-07 11:35:55 (1.73 MB/s) - `test.zip.2&#39; saved [3515540/3515540]
+2011-10-07 11:35:55 (1.73 MB/s) - `test.zip.2' saved [3515540/3515540]
 </pre></div>
 
         <div class="sharethis-bottom">

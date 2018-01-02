@@ -42,8 +42,9 @@
                 <nav class="navbar">
                     <div class="navbar-inner">
                         <ul class="nav">
-                            <li ><a href="http://www.popowa.com">Profile</a></li>
+                            <li ><a href="http://www.popowa.com">About Aya</a></li>
                             <li ><a href="https://twitter.com/ayakomuro">Twitter</a></li>
+                            <li ><a href="https://github.com/popowa">Github</a></li>
                         </ul>
 
 <script>
@@ -106,24 +107,24 @@
 <li>製品名: Cloudant</li>
 <li>URL: <a href="https://cloudant.com/">https://cloudant.com/</a></li>
 </ul>
-<p><a href="http://4.bp.blogspot.com/-IcijgudRNIs/UOdkhR19IQI/AAAAAAAAV-E/vkOt1dK9S6w/s1600/cloudant_logo.jpg"><img alt="" src="http://4.bp.blogspot.com/-IcijgudRNIs/UOdkhR19IQI/AAAAAAAAV-E/vkOt1dK9S6w/s1600/cloudant_logo.jpg"></a></p>
-<h3>要約</h3>
+<p><a href="http://4.bp.blogspot.com/-IcijgudRNIs/UOdkhR19IQI/AAAAAAAAV-E/vkOt1dK9S6w/s1600/cloudant_logo.jpg"><img alt="" src="http://4.bp.blogspot.com/-IcijgudRNIs/UOdkhR19IQI/AAAAAAAAV-E/vkOt1dK9S6w/s1600/cloudant_logo.jpg"/></a></p>
+<h3 id="yao-yue">要約</h3>
 <blockquote>
-<p><strong>CouchDBをサービスとして色んなクラウド上で展開出来るSaaS<br>
-自分でCouchDBをインストール＆設定、冗長化をしたく無い人にはぴったりのサービス。</strong> </p>
-<p><strong>CouchDBのコミッターも多いらしいので、ほぼCouchDBと同じ機能だと考えてOK</strong> </p>
+<p><strong>CouchDBをサービスとして色んなクラウド上で展開出来るSaaS<br/>
+自分でCouchDBをインストール＆設定、冗長化をしたく無い人にはぴったりのサービス。</strong>&nbsp;</p>
+<p><strong>CouchDBのコミッターも多いらしいので、ほぼCouchDBと同じ機能だと考えてOK</strong>&nbsp;</p>
 </blockquote>
 <p>[]</p>
-<h3>概要</h3>
+<h3 id="gai-yao">概要</h3>
 <ul>
 <li>
-<p>Cloudantは <a href="http://couchdb.apache.org/">Apache
+<p>Cloudantは&nbsp;<a href="http://couchdb.apache.org/">Apache
 CouchDB</a>で構築されている</p>
 <p>CouchDB: JSON形式のドキュメントでデータ保存、返却をするNoSQL</p>
 </li>
 </ul>
-<h2>-   Data Layer as a Service(DLAAS?)</h2>
-<h3>機能について</h3>
+<h2 id="-data-layer-as-a-servicedlaas_1">-   Data Layer as a Service(DLAAS?)</h2>
+<h3 id="ji-neng-nitsuite">機能について</h3>
 <ul>
 <li>より深い解析: MapReduce機能</li>
 <li>全文検索:
@@ -135,8 +136,8 @@ CouchDB</a>で構築されている</p>
 <li>HTTP経由でRESTfulなAPIでアクセスが可能</li>
 <li>データベースのインデックスはMapReduce機能を使って構築されているので、クエリー処理や解析が素早く行なえる</li>
 </ul>
-<h3>冗長性・インフラについて</h3>
-<p><a href="http://4.bp.blogspot.com/-Rd2IQpplD8w/UOdjEbcDvUI/AAAAAAAAV9o/-_p0xVJ7F7s/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88+2013-01-02+19.44.20.png"><img alt="" src="http://4.bp.blogspot.com/-Rd2IQpplD8w/UOdjEbcDvUI/AAAAAAAAV9o/-_p0xVJ7F7s/s320/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88+2013-01-02+19.44.20.png">{width="320"
+<h3 id="rong-chang-xing-inhuranitsuite">冗長性・インフラについて</h3>
+<p><a href="http://4.bp.blogspot.com/-Rd2IQpplD8w/UOdjEbcDvUI/AAAAAAAAV9o/-_p0xVJ7F7s/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88+2013-01-02+19.44.20.png"><img alt="" src="http://4.bp.blogspot.com/-Rd2IQpplD8w/UOdjEbcDvUI/AAAAAAAAV9o/-_p0xVJ7F7s/s320/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88+2013-01-02+19.44.20.png"/>{width="320"
 height="89"}</a></p>
 <ul>
 <li>Cloudantではメインのクラウドをどの物理プラットフォームを使うか、どのリージョンで使うかを選択する</li>
@@ -145,13 +146,13 @@ height="89"}</a></p>
 <li>Cloudantは自動で全世界でレプリケーションを行なう（エンドユーザーから見るとレイテンシーが低い）</li>
 <li>Cloudantはクラスターサーバ（ノード）間で分割して保存する。データ分散がされている</li>
 </ul>
-<h3>サービス特有の内容</h3>
+<h3 id="sabisute-you-nonei-rong">サービス特有の内容</h3>
 <ul>
 <li>マルチテナントが嫌な場合は専有テナントもあり</li>
 <li>平行クラスター・フレームワークをErlangで開発</li>
 <li>ノードサーバにデータを増やす機能、なので作った（CouchDBに無いらしい？？）</li>
 </ul>
-<p><a href="http://4.bp.blogspot.com/-9s78y4WZjV8/UOQMD1w4-eI/AAAAAAAAV74/stEW20vem3U/s1600/cloudant.png"><img alt="" src="http://4.bp.blogspot.com/-9s78y4WZjV8/UOQMD1w4-eI/AAAAAAAAV74/stEW20vem3U/s1600/cloudant.png"></a></p>
+<p><a href="http://4.bp.blogspot.com/-9s78y4WZjV8/UOQMD1w4-eI/AAAAAAAAV74/stEW20vem3U/s1600/cloudant.png"><img alt="" src="http://4.bp.blogspot.com/-9s78y4WZjV8/UOQMD1w4-eI/AAAAAAAAV74/stEW20vem3U/s1600/cloudant.png"/></a></p>
 <p>Cloudantスケール機能の勘所</p>
 <ul>
 <li>読み込みのロード時間 vs 書き込みのロード時間</li>
@@ -163,7 +164,7 @@ height="89"}</a></p>
 </ul>
 <p>コマンドラインで操作</p>
 <ul>
-<li><a href="http://d.hatena.ne.jp/popowa/20130103#1357197178">[Cloudant]コマンドラインで操作 </a></li>
+<li><a href="http://d.hatena.ne.jp/popowa/20130103#1357197178">[Cloudant]コマンドラインで操作&nbsp;</a></li>
 <li><a href="http://d.hatena.ne.jp/popowa/20130104#1357256329">[Cloudant]プライマリ・インデックス</a></li>
 <li><a href="http://d.hatena.ne.jp/popowa/20130105#1357334012">[Cloudant]セカンダリー・インデックス</a></li>
 </ul>

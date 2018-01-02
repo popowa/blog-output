@@ -42,8 +42,9 @@
                 <nav class="navbar">
                     <div class="navbar-inner">
                         <ul class="nav">
-                            <li ><a href="http://www.popowa.com">Profile</a></li>
+                            <li ><a href="http://www.popowa.com">About Aya</a></li>
                             <li ><a href="https://twitter.com/ayakomuro">Twitter</a></li>
+                            <li ><a href="https://github.com/popowa">Github</a></li>
                         </ul>
 
 <script>
@@ -106,9 +107,9 @@
 
         <p>前回サーバテンプレートを使ってサーバを立ててみました。それではサーバテンプレートを構成している個々のスクリプトを見てみたいと思います。  </p>
 <p>[]「デザイン」から「サーバテンプレート」を選択します。  </p>
-<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/server_template.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/server_template.png" title="server_template">{.alignnone
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/server_template.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/server_template.png" title="server_template"/>{.alignnone
 .size-full .wp-image-1322 width="153"
-height="66"}</a>  </p>
+height="66"}</a> </p>
 <p>対象サーバサーバテンプレートを選択します。スクリプトタブを選択します。  </p>
 <p>スクリプトの書き方  </p>
 <ul>
@@ -121,13 +122,13 @@ height="66"}</a>  </p>
 <li>パッケージ毎の起動は、/etc/init.d/パッケージ
     restart（Debian系特有）ではなく、serviceを使って起動する</li>
 <li>スクリプト内で設定された関数や、変数は引き継がれない事を前提にする。他のスクリプトに依存はせず、面倒でもスクリプト単体で、動くようにしておく</li>
-<li>サーバテンプレートに対応させるサーバイメージを複数ディストリビューションにする場合は、分岐を入れる<br>
+<li>サーバテンプレートに対応させるサーバイメージを複数ディストリビューションにする場合は、分岐を入れる<br/>
    （Debian系だとapt-get、CentOS系だとyumなど）</li>
 <li>同じディストリビューションでもバージョンによってパッケージの依存関係が違っていたりするので、もし依存関係が違っていたら、個別にバージョンを確認し、必要なパッケージのインストール等を行う必要がある</li>
 </ul>
-<p><strong>日本語化してみたライトスクリプト（随時追加）</strong>  </p>
+<p><strong>日本語化してみたライトスクリプト（随時追加）</strong> </p>
 <ul>
-<li><a href="http://www.popowa.com/archives/1326" title="ライトスクリプト: SYS Timezone set – 11H1 JST [rev 2]">SYS Timezone set - 11H1
+<li><a href="http://www.popowa.com/archives/1326" title="ライトスクリプト: SYS Timezone set &ndash; 11H1 JST [rev 2]">SYS Timezone set - 11H1
     JST</a></li>
 <li><a href="http://www.popowa.com/archives/1329" title="ライトスクリプト：SYS Syslog remote logging client">SYS Syslog remote logging
     client</a></li>
@@ -135,7 +136,7 @@ height="66"}</a>  </p>
     delivery</a></li>
 </ul>
 <p>[<strong>RightLink</strong>]  </p>
-<p>RightScaleが提供するサーバイメージ(v5以上)にはRightLinkというパッケージがはいっています。<br>
+<p>RightScaleが提供するサーバイメージ(v5以上)にはRightLinkというパッケージがはいっています。<br/>
 RightLinkは
 ライトスクリプトとChefを動かす為のエージェントです。拡張してPuppetとかも動かす事が出来ます。  </p>
 <p>MITライセンスで公開されているオープンソースです（<a href="https://github.com/rightscale/right_link">レポジトリはこちら</a>）  </p>
@@ -144,15 +145,15 @@ RightLinkは
 <p>[<strong>RightLinkのコマンド</strong>]  </p>
 <p>ほとんどのコマンドには以下のオプションがついています。  </p>
 <ul>
-<li>--verbose, -v  #デバック情報を出力する</li>
+<li>--verbose, -v &nbsp;#デバック情報を出力する</li>
 <li>--help #ヘルプを出す</li>
 <li>--version #パッケージのログを出す</li>
 </ul>
 <p>rs_log_level（<a href="http://support.rightscale.com/12-Guides/RightLink/RightLink_Command_Line_Utilities#rs_log_level">サポートページ</a>）  </p>
 <ul>
 <li>ログレベルの設定</li>
-<li>オプション<br>
-   --identify, -l #ログ出力レベルを設定する<br>
+<li>オプション<br/>
+   --identify, -l #ログ出力レベルを設定する<br/>
    例：rs_log_level --log-level debug</li>
 </ul>
 <p>rs_run_recipe（<a href="http://support.rightscale.com/12-Guides/RightLink/RightLink_Command_Line_Utilities#rs_run_recipe">サポートページ</a>）  </p>
@@ -169,13 +170,13 @@ RightLinkは
 </ul>
 </li>
 <li>
-<p>オプション<br>
+<p>オプション<br/>
    --identity, -i ID #
-    ライトスクリプトもしくはサーバテンプレートに設定されているChefのレシピのIDを取得する<br>
+    ライトスクリプトもしくはサーバテンプレートに設定されているChefのレシピのIDを取得する<br/>
    --name, -n 名前
-    #ライトスクリプトもしくはChefレシピ名(IDで上書きされている)<br>
+    #ライトスクリプトもしくはChefレシピ名(IDで上書きされている)<br/>
    --json, -j JSON_FILE
-    #レシピを実行する前にJSONファイルを属性として取り込む<br>
+    #レシピを実行する前にJSONファイルを属性として取り込む<br/>
    --parameter, -p NAME=type:VALUE
     #ライトスクリプトのInputを定義、もしくは上書きする（run_right_scriptのみ利用可能）</p>
 </li>
@@ -183,24 +184,24 @@ RightLinkは
 <p>rs_shutdown（サポートページ）  </p>
 <ul>
 <li>インスタンスに対して再起動、停止、終了のリクエストを送ります</li>
-<li>オプション<br>
-   --reboot, -r #再起動のリクエストを送る<br>
+<li>オプション<br/>
+   --reboot, -r #再起動のリクエストを送る<br/>
    --stop, -s
-    #停止のリクエストを送る（ルートディバイスがEBS等である際に利用出来ます）<br>
-   --terminate, -t #終了リクエストを送る<br>
-   --immediately, -i #リクエストを今すぐに実行させる<br>
+    #停止のリクエストを送る（ルートディバイスがEBS等である際に利用出来ます）<br/>
+   --terminate, -t #終了リクエストを送る<br/>
+   --immediately, -i #リクエストを今すぐに実行させる<br/>
    --deferred, -d #他のスクリプトが終了するまで待つ</li>
 </ul>
 <p>rs_tag（<a href="http://support.rightscale.com/12-Guides/RightLink/RightLink_Command_Line_Utilities#rs_tag">サポートページ</a>）  </p>
 <ul>
 <li>タグの一覧、追加、削除を現在のインスタンスや、クエリに対して行う事が出来る</li>
 <li>
-<p>オプション<br>
-   --list, -l #現在のインスタンスのタグ一覧を表示する<br>
-   --add, -a タグ #タグを追加する<br>
-   例：rs_tag --add \'options:tags=awesome\'<br>
-   --remove -r タグ #タグを削除する<br>
-   例: rs_tag --remove \'options:tag=awesome\'<br>
+<p>オプション<br/>
+   --list, -l #現在のインスタンスのタグ一覧を表示する<br/>
+   --add, -a タグ #タグを追加する<br/>
+   例：rs_tag --add \'options:tags=awesome\'<br/>
+   --remove -r タグ #タグを削除する<br/>
+   例: rs_tag --remove \'options:tag=awesome\'<br/>
    --query, -q タグリスト
     #デプロイメントのインスタンスのタグ情報を取得する</p>
 <p>一般的なパッケージ</p>
@@ -210,19 +211,19 @@ RightLinkは
 <p>Linuxのバージョンを確認する</p>
 </li>
 <li>
-<p>オプション<br>
-   -v, --help #ヘルプを出力<br>
-   -v, --version  #システムがサポートしているLSBモジュール
-    を表示する<br>
-   -i, --id #ディストリビューターの名前<br>
-   出力例：Distributor ID: Ubuntu<br>
-   -d, --description #ディストリビューションの説明を表示<br>
-   出力例：Description: Ubuntu 10.04.2 LTS<br>
-   -r, --release #ディストリビューションのリリース番号を表示<br>
-   出力例：Release: 10.04<br>
-   -c, --codename #コードネームを表示<br>
-   出力例：Codename: lucid<br>
-   -a, --all #上記情報を全部出す<br>
+<p>オプション<br/>
+   -v, --help #ヘルプを出力<br/>
+   -v, --version &nbsp;#システムがサポートしているLSBモジュール
+    を表示する<br/>
+   -i, --id #ディストリビューターの名前<br/>
+   出力例：Distributor ID: Ubuntu<br/>
+   -d, --description #ディストリビューションの説明を表示<br/>
+   出力例：Description: Ubuntu 10.04.2 LTS<br/>
+   -r, --release #ディストリビューションのリリース番号を表示<br/>
+   出力例：Release: 10.04<br/>
+   -c, --codename #コードネームを表示<br/>
+   出力例：Codename: lucid<br/>
+   -a, --all #上記情報を全部出す<br/>
    -s,--short #短くして表示</p>
 <p>mknod（manページ）</p>
 </li>

@@ -42,8 +42,9 @@
                 <nav class="navbar">
                     <div class="navbar-inner">
                         <ul class="nav">
-                            <li ><a href="http://www.popowa.com">Profile</a></li>
+                            <li ><a href="http://www.popowa.com">About Aya</a></li>
                             <li ><a href="https://twitter.com/ayakomuro">Twitter</a></li>
+                            <li ><a href="https://github.com/popowa">Github</a></li>
                         </ul>
 
 <script>
@@ -103,9 +104,9 @@
 
         <p>This is not what you</p>
 <p>are expected to read for understanding S3.
-Read<a href="http://docs.aws.amazon.com/ja_jp/AmazonS3/latest/dev/Welcome.html">this.</a><br>
+Read<a href="http://docs.aws.amazon.com/ja_jp/AmazonS3/latest/dev/Welcome.html">this.</a><br/>
 開発者ガイドを全部読んで大事かなーって所だけピックアップして書き出した。ちゃんとドキュメントは<a href="http://docs.aws.amazon.com/ja_jp/AmazonS3/latest/dev/Welcome.html">ここ</a>を読んだほうがいいよ</p>
-<p><a href="https://1.bp.blogspot.com/-OZeeh2jwn6k/VwGd60m-YBI/AAAAAAAAerU/YAd8tu0X9VcMWGHYAEa0lkvzEeL5nc4Mg/s1600/IMG_0822.jpg"><img alt="" src="https://1.bp.blogspot.com/-OZeeh2jwn6k/VwGd60m-YBI/AAAAAAAAerU/YAd8tu0X9VcMWGHYAEa0lkvzEeL5nc4Mg/s320/IMG_0822.jpg">{width="320"
+<p><a href="https://1.bp.blogspot.com/-OZeeh2jwn6k/VwGd60m-YBI/AAAAAAAAerU/YAd8tu0X9VcMWGHYAEa0lkvzEeL5nc4Mg/s1600/IMG_0822.jpg"><img alt="" src="https://1.bp.blogspot.com/-OZeeh2jwn6k/VwGd60m-YBI/AAAAAAAAerU/YAd8tu0X9VcMWGHYAEa0lkvzEeL5nc4Mg/s320/IMG_0822.jpg"/>{width="320"
 height="240"}</a></p>
 <p>[]</p>
 <p>1オブジェクト\~5TB変わらず</p>
@@ -206,7 +207,7 @@ Import/ExportにもS3がよく出てくるから一緒にドキュメント読�
 <li>全HTTPリクエストヘッダーがリダイレクトリクエストに適切に含まれている事</li>
 <li>非GETリダイレクトが正常動作しているか確認</li>
 <li>大きなPUTリクエストがリダイレクトに従っているか確認</li>
-<li><a href="https://ja.wikipedia.org/wiki/HTTP%E3%82%B9%E3%83%86%E3%83%BC%E3%82%BF%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89">100-continueレスポンス</a> が届くまで時間がかかる場合はPUTリクエストがリダイレクトに従っているか確認</li>
+<li><a href="https://ja.wikipedia.org/wiki/HTTP%E3%82%B9%E3%83%86%E3%83%BC%E3%82%BF%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89">100-continueレスポンス</a>&nbsp;が届くまで時間がかかる場合はPUTリクエストがリダイレクトに従っているか確認</li>
 </ul>
 <p>PUTに対して100-continueを利用するようにアプリ側で設定</p>
 <p>バケットについて</p>
@@ -219,7 +220,7 @@ Import/ExportにもS3がよく出てくるから一緒にドキュメント読�
 <li>http://s3-<strong>[aws-region]</strong>.amazonaws.com/<strong>bucket</strong></li>
 <li>http://<strong>bucket</strong>.s3-website-<strong>[aws-region]</strong>.amazonawscom
     (静的ウェブ)</li>
-<li>http://<strong>bucket</strong>.s3-website.<strong>[aws-region]</strong>.amazonaws.com (静的ウェブ)</li>
+<li>http://<strong>bucket</strong>.s3-website.<strong>[aws-region]</strong>.amazonaws.com&nbsp;(静的ウェブ)</li>
 </ul>
 <p>設定オプション（サブリソースと呼ばれるらしい）</p>
 <p>ライフサイクル</p>
@@ -287,14 +288,14 @@ S3コンソールは100,000までのオブジェクトがあるバケットを�
 </ul>
 <p>特殊文字をキー名に使う場合は16進数としてURL
 encodeが必要かもしれないので気をつけて</p>
-<p>\"&amp;\", \"\$\", \"@\", \"=\", \";\", \":\", \"+\", \",\",\"?\"</p>
+<p>\"&amp;\",&nbsp;\"\$\",&nbsp;\"@\",&nbsp;\"=\",&nbsp;\";\",&nbsp;\":\",&nbsp;\"+\",&nbsp;\",\",\"?\"</p>
 <p>0x0000(NULL)\~0x001F(US)までの範囲と、0x007F(DEL)</p>
 <ul>
 <li><a href="http://redgrittybrick.org/ascii.html">http://redgrittybrick.org/ascii.html</a></li>
 </ul>
 <p>使わないで</p>
 <ul>
-<li>\"\",\"\",\"`\",\"[\",\"]\",\">\",\"\&lt;\",\"#\",\"|\",\"\~\",表示不可なASCII文字</li>
+<li>\"\",\"\",\"`\",\"[\",\"]\",\"&gt;\",\"\&lt;\",\"#\",\"|\",\"\~\",表示不可なASCII文字</li>
 </ul>
 <p>オブジェクトのサブリソース（設定）</p>
 <p>ACL</p>
@@ -487,7 +488,7 @@ Deleteが有効の場合は、バケット所有者はリクエストにx-amz-mf
 <li>バケットのサイズとオブジェクトの数はメトリックスとして取得出来る</li>
 </ul>
 <p>CloudTrailでもS3操作のログが残るよ</p>
-<p>DevPay <a href="http://docs.aws.amazon.com/ja_jp/AmazonS3/latest/dev/UsingDevPay.html">http://docs.aws.amazon.com/ja_jp/AmazonS3/latest/dev/UsingDevPay.html</a></p>
+<p>DevPay&nbsp;<a href="http://docs.aws.amazon.com/ja_jp/AmazonS3/latest/dev/UsingDevPay.html">http://docs.aws.amazon.com/ja_jp/AmazonS3/latest/dev/UsingDevPay.html</a></p>
 
         <div class="sharethis-bottom">
           <span class='st_fblike_hcount' displayText='Facebook Like'></span>

@@ -42,8 +42,9 @@
                 <nav class="navbar">
                     <div class="navbar-inner">
                         <ul class="nav">
-                            <li ><a href="http://www.popowa.com">Profile</a></li>
+                            <li ><a href="http://www.popowa.com">About Aya</a></li>
                             <li ><a href="https://twitter.com/ayakomuro">Twitter</a></li>
+                            <li ><a href="https://github.com/popowa">Github</a></li>
                         </ul>
 
 <script>
@@ -101,9 +102,9 @@
         </div>
 
         <p>よくAWSのハンズオンや学校の授業などでEC2にWordPressを入れて試してみよう！というのをやるのですが、毎回困るのが次の授業でAMIからEC2を立ち上げると、FQDNが変わっていて、Wordpressがちゃんと表示されない、という事です。</p>
-<p><a href="http://4.bp.blogspot.com/-dxwPvGthFbU/UOeP3uUABwI/AAAAAAAAV-g/4dkOnnxEXCg/s1600/wordpress-logo-stacked-rgb.png"><img alt="" src="http://4.bp.blogspot.com/-dxwPvGthFbU/UOeP3uUABwI/AAAAAAAAV-g/4dkOnnxEXCg/s320/wordpress-logo-stacked-rgb.png">{width="320"
+<p><a href="http://4.bp.blogspot.com/-dxwPvGthFbU/UOeP3uUABwI/AAAAAAAAV-g/4dkOnnxEXCg/s1600/wordpress-logo-stacked-rgb.png"><img alt="" src="http://4.bp.blogspot.com/-dxwPvGthFbU/UOeP3uUABwI/AAAAAAAAV-g/4dkOnnxEXCg/s320/wordpress-logo-stacked-rgb.png"/>{width="320"
 height="196"}</a></p>
-<p>[]<br>
+<p>[]<br/>
 今まで起こっていた流れとしては</p>
 <ol>
 <li>EC2インスタンスで[<strong>WordPress立ち上げ成功</strong>]！（この時はEC2のFQDNを利用）</li>
@@ -113,56 +114,46 @@ height="196"}</a></p>
 <li><strong>CSSが表示されず、管理画面にもログイン出来ない</strong></li>
 <li>＼(\^o\^)／ｵﾜﾀ</li>
 </ol>
-<p>という感じでした。<br>
-これを解決する方法を調べてみたので、記載します。<br>
+<p>という感じでした。<br/>
+これを解決する方法を調べてみたので、記載します。<br/>
 [もちろんEC2のハンズオンの前にDNSのRoute53か固定IPのEIPをやればいんでしょうけど、どうしてもサイドディッシュというか後回しになっちゃうですよねー（白目]</p>
-<h3>1. DB内の値を変える</h3>
+<h3 id="1-dbnei-nozhi-wobian-eru">1. DB内の値を変える</h3>
 <div class="highlight"><pre><span></span>$ mysql -u アカウント名 -p <span class="c1">#MySQLにログイン</span>
 mysql &gt; use wordpress<span class="p">;</span>
 mysql&gt; UPDATE wp_options 
  SET <span class="nv">option_value</span> <span class="o">=</span> replace<span class="o">(</span>option_value, 
- <span class="s1">&#39;http://old.example.jp&#39;</span>,  <span class="s1">&#39;http://new.example.jp&#39;</span><span class="o">)</span> 
- WHERE <span class="nv">option_name</span> <span class="o">=</span> <span class="s1">&#39;home&#39;</span> OR <span class="nv">option_name</span> <span class="o">=</span> <span class="s1">&#39;siteurl&#39;</span><span class="p">;</span>
+ <span class="s1">'http://old.example.jp'</span>,  <span class="s1">'http://new.example.jp'</span><span class="o">)</span> 
+ WHERE <span class="nv">option_name</span> <span class="o">=</span> <span class="s1">'home'</span> OR <span class="nv">option_name</span> <span class="o">=</span> <span class="s1">'siteurl'</span><span class="p">;</span>
 </pre></div>
-
-
 <p>最初はこのやり方しか知らなかったのだけど、ハンズオンや授業では非常に面倒で、このやり方以外にないのかなぁと思っていた。</p>
-<h3>2. wp-config.phpで\"予め\"設定しておく</h3>
+<h3 id="2-wp-configphpdeyu-meshe-ding-shiteoku">2. wp-config.phpで\"予め\"設定しておく</h3>
 <div class="highlight"><pre><span></span>$ vi /var/www/wordpress/wp-config.php
-define<span class="o">(</span><span class="s1">&#39;WP_HOME&#39;</span>,<span class="s1">&#39;http://new.example.com/&#39;</span><span class="o">)</span><span class="p">;</span>
-define<span class="o">(</span><span class="s1">&#39;WP_SITEURL&#39;</span>,<span class="s1">&#39;http://new.example.com/&#39;</span><span class="o">)</span><span class="p">;</span>
+define<span class="o">(</span><span class="s1">'WP_HOME'</span>,<span class="s1">'http://new.example.com/'</span><span class="o">)</span><span class="p">;</span>
+define<span class="o">(</span><span class="s1">'WP_SITEURL'</span>,<span class="s1">'http://new.example.com/'</span><span class="o">)</span><span class="p">;</span>
 </pre></div>
-
-
 <p>この方法だと、管理画面から設定が出来なくなるが、FQDNが変わってしまって管理画面にログイン出来なくなって(1)をする事になるよりはマシだと思う。</p>
-<h3>3. functions.phpに書いて、(1)を行なう</h3>
+<h3 id="3-functionsphpnishu-ite-1woxing-nau">3. functions.phpに書いて、(1)を行なう</h3>
 <div class="highlight"><pre><span></span>$ vi /var/www/wordpress/wp-content/themes/twentytwelve/functions.php
-update_option<span class="o">(</span><span class="s1">&#39;siteurl&#39;</span>,<span class="s1">&#39;http://new.example.com/&#39;</span><span class="o">)</span><span class="p">;</span>
-update_option<span class="o">(</span><span class="s1">&#39;home&#39;</span>,<span class="s1">&#39;http://new.example.com/&#39;</span><span class="o">)</span><span class="p">;</span>
+update_option<span class="o">(</span><span class="s1">'siteurl'</span>,<span class="s1">'http://new.example.com/'</span><span class="o">)</span><span class="p">;</span>
+update_option<span class="o">(</span><span class="s1">'home'</span>,<span class="s1">'http://new.example.com/'</span><span class="o">)</span><span class="p">;</span>
 </pre></div>
-
-
-<p>利用しているテンプレートにあるfunctions.phpが呼ばれた時に(1)を行なってくれる機能があるそうです。<br>
+<p>利用しているテンプレートにあるfunctions.phpが呼ばれた時に(1)を行なってくれる機能があるそうです。<br/>
 これを書いて実行するのは一回だけで、上書きが終わったら、上記のupdate_optionの行を削除する必要があるそうです。二度手間ですね。</p>
 <p>functions.phpがなければ、以下のように新規作成すればよいようです。</p>
 <div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
-<span class="nx">update_option</span><span class="p">(</span><span class="s1">&#39;siteurl&#39;</span><span class="p">,</span><span class="s1">&#39;http://new.example.com/&#39;</span><span class="p">);</span>
-<span class="nx">update_option</span><span class="p">(</span><span class="s1">&#39;home&#39;</span><span class="p">,</span><span class="s1">&#39;http://new.example.com/&#39;</span><span class="p">);</span>
+<span class="nx">update_option</span><span class="p">(</span><span class="s1">'siteurl'</span><span class="p">,</span><span class="s1">'http://new.example.com/'</span><span class="p">);</span>
+<span class="nx">update_option</span><span class="p">(</span><span class="s1">'home'</span><span class="p">,</span><span class="s1">'http://new.example.com/'</span><span class="p">);</span>
 <span class="cp">?&gt;</span>
 </pre></div>
-
-
-<h3>4. 一時的に管理画面にログインする際のURLを違うものでも良しとする設定をtrueにする</h3>
+<h3 id="4-yi-shi-de-niguan-li-hua-mian-niroguinsuruji-nourlwowei-umonodemoliang-shitosurushe-ding-wotruenisuru">4. 一時的に管理画面にログインする際のURLを違うものでも良しとする設定をtrueにする</h3>
 <div class="highlight"><pre><span></span>$ vi /var/www/wordpress/wp-config.php
-define<span class="o">(</span><span class="s1">&#39;RELOCATE&#39;</span>,true<span class="o">)</span><span class="p">;</span>
+define<span class="o">(</span><span class="s1">'RELOCATE'</span>,true<span class="o">)</span><span class="p">;</span>
 </pre></div>
-
-
-<p>wp-config.phpに上記を追加する事で、違うFQDNでアクセスしている際に管理画面に一時的にログインを許可する設定が出来るそうです。<br>
-上記を追加する事でhttp://new.example.jp/wordpress/wp-login.phpにアクセスする事でDB内のsiteurlが上書きされて、管理画面にログインが可能になります。<br>
-管理画面ログイン後、設定ページでhomeの部分を新しいURLに書き換えれば終了！<br>
+<p>wp-config.phpに上記を追加する事で、違うFQDNでアクセスしている際に管理画面に一時的にログインを許可する設定が出来るそうです。<br/>
+上記を追加する事でhttp://new.example.jp/wordpress/wp-login.phpにアクセスする事でDB内のsiteurlが上書きされて、管理画面にログインが可能になります。<br/>
+管理画面ログイン後、設定ページでhomeの部分を新しいURLに書き換えれば終了！<br/>
 書き換えが終わったらRELOCATEは削除しておかないと別ドメインでアクセスして来た人にsiteurlを上書きされるので気をつけましょう。</p>
-<h3>参考URL</h3>
+<h3 id="can-kao-url">参考URL</h3>
 <ul>
 <li><a href="http://codex.wordpress.org/Changing_The_Site_URL">Changing The Site
     URL</a></li>

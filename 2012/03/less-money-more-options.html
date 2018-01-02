@@ -42,8 +42,9 @@
                 <nav class="navbar">
                     <div class="navbar-inner">
                         <ul class="nav">
-                            <li ><a href="http://www.popowa.com">Profile</a></li>
+                            <li ><a href="http://www.popowa.com">About Aya</a></li>
                             <li ><a href="https://twitter.com/ayakomuro">Twitter</a></li>
+                            <li ><a href="https://github.com/popowa">Github</a></li>
                         </ul>
 
 <script>
@@ -116,7 +117,7 @@ popowa.comに付随する過去のサブドメイン遺産をどれだけ安く�
 <li>ウェブサーバ</li>
 <li>検証で試したOSSなアプリ（主にWordpressなど）用検証サーバ</li>
 </ol>
-<p>がありました。<br>
+<p>がありました。<br/>
 過去使っていた有償環境としては</p>
 <ol>
 <li>自宅サーバー</li>
@@ -130,24 +131,24 @@ popowa.comに付随する過去のサブドメイン遺産をどれだけ安く�
 <li>RackSpace</li>
 </ol>
 <p>とかで運営していました(順不同)。</p>
-<h3>■ネームサーバー</h3>
+<h3 id="nemusaba">■ネームサーバー</h3>
 <p>まずネームサーバーをAWSが提供している<a href="http://aws.amazon.com/jp/route53/">Route
-53</a>に移します。Bindも脆弱性が多いので、これでBindのパッチ当てを気にする必要がなくなります(ﾉ´▽｀)ﾉ
-。<br>
+53</a>に移します。Bindも脆弱性が多いので、これでBindのパッチ当てを気にする必要がなくなります(ﾉ&acute;▽｀)ﾉ
+。<br/>
 Route 53は有償ですが、気にするに値しないほど安いです。本当に。</p>
 <blockquote>
 <p>★ネームサーバーはRoute 53で決まり！</p>
 </blockquote>
-<h3>■メールサーバー</h3>
+<h3 id="merusaba">■メールサーバー</h3>
 <p>メールは、スパムしか受けないので、<a href="http://www.google.com/apps/intl/ja/group/index.html">Google
 Apps</a>に移行しました。元々メールサーバーの構成はcatch-allなExim
-+ SpamAssassin + ClamAVでした。<br>
++ SpamAssassin + ClamAVでした。<br/>
 メールをトリガーにする動きが出来なくなったのでそれは別に何か考えたいと思います。</p>
 <blockquote>
 <p>★複数アカウントを作るのではなくアカウント+hoge@exampleとかで拡張出来るようにしておくと移行が楽</p>
 </blockquote>
-<h3>■ブログサーバー</h3>
-<p>ブログは、WordPressから、 Bloggerに移行しました。<br>
+<h3 id="burogusaba">■ブログサーバー</h3>
+<p>ブログは、WordPressから、 Bloggerに移行しました。<br/>
 まず前提ですが、WordPressに以下のプラグインを入れてから、WordPressは運用しましょう。</p>
 <ul>
 <li><a href="http://wordpress.org/extend/plugins/tantan-s3/">Amazon S3 for
@@ -161,19 +162,19 @@ Apps</a>に移行しました。元々メールサーバーの構成はcatch-all
 </ul>
 <p>Flickrは使っていないが同じようなPluginがあると思う。</p>
 <p>ブログの引っ越しで困るのは画像ファイルです。画像だけ歯抜けみたいになるので、出来るならばS3とか外部ファイルサーバーに置いておくと吉です。</p>
-<p>WPからBloggerの引っ越しは簡単で、WPから吐き出されたXMLをBloggerにインポートすれば完了。<br>
+<p>WPからBloggerの引っ越しは簡単で、WPから吐き出されたXMLをBloggerにインポートすれば完了。<br/>
 <a href="http://wordpress.com/">WordPress.com</a>というPaaSサービスもあるのだけれど、独自ドメイン、独自のテーマを使いたい場合は有償なので諦めました。  </p>
 <blockquote>
 <p>★画像は外部サーバに置こう</p>
 </blockquote>
-<h3>■レポジトリサーバー</h3>
+<h3 id="repozitorisaba">■レポジトリサーバー</h3>
 <p>まず過去のレポジトリは、GitHubにあげてしまいます。</p>
 <ul>
 <li><a href="https://github.com/">GitHub</a></li>
 </ul>
-<p>しかし実情として半分ぐらいしかあげられませんでした。<br>
-実際に運用しているコードはあげられません。過去のサイト運営で溜まったデータやサーバ別の設定ファイルなどはあげないように出来ますが、面倒なのは変わりありません。<br>
-GitHubにもプライベートモードがあるのですが、有償です。<br>
+<p>しかし実情として半分ぐらいしかあげられませんでした。<br/>
+実際に運用しているコードはあげられません。過去のサイト運営で溜まったデータやサーバ別の設定ファイルなどはあげないように出来ますが、面倒なのは変わりありません。<br/>
+GitHubにもプライベートモードがあるのですが、有償です。<br/>
 GitHubの一番安いプランでもいんだけどなぁとも、ここで考えを切り替えます（切り替えられない人はレポジトリサーバを立てるか有償GitHubにするかとかでしょうか）</p>
 <p>今GitHubにあげられないレポジトリはAWS上に立っているEC2についているEBSにあるので、必要な時だけEC2---EBS経由でみる事にしました。</p>
 <p>ここはまだ作業中なので、以下のレポジトリサービスも検討予定</p>
@@ -186,59 +187,59 @@ GitHubの一番安いプランでもいんだけどなぁとも、ここで考�
 <blockquote>
 <p>★プライベートレポジトリの扱いは難しい...</p>
 </blockquote>
-<h3>■ウェブサーバー</h3>
-<p>ウェブサーバーと言っても、アクセスの状況や、更新の頻度によって対応が変わってくると思います。<br>
-まずwww.popowa.comは静的HTMLにしたので、S3に置きました。<br>
+<h3 id="uebusaba">■ウェブサーバー</h3>
+<p>ウェブサーバーと言っても、アクセスの状況や、更新の頻度によって対応が変わってくると思います。<br/>
+まずwww.popowa.comは静的HTMLにしたので、S3に置きました。<br/>
 それ以外の動的なウェブサーバーはPaaSであるdotCloudに置いてみる事にしました</p>
 <ul>
 <li><a href="https://www.dotcloud.com/">dotCloud</a></li>
 </ul>
-<p>無料版は、appは2つまでしかデプロイ出来ません。しかしアプリの下に更にまたアプリ、という事も出来ます。<br>
+<p>無料版は、appは2つまでしかデプロイ出来ません。しかしアプリの下に更にまたアプリ、という事も出来ます。<br/>
 しかしルートの設定がサブディレクトリにも適応されてしまうようなので、複数の開発言語が違うアプリを一つのアプリとしてデプロイというのは難しそうです。</p>
 <p>memokui.popowa.comをdotCloudに置いてみました。  </p>
 <blockquote>
-<p>dotcloud create memokui<br>
-cd \~/Project/Code/memokui<br>
-emacs dotcloud.yml<br>
-www:<br>
-    type: php<br>
-dotcloud push memokui .<br>
-#ソースディレクトリのルートディレクトリで行う必要がある<br>
+<p>dotcloud create memokui<br/>
+cd \~/Project/Code/memokui<br/>
+emacs dotcloud.yml<br/>
+www:<br/>
+&nbsp;&nbsp;&nbsp; type: php<br/>
+dotcloud push memokui .<br/>
+#ソースディレクトリのルートディレクトリで行う必要がある<br/>
 dotcloud restart memokui.www</p>
 </blockquote>
-<p>ハマった点は、typeをstaticにした場合はappを一度削除して再度作り直さないといけない、という点です。<br>
+<p>ハマった点は、typeをstaticにした場合はappを一度削除して再度作り直さないといけない、という点です。<br/>
 DBも使えるようなのでよさげですが、有償版はそこそこするのでもっと安価なdotCloudがあればいいなぁと思いました。</p>
 <p>dotCloudのよい点はサブドメインをCNAMEで指定出来る、という所です。dotCloudでは、  </p>
 <blockquote>
 <p>http://memokui-csg3kdce.dotcloud.com</p>
 </blockquote>
-<p>のように独自サブドメインを配布してくれます（これはどこのPaaSでも同じ）<br>
+<p>のように独自サブドメインを配布してくれます（これはどこのPaaSでも同じ）<br/>
 しかしdotCloudでは独自（サブ）ドメインを追加する事が出来るのです。  </p>
 <blockquote>
 <p>dotcloud alias add memokui.www memokui.popowa.com</p>
 </blockquote>
 <p>ネームサーバーでの設定  </p>
 <blockquote>
-<p>memokui.popowa.com CNAME  memokui-csg3kdce.dotcloud.com</p>
+<p>memokui.popowa.com CNAME&nbsp; memokui-csg3kdce.dotcloud.com</p>
 </blockquote>
-<p>という風にRoute 53に設定しておけば、おk<br>
+<p>という風にRoute 53に設定しておけば、おk<br/>
 dotCloudだけかしら、と思ったら、<a href="https://www.cloudcontrol.com/">cloudcontrol</a>も<a href="https://www.cloudcontrol.com/documentation/add-ons/aliases">同じ事を無料で出来るよう</a>です！</p>
 <p>他のPaaSや安価なレンタルサーバーは、独自サブドメインを使いたい場合は、ドメインのネームサーバーを移行したら可能になるものばかりで、ネームサーバーとウェブサーバーを別のサービスにしたい人には向いていないと思いました。</p>
-<p>(´･ω･`)ｶﾞｯｶﾘ･･･</p>
+<p>(&acute;･&omega;･`)ｶﾞｯｶﾘ･･･</p>
 <p>後はwikiをどこに置くか検討中。。</p>
-<p><strong>[追記：]</strong>GitHubでウェブサイト運営が出来るようです！<a href="https://twitter.com/#%21/d6rkaiz">@d6rkaiz</a>さんありがとう！<br>
+<p><strong>[追記：]</strong>GitHubでウェブサイト運営が出来るようです！<a href="https://twitter.com/#%21/d6rkaiz">@d6rkaiz</a>さんありがとう！<br/>
 <a href="http://pages.github.com/">http://pages.github.com/</a></p>
 <blockquote>
 <p>★無償でエイリアスで独自ドメインが使えるPaaSは嬉しい</p>
 </blockquote>
-<h3>■検証用ウェブサーバー</h3>
+<h3 id="jian-zheng-yong-uebusaba">■検証用ウェブサーバー</h3>
 <p>検証用は、色々触るので、さくらVPSと必要な時にAWSな感じで行こうかなぁと思っています。</p>
-<h3>■突然まとめ</h3>
+<h3 id="tu-ran-matome">■突然まとめ</h3>
 <p>PaaSなサービスとかレンタルサーバーとかの多くは、ネームサーバーも一緒にしたらいいじゃない！というスタンスですが、これはユーザーの自由を奪うものに他ありません。</p>
-<p>一番起点になるドメインの扱いをロックされてしまうサービスは今後流行らないのではないでしょうか？<br>
+<p>一番起点になるドメインの扱いをロックされてしまうサービスは今後流行らないのではないでしょうか？<br/>
 ビジネス的にはAll in
-oneにしたい所だと思いますが、ベンダーロックがない、というだけでもその商品を選択候補に入れやすくなります。<br>
-<br>
+oneにしたい所だと思いますが、ベンダーロックがない、というだけでもその商品を選択候補に入れやすくなります。<br/>
+<br/>
 SaaS/PaaS/IaaS環境を提供する上でも、ブロックのように取り外し可能な状態である事が今後大事になってくるのだと思いました！</p>
 
         <div class="sharethis-bottom">

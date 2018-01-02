@@ -42,8 +42,9 @@
                 <nav class="navbar">
                     <div class="navbar-inner">
                         <ul class="nav">
-                            <li ><a href="http://www.popowa.com">Profile</a></li>
+                            <li ><a href="http://www.popowa.com">About Aya</a></li>
                             <li ><a href="https://twitter.com/ayakomuro">Twitter</a></li>
+                            <li ><a href="https://github.com/popowa">Github</a></li>
                         </ul>
 
 <script>
@@ -101,7 +102,7 @@
         </div>
 
         <p>Zabbix database.+</p>
-<p>追記<br>
+<p>追記<br/>
 色々調べた結果こっちの入れ方が簡単です</p>
 <ul>
 <li><a href="http://blog.popowa.com/2014/01/debianzabbix.html">http://blog.popowa.com/2014/01/debianzabbix.html</a></li>
@@ -114,7 +115,7 @@
 <p>入れたぞーと思ったら、よく見たら2.0だったので2.2にアップグレードしてみた。</p>
 <p>Zabbix2.0から2.2に上げたついでにMySQL5.4から5.5に上げて特にエラーもなくいい感じだった時にブラウザー経由でアクセスしたらこういうエラーが出た</p>
 <p>Database error: The frontend does not match Zabbix database.</p>
-<p><a href="http://3.bp.blogspot.com/-jKoGOSHApOs/UsNw8g07BlI/AAAAAAAAZDM/ZVU2n9BhTEY/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88+2014-01-01+10.34.18.png"><img alt="" src="http://3.bp.blogspot.com/-jKoGOSHApOs/UsNw8g07BlI/AAAAAAAAZDM/ZVU2n9BhTEY/s640/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88+2014-01-01+10.34.18.png">{width="640"
+<p><a href="http://3.bp.blogspot.com/-jKoGOSHApOs/UsNw8g07BlI/AAAAAAAAZDM/ZVU2n9BhTEY/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88+2014-01-01+10.34.18.png"><img alt="" src="http://3.bp.blogspot.com/-jKoGOSHApOs/UsNw8g07BlI/AAAAAAAAZDM/ZVU2n9BhTEY/s640/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88+2014-01-01+10.34.18.png"/>{width="640"
 height="148"}</a></p>
 <p>/var/log/zabbix/zabbix_server.log</p>
 <p>にもめぼしいエラーが出ていない。</p>
@@ -123,77 +124,77 @@ height="148"}</a></p>
 <li><a href="https://www.zabbix.com/forum/showthread.php?t=43095">https://www.zabbix.com/forum/showthread.php?t=43095</a></li>
 </ul>
 <blockquote>
-<p>foobar@codepopowa:/var/log\$ dpkg -l | grep mysql<br>
-ii  libdbd-mysql-perl                  4.021-1+b1                    
-    amd64        Perl5 database interface to the MySQL database<br>
-ii  libmysqlclient18:amd64             5.5.33+dfsg-0+wheezy1          
-   amd64        MySQL database client library<br>
-ii  mysql-client-5.5                   5.5.33+dfsg-0+wheezy1          
-   amd64        MySQL database client binaries<br>
-ii  mysql-common                       5.5.33+dfsg-0+wheezy1          
-   all          MySQL database common files, e.g. /etc/mysql/my.cnf<br>
-ii  mysql-server                       5.5.33+dfsg-0+wheezy1          
-   all          MySQL database server (metapackage depending on the
-latest version)<br>
-ii  mysql-server-5.5                   5.5.33+dfsg-0+wheezy1          
-   amd64        MySQL database server binaries and system database
-setup<br>
-ii  mysql-server-core-5.5              5.5.33+dfsg-0+wheezy1          
-   amd64        MySQL database server binaries<br>
-ii  php5-mysql                         5.4.4-14+deb7u7                
-   amd64        MySQL module for php5<br>
-[ii  zabbix-server-mysql                1:2.0.10-1+wheezy            
-     amd64        network monitoring solution - server (using MySQL)
+<p>foobar@codepopowa:/var/log\$ dpkg -l | grep mysql<br/>
+ii &nbsp;libdbd-mysql-perl &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;4.021-1+b1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; amd64 &nbsp; &nbsp; &nbsp; &nbsp;Perl5 database interface to the MySQL database<br/>
+ii &nbsp;libmysqlclient18:amd64 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 5.5.33+dfsg-0+wheezy1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp;amd64 &nbsp; &nbsp; &nbsp; &nbsp;MySQL database client library<br/>
+ii &nbsp;mysql-client-5.5 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 5.5.33+dfsg-0+wheezy1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp;amd64 &nbsp; &nbsp; &nbsp; &nbsp;MySQL database client binaries<br/>
+ii &nbsp;mysql-common &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 5.5.33+dfsg-0+wheezy1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp;all &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;MySQL database common files, e.g. /etc/mysql/my.cnf<br/>
+ii &nbsp;mysql-server &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 5.5.33+dfsg-0+wheezy1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp;all &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;MySQL database server (metapackage depending on the
+latest version)<br/>
+ii &nbsp;mysql-server-5.5 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 5.5.33+dfsg-0+wheezy1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp;amd64 &nbsp; &nbsp; &nbsp; &nbsp;MySQL database server binaries and system database
+setup<br/>
+ii &nbsp;mysql-server-core-5.5 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;5.5.33+dfsg-0+wheezy1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp;amd64 &nbsp; &nbsp; &nbsp; &nbsp;MySQL database server binaries<br/>
+ii &nbsp;php5-mysql &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 5.4.4-14+deb7u7 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp;amd64 &nbsp; &nbsp; &nbsp; &nbsp;MySQL module for php5<br/>
+[ii &nbsp;zabbix-server-mysql &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1:2.0.10-1+wheezy &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp;amd64 &nbsp; &nbsp; &nbsp; &nbsp;network monitoring solution - server (using MySQL)
 #これ]</p>
 </blockquote>
 <p>アップグレードしたら直った  </p>
 <blockquote>
-<p>foobar@codepopowa:/var/log\$ sudo apt-get dist-upgrade -u<br>
-Reading package lists... Done<br>
-Building dependency tree    <br>
-Reading state information... Done<br>
-Calculating upgrade... Done<br>
-The following NEW packages will be installed:<br>
-  libodbc1<br>
-The following packages will be upgraded:<br>
-  zabbix-server-mysql<br>
-1 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.<br>
-Need to get 3,148 kB of archives.<br>
-After this operation, 1,326 kB of additional disk space will be used.<br>
-Do you want to continue [Y/n]? y<br>
+<p>foobar@codepopowa:/var/log\$ sudo apt-get dist-upgrade -u<br/>
+Reading package lists... Done<br/>
+Building dependency tree &nbsp; &nbsp;<br/>
+Reading state information... Done<br/>
+Calculating upgrade... Done<br/>
+The following NEW packages will be installed:<br/>
+&nbsp; libodbc1<br/>
+The following packages will be upgraded:<br/>
+&nbsp; zabbix-server-mysql<br/>
+1 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.<br/>
+Need to get 3,148 kB of archives.<br/>
+After this operation, 1,326 kB of additional disk space will be used.<br/>
+Do you want to continue [Y/n]? y<br/>
 Get:1 http://cdn.debian.net/debian/ wheezy/main libodbc1 amd64
-2.2.14p2-5 [252 kB]<br>
+2.2.14p2-5 [252 kB]<br/>
 Get:2 http://repo.zabbix.com/zabbix/2.2/debian/ wheezy/main
-zabbix-server-mysql amd64 1:2.2.1-1+wheezy [2,896 kB]<br>
-Fetched 3,148 kB in 7s (443 kB/s)                                    </p>
-<p>Reading changelogs... Done<br>
-Preconfiguring packages ...<br>
-Selecting previously unselected package libodbc1:amd64.<br>
+zabbix-server-mysql amd64 1:2.2.1-1+wheezy [2,896 kB]<br/>
+Fetched 3,148 kB in 7s (443 kB/s) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
+<p>Reading changelogs... Done<br/>
+Preconfiguring packages ...<br/>
+Selecting previously unselected package libodbc1:amd64.<br/>
 (Reading database ... 39455 files and directories currently
-installed.)<br>
+installed.)<br/>
 Unpacking libodbc1:amd64 (from .../libodbc1_2.2.14p2-5_amd64.deb)
-...<br>
+...<br/>
 Preparing to replace zabbix-server-mysql 1:2.0.10-1+wheezy (using
-.../zabbix-server-mysql_1%3a2.2.1-1+wheezy_amd64.deb) ...<br>
-[ ok ] Stopping Zabbix server: zabbix_server.<br>
-Unpacking replacement zabbix-server-mysql ...<br>
-Processing triggers for man-db ...<br>
-Setting up libodbc1:amd64 (2.2.14p2-5) ...<br>
-Setting up zabbix-server-mysql (1:2.2.1-1+wheezy) ...<br>
+.../zabbix-server-mysql_1%3a2.2.1-1+wheezy_amd64.deb) ...<br/>
+[ ok ] Stopping Zabbix server: zabbix_server.<br/>
+Unpacking replacement zabbix-server-mysql ...<br/>
+Processing triggers for man-db ...<br/>
+Setting up libodbc1:amd64 (2.2.14p2-5) ...<br/>
+Setting up zabbix-server-mysql (1:2.2.1-1+wheezy) ...<br/>
 dbconfig-common: writing config to
-/etc/dbconfig-common/zabbix-server-mysql.conf<br>
-dbconfig-common: flushing administrative password<br>
-[ ok ] Starting Zabbix server: zabbix_server. </p>
+/etc/dbconfig-common/zabbix-server-mysql.conf<br/>
+dbconfig-common: flushing administrative password<br/>
+[ ok ] Starting Zabbix server: zabbix_server.&nbsp;</p>
 </blockquote>
 <p>追記  </p>
 <blockquote>
 <p><a href="https://twitter.com/ayakomuro">@ayakomuro</a>
 サーバパッケージをアップデートしたあと、初回起動したタイミングでDBコンバートが走ります。DBコンバートしたあとじゃないとweb-uiはDBに接続できません
-<a href="https://twitter.com/search?q=%23Zabbix&amp;src=hash">#Zabbix</a><br>
+<a href="https://twitter.com/search?q=%23Zabbix&amp;src=hash">#Zabbix</a><br/>
 --- 九龍真乙 (@qryuu) <a href="https://twitter.com/qryuu/statuses/418236796619603968">2014, 1月
 1</a></p>
 </blockquote>
-<p>追記その２<br>
+<p>追記その２<br/>
 dpkgで入れたパッケージとbackport
 から入れたパッケージの関係性が分からなくなったので後でちょっと調べる...</p>
 

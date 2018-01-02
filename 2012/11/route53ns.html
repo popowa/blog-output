@@ -42,8 +42,9 @@
                 <nav class="navbar">
                     <div class="navbar-inner">
                         <ul class="nav">
-                            <li ><a href="http://www.popowa.com">Profile</a></li>
+                            <li ><a href="http://www.popowa.com">About Aya</a></li>
                             <li ><a href="https://twitter.com/ayakomuro">Twitter</a></li>
+                            <li ><a href="https://github.com/popowa">Github</a></li>
                         </ul>
 
 <script>
@@ -102,12 +103,12 @@
         </div>
 
         <p>そう入れ歯と思って、Route53に移行する場合に気をつける事を記載します。  </p>
-<h4>ムームードメイン -> Route53</h4>
+<h4 id="mumudomein-route53">ムームードメイン -&gt; Route53</h4>
 <p>NS切り替えを行なった際、TTLはまだムームードメインを見ているのに、ムームードメイン側でレコードが削除されてしまい、名前解決が出来なくなるという問題が発生する（らしい。会社で大騒ぎだった）。</p>
 <p>気をつけよう、てか気をつけられないよね。  </p>
-<h4>お名前.com -> Route53</h4>
+<h4 id="oming-qian-com-route53">お名前.com -&gt; Route53</h4>
 <p>ドメイン管理がお名前.comである限り、NSが移行したとしてもお名前.com側でレコードを削除するという事はないとの事。もしドメイン毎移行するのであれば、段階を踏んでやる必要がある</p>
-<p>NS移行->完全に移行 -> ドメインに移行</p>
+<p>NS移行-&gt;完全に移行 -&gt; ドメインに移行</p>
 <p>他のNSからの移行の検証はまた追記する。</p>
 
         <div class="sharethis-bottom">

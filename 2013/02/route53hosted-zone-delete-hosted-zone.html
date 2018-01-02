@@ -42,8 +42,9 @@
                 <nav class="navbar">
                     <div class="navbar-inner">
                         <ul class="nav">
-                            <li ><a href="http://www.popowa.com">Profile</a></li>
+                            <li ><a href="http://www.popowa.com">About Aya</a></li>
                             <li ><a href="https://twitter.com/ayakomuro">Twitter</a></li>
+                            <li ><a href="https://github.com/popowa">Github</a></li>
                         </ul>
 
 <script>
@@ -102,25 +103,25 @@
         </div>
 
         <p>Route53+既知な事かもしれないけど、Hosted Zone(ドメイン）を消す時はRecord
-Setを消す必要があるんだけど、NSとSOAは消せない。<br>
-You might already know this, but I didn\'t.<br>
+Setを消す必要があるんだけど、NSとSOAは消せない。<br/>
+You might already know this, but I didn\'t.<br/>
 Before deleting hosted zone, you need to delete record sets first. But
 you can\'t with NS and SOA.</p>
-<p><a href="http://4.bp.blogspot.com/-A7tZ7VW6txI/URrrDZ8pBgI/AAAAAAAAWu8/zsO2DQdkKA8/s1600/1.png"><img alt="" src="http://4.bp.blogspot.com/-A7tZ7VW6txI/URrrDZ8pBgI/AAAAAAAAWu8/zsO2DQdkKA8/s1600/1.png"></a></p>
+<p><a href="http://4.bp.blogspot.com/-A7tZ7VW6txI/URrrDZ8pBgI/AAAAAAAAWu8/zsO2DQdkKA8/s1600/1.png"><img alt="" src="http://4.bp.blogspot.com/-A7tZ7VW6txI/URrrDZ8pBgI/AAAAAAAAWu8/zsO2DQdkKA8/s1600/1.png"/></a></p>
 <p>[]</p>
 <p>例えばNS/SOA/CNAMEがあった場合、全部を選択したら、Delete Record
 Setはクリック出来る状態。</p>
 <p>eg. there are 3 record sets, NS/SOA/CNAME. Select all and click \'Delete
 Record Set\'.</p>
-<p><a href="http://2.bp.blogspot.com/-QAuYuUwgvKI/URrrDWLvDcI/AAAAAAAAWu4/FGe0v0p5wtY/s1600/2.png"><img alt="" src="http://2.bp.blogspot.com/-QAuYuUwgvKI/URrrDWLvDcI/AAAAAAAAWu4/FGe0v0p5wtY/s1600/2.png"></a></p>
+<p><a href="http://2.bp.blogspot.com/-QAuYuUwgvKI/URrrDWLvDcI/AAAAAAAAWu4/FGe0v0p5wtY/s1600/2.png"><img alt="" src="http://2.bp.blogspot.com/-QAuYuUwgvKI/URrrDWLvDcI/AAAAAAAAWu4/FGe0v0p5wtY/s1600/2.png"/></a></p>
 <p>クリックしたらちゃんと削除対象として認識してくれる。でも削除出来ない。</p>
 <p>Popup confirmed to delete 3 record sets, but you can\'t delete NS/SOA.</p>
-<p><a href="http://3.bp.blogspot.com/-LI4ioneJR94/URrrDSEZuoI/AAAAAAAAWvA/L0rTeT5PuK8/s1600/3.png"><img alt="" src="http://3.bp.blogspot.com/-LI4ioneJR94/URrrDSEZuoI/AAAAAAAAWvA/L0rTeT5PuK8/s1600/3.png"></a></p>
+<p><a href="http://3.bp.blogspot.com/-LI4ioneJR94/URrrDSEZuoI/AAAAAAAAWvA/L0rTeT5PuK8/s1600/3.png"><img alt="" src="http://3.bp.blogspot.com/-LI4ioneJR94/URrrDSEZuoI/AAAAAAAAWvA/L0rTeT5PuK8/s1600/3.png"/></a></p>
 <p>NS/SOAだけ残った状態だと、選択してもDelete Record
-Setはクリック出来る状態にはならない<br>
+Setはクリック出来る状態にはならない<br/>
 You can\'t select \'Delete Record Set\' when selected record sets are
 either NS or SOA or both.</p>
-<p><a href="http://3.bp.blogspot.com/-QXWJCIYZxws/URrrDvhCF2I/AAAAAAAAWvI/yqF4PY9kO1Q/s1600/4.png"><img alt="" src="http://3.bp.blogspot.com/-QXWJCIYZxws/URrrDvhCF2I/AAAAAAAAWvI/yqF4PY9kO1Q/s1600/4.png"></a></p>
+<p><a href="http://3.bp.blogspot.com/-QXWJCIYZxws/URrrDvhCF2I/AAAAAAAAWvI/yqF4PY9kO1Q/s1600/4.png"><img alt="" src="http://3.bp.blogspot.com/-QXWJCIYZxws/URrrDvhCF2I/AAAAAAAAWvI/yqF4PY9kO1Q/s1600/4.png"/></a></p>
 <p>削除するには一つ上のレベルにあがってDelete Hosted
 Zoneをする事でNS/SOAを削除する。</p>
 <p>You have to go to Hosted Zone leve to delete NS/SOA related to target

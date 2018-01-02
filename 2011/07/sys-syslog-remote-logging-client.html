@@ -42,8 +42,9 @@
                 <nav class="navbar">
                     <div class="navbar-inner">
                         <ul class="nav">
-                            <li ><a href="http://www.popowa.com">Profile</a></li>
+                            <li ><a href="http://www.popowa.com">About Aya</a></li>
                             <li ><a href="https://twitter.com/ayakomuro">Twitter</a></li>
+                            <li ><a href="https://github.com/popowa">Github</a></li>
                         </ul>
 
 <script>
@@ -101,9 +102,9 @@
         </div>
 
         <p>client+個別のライトスクリプトを日本語化してみます：SYS Syslog remote
-logging client<br>
-[]<br>
-<strong>SYS Syslog remote logging client</strong>  </p>
+logging client<br/>
+[]<br/>
+<strong>SYS Syslog remote logging client</strong> </p>
 <blockquote>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
   2
@@ -220,12 +221,12 @@ logging client<br>
 <span class="c1">#一部の場合を除いて即座に終了しないようにする</span>
 which rs_tag
 <span class="c1">#</span>
-<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$?</span><span class="s2">&quot;</span> -ne <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+<span class="k">if</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$?</span><span class="s2">"</span> -ne <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
 <span class="c1">#rs_tagのパスの値（$?)が0ではなかった場合、</span>
-  <span class="nb">echo</span> -e <span class="s2">&quot;FATAL ERROR: this RightScript only supports v5 based</span>
+  <span class="nb">echo</span> -e <span class="s2">"FATAL ERROR: this RightScript only supports v5 based</span>
 <span class="s2">　RightImages that have rs_tag support!</span>
-<span class="s2">　You must use SYS Syslog Remote Logging Client v7 instead if you are using a v4 RightImage&quot;</span>
- <span class="c1">#ライトスクリプトはrs_tagに対応しているv5ベースのライトイメージに対応している </span>
+<span class="s2">　You must use SYS Syslog Remote Logging Client v7 instead if you are using a v4 RightImage"</span>
+ <span class="c1">#ライトスクリプトはrs_tagに対応しているv5ベースのライトイメージに対応している&nbsp;</span>
  <span class="c1">#v4のライトイメージだった場合は、SYS Syslog Remote Logging client v7を使う必要がある</span>
 <span class="nb">exit</span> <span class="m">1</span>
 <span class="k">fi</span>
@@ -234,51 +235,51 @@ which rs_tag
 <span class="k">function</span> write_config
 <span class="c1">#write_config関数を作成する</span>
 <span class="o">{</span>
-  <span class="o">[</span> -e /etc/syslog-ng/syslog-ng.conf <span class="o">]</span> <span class="o">&amp;&amp;</span> mv -f /etc/syslog-ng/syslog-ng.conf /etc/syslog-ng/syslog-ng.conf.bak.<span class="k">$(</span>date <span class="s2">&quot;+%Y%m%d%H%M%S&quot;</span><span class="k">)</span>
+  <span class="o">[</span> -e /etc/syslog-ng/syslog-ng.conf <span class="o">]</span> <span class="o">&amp;&amp;</span> mv -f /etc/syslog-ng/syslog-ng.conf /etc/syslog-ng/syslog-ng.conf.bak.<span class="k">$(</span>date <span class="s2">"+%Y%m%d%H%M%S"</span><span class="k">)</span>
 　<span class="c1">#syslog-ng.confがあって、そのファイルを日時付きでバックアップ出来たら</span>
   cp <span class="nv">$RS_ATTACH_DIR</span>/syslog-ng-remote.conf /etc/syslog-ng/syslog-ng.conf
   <span class="c1">#RS_ATTACH_DIRに添付されているsyslog-ng-remote.confからコピーする</span>
   <span class="c1">#Inject Instance ID into config</span>
-  perl -p -i -e <span class="s1">&#39;s/i-123456/&#39;</span><span class="nv">$SERVER_UUID</span><span class="s1">&#39;/&#39;</span> /etc/syslog-ng/syslog-ng.conf
+  perl -p -i -e <span class="s1">'s/i-123456/'</span><span class="nv">$SERVER_UUID</span><span class="s1">'/'</span> /etc/syslog-ng/syslog-ng.conf
 　<span class="c1">#InstanceのIDをコンフィグ内に書き込む</span>
   <span class="c1">#set syslog server.</span>
-  perl -p -i -e <span class="s1">&#39;s/syslog.rightscale.com/&#39;</span><span class="nv">$SYSLOG_SERVER</span><span class="s1">&#39;/&#39;</span> /etc/syslog-ng/syslog-ng.conf
+  perl -p -i -e <span class="s1">'s/syslog.rightscale.com/'</span><span class="nv">$SYSLOG_SERVER</span><span class="s1">'/'</span> /etc/syslog-ng/syslog-ng.conf
   <span class="c1"># Set apache log dir (for haproxy.log)</span>
-  sed -i <span class="s2">&quot;/@@APACHE_LOG_DIR@@/s//</span><span class="nv">$apache_log_dir</span><span class="s2">/&quot;</span> /etc/syslog-ng/syslog-ng.conf
+  sed -i <span class="s2">"/@@APACHE_LOG_DIR@@/s//</span><span class="nv">$apache_log_dir</span><span class="s2">/"</span> /etc/syslog-ng/syslog-ng.conf
 <span class="o">}</span>
-<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$RS_DISTRO</span><span class="s2">&quot;</span> <span class="o">=</span> ubuntu <span class="o">]</span><span class="p">;</span> <span class="k">then</span> <span class="c1">#ディストリビューションがUbuntuだったら</span>
+<span class="k">if</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$RS_DISTRO</span><span class="s2">"</span> <span class="o">=</span> ubuntu <span class="o">]</span><span class="p">;</span> <span class="k">then</span> <span class="c1">#ディストリビューションがUbuntuだったら</span>
   <span class="nv">logrotate_file</span><span class="o">=</span>/etc/logrotate.d/syslog-ng
   <span class="nv">apache_log_dir</span><span class="o">=</span>apache2
-<span class="k">elif</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$RS_DISTRO</span><span class="s2">&quot;</span> <span class="o">=</span> centos <span class="o">]</span><span class="p">;</span> <span class="k">then</span> <span class="c1">#ディストリビューションがCenntosだったら</span>
+<span class="k">elif</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$RS_DISTRO</span><span class="s2">"</span> <span class="o">=</span> centos <span class="o">]</span><span class="p">;</span> <span class="k">then</span> <span class="c1">#ディストリビューションがCenntosだったら</span>
   <span class="nv">logrotate_file</span><span class="o">=</span>/etc/logrotate.d/syslog
   <span class="nv">apache_log_dir</span><span class="o">=</span>httpd
 <span class="k">fi</span>
 
 <span class="c1"># Test if this script has already run.  If so it is either a boot script being re-run</span>
 <span class="c1"># or the server is being started from a stopped state.  Update the config - same as reboot.</span>
-<span class="k">if</span> <span class="nb">test</span> <span class="s2">&quot;</span><span class="nv">$RS_REBOOT</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;true&quot;</span> -o <span class="s2">&quot;</span><span class="nv">$RS_ALREADY_RUN</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;true&quot;</span><span class="p">;</span> <span class="k">then</span>
+<span class="k">if</span> <span class="nb">test</span> <span class="s2">"</span><span class="nv">$RS_REBOOT</span><span class="s2">"</span> <span class="o">=</span> <span class="s2">"true"</span> -o <span class="s2">"</span><span class="nv">$RS_ALREADY_RUN</span><span class="s2">"</span> <span class="o">=</span> <span class="s2">"true"</span><span class="p">;</span> <span class="k">then</span>
 <span class="c1">#もしリブート処理だったり、すでに起動済みだった場合</span>
-  <span class="nb">echo</span> <span class="s2">&quot;Update SYSLOG configuration on REBOOT.&quot;</span>
+  <span class="nb">echo</span> <span class="s2">"Update SYSLOG configuration on REBOOT."</span>
   write_config
   <span class="c1">#先ほどの関数を走らせて、アップデートを行う</span>
   service syslog-ng restart
   <span class="c1">#syslogn-ngをリスタートさせる</span>
   <span class="c1"># Tag instance for start/stop support</span>
-  rs_tag -a <span class="s2">&quot;rs_logging:state=active&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;Setting logging active tag&quot;</span>
+  rs_tag -a <span class="s2">"rs_logging:state=active"</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">"Setting logging active tag"</span>
 　<span class="c1">#rs_tagで設定する（rs_tag説明部分を参照）</span>
-  logger -t RightScale <span class="s2">&quot;Updated SYSLOG configuration on REBOOT.&quot;</span>
+  logger -t RightScale <span class="s2">"Updated SYSLOG configuration on REBOOT."</span>
 　<span class="c1">#logに記録</span>
   <span class="nb">exit</span> <span class="m">0</span>
 <span class="k">fi</span>
 
-<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$RS_DISTRO</span><span class="s2">&quot;</span> <span class="o">=</span> ubuntu <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+<span class="k">if</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$RS_DISTRO</span><span class="s2">"</span> <span class="o">=</span> ubuntu <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
   apt-get install -y syslog-ng <span class="c1">#必要パッケージをインストール</span>
-  <span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="k">$(</span>lsb_release -rs<span class="k">)</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;8.04&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+  <span class="k">if</span> <span class="o">[</span> <span class="s2">"</span><span class="k">$(</span>lsb_release -rs<span class="k">)</span><span class="s2">"</span> <span class="o">==</span> <span class="s2">"8.04"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
 　<span class="c1">#lsb_releaseコマンドを使って現在のバージョンを確認。8.04だったら</span>
-    <span class="nb">export</span> <span class="nv">DEBIAN_FRONTEND</span><span class="o">=</span><span class="s2">&quot;noninteractive&quot;</span><span class="p">;</span> apt-get install  -y sysvconfig
+    <span class="nb">export</span> <span class="nv">DEBIAN_FRONTEND</span><span class="o">=</span><span class="s2">"noninteractive"</span><span class="p">;</span> apt-get install  -y sysvconfig
 　　<span class="c1">#syslong-ngだけではなくsysvconfigもインストール</span>
   <span class="k">fi</span>
-<span class="k">elif</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$RS_DISTRO</span><span class="s2">&quot;</span> <span class="o">=</span> centos <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+<span class="k">elif</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$RS_DISTRO</span><span class="s2">"</span> <span class="o">=</span> centos <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
   yum install -y syslog-ng
 <span class="k">fi</span>
 
@@ -294,14 +295,14 @@ chown root /var/log/* <span class="c1">#ファイル/ディレクトリの所有
 service syslog-ng restart <span class="c1">#syslog-ngを再起動</span>
 
 <span class="c1"># Set up log file rotation #ログローテイトの設定</span>
-perl -p -i -e <span class="s1">&#39;s/weekly/daily/; s/rotates+d+/rotate 7/&#39;</span> /etc/logrotate.conf
+perl -p -i -e <span class="s1">'s/weekly/daily/; s/rotates+d+/rotate 7/'</span> /etc/logrotate.conf
 
 <span class="c1"># fix /var/log/boot.log issue #ブートログのバグを対応する</span>
 <span class="o">[</span> ! -e /var/log/boot.log <span class="o">]</span> <span class="o">&amp;&amp;</span> touch /var/log/boot.log
 
-<span class="o">[</span> -z <span class="s2">&quot;</span><span class="k">$(</span>grep -lir <span class="s2">&quot;missingok&quot;</span> <span class="nv">$logrotate_file</span><span class="k">)</span><span class="s2">&quot;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> sed -i <span class="s1">&#39;/sharedscripts/ a    missingok&#39;</span> <span class="nv">$logrotate_file</span>
-<span class="c1">#logrotate_fileからmissingokを検索して、文字数が0だったら、logrotate_fileに&#39;sharedscripts&#39;の後に&#39;missingok&#39;を追加する</span>
-<span class="o">[</span> -z <span class="s2">&quot;</span><span class="k">$(</span>grep -lir <span class="s2">&quot;notifempty&quot;</span> <span class="nv">$logrotate_file</span><span class="k">)</span><span class="s2">&quot;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> sed -i <span class="s1">&#39;/sharedscripts/ a    notifempty&#39;</span> <span class="nv">$logrotate_file</span>
+<span class="o">[</span> -z <span class="s2">"</span><span class="k">$(</span>grep -lir <span class="s2">"missingok"</span> <span class="nv">$logrotate_file</span><span class="k">)</span><span class="s2">"</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> sed -i <span class="s1">'/sharedscripts/ a    missingok'</span> <span class="nv">$logrotate_file</span>
+<span class="c1">#logrotate_fileからmissingokを検索して、文字数が0だったら、logrotate_fileに'sharedscripts'の後に'missingok'を追加する</span>
+<span class="o">[</span> -z <span class="s2">"</span><span class="k">$(</span>grep -lir <span class="s2">"notifempty"</span> <span class="nv">$logrotate_file</span><span class="k">)</span><span class="s2">"</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> sed -i <span class="s1">'/sharedscripts/ a    notifempty'</span> <span class="nv">$logrotate_file</span>
 
 <span class="c1"># add mail to logrotate</span>
 mkdir -p /var/spool/oldmail
@@ -320,11 +321,10 @@ cat <span class="s">&lt;&lt;EOF&gt; /etc/logrotate.d/mail</span>
 <span class="s">EOF</span>
 
 <span class="c1"># tag required for RightLink enabled images</span>
-rs_tag -a <span class="s2">&quot;rs_logging:state=active&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;Setting logging active tag&quot;</span>
+rs_tag -a <span class="s2">"rs_logging:state=active"</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">"Setting logging active tag"</span>
 <span class="c1">#rs_tagを使ってタグを追加する</span>
 </pre></div>
 </td></tr></table>
-
 </blockquote>
 
         <div class="sharethis-bottom">

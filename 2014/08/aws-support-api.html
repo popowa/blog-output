@@ -42,8 +42,9 @@
                 <nav class="navbar">
                     <div class="navbar-inner">
                         <ul class="nav">
-                            <li ><a href="http://www.popowa.com">Profile</a></li>
+                            <li ><a href="http://www.popowa.com">About Aya</a></li>
                             <li ><a href="https://twitter.com/ayakomuro">Twitter</a></li>
+                            <li ><a href="https://github.com/popowa">Github</a></li>
                         </ul>
 
 <script>
@@ -106,14 +107,14 @@
 <blockquote>
 <p>/Users/komuro/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/aws-sdk-1.50.0/lib/aws/core/client.rb:375:in
 `return_or_raise\': 
-(AWS::Support::Errors::InternalServerError)<br>
+(AWS::Support::Errors::InternalServerError)<br/>
 from
 /Users/komuro/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/aws-sdk-1.50.0/lib/aws/core/client.rb:476:in
-`client_request\'<br>
-from (eval):3:in `describe_cases\'<br>
-from get-support-content.rb:11:in `\&lt;main>\'</p>
+`client_request\'<br/>
+from (eval):3:in `describe_cases\'<br/>
+from get-support-content.rb:11:in `\&lt;main&gt;\'</p>
 </blockquote>
-<p>こんなエラーが出て。おや？と思ってパラメーター変えても駄目で、別のAWSアカウントのアクセスキー/シークレットアクセスキーを設定したらちゃんと取れた。<br>
+<p>こんなエラーが出て。おや？と思ってパラメーター変えても駄目で、別のAWSアカウントのアクセスキー/シークレットアクセスキーを設定したらちゃんと取れた。<br/>
 エラーが出たAWSアカウントの最後の問合せ日時はJul 17, 201304:37 PM
 PDTだった。</p>
 <p>上記の状況と風の噂で聞いた事を掛け合わせると、</p>
@@ -123,7 +124,7 @@ PDTだった。</p>
 <p>という事らしい。またAWS Support
 APIと、マネージメントコンソールのサポート画面は別のAPIを使っていると思う（マネージメントコンソールでは表示されるのにSupport
 APIでは取れない）</p>
-<p>マネージメントコンソールで見れるんだからAPIでも取れる様にして欲しいなぁというのがユーザー側の想いですけど何か一年縛りにしている理由があるんですかねー。。<br>
+<p>マネージメントコンソールで見れるんだからAPIでも取れる様にして欲しいなぁというのがユーザー側の想いですけど何か一年縛りにしている理由があるんですかねー。。<br/>
 最後はマネージメントコンソールのサポート画面をあれするしか（うわ、何をするやめr</p>
 <p><strong>追記</strong>：APIのドキュメント調べたら確かに書いてあった！  </p>
 <blockquote>

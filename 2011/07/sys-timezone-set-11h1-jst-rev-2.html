@@ -42,8 +42,9 @@
                 <nav class="navbar">
                     <div class="navbar-inner">
                         <ul class="nav">
-                            <li ><a href="http://www.popowa.com">Profile</a></li>
+                            <li ><a href="http://www.popowa.com">About Aya</a></li>
                             <li ><a href="https://twitter.com/ayakomuro">Twitter</a></li>
+                            <li ><a href="https://github.com/popowa">Github</a></li>
                         </ul>
 
 <script>
@@ -103,7 +104,7 @@
         <p>2]+個別のライトスクリプトを日本語化してみます。SYS Timezone set - 11H1
 JST [rev 2]  </p>
 <p>[]  </p>
-<p><strong>SYS Timezone set - 11H1 JST [rev 2]</strong>  </p>
+<p><strong>SYS Timezone set - 11H1 JST&nbsp;[rev 2]</strong> </p>
 <blockquote>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -156,12 +157,12 @@ JST [rev 2]  </p>
 <span class="c1">#</span>
 <span class="c1"># Test for a reboot,  if this is a reboot just skip this script.</span>
 <span class="c1">#</span>
-<span class="k">if</span> <span class="nb">test</span> <span class="s2">&quot;</span><span class="nv">$RS_REBOOT</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;true&quot;</span> <span class="p">;</span> <span class="k">then</span> 
+<span class="k">if</span> <span class="nb">test</span> <span class="s2">"</span><span class="nv">$RS_REBOOT</span><span class="s2">"</span> <span class="o">=</span> <span class="s2">"true"</span> <span class="p">;</span> <span class="k">then</span>&nbsp;
 <span class="c1">#もしリブートだったら</span>
 
 
 
-  <span class="nb">echo</span> <span class="s2">&quot;Skip re-setting Timezone on reboot.&quot;</span>
+  <span class="nb">echo</span> <span class="s2">"Skip re-setting Timezone on reboot."</span>
 　<span class="c1">#タイム設定をスキップする</span>
   <span class="nb">exit</span> <span class="m">0</span> <span class="c1"># Leave with a smile ...</span>
 　<span class="c1">#exit 0値が返るとスクリプトは終了します</span>
@@ -170,14 +171,14 @@ JST [rev 2]  </p>
 <span class="c1">#</span>
 <span class="c1"># If this parameter is not set leave unchanged and use localtime</span>
 <span class="c1">#</span>
-<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$SYS_TZINFO</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;localtime&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+<span class="k">if</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$SYS_TZINFO</span><span class="s2">"</span> <span class="o">=</span> <span class="s2">"localtime"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
 　<span class="c1">#localtimeなら</span>
-  <span class="nb">echo</span> <span class="s2">&quot;SYS_TZINFO set to localtime.  Not changing /etc/localtime...&quot;</span>
+  <span class="nb">echo</span> <span class="s2">"SYS_TZINFO set to localtime.  Not changing /etc/localtime..."</span>
 　<span class="c1">#変更しない。</span>
   <span class="nb">exit</span> <span class="m">0</span>
 　<span class="c1">#スクリプトを抜ける</span>
 <span class="k">else</span>
-  <span class="nv">tzset</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$SYS_TZINFO</span><span class="s2">&quot;</span>
+  <span class="nv">tzset</span><span class="o">=</span><span class="s2">"</span><span class="nv">$SYS_TZINFO</span><span class="s2">"</span>
   <span class="c1">#Inputの$SYS_TZINFOで設定した値をtzsetという変数値に入れる</span>
 <span class="k">fi</span>
 <span class="c1">#</span>
@@ -185,16 +186,15 @@ JST [rev 2]  </p>
 <span class="c1">#</span>
 ln -sf /usr/share/zoneinfo/<span class="nv">$tzset</span> /etc/localtime
 <span class="c1">#シンボリックリンクを貼って設定する</span>
-<span class="nb">echo</span> <span class="s2">&quot;Timezone set to </span><span class="nv">$tzset</span><span class="s2">&quot;</span>
+<span class="nb">echo</span> <span class="s2">"Timezone set to </span><span class="nv">$tzset</span><span class="s2">"</span>
 <span class="c1"># $tzset(=$SYS_TZINFO)に設定したとエコー</span>
 
-logger -t RightScale <span class="s2">&quot;Timezone set to </span><span class="nv">$tzset</span><span class="s2">&quot;</span>
+logger -t RightScale <span class="s2">"Timezone set to </span><span class="nv">$tzset</span><span class="s2">"</span>
 <span class="c1">#ログに記録</span>
 <span class="nb">exit</span> <span class="m">0</span>
 <span class="c1">#スクリプトを終了</span>
 </pre></div>
 </td></tr></table>
-
 </blockquote>
 
         <div class="sharethis-bottom">

@@ -42,8 +42,9 @@
                 <nav class="navbar">
                     <div class="navbar-inner">
                         <ul class="nav">
-                            <li ><a href="http://www.popowa.com">Profile</a></li>
+                            <li ><a href="http://www.popowa.com">About Aya</a></li>
                             <li ><a href="https://twitter.com/ayakomuro">Twitter</a></li>
+                            <li ><a href="https://github.com/popowa">Github</a></li>
                         </ul>
 
 <script>
@@ -102,85 +103,79 @@
         </div>
 
         <p>Facebookのいいね！ボタンが日本のポータルサイトに始まり、ブログ、企業サイト、至る所に出没するようになったのは、ほんの最近のように思います。  </p>
-<p>でもあるのが当たり前な毎日になって無い方が不思議なくらいに、日本でのFacebookは普及しました。<br>
-でもなんでいつも青色バックのいいね！なんだろう？と思った事はありませんか。<br>
-いいね！じゃなくて、カワイイ！とか日本人向けなんじゃないのとか、tdiaryのプラグインでもあるへー！ボタンとかでもいいんじゃないのかな、と思って調べてみました<br>
-[]<br>
-それをChromeのExtentionで実装出来ないだろうか？調査とその結果にいたるまでの内容です、というかまだ終わってません。orz<br>
+<p>でもあるのが当たり前な毎日になって無い方が不思議なくらいに、日本でのFacebookは普及しました。<br/>
+でもなんでいつも青色バックのいいね！なんだろう？と思った事はありませんか。<br/>
+いいね！じゃなくて、カワイイ！とか日本人向けなんじゃないのとか、tdiaryのプラグインでもあるへー！ボタンとかでもいいんじゃないのかな、と思って調べてみました<br/>
+[]<br/>
+それをChromeのExtentionで実装出来ないだろうか？調査とその結果にいたるまでの内容です、というかまだ終わってません。orz<br/>
 やりたい事としてはFacebook Like
 Buttonを実装するサイト側じゃなくて、そのButtonを見ている側がそれを自分のブラウザーだけでカスタマイズ出来ないかなーと思ったのです。greasemonkeyとかで出来そうな気もするんだけど。</p>
-<p>まずChrome のextentionの作り方についてはこのページが参考になりました。<br>
-<a href="http://code.google.com/chrome/extensions/getstarted.html">>> Tutorial: Getting Started (Hello,
+<p>まずChrome のextentionの作り方についてはこのページが参考になりました。<br/>
+<a href="http://code.google.com/chrome/extensions/getstarted.html">&gt;&gt; Tutorial: Getting Started (Hello,
 World!)</a></p>
 <p>よくある echo
 \'hello\'とかじゃなくて、とても実践的なチュートリアルです。</p>
-<p>上記を一通りやってみてから、Facebookのいいね！ボタンについて調べてみます。<br>
-<a href="http://developers.facebook.com/docs/reference/plugins/like/">>> Facebook Like
-Box</a><br>
+<p>上記を一通りやってみてから、Facebookのいいね！ボタンについて調べてみます。<br/>
+<a href="http://developers.facebook.com/docs/reference/plugins/like/">&gt;&gt; Facebook Like
+Box</a><br/>
 例えばblog.popowa.comに対していいね！ボタンを付ける場合、コードとしては</p>
-<p>になります。<br>
+<p>になります。<br/>
 （上記のソース内でJSが動いてしまっているけど）その後実際にウェブ経由で見た際にどのように展開されているかというと</p>
 <p>divの中にspanを入れて、その中にiframeをappendして表示させているようです。</p>
 <p>iframe内にあるsrcのURLをブラウザーで叩くとになって以下のようになっていました。</p>
-<p><a href="http://3.bp.blogspot.com/-2vvfpwCHxxw/TpBFVgFKgLI/AAAAAAAANuo/W9ejYleQyVw/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%25EF%25BC%25882011-10-08+20.22.02%25EF%25BC%2589.png"><img alt="" src="http://3.bp.blogspot.com/-2vvfpwCHxxw/TpBFVgFKgLI/AAAAAAAANuo/W9ejYleQyVw/s320/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%25EF%25BC%25882011-10-08+20.22.02%25EF%25BC%2589.png">{width="320"
+<p><a href="http://3.bp.blogspot.com/-2vvfpwCHxxw/TpBFVgFKgLI/AAAAAAAANuo/W9ejYleQyVw/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%25EF%25BC%25882011-10-08+20.22.02%25EF%25BC%2589.png"><img alt="" src="http://3.bp.blogspot.com/-2vvfpwCHxxw/TpBFVgFKgLI/AAAAAAAANuo/W9ejYleQyVw/s320/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%25EF%25BC%25882011-10-08+20.22.02%25EF%25BC%2589.png"/>{width="320"
 height="37"}</a></p>
 <p>このiframe内のHTMLを見るとページ末尾参照のようになっています（長いです）。
 その中でLikeとかいいね！になっている部分は</p>
 <div class="highlight"><pre><span></span>いいね！
 </pre></div>
-
-
-<p>そもそもあるページからiframe内に読み込まれるデータを変更出来るんだろうか？<br>
-これは調べてみたら出来るようですが、iframeのid/nameは、reloadする度に変わる事が判明。<br>
+<p>そもそもあるページからiframe内に読み込まれるデータを変更出来るんだろうか？<br/>
+これは調べてみたら出来るようですが、iframeのid/nameは、reloadする度に変わる事が判明。<br/>
 ここはid/nameが固定じゃないと var likeText =
 .document.getElementByClassName(\'liketext\').value;
-で出来ない。<br>
+で出来ない。<br/>
 何度かreloadして分かった事は、最初の文字が小文字英語の\"f\"である事ぐらいで、その後はランダムであまり規則性がなさそう。</p>
-<p><a href="http://1.bp.blogspot.com/-DRoBXLLdEEE/TpBFWRaub_I/AAAAAAAANuw/PFzolWrmfWE/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%25EF%25BC%25882011-10-08+21.37.14%25EF%25BC%2589.png"><img alt="" src="http://1.bp.blogspot.com/-DRoBXLLdEEE/TpBFWRaub_I/AAAAAAAANuw/PFzolWrmfWE/s320/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%25EF%25BC%25882011-10-08+21.37.14%25EF%25BC%2589.png">{width="320"
+<p><a href="http://1.bp.blogspot.com/-DRoBXLLdEEE/TpBFWRaub_I/AAAAAAAANuw/PFzolWrmfWE/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%25EF%25BC%25882011-10-08+21.37.14%25EF%25BC%2589.png"><img alt="" src="http://1.bp.blogspot.com/-DRoBXLLdEEE/TpBFWRaub_I/AAAAAAAANuw/PFzolWrmfWE/s320/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%25EF%25BC%25882011-10-08+21.37.14%25EF%25BC%2589.png"/>{width="320"
 height="20"}</a></p>
-<p><a href="http://2.bp.blogspot.com/-JccnW4lAuQk/TpBFV03QklI/AAAAAAAANus/Zjy8UUZtmUE/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%25EF%25BC%25882011-10-08+21.37.01%25EF%25BC%2589.png"><img alt="" src="http://2.bp.blogspot.com/-JccnW4lAuQk/TpBFV03QklI/AAAAAAAANus/Zjy8UUZtmUE/s320/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%25EF%25BC%25882011-10-08+21.37.01%25EF%25BC%2589.png">{width="320"
+<p><a href="http://2.bp.blogspot.com/-JccnW4lAuQk/TpBFV03QklI/AAAAAAAANus/Zjy8UUZtmUE/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%25EF%25BC%25882011-10-08+21.37.01%25EF%25BC%2589.png"><img alt="" src="http://2.bp.blogspot.com/-JccnW4lAuQk/TpBFV03QklI/AAAAAAAANus/Zjy8UUZtmUE/s320/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%25EF%25BC%25882011-10-08+21.37.01%25EF%25BC%2589.png"/>{width="320"
 height="21"}</a></p>
-<p>結構大変そうな事が分かったので、この時点でjQueryを導入しようと決意。<br>
-そして検索しているうちにこんなページを発見<br>
-<a href="http://www.facebook.com/brandpermissions/logos.php">>>
-Facebookの「いいね！」ボタンのガイドライン </a><br>
-用途<br>
-「いいね！」ボタンの大きさは必要に応じて調節していただいて構いませんが、その他の変更は一切認められません(デザイン変更など)。<br>
- という事なので、出来ない模様。この用途を良く読むと[F]がないといけない、と書いてあるのにはすこし驚きを感じました。結構適当にいいね！を[F]なしで使っている広告代理店とか、見る気がします。まぁ、それはいつかFacebookが本腰を入れたら直るかと思いますが。</p>
+<p>結構大変そうな事が分かったので、この時点でjQueryを導入しようと決意。<br/>
+そして検索しているうちにこんなページを発見<br/>
+<a href="http://www.facebook.com/brandpermissions/logos.php">&gt;&gt;
+Facebookの「いいね！」ボタンのガイドライン&nbsp;</a><br/>
+用途<br/>
+「いいね！」ボタンの大きさは必要に応じて調節していただいて構いませんが、その他の変更は一切認められません(デザイン変更など)。<br/>
+&nbsp;という事なので、出来ない模様。この用途を良く読むと[F]がないといけない、と書いてあるのにはすこし驚きを感じました。結構適当にいいね！を[F]なしで使っている広告代理店とか、見る気がします。まぁ、それはいつかFacebookが本腰を入れたら直るかと思いますが。</p>
 <p>さて個人のブラウザー単位でいいね！を違う文字に変えられるか、という話に戻ると、
-まだ出来てなくてjQueryのAPIを現在調べ居ている所。<br>
-動的にjQueryをappendした時、確かそれ専用にreload的に使える関数があった気がするんだけど、まだ見つけれてない。<br>
-こんな感じで書いてみたんだけど、jQueryが読み込まれてないようで、\$って何？とエラーが出る。<br>
+まだ出来てなくてjQueryのAPIを現在調べ居ている所。<br/>
+動的にjQueryをappendした時、確かそれ専用にreload的に使える関数があった気がするんだけど、まだ見つけれてない。<br/>
+こんな感じで書いてみたんだけど、jQueryが読み込まれてないようで、\$って何？とエラーが出る。<br/>
 manifest.json</p>
 <div class="highlight"><pre><span></span>{
-  &quot;name&quot;: &quot;Customize FB Like!&quot;,
-  &quot;version&quot;: &quot;1.0&quot;,
-  &quot;description&quot;: &quot;This extension can allow you customize Facebook &#39;like&#39; to &#39;Cute&#39;&quot;,
-  &quot;content_scripts&quot;: [
+  "name": "Customize FB Like!",
+  "version": "1.0",
+  "description": "This extension can allow you customize Facebook 'like' to 'Cute'",
+  "content_scripts": [
        {
-       &quot;matches&quot;: [&quot;http://*/*&quot;],
-        &quot;js&quot;: [&quot;myscript.js&quot;]
+       "matches": ["http://*/*"],
+        "js": ["myscript.js"]
        }
    ],
-  &quot;permissions&quot;: [
+  "permissions": [
   ]
 }
 </pre></div>
-
-
 <p>myscript.js</p>
-<div class="highlight"><pre><span></span><span class="nt">var</span> <span class="nt">script</span> <span class="o">=</span> <span class="nt">document</span><span class="p">.</span><span class="nc">createElement</span><span class="o">(</span><span class="s1">&#39;script&#39;</span><span class="o">);</span> 
-<span class="nt">script</span><span class="p">.</span><span class="nc">type</span> <span class="o">=</span> <span class="s1">&#39;text/javascript&#39;</span><span class="o">;</span> 
-<span class="nt">script</span><span class="p">.</span><span class="nc">src</span> <span class="o">=</span> <span class="s1">&#39;https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js&#39;</span><span class="o">;</span> 
-<span class="nt">document</span><span class="p">.</span><span class="nc">getElementsByTagName</span><span class="o">(</span><span class="s1">&#39;head&#39;</span><span class="o">)</span><span class="cp">[</span><span class="mi">0</span><span class="cp">]</span><span class="p">.</span><span class="nc">appendChild</span><span class="o">(</span><span class="nt">script</span><span class="o">);</span>
+<div class="highlight"><pre><span></span><span class="nt">var</span> <span class="nt">script</span> <span class="o">=</span> <span class="nt">document</span><span class="p">.</span><span class="nc">createElement</span><span class="o">(</span><span class="s1">'script'</span><span class="o">);</span> 
+<span class="nt">script</span><span class="p">.</span><span class="nc">type</span> <span class="o">=</span> <span class="s1">'text/javascript'</span><span class="o">;</span> 
+<span class="nt">script</span><span class="p">.</span><span class="nc">src</span> <span class="o">=</span> <span class="s1">'https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js'</span><span class="o">;</span> 
+<span class="nt">document</span><span class="p">.</span><span class="nc">getElementsByTagName</span><span class="o">(</span><span class="s1">'head'</span><span class="o">)</span><span class="cp">[</span><span class="mi">0</span><span class="cp">]</span><span class="p">.</span><span class="nc">appendChild</span><span class="o">(</span><span class="nt">script</span><span class="o">);</span>
 
  <span class="o">$(</span><span class="nt">document</span><span class="o">)</span><span class="p">.</span><span class="nc">ready</span><span class="o">(</span><span class="nt">function</span><span class="o">()</span><span class="p">{</span>
-   <span class="err">$(&#39;iframe&#39;).contents().find(&#39;span</span><span class="cp">[</span><span class="p">@</span><span class="n">class</span><span class="o">=</span><span class="s2">&quot;liketext&quot;</span><span class="cp">]</span><span class="err">&#39;).html(&#39;Cute&#39;)</span><span class="p">;</span>
+   <span class="err">$('iframe').contents().find('span</span><span class="cp">[</span><span class="p">@</span><span class="n">class</span><span class="o">=</span><span class="s2">"liketext"</span><span class="cp">]</span><span class="err">').html('Cute')</span><span class="p">;</span>
  <span class="p">}</span><span class="o">);</span>
 </pre></div>
-
-
-<p>もうちょっと調べないとです(´・ω・`)。</p>
+<p>もうちょっと調べないとです(&acute;・&omega;・`)。</p>
 <p>つづく！</p>
 <p>FacebookのLike ButtonのiframeのsrcのHTML詳細</p>
 <div class="highlight"><pre><span></span>Like
@@ -196,12 +191,10 @@ manifest.json</p>
 
 いいね！
 </pre></div>
-
-
 <p><a href="http://www.blogger.com/blogger.g?blogID=2677338708669705892">承認</a></p>
-<p>あなたが「いいね！」と言っています。<a href="http://www.blogger.com/blogger.g?blogID=2677338708669705892"></a> · <a href="http://www.blogger.com/blogger.g?blogID=2677338708669705892">管理用ページ</a> · <a href="http://www.blogger.com/blogger.g?blogID=2677338708669705892">インサイト</a> · <a href="http://www.blogger.com/blogger.g?blogID=2677338708669705892">エラー</a><a href="http://www.facebook.com/ayakomuro">小室
-文</a>さんが「いいね！」と言っています。「いいね！」と言っている友達はまだいません。<a href="http://www.blogger.com/blogger.g?blogID=2677338708669705892"></a> · <a href="http://www.blogger.com/blogger.g?blogID=2677338708669705892">管理用ページ</a> · <a href="http://www.blogger.com/blogger.g?blogID=2677338708669705892">インサイト</a> · <a href="http://www.blogger.com/blogger.g?blogID=2677338708669705892">エラー</a></p>
-<p><a href="http://www.facebook.com/ayakomuro"><img alt="" src="http://profile.ak.fbcdn.net/hprofile-ak-snc4/23094_681849640_6919_q.jpg">{.connect_widget_image
+<p>あなたが「いいね！」と言っています。<a href="http://www.blogger.com/blogger.g?blogID=2677338708669705892"></a>&nbsp;&middot;&nbsp;<a href="http://www.blogger.com/blogger.g?blogID=2677338708669705892">管理用ページ</a>&nbsp;&middot;&nbsp;<a href="http://www.blogger.com/blogger.g?blogID=2677338708669705892">インサイト</a>&nbsp;&middot;&nbsp;<a href="http://www.blogger.com/blogger.g?blogID=2677338708669705892">エラー</a><a href="http://www.facebook.com/ayakomuro">小室
+文</a>さんが「いいね！」と言っています。「いいね！」と言っている友達はまだいません。<a href="http://www.blogger.com/blogger.g?blogID=2677338708669705892"></a>&nbsp;&middot;&nbsp;<a href="http://www.blogger.com/blogger.g?blogID=2677338708669705892">管理用ページ</a>&nbsp;&middot;&nbsp;<a href="http://www.blogger.com/blogger.g?blogID=2677338708669705892">インサイト</a>&nbsp;&middot;&nbsp;<a href="http://www.blogger.com/blogger.g?blogID=2677338708669705892">エラー</a></p>
+<p><a href="http://www.facebook.com/ayakomuro"><img alt="" src="http://profile.ak.fbcdn.net/hprofile-ak-snc4/23094_681849640_6919_q.jpg"/>{.connect_widget_image
 .img}小室 文</a></p>
 
         <div class="sharethis-bottom">

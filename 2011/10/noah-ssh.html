@@ -5,14 +5,14 @@
     <meta name="author" content="ayakomuro" />
     <meta name="robots" content="index, follow"/>
 
-    <meta property="og:title" content=""/>
+    <meta property="og:title" content="ポートの設定、SSHログイン"/>
     <meta property="og:url" content="http://blog.popowa.com/2011/10/noah-ssh.html"/>
     <meta property="og:site_name" content="popowa"/>
     <meta property="og:type" content="article"/>
 
     <link rel="canonical" href="http://blog.popowa.com/2011/10/noah-ssh.html" />
 
-    <title> | popowa</title>
+    <title>ポートの設定、SSHログイン | popowa</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
@@ -42,8 +42,9 @@
                 <nav class="navbar">
                     <div class="navbar-inner">
                         <ul class="nav">
-                            <li ><a href="http://www.popowa.com">Profile</a></li>
+                            <li ><a href="http://www.popowa.com">About Aya</a></li>
                             <li ><a href="https://twitter.com/ayakomuro">Twitter</a></li>
+                            <li ><a href="https://github.com/popowa">Github</a></li>
                         </ul>
 
 <script>
@@ -73,7 +74,7 @@
       <header>
         <h1 class="entry-title">
           <a href="http://blog.popowa.com/2011/10/noah-ssh.html" rel="bookmark"
-             title="Permalink to "></a></h1>
+             title="Permalink to ポートの設定、SSHログイン">ポートの設定、SSHログイン</a></h1>
 <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="ayakomuro">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
       </header>
       <div class="entry-content">
@@ -100,47 +101,44 @@
           <span class='st_email_hcount' displayText='Email'></span>
         </div>
 
-        <p>ポートの設定、SSHログイン+NOAHクラウドの登録、仮想マシンの起動は簡単だったのですが、ポートを開ける方法が分からずあれこれしたので、メモとして残しておきます。<br>
-[]<br>
+        <p>NOAHクラウドの登録、仮想マシンの起動は簡単だったのですが、ポートを開ける方法が分からずあれこれしたので、メモとして残しておきます。<br/>
 追加した仮想マシンは、ダッシュボードの横にあるリソースから見る事が出来ます。</p>
-<p><a href="http://4.bp.blogspot.com/-8QzoyXQiv5Y/Topq_vnzaUI/AAAAAAAANks/sWB8KszGpt8/s1600/resource.png"><img alt="" src="http://4.bp.blogspot.com/-8QzoyXQiv5Y/Topq_vnzaUI/AAAAAAAANks/sWB8KszGpt8/s1600/resource.png"></a></p>
+<p><img alt="" src="http://4.bp.blogspot.com/-8QzoyXQiv5Y/Topq_vnzaUI/AAAAAAAANks/sWB8KszGpt8/s1600/resource.png"/></p>
 <p>リソースをクリックすると、仮想マシン一覧が表示されますが、そこに表示されているIPアドレスはSSHやHTTPなどで外からアクセス出来る物はありません。</p>
-<p><a href="http://2.bp.blogspot.com/-txnO7pieK-U/TopsH6WYV_I/AAAAAAAANkw/6rML1EhHDVI/s1600/machine.png"><img alt="" src="http://2.bp.blogspot.com/-txnO7pieK-U/TopsH6WYV_I/AAAAAAAANkw/6rML1EhHDVI/s400/machine.png">{width="400"
-height="108"}</a></p>
+<p><img alt="" src="http://2.bp.blogspot.com/-txnO7pieK-U/TopsH6WYV_I/AAAAAAAANkw/6rML1EhHDVI/s1600/machine.png"/></p>
 <p>左側メニューにあるIPアドレス、というのをクリックすると、IPアドレス一覧が表示されます(AWSでいうとElastic
 IP)。</p>
-<p><a href="http://1.bp.blogspot.com/-W9Of-R3ipwU/Topss2YFBoI/AAAAAAAANk0/8J8q_ooucMM/s1600/ip.png"><img alt="" src="http://1.bp.blogspot.com/-W9Of-R3ipwU/Topss2YFBoI/AAAAAAAANk0/8J8q_ooucMM/s400/ip.png">{width="400"
-height="83"}</a></p>
+<p><img alt="" src="http://1.bp.blogspot.com/-W9Of-R3ipwU/Topss2YFBoI/AAAAAAAANk0/8J8q_ooucMM/s1600/ip.png"/></p>
 <p>その下に選択したIPアドレスの詳細、ファイヤーウォール、ポートフォワーディング、ロードバランサーのタブが表示されます。</p>
-<p><a href="http://1.bp.blogspot.com/-5h754JC8LKg/ToptHZtE14I/AAAAAAAANk4/zsHDY-t5Dts/s1600/tab.png"><img alt="" src="http://1.bp.blogspot.com/-5h754JC8LKg/ToptHZtE14I/AAAAAAAANk4/zsHDY-t5Dts/s1600/tab.png"></a></p>
-<p>SSHで接続出来るようにしてみます。<br>
+<p><img alt="" src="http://1.bp.blogspot.com/-5h754JC8LKg/ToptHZtE14I/AAAAAAAANk4/zsHDY-t5Dts/s1600/tab.png"/></p>
+<p>SSHで接続出来るようにしてみます。<br/>
 まずファイヤーウォールに22ポートを開けます。接続元が動的IPなので、ソースCIDRは0.0.0.0/0にします。会社など固定IPならそのように設定した方がいいでしょう。</p>
-<p><a href="http://3.bp.blogspot.com/-fgJLwy3BxOM/TopuGzWkdAI/AAAAAAAANk8/kQodmZLrm14/s1600/sshfw.png"><img alt="" src="http://3.bp.blogspot.com/-fgJLwy3BxOM/TopuGzWkdAI/AAAAAAAANk8/kQodmZLrm14/s1600/sshfw.png"></a></p>
+<p><img alt="" src="http://3.bp.blogspot.com/-fgJLwy3BxOM/TopuGzWkdAI/AAAAAAAANk8/kQodmZLrm14/s1600/sshfw.png"/></p>
 <p>その後ポートフォワーディングタブをクリックし、外部の22ポートを個別仮想マシンのポートを紐付けます。</p>
-<p><a href="http://2.bp.blogspot.com/-_TWmbSrWRWM/TopughqIiGI/AAAAAAAANlA/xEqnp7AuTOM/s1600/sshpf.png"><img alt="" src="http://2.bp.blogspot.com/-_TWmbSrWRWM/TopughqIiGI/AAAAAAAANlA/xEqnp7AuTOM/s1600/sshpf.png"></a></p>
+<p><img alt="" src="http://2.bp.blogspot.com/-_TWmbSrWRWM/TopughqIiGI/AAAAAAAANlA/xEqnp7AuTOM/s1600/sshpf.png"/></p>
 <p>その後、ターミナルを開き、先ほど保存した秘密鍵を使ってSSH接続してみます。</p>
 <blockquote>
-<p>aya-air:AccountInfo aya\$ ls -la | grep tangerine.pem<br>
--rwxrwxr-x@  1 aya  staff    887 10  4 06:14 tangerine.pem<br>
-aya-air:AccountInfo aya\$ chmod 700 tangerine.pem<br>
-aya-air:AccountInfo aya\$ ls -la | grep tangerine.pem<br>
--rwx------@  1 aya  staff    887 10  4 06:14 tangerine.pem<br>
-aya-air:AccountInfo aya\$  ssh -i tangerine.pem root@xxx.xxx.xxx.xxx<br>
+<p>aya-air:AccountInfo aya\$ ls -la | grep tangerine.pem<br/>
+-rwxrwxr-x@&nbsp; 1 aya&nbsp; staff&nbsp;&nbsp;&nbsp; 887 10&nbsp; 4 06:14 tangerine.pem<br/>
+aya-air:AccountInfo aya\$ chmod 700 tangerine.pem<br/>
+aya-air:AccountInfo aya\$ ls -la | grep tangerine.pem<br/>
+-rwx------@&nbsp; 1 aya&nbsp; staff&nbsp;&nbsp;&nbsp; 887 10&nbsp; 4 06:14 tangerine.pem<br/>
+aya-air:AccountInfo aya\$&nbsp; ssh -i tangerine.pem root@xxx.xxx.xxx.xxx<br/>
 The authenticity of host \'xxx.xxx.xxx.xxx (xxx.xxx.xxx.xxx)\' can\'t
-be established.<br>
+be established.<br/>
 RSA key fingerprint is
-58:a8:16:38:0c:31:32:28:b4:c6:8a:64:b8:ea:51:95.<br>
-Are you sure you want to continue connecting (yes/no)? yes<br>
+58:a8:16:38:0c:31:32:28:b4:c6:8a:64:b8:ea:51:95.<br/>
+Are you sure you want to continue connecting (yes/no)? yes<br/>
 Linux ubuntu 2.6.32-33-server #72-Ubuntu SMP Fri Jul 29 21:21:55 UTC
-2011 x86_64 GNU/Linux<br>
+2011 x86_64 GNU/Linux<br/>
 Ubuntu 10.04.3 LTS</p>
-<p>Welcome to the Ubuntu Server!<br>
- * Documentation:  http://www.ubuntu.com/server/doc</p>
-<p>The programs included with the Ubuntu system are free software;<br>
-the exact distribution terms for each program are described in the<br>
+<p>Welcome to the Ubuntu Server!<br/>
+&nbsp;* Documentation:&nbsp; http://www.ubuntu.com/server/doc</p>
+<p>The programs included with the Ubuntu system are free software;<br/>
+the exact distribution terms for each program are described in the<br/>
 individual files in /usr/share/doc/*/copyright.</p>
 <p>Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
-applicable law.<br>
+applicable law.<br/>
 root@ubuntu:\~#</p>
 </blockquote>
 <p>ログイン出来ました！</p>

@@ -42,8 +42,9 @@
                 <nav class="navbar">
                     <div class="navbar-inner">
                         <ul class="nav">
-                            <li ><a href="http://www.popowa.com">Profile</a></li>
+                            <li ><a href="http://www.popowa.com">About Aya</a></li>
                             <li ><a href="https://twitter.com/ayakomuro">Twitter</a></li>
+                            <li ><a href="https://github.com/popowa">Github</a></li>
                         </ul>
 
 <script>
@@ -109,8 +110,8 @@
 <li>メールアカウント@example.comをロリポップのレンタルサーバのメール機能</li>
 </ul>
 <p>という風にしたかった。</p>
-<p>[]<br>
-ロリポップのサービスを契約したりサポートに問い合わせてみたりしたけど、どうやらドップレベルの独自ドメインでしか利用出来ない模様。。<br>
+<p>[]<br/>
+ロリポップのサービスを契約したりサポートに問い合わせてみたりしたけど、どうやらドップレベルの独自ドメインでしか利用出来ない模様。。<br/>
 つまり</p>
 <ul>
 <li>ルートドメイン（example.com）のネームサーバーがロリポップ側にある</li>
@@ -121,21 +122,21 @@
 <li>example.comのドメイン取得はお名前.com</li>
 <li>example.comのネームサーバーはAWS Route53</li>
 <li>http://example.com、http://www.example.comのウェブサーバはさくらVPS</li>
-<li>メールアカウント@[mail.]example.comをロリポップのレンタルサーバのメール機能<br>
-   ↑mail.example.comをロリポップ側に委譲する事で利用出来るのではないか！？と思った次第。</li>
+<li>メールアカウント@[mail.]example.comをロリポップのレンタルサーバのメール機能<br/>
+   &uarr;mail.example.comをロリポップ側に委譲する事で利用出来るのではないか！？と思った次第。</li>
 </ul>
 <p>最初以下のネームサーバーをサブドメインのNSとして登録すればよいのかと思い設定してみた。</p>
 <ul>
 <li><a href="http://lolipop.jp/manual/user/chg-plan/">http://lolipop.jp/manual/user/chg-plan/</a></li>
 </ul>
-<p><a href="http://4.bp.blogspot.com/-uxlv7jinxDk/URsFbFhrZcI/AAAAAAAAWvw/tp30MW3TvmM/s1600/1.png"><img alt="" src="http://4.bp.blogspot.com/-uxlv7jinxDk/URsFbFhrZcI/AAAAAAAAWvw/tp30MW3TvmM/s1600/1.png"></a></p>
+<p><a href="http://4.bp.blogspot.com/-uxlv7jinxDk/URsFbFhrZcI/AAAAAAAAWvw/tp30MW3TvmM/s1600/1.png"><img alt="" src="http://4.bp.blogspot.com/-uxlv7jinxDk/URsFbFhrZcI/AAAAAAAAWvw/tp30MW3TvmM/s1600/1.png"/></a></p>
 <p>その後対象ドメインの設定内で、サブドメインにてNSを作成した</p>
-<p><a href="http://1.bp.blogspot.com/-HZ91zFaz9wo/URsFbDoIyJI/AAAAAAAAWvs/oYOP3RGT1vA/s1600/2.png"><img alt="" src="http://1.bp.blogspot.com/-HZ91zFaz9wo/URsFbDoIyJI/AAAAAAAAWvs/oYOP3RGT1vA/s1600/2.png"></a></p>
-<p>これでmail.popowa.comをロリポップ側の独自ドメイン設定扱いとすればロリポップサーバが使えるはず！！╰(*´︶`*)╯♡</p>
+<p><a href="http://1.bp.blogspot.com/-HZ91zFaz9wo/URsFbDoIyJI/AAAAAAAAWvs/oYOP3RGT1vA/s1600/2.png"><img alt="" src="http://1.bp.blogspot.com/-HZ91zFaz9wo/URsFbDoIyJI/AAAAAAAAWvs/oYOP3RGT1vA/s1600/2.png"/></a></p>
+<p>これでmail.popowa.comをロリポップ側の独自ドメイン設定扱いとすればロリポップサーバが使えるはず！！╰(*&acute;︶`*)╯♡</p>
 <p>。。</p>
 <p>エラーが。。。</p>
-<p><a href="http://4.bp.blogspot.com/-beqE-6mXMi8/URsGejRRNPI/AAAAAAAAWwA/ccRLOh-Bm3o/s1600/3.png"><img alt="" src="http://4.bp.blogspot.com/-beqE-6mXMi8/URsGejRRNPI/AAAAAAAAWwA/ccRLOh-Bm3o/s1600/3.png"></a></p>
-<p>(´；ω；｀)ﾌﾞﾜｯ</p>
+<p><a href="http://4.bp.blogspot.com/-beqE-6mXMi8/URsGejRRNPI/AAAAAAAAWwA/ccRLOh-Bm3o/s1600/3.png"><img alt="" src="http://4.bp.blogspot.com/-beqE-6mXMi8/URsGejRRNPI/AAAAAAAAWwA/ccRLOh-Bm3o/s1600/3.png"/></a></p>
+<p>(&acute;；&omega;；｀)ﾌﾞﾜｯ</p>
 <p>という訳で、検証の結果サブドメイン委譲でのロリポップレンタルサーバ利用は難しそうです。</p>
 <p>もしかしたらウェブ側のvalidation問題でやろうと思えば出来るかもしれない。</p>
 <ul>

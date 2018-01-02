@@ -42,8 +42,9 @@
                 <nav class="navbar">
                     <div class="navbar-inner">
                         <ul class="nav">
-                            <li ><a href="http://www.popowa.com">Profile</a></li>
+                            <li ><a href="http://www.popowa.com">About Aya</a></li>
                             <li ><a href="https://twitter.com/ayakomuro">Twitter</a></li>
+                            <li ><a href="https://github.com/popowa">Github</a></li>
                         </ul>
 
 <script>
@@ -103,8 +104,8 @@
 
         <p>RightScaleの一番の醍醐味であるサーバテンプレートを分解して、どのようになっているか見て行きましょう。全部見終わったときは、「あ〜なるほど」と思って頂けると思います。</p>
 <p>[]</p>
-<p>「デザイン」->「サーバテンプレート」をクリックします。</p>
-<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/ss.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/ss.png" title="ss">{.alignnone
+<p>「デザイン」-&gt;「サーバテンプレート」をクリックします。</p>
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/ss.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/ss.png" title="ss"/>{.alignnone
 .size-full .wp-image-1259 width="251"
 height="71"}</a></p>
 <p>見たいサーバテンプレートをクリックします。今回は「LAMP All-In-One with
@@ -119,37 +120,37 @@ wordpress JP- 11H1 v1」（複製を作ったもの）になります。</p>
 <li>Xref</li>
 <li>Revisions</li>
 </ul>
-<h3>「イメージ」タブ</h3>
+<h3 id="imezi-tabu">「イメージ」タブ</h3>
 <p>このサーバテンプレートに紐付けられているサーバイメージが表示されています。チェックボックスを他の物に選択する事で、他のサーバイメージ（例えば他のOSが良い場合など）を選ぶ事が出来ます。また「Add
 MultiCloud
 Image」をクリックすると、警告が出た後、マルチクラウドを選択出来るようになります。私はDebianが好きなので、Ubuntuを選択します。  </p>
-<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/images.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/images-300x177.png" title="images">{width="300"
-height="177"}</a>  </p>
-<h3>「Repos」タブ</h3>
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/images.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/images-300x177.png" title="images"/>{width="300"
+height="177"}</a> </p>
+<h3 id="repos-tabu">「Repos」タブ</h3>
 <p>ここは主にレポジトリ情報を保持する場所です。そして大体保持している内容としてはChef
 CookbooksとOSのディストリビューションのレポジトリになります。（例えば/etc/apt/source.listsに追加するパッケージのレポジトリ先、という感じです）  </p>
-<p><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/Repos.png" title="Repos">{width="91"
+<p><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/Repos.png" title="Repos"/>{width="91"
 height="55"}  </p>
 <p>RightScaleが提供しているサーバイメージに関しては彼らのOSのレポジトリがあり、独自のレポジトリを使いたい、というニーズがなければ通常はそのままです（逆を返せば、サーバーイメージのメンテナンスをRightScaleがしてくれている、という事になります）  </p>
 <p>Chefに関してはきっちり触った事が無いので、調査してまた別の記事を書いてみたいと思います。  </p>
-<h3>「スクリプト」タブ</h3>
-<p>ここはサーバテンプレートがデプロイメントに入ってサーバを立てる時に実行されるスクリプト、また運用中、サーバを停止する時のスクリプト入っています。<br>
-<a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/script.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/script.png" title="script">{width="111"
-height="52"}</a>  </p>
+<h3 id="sukuriputo-tabu">「スクリプト」タブ</h3>
+<p>ここはサーバテンプレートがデプロイメントに入ってサーバを立てる時に実行されるスクリプト、また運用中、サーバを停止する時のスクリプト入っています。<br/>
+<a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/script.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/script.png" title="script"/>{width="111"
+height="52"}</a> </p>
 <ul>
 <li>Boot Scripts：サーバを立ち上げる時に実行されるスクリプト</li>
 <li>Operational Scripts: 運用中に実行するであろうスクリプト</li>
 <li>Decommission Scripts（ライトイメージv3以降で利用可能）:
     サーバを停止する時に使うスクリプト</li>
 </ul>
-<p>以下がスクリプトの１例です。<br>
-鉛筆のアイコンは、編集、虫眼鏡は中を見る、×は削除です。  </p>
-<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/script_line.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/script_line.png" title="script_line">{width="577"
-height="21"}</a>  </p>
+<p>以下がスクリプトの１例です。<br/>
+鉛筆のアイコンは、編集、虫眼鏡は中を見る、&times;は削除です。  </p>
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/script_line.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/script_line.png" title="script_line"/>{width="577"
+height="21"}</a> </p>
 <p>またスクリプトの実行する順番を変える事が出来ます。スクリプトは上から順に実行されます。  </p>
-<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/script_sort.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/script_sort.png" title="script_sort">{width="75"
-height="26"}</a>  </p>
-<p>スクリプトの例を以下に乗せます。他にも色々あるので除いてみてください。<br>
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/script_sort.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/script_sort.png" title="script_sort"/>{width="75"
+height="26"}</a> </p>
+<p>スクリプトの例を以下に乗せます。他にも色々あるので除いてみてください。<br/>
 スクリプトページを開いた際に出る項目は以下のものがあります。  </p>
 <p>Packages:
 スペースで区切られたインストールされるパッケージリストになります（例：mysql-server
@@ -213,9 +214,9 @@ mysql-devel）ブート時にyumやapt/aptitude等で一括インストールさ
 
 
 
-<span class="k">if</span> <span class="nb">test</span> <span class="s2">&quot;</span><span class="nv">$RS_REBOOT</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;true&quot;</span> <span class="p">;</span> <span class="k">then</span>　&lt;<span class="o">=</span> もしリブードだったら
-  <span class="nb">echo</span> <span class="s2">&quot;Skip Php Modules install on reboot.&quot;</span>　&lt;<span class="o">=</span> PHPモジュールインストールはスキップするよ、とエコー
-  logger -t RightScale <span class="s2">&quot;Php Modules Install,  skipped on a reboot.&quot;</span> &lt;<span class="o">=</span> ログに記録
+<span class="k">if</span> <span class="nb">test</span> <span class="s2">"</span><span class="nv">$RS_REBOOT</span><span class="s2">"</span> <span class="o">=</span> <span class="s2">"true"</span> <span class="p">;</span> <span class="k">then</span>　&lt;<span class="o">=</span> もしリブードだったら
+  <span class="nb">echo</span> <span class="s2">"Skip Php Modules install on reboot."</span>　&lt;<span class="o">=</span> PHPモジュールインストールはスキップするよ、とエコー
+  logger -t RightScale <span class="s2">"Php Modules Install,  skipped on a reboot."</span> &lt;<span class="o">=</span> ログに記録
   <span class="nb">exit</span> <span class="m">0</span> &lt;<span class="o">=</span> 終了
 <span class="k">fi</span>
 
@@ -228,14 +229,14 @@ mysql-devel）ブート時にyumやapt/aptitude等で一括インストールさ
   yum install -y php php-mysql php-pear <span class="nv">$OPT_PHP_MODULES_LIST</span> &lt;<span class="o">=</span> パッケージをインストール
    <span class="nv">php_conf</span><span class="o">=</span>/etc/httpd/conf.d/php.conf &lt;<span class="o">=</span>変数作成
   <span class="k">if</span> <span class="o">[</span> -f /etc/httpd/conf.d/php.disabled <span class="o">]</span><span class="p">;</span> <span class="k">then</span>　&lt;<span class="o">=</span>PHP設定の確認、無効になっていたら、有効にする
-       <span class="nb">echo</span> <span class="s2">&quot;Enabling PHP configuration...&quot;</span>
+       <span class="nb">echo</span> <span class="s2">"Enabling PHP configuration..."</span>
        mv -f /etc/httpd/conf.d/php.disabled <span class="nv">$php_conf</span>
  <span class="k">fi</span>
  <span class="k">if</span> <span class="o">[</span> -f <span class="nv">$php_conf</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span> &lt;<span class="o">=</span> php.conf設定がなければ、諸設定をする
-     perl -p -i -e <span class="s1">&#39;s/#LoadModule php5_module modules/libphp5.so/LoadModule php5_module modules/libphp5.so/&#39;</span> <span class="nv">$php_conf</span>
-      perl -p -i -e <span class="s1">&#39;s/#DirectoryIndex index.php/DirectoryIndex default.php index.php/&#39;</span> <span class="nv">$php_conf</span>
-        perl -p -i -e <span class="s1">&#39;s/#AddHandler php5-script .php/AddHandler php5-script .php/&#39;</span> <span class="nv">$php_conf</span>
-      perl -p -i -e <span class="s1">&#39;s/#AddType text/html .php/AddType text/html .php/&#39;</span> <span class="nv">$php_conf</span>
+     perl -p -i -e <span class="s1">'s/#LoadModule php5_module modules/libphp5.so/LoadModule php5_module modules/libphp5.so/'</span> <span class="nv">$php_conf</span>
+      perl -p -i -e <span class="s1">'s/#DirectoryIndex index.php/DirectoryIndex default.php index.php/'</span> <span class="nv">$php_conf</span>
+        perl -p -i -e <span class="s1">'s/#AddHandler php5-script .php/AddHandler php5-script .php/'</span> <span class="nv">$php_conf</span>
+      perl -p -i -e <span class="s1">'s/#AddType text/html .php/AddType text/html .php/'</span> <span class="nv">$php_conf</span>
     <span class="k">fi</span>
  <span class="c1"># delete default welcome</span>
    <span class="k">if</span> <span class="o">[</span> -e /etc/httpd/conf.d/welcome.conf <span class="o">]</span><span class="p">;</span> <span class="k">then</span> &lt;<span class="o">=</span> ディフォルトのウェルカムページを削除する
@@ -243,28 +244,27 @@ mysql-devel）ブート時にyumやapt/aptitude等で一括インストールさ
    <span class="k">fi</span>
 <span class="k">fi</span>
 
-logger -t RightScale <span class="s2">&quot;Installed Php Modules.&quot;</span>　&lt;<span class="o">=</span> ログに記録
+logger -t RightScale <span class="s2">"Installed Php Modules."</span>　&lt;<span class="o">=</span> ログに記録
 </pre></div>
 </td></tr></table>
-
 </blockquote>
-<h2>「アラート」タブ</h2>
+<h2 id="arato-tabu_1">「アラート」タブ</h2>
 <p>アラートは、サーバのCPU/メモリ/容量/アプリの状態/特定のファイルの状態によって、警告メールを飛ばす設定が出来ます。NagiosやZabbixの部分だと思って頂ければいいと思います。アラートはモニターされているサーバーのみ利用する事が出来ます。  </p>
-<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/alert.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/alert.png" title="alert">{width="91"
-height="48"}</a>  </p>
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/alert.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/alert.png" title="alert"/>{width="91"
+height="48"}</a> </p>
 <p>タイトル、コンディション、鉛筆のアイコンは編集、Xマークは削除になります。  </p>
-<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/alert_2.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/alert_2.png" title="alert_2">{.alignnone
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/alert_2.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/alert_2.png" title="alert_2"/>{.alignnone
 .size-full .wp-image-1261 width="502"
-height="37"}</a>  </p>
-<p>タイトルの右横にある(i)にマウスオーバーするとアラートの説明が表示されます。<br>
+height="37"}</a> </p>
+<p>タイトルの右横にある(i)にマウスオーバーするとアラートの説明が表示されます。<br/>
 例えばApacheやトラフィックに負荷がかかっていて、現在のプロセスに空きスロットがない場合にアラートを送ります。  </p>
-<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/alert_description.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/alert_description.png" title="alert_description">{.alignnone
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/alert_description.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/alert_description.png" title="alert_description"/>{.alignnone
 .size-full .wp-image-1262 width="390"
-height="29"}</a>  </p>
+height="29"}</a> </p>
 <p>トリガーになる値を変更したい場合は、変更ボタン（鉛筆）をクリックすると値を入力する画面に遷移します。  </p>
-<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/alert_edit.jpg"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/alert_edit.jpg" title="alert_edit">{.alignnone
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/alert_edit.jpg"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/alert_edit.jpg" title="alert_edit"/>{.alignnone
 .size-full .wp-image-1265 width="505"
-height="151"}</a>  </p>
+height="151"}</a> </p>
 <p>アラートは、サーバテンプレート、サーバアレイ、サーバそのものにも追加する事が出来ます。またアラートは実際に稼働した後は、有効/無効、メンテナンス等で１時間off/24時間offをする事が出来ます。  </p>
 <p>アラートに達する状態が起こった場合、以下のアクションがサポートされています。  </p>
 <ul>
@@ -276,54 +276,54 @@ height="151"}</a>  </p>
     X</li>
 <li>サーバアレイを呼び出してスケールダウンする</li>
 </ul>
-<h2>「入力」タブ</h2>
+<h2 id="ru-li-tabu">「入力」タブ</h2>
 <p>入力タブでは、ライトスクリプトで使われる変数の設定をする事が出来ます。使われる場所はChef
 Cookbook、ライトスクリプトになり、入力必須で未入力な場所は赤い線が出ています。  </p>
-<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/input.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/input.png" title="input">{.alignnone
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/input.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/input.png" title="input"/>{.alignnone
 .size-full .wp-image-1266 width="63"
-height="46"}</a>  </p>
+height="46"}</a> </p>
 <p>変数名とその値、またどこで使われているかを選択する事が出来ます。  </p>
 <p>変数名  </p>
-<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/input_title.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/input_title.png" title="input_title">{.alignnone
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/input_title.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/input_title.png" title="input_title"/>{.alignnone
 .size-full .wp-image-1269 width="165"
-height="37"}</a>  </p>
+height="37"}</a> </p>
 <p>その値のタイプ（Ignore: 利用しない / Env: サーバの環境値 / Array: 配列 /
 Cred: 証明書で作成した値 、Key: SSHの鍵）  </p>
-<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/input_select.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/input_select.png" title="input_select">{.alignnone
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/input_select.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/input_select.png" title="input_select"/>{.alignnone
 .size-full .wp-image-1267 width="75"
-height="111"}</a>  </p>
+height="111"}</a> </p>
 <p>Credを選択してみます。  </p>
-<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/input_select_2.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/input_select_2.png" title="input_select_2">{.alignnone
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/input_select_2.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/input_select_2.png" title="input_select_2"/>{.alignnone
 .size-full .wp-image-1268 width="195"
-height="107"}</a>  </p>
+height="107"}</a> </p>
 <p>どこで使われているかの説明とリンク  </p>
-<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/input_used.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/input_used.png" title="input_used">{.alignnone
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/input_used.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/input_used.png" title="input_used"/>{.alignnone
 .size-full .wp-image-1270 width="487"
-height="56"}</a>  </p>
-<h2>「Xref」タブ</h2>
+height="56"}</a> </p>
+<h2 id="xref-tabu">「Xref」タブ</h2>
 <p>これは稼働中、非稼働のサーバで使われているサーバテンプレートのリファレンスを表示します。利用しているクラウド構築の一覧としても見る事が出来ます。これは運用の記事でも再度取り上げたいと思います。  </p>
-<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/xref.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/xref.png" title="xref">{.alignnone
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/xref.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/xref.png" title="xref"/>{.alignnone
 .size-full .wp-image-1271 width="67"
-height="47"}</a>  </p>
-<h2>「Revision」タブ</h2>
+height="47"}</a> </p>
+<h2 id="revision-tabu">「Revision」タブ</h2>
 <p>Revisionタブではコミットされたサーバテンプレートの履歴を見る事が出来ます。特定のバージョンのスナップショットを見る事が出来ます。これも運用の記事で再度取り上げたいと思います。  </p>
-<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/revison.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/revison.png" title="revison">{.alignnone
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/revison.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/revison.png" title="revison"/>{.alignnone
 .size-full .wp-image-1273 width="100"
-height="45"}</a>  </p>
+height="45"}</a> </p>
 <p>現在HEAD（最新）しかないので、一行しか表示されません。  </p>
-<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/revision_list.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/revision_list.png" title="revision_list">{.alignnone
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/revision_list.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/revision_list.png" title="revision_list"/>{.alignnone
 .size-full .wp-image-1272 width="199"
-height="60"}</a>  </p>
-<h2>コミット</h2>
+height="60"}</a> </p>
+<h2 id="komitsuto">コミット</h2>
 <p>変更や追加、削除が終われば、コミットをして、リビジョンを確定させます。  </p>
 <p>コメントを入力する枠、またあればマルチクラウドを紐付ける設定を確定させるか、などのオプションが出てきます。  </p>
-<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/commit.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/commit.png" title="commit">{.alignnone
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/commit.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/commit.png" title="commit"/>{.alignnone
 .size-full .wp-image-1274 width="75"
-height="29"}</a>  </p>
+height="29"}</a> </p>
 <p>コミットすると、[HEAD]だった物が[Rev1]になって、変更をした物が[HEAD]になります。  </p>
-<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/revision.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/revision.png" title="revision">{.alignnone
+<p><a href="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/revision.png"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/07/revision.png" title="revision"/>{.alignnone
 .size-full .wp-image-1275 width="299"
-height="47"}</a>  </p>
+height="47"}</a> </p>
 
         <div class="sharethis-bottom">
           <span class='st_fblike_hcount' displayText='Facebook Like'></span>

@@ -42,8 +42,9 @@
                 <nav class="navbar">
                     <div class="navbar-inner">
                         <ul class="nav">
-                            <li ><a href="http://www.popowa.com">Profile</a></li>
+                            <li ><a href="http://www.popowa.com">About Aya</a></li>
                             <li ><a href="https://twitter.com/ayakomuro">Twitter</a></li>
+                            <li ><a href="https://github.com/popowa">Github</a></li>
                         </ul>
 
 <script>
@@ -101,25 +102,25 @@
         </div>
 
         <p>ELBで扱えるドメイン</p>
-<h3>Zone Apex</h3>
+<h3 id="zone-apex">Zone Apex</h3>
 <p>ELB(example.com)</p>
 <p>_EC2</p>
 <p>_EC2</p>
 <p>_EC2....</p>
-<p>=> Zone ApexをRoute53を利用してのみ可能</p>
-<h3>サブドメイン</h3>
+<p>=&gt; Zone ApexをRoute53を利用してのみ可能</p>
+<h3 id="sabudomein">サブドメイン</h3>
 <p>ELB(www.example.com)</p>
 <p>_EC2</p>
 <p>_EC2</p>
 <p>_EC2....</p>
-<p>=> NSはどこでもよい</p>
-<h3>サブディレクトリ</h3>
+<p>=&gt; NSはどこでもよい</p>
+<h3 id="sabudeirekutori">サブディレクトリ</h3>
 <p>ELB(www.example.com)</p>
 <p>_EC2(Apache/Varnish/Nginx等のProxyサーバ)</p>
 <p>_EC2(www.example.com/dir)</p>
 <p>_EC2(www.example.com/dir2)</p>
 <p>_EC2....</p>
-<p>=> ELBの下にProxyサーバを置く事で可能</p>
+<p>=&gt; ELBの下にProxyサーバを置く事で可能</p>
 <p>ELBがサブディレクトリの処理をするのは違うとは思うが、機能としては欲しいなぁと思う今日この頃</p>
 
         <div class="sharethis-bottom">

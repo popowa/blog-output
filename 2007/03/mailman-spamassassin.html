@@ -42,8 +42,9 @@
                 <nav class="navbar">
                     <div class="navbar-inner">
                         <ul class="nav">
-                            <li ><a href="http://www.popowa.com">Profile</a></li>
+                            <li ><a href="http://www.popowa.com">About Aya</a></li>
                             <li ><a href="https://twitter.com/ayakomuro">Twitter</a></li>
+                            <li ><a href="https://github.com/popowa">Github</a></li>
                         </ul>
 
 <script>
@@ -101,23 +102,23 @@
         </div>
 
         <p>spamassassin
-KNOWN_SPAMMERS = [(\"x-spam-flag\", \"yes\"),]<br>
-とすると、静かに破棄される<br>
-後は、<br>
-KNOWN_SPAMMMERS = [(\"x-spam-level\", \"***\"),]<br>
+KNOWN_SPAMMERS = [(\"x-spam-flag\", \"yes\"),]<br/>
+とすると、静かに破棄される<br/>
+後は、<br/>
+KNOWN_SPAMMMERS = [(\"x-spam-level\", \"***\"),]<br/>
 spam level 3以上は破棄</p>
 <p>となるらしい(未確認)</p>
 <p>今はexim4で受けた時に、spamassassinをつかってフィルターにかけて、その後、個人のMaildirに来た時にprocmailrcで分けているから、有効的かと思われる。</p>
-<p>SpamAssassinは日本語対応していない。<br>
-問題点(日本語メール)<br>
--False Positiveになりやすい<br>
+<p>SpamAssassinは日本語対応していない。<br/>
+問題点(日本語メール)<br/>
+-False Positiveになりやすい<br/>
 -日本語キーワードチェックルールを書こうとするとキーワードを文字コード(16進表記)にして書かないと行けない</p>
-<p>上記を解決するであろうパッチも作ってくれている方々がいる。<br>
-http://www.emaillab.org/spamassassin/<br>
-効果(未確認)<br>
--ベイズフィルターが賢くなるらしい(現在は文字コードを変換せず、生のコードのままで処理をするらしい、その一方で、新しいパッチは文字コードをUTF-8に統一した上で、MeCabなどのプログラムで語句に区切るらしい)->この処理は時間がかかるらしいが、ベイズフィルターの判別力は大幅にアップ(するらしい)<br>
+<p>上記を解決するであろうパッチも作ってくれている方々がいる。<br/>
+http://www.emaillab.org/spamassassin/<br/>
+効果(未確認)<br/>
+-ベイズフィルターが賢くなるらしい(現在は文字コードを変換せず、生のコードのままで処理をするらしい、その一方で、新しいパッチは文字コードをUTF-8に統一した上で、MeCabなどのプログラムで語句に区切るらしい)-&gt;この処理は時間がかかるらしいが、ベイズフィルターの判別力は大幅にアップ(するらしい)<br/>
 -ルールが簡単に書ける。UTF-8を書けるエディターを使えばよい</p>
-<p>日本語パッチがあたっているspamassassinをダウンロードする場合はこちらから！<br>
+<p>日本語パッチがあたっているspamassassinをダウンロードする場合はこちらから！<br/>
 http://spamassassin.jp/download/rules/</p>
 <p>というわけで、オープンソースカンファレン2006東京で貰っSpamAssassin活用ヒント集(<a href="http://spamassassin.jp/">日本
 SpamAssassinユーザ会</a>)からの抜粋でした。早くwikiをたてたいよー</p>

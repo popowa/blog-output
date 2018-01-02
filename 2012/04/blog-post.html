@@ -42,8 +42,9 @@
                 <nav class="navbar">
                     <div class="navbar-inner">
                         <ul class="nav">
-                            <li ><a href="http://www.popowa.com">Profile</a></li>
+                            <li ><a href="http://www.popowa.com">About Aya</a></li>
                             <li ><a href="https://twitter.com/ayakomuro">Twitter</a></li>
+                            <li ><a href="https://github.com/popowa">Github</a></li>
                         </ul>
 
 <script>
@@ -101,29 +102,29 @@
         </div>
 
         <p>若さの過ちで、サブドメインを大量に作ってアプリを展開したのはいいものの、時が過ぎ閉じたいけどなかなか閉じれない時があると思います[（みんな賛同してくれると信じてる）]</p>
-<p>例えば<br>
-http://my-cool-app.popowa.com<br>
+<p>例えば<br/>
+http://my-cool-app.popowa.com<br/>
 というのがあったとします。</p>
-<p>サブドメインが動いているサーバーは落としたいけど、どこかにこのサブドメインとコンテンツを残しておきたい。<br>
+<p>サブドメインが動いているサーバーは落としたいけど、どこかにこのサブドメインとコンテンツを残しておきたい。<br/>
 しかしその為にサーバを立てて、Virtual
 Host設定で別のサイトに転送するのは賢いやり方ではありません。そもそもサーバーを引っ越しする度に、そのVirtual
 Hostが何だったのかを思い出して適切な移行をしDNS設定も変更する必要があるからです。</p>
 <p>[]</p>
 <p><strong>[No 面倒！ ]</strong></p>
 <p>そんな時にS3のウェブサイト機能を使います。</p>
-<p>http://my-cool-app.popowa.com<br>
-に来たリクエストを<br>
-http://www.popowa.com/my-cool-app/index.html<br>
+<p>http://my-cool-app.popowa.com<br/>
+に来たリクエストを<br/>
+http://www.popowa.com/my-cool-app/index.html<br/>
 というサブドメインからサブディレクトリに転送するのをサーバを立てずにします。</p>
 <p>まずS3で my-cool-app.popowa.comというバケットを作ります。</p>
-<p><a href="http://4.bp.blogspot.com/-xojwSnyxH_o/T5Nub2hy7fI/AAAAAAAAQoI/n4KqFjegAOQ/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%EF%BC%882012-04-22+11.27.50%EF%BC%89.png"><img alt="" src="http://4.bp.blogspot.com/-xojwSnyxH_o/T5Nub2hy7fI/AAAAAAAAQoI/n4KqFjegAOQ/s400/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%EF%BC%882012-04-22+11.27.50%EF%BC%89.png">{width="400"
+<p><a href="http://4.bp.blogspot.com/-xojwSnyxH_o/T5Nub2hy7fI/AAAAAAAAQoI/n4KqFjegAOQ/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%EF%BC%882012-04-22+11.27.50%EF%BC%89.png"><img alt="" src="http://4.bp.blogspot.com/-xojwSnyxH_o/T5Nub2hy7fI/AAAAAAAAQoI/n4KqFjegAOQ/s400/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%EF%BC%882012-04-22+11.27.50%EF%BC%89.png"/>{width="400"
 height="230"}</a></p>
 <p>バケットを作成後、権限設定で誰でもアクセス可能にします。  </p>
 <blockquote>
 <p>Grantee: Everyone : List を許可します。</p>
 </blockquote>
-<p><a href="http://2.bp.blogspot.com/-O2W4cXkPy7I/T5NuyaYzmHI/AAAAAAAAQoQ/UX99liJHkcA/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%EF%BC%882012-04-22+11.29.56%EF%BC%89.png"><img alt="" src="http://2.bp.blogspot.com/-O2W4cXkPy7I/T5NuyaYzmHI/AAAAAAAAQoQ/UX99liJHkcA/s400/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%EF%BC%882012-04-22+11.29.56%EF%BC%89.png">{width="400"
-height="101"} </a></p>
+<p><a href="http://2.bp.blogspot.com/-O2W4cXkPy7I/T5NuyaYzmHI/AAAAAAAAQoQ/UX99liJHkcA/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%EF%BC%882012-04-22+11.29.56%EF%BC%89.png"><img alt="" src="http://2.bp.blogspot.com/-O2W4cXkPy7I/T5NuyaYzmHI/AAAAAAAAQoQ/UX99liJHkcA/s400/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%EF%BC%882012-04-22+11.29.56%EF%BC%89.png"/>{width="400"
+height="101"}&nbsp;</a></p>
 <p>その後Websiteタブをクリックし、</p>
 <blockquote>
 <p>Enabled: クリック</p>
@@ -131,51 +132,51 @@ height="101"} </a></p>
 <p>Error Document: index.html</p>
 <p>Endpoint: 自動で生成されるのでコピーしておきます。</p>
 </blockquote>
-<p><a href="http://3.bp.blogspot.com/-g9F8ZxSGB1U/T5NuzFxMkeI/AAAAAAAAQoU/K6SPhmxU57s/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%EF%BC%882012-04-22+11.30.24%EF%BC%89.png"><img alt="" src="http://3.bp.blogspot.com/-g9F8ZxSGB1U/T5NuzFxMkeI/AAAAAAAAQoU/K6SPhmxU57s/s400/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%EF%BC%882012-04-22+11.30.24%EF%BC%89.png">{width="400"
-height="112"} </a></p>
+<p><a href="http://3.bp.blogspot.com/-g9F8ZxSGB1U/T5NuzFxMkeI/AAAAAAAAQoU/K6SPhmxU57s/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%EF%BC%882012-04-22+11.30.24%EF%BC%89.png"><img alt="" src="http://3.bp.blogspot.com/-g9F8ZxSGB1U/T5NuzFxMkeI/AAAAAAAAQoU/K6SPhmxU57s/s400/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%EF%BC%882012-04-22+11.30.24%EF%BC%89.png"/>{width="400"
+height="112"}&nbsp;</a></p>
 <p>popowa.comのDNSはRoute 53を使っているので、Route
-53でレコードを編集します。<br>
-（ここはドメインが使っているDNSを変更します。）<br>
+53でレコードを編集します。<br/>
+（ここはドメインが使っているDNSを変更します。）<br/>
 先ほどコピーしたEndPointをCNAMEにします。</p>
 <blockquote>
 <p>my-cool-app.popowa.com CNAME
 my-cool-app.popowa.com.s3-website-ap-northeast-1.amazonaws.com</p>
 </blockquote>
-<p><a href="http://3.bp.blogspot.com/-xximfnARLuw/T5NuzpmQ5FI/AAAAAAAAQoc/p45y38zRhEY/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%EF%BC%882012-04-22+11.31.28%EF%BC%89.png"><img alt="" src="http://3.bp.blogspot.com/-xximfnARLuw/T5NuzpmQ5FI/AAAAAAAAQoc/p45y38zRhEY/s400/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%EF%BC%882012-04-22+11.31.28%EF%BC%89.png">{width="345"
+<p><a href="http://3.bp.blogspot.com/-xximfnARLuw/T5NuzpmQ5FI/AAAAAAAAQoc/p45y38zRhEY/s1600/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%EF%BC%882012-04-22+11.31.28%EF%BC%89.png"><img alt="" src="http://3.bp.blogspot.com/-xximfnARLuw/T5NuzpmQ5FI/AAAAAAAAQoc/p45y38zRhEY/s400/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%EF%BC%882012-04-22+11.31.28%EF%BC%89.png"/>{width="345"
 height="400"}</a></p>
-<p>その後以下のHTMLをindex.htmlとしてコピーして作成したバケットにアップロードします。S3には.htaccessは使えません。なので以下のようなHTML自体が転送をする処理を追加しておく必要があります。<br>
+<p>その後以下のHTMLをindex.htmlとしてコピーして作成したバケットにアップロードします。S3には.htaccessは使えません。なので以下のようなHTML自体が転送をする処理を追加しておく必要があります。<br/>
 もし分岐させたい場合は、リクエストのURLを見てそこから別のドメインに付け足して。。という事も出来ます。  </p>
 <blockquote>
 <p>\&lt;html xmlns=\"http://www.w3.org/1999/xhtml\"
-xmlns:og=\"http://ogp.me/ns#\" xml:lang=\"ja\" lang=\"ja\"><br>
-    \&lt;head><br>
-        \&lt;meta http-equiv=\"Content-Type\" content=\"text/html;
-charset=utf-8\" /><br>
-        \&lt;meta http-equiv=\"Content-Script-Type\"
-content=\"text/javascript\" /><br>
-        \&lt;title>Redirect to
-http://www.popowa.com/my-cool-app/index.html\&lt;/title><br>
-        \&lt;script type=\"text/javascript\" language=\"javascript\"><br>
-        \&lt;!--  </p>
-<p>location.href=\'http://www.popowa.com/my-cool-app/index.html\';<br>
-        // --><br>
-        \&lt;/script><br>
-    \&lt;/head><br>
-    \&lt;body><br>
-    See you Later!<br>
-    \&lt;/body><br>
-\&lt;/html></p>
+xmlns:og=\"http://ogp.me/ns#\" xml:lang=\"ja\" lang=\"ja\"&gt;<br/>
+&nbsp;&nbsp;&nbsp; \&lt;head&gt;<br/>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; \&lt;meta http-equiv=\"Content-Type\" content=\"text/html;
+charset=utf-8\" /&gt;<br/>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; \&lt;meta http-equiv=\"Content-Script-Type\"
+content=\"text/javascript\" /&gt;<br/>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; \&lt;title&gt;Redirect to
+http://www.popowa.com/my-cool-app/index.html\&lt;/title&gt;<br/>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; \&lt;script type=\"text/javascript\" language=\"javascript\"&gt;<br/>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; \&lt;!--  </p>
+<p>location.href=\'http://www.popowa.com/my-cool-app/index.html\';<br/>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; // --&gt;<br/>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; \&lt;/script&gt;<br/>
+&nbsp;&nbsp;&nbsp; \&lt;/head&gt;<br/>
+&nbsp;&nbsp;&nbsp; \&lt;body&gt;<br/>
+&nbsp;&nbsp;&nbsp; See you Later!<br/>
+&nbsp;&nbsp;&nbsp; \&lt;/body&gt;<br/>
+\&lt;/html&gt;</p>
 </blockquote>
 <p>これじゃなくても  </p>
 <blockquote>
 <p>\&lt;meta http-equiv=\"Refresh\"
-content=\"0;URL=http://www.popowa.com/my-cool-app/index.html\" /></p>
+content=\"0;URL=http://www.popowa.com/my-cool-app/index.html\" /&gt;</p>
 </blockquote>
 <p>でもいいかもしれません。</p>
-<p>それではアクセスしてみましょう！<br>
-<a href="http://my-cool-app.popowa.com/">http://my-cool-app.popowa.com</a><br>
-あっという間に<br>
-<a href="http://www.popowa.com/my-cool-app/index.html">http://www.popowa.com/my-cool-app/index.html</a><br>
+<p>それではアクセスしてみましょう！<br/>
+<a href="http://my-cool-app.popowa.com/">http://my-cool-app.popowa.com</a><br/>
+あっという間に<br/>
+<a href="http://www.popowa.com/my-cool-app/index.html">http://www.popowa.com/my-cool-app/index.html</a><br/>
 に転送されていると思います。</p>
 <p>これで転送用のサーバを立てずして過去の遺産を新しいドメインに移す事が出来ましたね！</p>
 <p>という訳で過去よ永遠に、S3を使ったサブドメインからサブディレクトリへの転送でしたー</p>

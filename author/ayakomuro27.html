@@ -75,50 +75,6 @@
                         <article>
                             <header>
                                 <h1 class="entry-title">
-                                    <a href="http://blog.popowa.com/2011/09/on-s3.html" rel="bookmark" title="Permalink to ">
-                                       
-                                    </a>
-                                </h1>
-                            </header>
-                            <div class="entry-content">
-<footer class="post-info">
-    <address class="vcard author">
-        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
-    </address>
-
-    in <a href="http://blog.popowa.com/category/blog.html">blog</a>
-
-    on 2011-09-21
-
-        |
-        tags:         <a href="http://blog.popowa.com/tag/blogspot.html">blogspot</a>
-        <a href="http://blog.popowa.com/tag/wordpress.html">wordpress</a>
-
-
-
-    
-</footer><!-- /.post-info -->                                <p>S3+www.popowa.comのコンテンツ（Wordpress）をblog.popowa.com(BlogSpot)に移行して、www.popowa.comはS3のウェブホストに置いたのですが、www.popowa.comには、はてぶとかから来る人も多くリンク切れになるのは困るなーと思い、以下のように設定してみました。<br/>
-[]※前提として旧www.popowa.comは新stock.popowa.comとして残しています。</p>
-<p>まずS3の静的ページのホスティングは動的なページを置く事は出来ません。なので、.htaccessを使ってmod_rewriteでURLを書き換える事が出来ません。</p>
-<p>S3にはエラーページを設定出来る所があり、</p>
-<p><a href="http://3.bp.blogspot.com/-Bioi-DfULrw/TnpHDSXPP9I/AAAAAAAANa8/JMuE39V00-g/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%25EF%25BC%25882011-09-22+5.18.57%25EF%25BC%2589.png"><img alt="" src="http://3.bp.blogspot.com/-Bioi-DfULrw/TnpHDSXPP9I/AAAAAAAANa8/JMuE39V00-g/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%25EF%25BC%25882011-09-22+5.18.57%25EF%25BC%2589.png"/></a></p>
-<p>404.htmlに以下のコードを入れると旧www.popowa.com/archives/xxxxに来た人は新stock.popowa.com/archives/xxxxに転送されます。</p>
-<blockquote>
-<p>\&lt;script type=\"text/javascript\" language=\"javascript\"&gt;<br/>
-&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; \&lt;!--<br/>
-&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; var url=document.URL;<br/>
-&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; if (url.match …</p></blockquote>
-                                <p class="readmore">
-                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2011/09/on-s3.html">Read more...</a>
-                                </p>
-                            </div><!-- /.entry-content -->
-                            <hr/>
-                        </article>
-                    </li>
-                    <li>
-                        <article>
-                            <header>
-                                <h1 class="entry-title">
                                     <a href="http://blog.popowa.com/2011/09/deployment.html" rel="bookmark" title="Permalink to Deploymentの削除方法">
                                        Deploymentの削除方法
                                     </a>
@@ -172,80 +128,6 @@ height="98"}</a></p>
 <p>Deploymentは削除されます。</p>
                                 <p class="readmore">
                                     <a class="btn btn-small btn-info" href="http://blog.popowa.com/2011/09/deployment.html">Read more...</a>
-                                </p>
-                            </div><!-- /.entry-content -->
-                            <hr/>
-                        </article>
-                    </li>
-                    <li>
-                        <article>
-                            <header>
-                                <h1 class="entry-title">
-                                    <a href="http://blog.popowa.com/2011/09/blog-post.html" rel="bookmark" title="Permalink to (要アップデート)クラウドを提供しているベンダー一覧">
-                                       (要アップデート)クラウドを提供しているベンダー一覧
-                                    </a>
-                                </h1>
-                            </header>
-                            <div class="entry-content">
-<footer class="post-info">
-    <address class="vcard author">
-        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
-    </address>
-
-    in <a href="http://blog.popowa.com/category/blog.html">blog</a>
-
-    on 2011-09-18
-
-        |
-        tags:         <a href="http://blog.popowa.com/tag/aws.html">AWS</a>
-        <a href="http://blog.popowa.com/tag/cloud.html">Cloud</a>
-        <a href="http://blog.popowa.com/tag/cloudisle.html">CloudIsle</a>
-        <a href="http://blog.popowa.com/tag/codero.html">Codero</a>
-        <a href="http://blog.popowa.com/tag/cuvic-ondemand.html">Cuvic OnDemand</a>
-        <a href="http://blog.popowa.com/tag/first-server.html">First Server</a>
-        <a href="http://blog.popowa.com/tag/gmo.html">GMO</a>
-        <a href="http://blog.popowa.com/tag/gogrid.html">GoGrid</a>
-        <a href="http://blog.popowa.com/tag/ibm.html">IBM</a>
-        <a href="http://blog.popowa.com/tag/iij-gio.html">IIJ GIO</a>
-        <a href="http://blog.popowa.com/tag/nifty-cloud-biglobe.html">Nifty Cloud Biglobe</a>
-        <a href="http://blog.popowa.com/tag/noah-cloud.html">Noah cloud</a>
-        <a href="http://blog.popowa.com/tag/rackspace.html">Rackspace</a>
-
-
-
-    
-</footer><!-- /.post-info -->                                <p>クラウドを提供しているベンダー一覧</p>
-<p>ブログ以降に伴い記事を移行させておきます。後日アップデートします。</p>
-<p>[]</p>
-<p><a href="http://www.popowa.com/cloud/aws" title="Amazon Web Services"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/03/amazon-web-services1-e1300250817998.png" title="amazon-web-services"/>{width="168"
-height="61"}</a></p>
-<ol>
-<li>AWS</li>
-<li>Hypervisor:&nbsp;Citrix Xen</li>
-<li>契約対応:&nbsp;個人/法人</li>
-<li>対応言語:&nbsp;日本語/英語あり</li>
-<li>日本法人有無:&nbsp;日本法人あり</li>
-</ol>
-<p><a href="http://www.popowa.com/cloud/nifty-cloud"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/03/nifty.gif" title="nifty"/>{.alignnone
-.size-full .wp-image-82 width="278"
-height="27"}</a></p>
-<ol>
-<li>Nifty Cloud</li>
-<li>Hypervisor:VMware</li>
-<li>契約対応:法人</li>
-<li>対応言語:日本語</li>
-<li>日本法人有無:日本法人あり</li>
-</ol>
-<p><a href="http://www.popowa.com/cloud/c%E2%80%8Bl%E2%80%8Bo%E2%80%8Bu%E2%80%8Bd%E2%80%8Ba%E2%80%8Bg%E2%80%8Be%E2%80%8B-%E2%80%8Bc%E2%80%8Bu%E2%80%8Bv%E2%80%8Bi%E2%80%8Bc%E2%80%8B-%E2%80%8Bo%E2%80%8Bn%E2%80%8Bd%E2%80%8Be%E2%80%8Bm%E2%80%8B" title="c​l​o​u​d​a​g​e​ ​C​U​V​I​C​ ​O​n​D​e​m​a​n​d"><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/03/cubicondemand-300x77.png" title="cubicondemand"/>{.alignnone
-.size-medium .wp-image-274 width="300"
-height="77"}</a></p>
-<ol>
-<li>Cuvic OnDemand</li>
-<li>Hypervisor:VMware</li>
-<li>契約対応:法人</li>
-<li>対応言語 …</li></ol>
-                                <p class="readmore">
-                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2011/09/blog-post.html">Read more...</a>
                                 </p>
                             </div><!-- /.entry-content -->
                             <hr/>
@@ -322,28 +204,20 @@ height="77"}</a></p>
 </footer><!-- /.post-info -->                                <p>WordpressからBlogspotに引っ越ししてみました。  </p>
 <p>あまり深い意味はありません。</p>
 <p>引っ越しは簡単でしたが、一度エラーが出たので記載しておきます。<br/>
-[]<br/>
-wordpress --&gt; ツール--&gt;エキスポートでXMLで出力します。  </p>
-<hr/>
-<p><a href="http://1.bp.blogspot.com/-y71Alr7Sonw/TnU57hqzVrI/AAAAAAAANZs/WYWqWyI4dyQ/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%25EF%25BC%25882011-09-18+9.13.17%25EF%25BC%2589.png"><img alt="" src="http://1.bp.blogspot.com/-y71Alr7Sonw/TnU57hqzVrI/AAAAAAAANZs/WYWqWyI4dyQ/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%25EF%25BC%25882011-09-18+9.13.17%25EF%25BC%2589.png"/></a></p>
-<hr/>
+wordpress --&gt; ツール--&gt;エキスポートでXMLで出力します。<br/>
+<img alt="" src="http://1.bp.blogspot.com/-y71Alr7Sonw/TnU57hqzVrI/AAAAAAAANZs/WYWqWyI4dyQ/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%25EF%25BC%25882011-09-18+9.13.17%25EF%25BC%2589.png"/></p>
 <p>するとpopowa.wordpress.2011-09-18.xmlという感じのXMLがダウンロードされます。<br/>
 それをBlogspotで新しいブログを作成し、設定-&gt;ブログのインポートで、選択をして取り込もうとすると</p>
-<p><a href="http://1.bp.blogspot.com/-31jlXFKfspA/TnU58PkIR5I/AAAAAAAANZw/8iHNulOCxdw/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%25EF%25BC%25882011-09-18+9.14.46%25EF%25BC%2589.png"><img alt="" src="http://1.bp.blogspot.com/-31jlXFKfspA/TnU58PkIR5I/AAAAAAAANZw/8iHNulOCxdw/s400/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%25EF%25BC%25882011-09-18+9.14.46%25EF%25BC%2589.png"/>{width="400"
-height="100"}</a></p>
+<p><img alt="" src="http://1.bp.blogspot.com/-31jlXFKfspA/TnU58PkIR5I/AAAAAAAANZw/8iHNulOCxdw/s1600/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%25EF%25BC%25882011-09-18+9.14.46%25EF%25BC%2589.png"/></p>
 <p>エラーが！！[bX-izedxvというエラーコードが出たので検索してみると、皆さん同じエラーで悩まれているよう]</p>
 <ul>
 <li>[[[<a href="http://www.google.com/support/forum/p/blogger/thread?tid=39d670cf007b7488&amp;hl=en">Error bX-izedxv While Trying To Import Blog From
     Wordpress</a>]]]</li>
 </ul>
-<p>[<br/>
-]<br/>
-[[結論として、私は以下のサイトで変換をする事でインポート出来るようになりました！]]</p>
+<p>結論として、私は以下のサイトで変換をする事でインポート出来るようになりました！</p>
 <ul>
-<li>[[<a href="http://wordpress2blogger.appspot.com/">http://wordpress2blogger.appspot.com/</a>]]</li>
+<li><a href="http://wordpress2blogger.appspot.com/">http://wordpress2blogger.appspot.com/</a></li>
 </ul>
-<p>[<br/>
-]</p>
                                 <p class="readmore">
                                     <a class="btn btn-small btn-info" href="http://blog.popowa.com/2011/09/wordpressblogspot.html">Read more...</a>
                                 </p>
@@ -436,7 +310,7 @@ height="100"}</a></p>
 <p>まずクラウド女子会は、単独での勉強会は1月にやったきりで、その後は、JAZUGとの合同勉強会、また色んな所に出張発表や、女子会サミットなど、普通に食事会など、「勉強会」らしいのはしてませんでした。  </p>
 <p>そしてついにしびれを切らした@KenTamagawaさんから「そろそろ勉強会しましょう|д･)ﾁﾗｯ」とご連絡を頂いてから(本当すいません。。)、内部で何をテーマにしようか、と相談してました。  </p>
 <h2 id="netajue-meniguan-shite">■ ネタ決めに関して</h2>
-<p>ここで前回開催した女子会サミットで、学んだ<strong>「勉強会のネタは、流行の物が惹きがいい」</strong>という@mana_catさんのアイディアを採用し、今クラウドで流行っている事、皆が知りたい事はなんだろうね〜と調査。<br/>
+<p>ここで前回開催した女子会サミットで、学んだ<strong>「勉強会のネタは、流行の物が惹きがいい」</strong>　という@mana_catさんのアイディアを採用し、今クラウドで流行っている事、皆が知りたい事はなんだろうね〜と調査。<br/>
 @bond_honeyさんから「顧客からよく聞かれる事はセキュリティですかねー！」という意見で、「面白そうだね〜！」という声によって、今回のクラウド女子会のネタは「クラウドのセキュリティ」になりました。  </p>
 <p>クラウド女子会は基本誰かが「面白いね〜！楽しそう〜！」な事をやるようにしてます。  </p>
 <p>検証：「勉強会のネタは、流行の物が惹きがいい」は本当か …</p>
@@ -474,9 +348,7 @@ height="100"}</a></p>
 
 
     
-</footer><!-- /.post-info -->                                <p>[Startup Weekend</p>
-<p>Fukuoka](http://old-blog.popowa.com/fukuoka.startupweekend.org)に先週末参加し、やっと自分の中で消化出来たので今後参加する人の為にも、自分がいつか振り返る為にもブログを書きたいと思います。  </p>
-<p>[]  </p>
+</footer><!-- /.post-info -->                                <p><a href="http://old-blog.popowa.com/fukuoka.startupweekend.org">Startup Weekend Fukuoka</a>に先週末参加し、やっと自分の中で消化出来たので今後参加する人の為にも、自分がいつか振り返る為にもブログを書きたいと思います。  </p>
 <p>まずStartup Weekend Fukuokaを知らない方に説明をしますと、これは  </p>
 <h3 id="aideakara-ronchimadeno54shi-jian-no-talk-all-action">アイデアから ローンチまでの５４時間 No Talk. All Action.</h3>
 <p>と書いてある通り、アイディアを出し合い -&gt; 投票　-&gt;　グループを作り -&gt;
@@ -484,7 +356,9 @@ height="100"}</a></p>
 <ul>
 <li>Startup Weekend Fukuoka :&nbsp;<a href="http://fukuoka.startupweekend.org/">http://fukuoka.startupweekend.org/</a></li>
 <li>発表時Ustream:&nbsp;<a href="http://www.ustream.tv/channel/startup-weekend-fukuoka">http://www.ustream.tv/channel/startup-weekend-fukuoka</a></li>
-<li>３日間の写真：<a href="https://picasaweb.google.com/102515833230145544168/StartupWeekendFukuoka">https://picasaweb.google.com …</a></li></ul>
+<li>３日間の写真：<a href="https://picasaweb.google.com/102515833230145544168/StartupWeekendFukuoka">https://picasaweb.google.com/102515833230145544168/StartupWeekendFukuoka</a></li>
+</ul>
+<p>模擬、というと語弊があるかもしれません。何故かというと、ここで出来上がった物を元にサービスインしたり、起業してもいいからです …</p>
                                 <p class="readmore">
                                     <a class="btn btn-small btn-info" href="http://blog.popowa.com/2011/09/startup-weekend-fukuoka.html">Read more...</a>
                                 </p>
@@ -496,8 +370,8 @@ height="100"}</a></p>
                         <article>
                             <header>
                                 <h1 class="entry-title">
-                                    <a href="http://blog.popowa.com/2011/09/cloudcom.html" rel="bookmark" title="Permalink to Cloud.com">
-                                       Cloud.com
+                                    <a href="http://blog.popowa.com/2011/08/important-security-notification.html" rel="bookmark" title="Permalink to S3のsettings気をつけようね！">
+                                       S3のsettings気をつけようね！
                                     </a>
                                 </h1>
                             </header>
@@ -507,44 +381,28 @@ height="100"}</a></p>
         by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
     </address>
 
-    in <a href="http://blog.popowa.com/category/blog.html">blog</a>
+    in <a href="http://blog.popowa.com/category/tech.html">tech</a>
 
-    on 2011-08-31
+    on 2011-08-24
 
         |
-        tags:         <a href="http://blog.popowa.com/tag/cloudstack.html">CloudStack</a>
-        <a href="http://blog.popowa.com/tag/kuraudo.html">クラウド</a>
+        tags:         <a href="http://blog.popowa.com/tag/aws.html">AWS</a>
 
 
 
     
-</footer><!-- /.post-info -->                                <p><img alt="" src="http://cloudstockimg.s3.amazonaws.com/wp-content/uploads/2011/05/cloudcom.jpg" title="cloudcom"/>{.alignnone
-.size-full .wp-image-505 width="198" height="63"}　とは。。  </p>
-<p>[]  </p>
-<ol>
-<li>会社名: Cloud.com &nbsp;-&gt; citrixに買収された</li>
-<li>商品名: CloudStack -&gt; Citrixの買収に伴い無償版になった</li>
-<li>サイトURL:&nbsp;<a href="http://cloud.com/">http://cloud.com/</a></li>
-<li>詳細サイト:&nbsp;<a href="http://cloud.com/company/blog">http://cloud.com/company/blog</a></li>
-<li>ユーザーグループ:
-    &nbsp;コミュニティ版としての<a href="http://openstack.jp/">OpenStackユーザー会</a>があり</li>
-<li>Twitter:&nbsp;<a href="http://twitter.com/#!/clouddotcom">@clouddotcom</a>提供サービス</li>
-</ol>
-<p>導入事例（CloudStackを使ってクラウドを構築したクラウド屋）  </p>
-<ul>
-<li><a href="http://www.greenqloud.com/">GreenQloud</a></li>
-<li><a href="http://home.ucloud.olleh.com/main.kt">KT</a>のuCloud（韓国最大の通信事業社）</li>
-<li><a href="http://www.logicworks.net/">LogicWorks</a></li>
-<li><a href="http://iaas.tatacommunications.com/">Tata
-    Communications</a>のinstaCompute</li>
-<li><a href="http://appica.com/">Appica</a></li>
-<li><a href="http://research.nokia.com/open_innovation">Nokia Research Center</a>
-    (NRC)</li>
-<li><a href="https://www.appcore.com/">Appcore</a>
-    （ジンバブエにもオフィスがあるクラウド提供会社）</li>
-<li><a href="http://www.colocube.com/cloud">Colocube …</a></li></ul>
+</footer><!-- /.post-info -->                                <p>ちょっと前ですが、表題のメールがAmazonから来ました。<br/>
+なぬ！？と思って見てみましたが、自分が設定した通りの設定で、はて？と思いました。  </p>
+<p>なんでこんなメールが来たんだろう、と考えた際に、元々S3は公開を前提としていない製品なのかなぁとまず思いました。DBのdumpファイル置いたり、アプリのソースを置いたりしてますもんね。  </p>
+<p>後、S3の用途はとても多岐に渡っていて、本当に機密情報をも保管出来てしまうため、AWSが対応出来る以外の対応策（ユーザー主導のセキュリティ対策）について喚起したのでしょう。  </p>
+<p>IAMが出来てからより細かな設定が出来るようになりましたので、ぜひよりセキュリアなデータをS3に起きつつも、公開用としての画像やファイルの配布などで適材適所の使い方をして行きたいですね。  </p>
+<blockquote>
+<p>[Dear Amazon S3 Customer,  </p>
+<p>We've noticed that your Amazon S3 account has a bucket where your
+permissions allow anonymous requestors to perform READ operations,
+enumerating the contents of the …</p></blockquote>
                                 <p class="readmore">
-                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2011/09/cloudcom.html">Read more...</a>
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2011/08/important-security-notification.html">Read more...</a>
                                 </p>
                             </div><!-- /.entry-content -->
                             <hr/>
@@ -554,8 +412,8 @@ height="100"}</a></p>
                         <article>
                             <header>
                                 <h1 class="entry-title">
-                                    <a href="http://blog.popowa.com/2011/08/important-security-notification.html" rel="bookmark" title="Permalink to ">
-                                       
+                                    <a href="http://blog.popowa.com/2011/08/aws.html" rel="bookmark" title="Permalink to AWSが取得している第三者証明書について">
+                                       AWSが取得している第三者証明書について
                                     </a>
                                 </h1>
                             </header>
@@ -571,24 +429,137 @@ height="100"}</a></p>
 
         |
         tags:         <a href="http://blog.popowa.com/tag/aws.html">AWS</a>
+        <a href="http://blog.popowa.com/tag/security.html">Security</a>
         <a href="http://blog.popowa.com/tag/hai-wai-saito.html">海外サイト</a>
 
 
 
     
-</footer><!-- /.post-info -->                                <p>settings+ちょっと前ですが、表題のメールがAmazonから来ました。  </p>
-<p>[]なぬ！？と思って見てみましたが、自分が設定した通りの設定で、はて？と思いました。  </p>
-<p>なんでこんなメールが来たんだろう、と考えた際に、元々S3は公開を前提としていない製品なのかなぁとまず思いました。DBのdumpファイル置いたり、アプリのソースを置いたりしてますもんね。  </p>
-<p>後、S3の用途はとても多岐に渡っていて、本当に機密情報をも保管出来てしまうため、AWSが対応出来る以外の対応策（ユーザー主導のセキュリティ対策）について喚起したのでしょう。  </p>
-<p>IAMが出来てからより細かな設定が出来るようになりましたので、ぜひよりセキュリアなデータをS3に起きつつも、公開用としての画像やファイルの配布などで適材適所の使い方をして行きたいですね。  </p>
-<blockquote>
-<p><a href="http://www.amazon.com/gp/r.html?R=O6R0FDUCS6A4&amp;C=3I9Y3TLVAZY0I&amp;H=OWFZXXG3XBZGVKTLLNEEBQONUCCA&amp;T=C&amp;U=http%3A%2F%2Faws.amazon.com%3Fref_%3Dpe_12300_20912970"><img alt="" src="http://g-ecx.images-amazon.com/images/G/01/webservices/AWS_LOGO._V2289989_.gif"/></a> </p>
-<p>[Dear Amazon S3 Customer,  </p>
-<p>We've noticed that your Amazon S3 account has a bucket where your
-permissions allow anonymous requestors to perform READ operations,
-enumerating the contents of …</p></blockquote>
+</footer><!-- /.post-info -->                                <p>AWSのセキュリティで欠かす事が出来ないのは第三者証明書ですが、略語になっていてこれなんだろう！？と思う事がよくあります。日本の法律ではない事もあり、余計セキュリティはどうなっているのか分かりにくくしているのではないでしょうか。  </p>
+<p>概要として調べてみたので紹介します。  </p>
+<p>[]  </p>
+<h2 id="sas70-type-ii">SAS70 Type II</h2>
+<ul>
+<li>米国監査基準書70号 =&gt;
+    外部委託をする場合に米国監査に提出する事が出来る</li>
+<li>SAS70報告書にはType IとType IIの2種類がある</li>
+<li>Type Iは委託業務に関する内部統制の整備状況について、Type
+    IIはそれに加えて所定の期間を通じての内部統制の運用状況の有効性の評価を行う</li>
+<li>日本でも同様の基準として日本公認会計士協会の監査基準委員会報告書第18号「委託業務に係る統制リスクの評価」（通称「18号監査」）</li>
+<li>Type
+    II報告書の内容が適切でないと監査人が判断した場合には、委託先への直接監査を行うことがあり得る　=&gt;
+    これは結構重要事項では？</li>
+<li>報告書の内容が適切と監査人が判断した場合に初めて、委託業務についての統制リスクを中位もしくは低位であると評価できる</li>
+</ul>
+<p><a href="http://www.atmarkit.co.jp/im/cits/serial/soxfw/07/03.html">日本版SOX法に必要なセキュリティポリシーとは？ －
+＠IT情報マネジメント</a> </p>
+<p><a href="http://ameblo.jp/yamasan007/entry-10481706640.html">クラウド・コンピューティングで重要な用語の一つ「SAS 70 Type
+II」を探ってみよう！</a> </p>
+<h2 id="pci-dss-level-1">PCI DSS Level 1</h2>
+<ul>
+<li>PCI DSS（Payment Card Industry Data Security Standard）</li>
+<li>JCB …</li></ul>
                                 <p class="readmore">
-                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2011/08/important-security-notification.html">Read more...</a>
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2011/08/aws.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2011/08/ustday.html" rel="bookmark" title="Permalink to Ustなしday">
+                                       Ustなしday
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/blog.html">blog</a>
+
+    on 2011-08-05
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/jin-zhou-noqi-ninatsutaniyusu.html">今週の気になったニュース</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>今日は会議の為ust出来なかったので、話そうと思って用意していた記事だけアップします。  </p>
+<p>[]  </p>
+<ul>
+<li><a href="http://japan.cnet.com/news/service/35005773/">＜CNET
+    Japan＞アップル、「iCloud」追加ストレージ料を明らかに--年額20ドル10Gバイトから3通り</a></li>
+<li><a href="http://feedproxy.google.com/~r/fastcompany/headlines/~3/wQ7bid31t2k/time-warner-profits-itunes-to-get-streaming-powers-microsofts-arduino-rival-sonys-vita-will-">Flickr Hits 6 Billion Photos, Mobile Ad Firms Grow, Time Warner
+    Profits, iTunes\' Streaming Powers, Microsoft\'s Arduino
+    Rival</a></li>
+<li><a href="http://aws.typepad.com/aws_japan/2011/08/new-aws-enterprise-features-vpc-everywhere-direct-connect-identity-federation.html">【AWS発表】 エンタープライズ向けの新発表：
+    東京リージョンを含む全リージョンでのVPCサポート、専用線でクラウドに直結できるDirect
+    Connect、
+    LDAP等でAWSアカウントへのアクセスを可能にする</a></li>
+<li><a href="http://www.itmedia.co.jp/enterprise/articles/1108/04/news103.html">アドビ、Web会議のマネージドサービスを提供　在宅勤務に効果</a></li>
+<li><a href="http://www.itmedia.co.jp/enterprise/articles/1107/29/news105.html">「箱売りから卒業」　仮想化とクラウドに軸足を移すDell</a></li>
+<li><a href="http://www.nec.co.jp/press/ja/1108/0201.html">沖縄県石垣市と竹富町に、住民サービスの向上や災害対策強化を支援する統合コミュニケーションシステムをクラウドサービスで提供</a></li>
+<li><a href="http://cloud.watch.impress.co.jp/docs/news/20110804_465299.html">CTC、大規模プライベートクラウド環境向けのコンサルティングサービス</a></li>
+<li><a href="http://ascii.jp/elem/000/000/625/625527/summary.html?">迅速な導入を実現！日本HPが仮想化支援の「Cloud検証センター」</a></li>
+</ul>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2011/08/ustday.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2011/07/blog-post_30.html" rel="bookmark" title="Permalink to ハンズオン＠佐賀大学でお手伝いをしてくださる方を募集します！">
+                                       ハンズオン＠佐賀大学でお手伝いをしてくださる方を募集します！
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/blog.html">blog</a>
+
+    on 2011-07-30
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/ozhi-rase.html">お知らせ</a>
+        <a href="http://blog.popowa.com/tag/guo-nei-ibento.html">国内イベント</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>9/10(土曜日）に佐賀大学で行われるクラウド/AWSのハンズオンをお手伝いしてくださる方を募集します。  </p>
+<p>詳細は以下の通りです。  </p>
+<p>[]開催日時：2011/9/10 (土曜日）<br/>
+開催場所：佐賀大学<br/>
+スケジュール：  </p>
+<ul>
+<li>10時〜12時: クラウド、AWSとはなぞや</li>
+<li>12時\~13時：ランチ</li>
+<li>13時\~15時：AWS(EC2/S3)を触ってみよう！</li>
+</ul>
+<p>参加費：無料<br/>
+ターゲット参加者：佐賀近辺のIT管理者、（佐賀）大学（院）生  </p>
+<p>スタッフとして手伝っていたく方には感謝の意しかお渡し出来ませんが、無償でもいいとやって頂ける方は是非ご連絡(
+ayakomuro (at) gmail.com ) ください。<br/>
+#スタッフをやって頂く方は、Ec2、S3を触った事がある、というのが最低条件です。  </p>
+<p>以上宜しくお願い致します！！  </p>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2011/07/blog-post_30.html">Read more...</a>
                                 </p>
                             </div><!-- /.entry-content -->
                             <hr/>
@@ -597,7 +568,7 @@ enumerating the contents of …</p></blockquote>
                     </ol><!-- /#posts-list -->
 <p class="paginator">
         <a href="http://blog.popowa.com/author/ayakomuro26.html">&laquo;</a>
-    Page 27 / 35
+    Page 27 / 31
         <a href="http://blog.popowa.com/author/ayakomuro28.html">&raquo;</a>
 </p>
                 </section><!-- /#content -->

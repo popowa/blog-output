@@ -42,8 +42,9 @@
                 <nav class="navbar">
                     <div class="navbar-inner">
                         <ul class="nav">
-                            <li ><a href="http://www.popowa.com">Profile</a></li>
+                            <li ><a href="http://www.popowa.com">About Aya</a></li>
                             <li ><a href="https://twitter.com/ayakomuro">Twitter</a></li>
+                            <li ><a href="https://github.com/popowa">Github</a></li>
                         </ul>
 
 <script>
@@ -108,35 +109,27 @@
   <span class="nx">def</span> <span class="nx">show</span>
   <span class="nx">def</span> <span class="k">delete</span>
 </pre></div>
-
-
 <p>のmethodが追加されるが、新しくmethod追加された場合</p>
 <div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">ProjectsController</span> <span class="o">&lt;</span> <span class="nx">ApplicationController</span> 
   <span class="nx">def</span> <span class="nx">summary</span> <span class="err">#新しく追加した</span>
 </pre></div>
-
-
 <p>config/router.rbに追加してあげる必要がある</p>
 <div class="highlight"><pre><span></span>WebTest::Application.routes.draw do
   resources :projects do
     collection do                                                                                                                         
-      get &#39;summary&#39;
+      get 'summary'
     end
   end
 </pre></div>
-
-
 <p>これだと/projects/summaryとして使える
 特定のレコードに対して新たに処理を追加したい場合はこうする</p>
 <div class="highlight"><pre><span></span>WebTest::Application.routes.draw do
   resources :projects do
     member do                                                                                                                         
-      get &#39;summary&#39;
+      get 'summary'
     end
   end
 </pre></div>
-
-
 <p>こうすると/projects/1/summaryとして使える</p>
 
         <div class="sharethis-bottom">
