@@ -75,6 +75,51 @@
                         <article>
                             <header>
                                 <h1 class="entry-title">
+                                    <a href="http://blog.popowa.com/2014/01/debianzabbix.html" rel="bookmark" title="Permalink to DebianでのZabbixの入れ方">
+                                       DebianでのZabbixの入れ方
+                                    </a>
+                                </h1>
+                            </header>
+                            <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="http://blog.popowa.com/category/blog.html">blog</a>
+
+    on 2014-01-01
+
+        |
+        tags:         <a href="http://blog.popowa.com/tag/zabbiz.html">zabbiz</a>
+
+
+
+    
+</footer><!-- /.post-info -->                                <p>ドキュメント読んでいたら.debパッケージをwgetして入れろ、みたいな事を書いてあるんだけど、wheey-backportにもあって、どっちがどっちなんだ！？となったので調べてみたよ。</p>
+<ul>
+<li><a href="https://www.zabbix.com/documentation/2.2/manual/installation/install_from_packages">https://www.zabbix.com/documentation/2.2/manual/installation/install_from_packages</a></li>
+<li><a href="http://packages.debian.org/wheezy-backports/zabbix-server-mysql">http://packages.debian.org/wheezy-backports/zabbix-server-mysql</a></li>
+</ul>
+<p>Zabbixソースパッケージ（<a href="http://packages.debian.org/source/wheezy-backports/misc/zabbix">http://packages.debian.org/source/wheezy-backports/misc/zabbix</a>）からzabbix-server-mysqlのパッケージがビルドされているので、Debianで使う場合は<br/>
+source.listsでwheey-backportの設定をしてから</p>
+<ol>
+<li>mysql-server(2番目の依存パッケージであるので、明示的に指名する必要は無い）</li>
+<li>zabbix-server-mysql</li>
+<li>zabbix-frontend-php</li>
+</ol>
+<p>を入れれば使えるようになる。</p>
+                                <p class="readmore">
+                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2014/01/debianzabbix.html">Read more...</a>
+                                </p>
+                            </div><!-- /.entry-content -->
+                            <hr/>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h1 class="entry-title">
                                     <a href="http://blog.popowa.com/2014/01/zabbix22database-error-frontend-does.html" rel="bookmark" title="Permalink to ">
                                        
                                     </a>
@@ -517,61 +562,10 @@ by <a href="http://www.pixiv.net/member.php?id=4845725">popowa</a> on
                             <hr/>
                         </article>
                     </li>
-                    <li>
-                        <article>
-                            <header>
-                                <h1 class="entry-title">
-                                    <a href="http://blog.popowa.com/2013/12/blog-post.html" rel="bookmark" title="Permalink to 資料をアップしました(追記12/7)">
-                                       資料をアップしました(追記12/7)
-                                    </a>
-                                </h1>
-                            </header>
-                            <div class="entry-content">
-<footer class="post-info">
-    <address class="vcard author">
-        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
-    </address>
-
-    in <a href="http://blog.popowa.com/category/blog.html">blog</a>
-
-    on 2013-12-05
-
-        |
-        tags:         <a href="http://blog.popowa.com/tag/aws.html">AWS</a>
-        <a href="http://blog.popowa.com/tag/jawsug.html">JAWSUG</a>
-        <a href="http://blog.popowa.com/tag/swx.html">swx</a>
-
-
-
-    
-</footer><!-- /.post-info -->                                <p>まとめて資料アップします(12/5分)  </p>
-<p>追記(12/7) JAWS-UG鹿児島の資料を追加した</p>
-<p>----  </p>
-<h2 id="2013125">2013/12/5</h2>
-<h3 id="fu-gang-kai-cui-kuraudozui-xin-dong-xiang-kiyatsuchiatsupu">［福岡開催！］クラウド最新動向キャッチアップ</h3>
-<p>～　re:Inventから見える日本のクラウドの行方と最新ユーザー事例紹介　～</p>
-<p><a href="http://www.serverworks.co.jp/seminar/info20131205">http://www.serverworks.co.jp/seminar/info20131205</a></p>
-<p>AWS導入前に知っておくと新規・移行が断然に楽になる方法<br/>
-〜コスト削減だけではないAWS導入のメリット〜<br/>
-導入に携わったサーバーワークスが、導入成功のポイントと検討中の皆様へのアドバイス</p>
-<p><strong><a href="https://www.slideshare.net/serverworks/20131205-serverworks-seminar" title="2013/12/05 Serverworks Seminar 小室分">2013/12/05 Serverworks Seminar
-小室分</a></strong>
-from <strong><a href="http://www.slideshare.net/serverworks">Serverworks</a></strong></p>
-<p><strong>このプレゼンは正直スーツな感じの内容では無かったのでちょっと失敗したかな、と思った。。後セミナーの本題（事例とか）と全然被ってないタイトルだったのに今更気付いた。</strong></p>
-<h3 id="jaws-ugfu-gang-reinventbao-gao-hui">JAWS-UG福岡 re:Invent報告会</h3>
-<p><a href="http://jaws-ug-fukuoka.doorkeeper.jp/events/7301">http://jaws-ug-fukuoka.doorkeeper.jp/events/7301</a></p>
-<p>re:Invent行ってみた …</p>
-                                <p class="readmore">
-                                    <a class="btn btn-small btn-info" href="http://blog.popowa.com/2013/12/blog-post.html">Read more...</a>
-                                </p>
-                            </div><!-- /.entry-content -->
-                            <hr/>
-                        </article>
-                    </li>
                     </ol><!-- /#posts-list -->
 <p class="paginator">
         <a href="http://blog.popowa.com/index11.html">&laquo;</a>
-    Page 12 / 31
+    Page 12 / 32
         <a href="http://blog.popowa.com/index13.html">&raquo;</a>
 </p>
                 </section><!-- /#content -->
