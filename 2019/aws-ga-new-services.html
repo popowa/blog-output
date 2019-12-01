@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="author" content="ayakomuro" />
+    <meta name="robots" content="index, follow"/>
+
+    <meta property="og:title" content="2019年にGAになった（と思う）AWSサービス"/>
+    <meta property="og:url" content="https://blog.popowa.com/2019/aws-ga-new-services.html"/>
+    <meta property="og:site_name" content="popowa"/>
+    <meta property="og:type" content="article"/>
+
+    <link rel="canonical" href="https://blog.popowa.com/2019/aws-ga-new-services.html" />
+
+    <title>2019年にGAになった（と思う）AWSサービス | popowa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />
+
+    <link rel="stylesheet" type="text/css" href="https://blog.popowa.com/theme/css/main.css" />
+
+    <script type="text/javascript">var switchTo5x=true;</script>
+    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript">
+        stLight.options({
+            publisher: "5a2ce781d0739000123acd73",
+            doNotHash: false,
+            doNotCopy: false,
+            hashAddressBar: false
+        });
+    </script>
+</head>
+
+<body id="index">
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <header id="banner" >
+                <h1>
+                    <a href="https://blog.popowa.com/">popowa </a>
+                </h1>
+                <nav class="navbar">
+                    <div class="navbar-inner">
+                        <ul class="nav">
+                            <li ><a href="https://blog.popowa.com">TOP</a></li>
+                            <li ><a href="http://www.popowa.com">About Aya</a></li>
+                            <li ><a href="https://twitter.com/ayakomuro">Twitter</a></li>
+                            <li ><a href="https://github.com/popowa">Github</a></li>
+                        </ul>
+
+<script>
+  (function() {
+    var cx = '014316853335343165598:-bgzniyqm3y';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div id="google-custom-search" class="nav">
+    <gcse:search></gcse:search>
+</div>
+                    </div>
+                </nav>
+            </header><!-- /#banner -->
+        </div>
+    </div>
+
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <div class="row-fluid">
+<div class="span10 offset1">
+  <section>
+    <article>
+      <header>
+        <h1 class="entry-title">
+          <a href="https://blog.popowa.com/2019/aws-ga-new-services.html" rel="bookmark"
+             title="Permalink to 2019年にGAになった（と思う）AWSサービス">2019年にGAになった（と思う）AWSサービス</a></h1>
+<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="ayakomuro">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+      </header>
+      <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="https://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+    </address>
+
+    in <a href="https://blog.popowa.com/category/tech.html">tech</a>
+
+    on 2019-12-01
+
+        |
+        tags:         <a href="https://blog.popowa.com/tag/aws.html">AWS</a>
+
+
+
+    
+</footer><!-- /.post-info -->
+        <div class="sharethis-top">
+          <span class='st_fblike_hcount' displayText='Facebook Like'></span>
+          <span class='st_plusone_hcount' displayText='Google +1'></span>
+          <span class='st_twitter_hcount' displayText='Tweet'></span>
+          <span class='st_email_hcount' displayText='Email'></span>
+        </div>
+
+        <p>自分のブログを見て2018年の前半にちらっと軽い記事書いてから、それ以降全く何も書いて無くてビックリした小室です。毎月３万字もタイピングしているというのに&hellip;&hellip;（ATOKレポートより）</p>
+<h2 id="souda,  2019nian niririsushitaawssabisudiao betemiyou">そうだ、 2019年にリリースしたAWSサービス調べてみよう</h2>
+<p>今日は12月4日の<a href="https://kixs.connpass.com/event/154733/">九州インフラ交流勉強会(Kixs) Vol.010 - connpass</a> で2019年（1月〜今日時点）にリリースされた新サービスについて発表しようかなーと思ったので、ちょっくらまとめてみようと思います。</p>
+<p><a href="https://aws.amazon.com/jp/about-aws/whats-new/2019/">2019年のリリースはこちら</a></p>
+<ul>
+<li>そういえば前は英語ページしかなかったのに、今はほぼ全部日本語化されていますね</li>
+<li>考えたら2017年度も同じ事してますね、私&hellip;&hellip; <a href="http://blog.popowa.com/2017/12/2017-aws-release.html">2017年のAWSリリース一覧</a></li>
+</ul>
+<h2 id="setsukakunande2017nian nokodode2019nian nomatomejian temiyou">せっかくなんで2017年のコードで2019年のまとめ見てみよう</h2>
+<p>この<a href="https://aws.amazon.com/jp/about-aws/whats-new/2019/">ページ</a>をダウンロードして、<a href="https://github.com/popowa/blog/tree/master/code/aws-release">graph-wordcloud2019.py</a> で走らせてみました。
+最初はフォントが日本語ではなかったので<a href="https://ipafont.ipa.go.jp/node26">IPAexゴシック(Ver.003.01)</a>を利用させて頂きました🙌</p>
+<h3 id="jie guo ......naruhodo...... yokufen karan......">結果&hellip;&hellip;なるほど&hellip;&hellip;👀 よく分からん&hellip;&hellip;</h3>
+<p><img alt="今回の構成" src="https://blog.popowa.com/images/awsrelease-all-keywords-2019-ja.png"/></p>
+<h2 id="yi lan jian temo......naruhodo...... yokufen karan......_1">一覧見ても&hellip;&hellip;なるほど&hellip;&hellip;👀 よく分からん&hellip;&hellip;</h2>
+<p>一覧をBeautifulSoupで並べただけです。
+<a href="https://blog.popowa.com/2019/aws-release-title.html">AWSの2019年リリース一覧を見てみる（2019月12月1日時点)</a></p>
+<p>なるほど&hellip;&hellip;よく分からん&hellip;&hellip;しょうが無いのでタイトルの末尾に何か法則がないか考えてみます。
+どうやらこのキーワードがよく出てくるようです。=&gt; <strong>開始、追加、簡素化、改善、発表、利用可能に、サポート、ご紹介、拡大</strong></p>
+<p>これらの文字が何回タイトルに出てくるか調べてみました。</p>
+<ul>
+<li>開始: 344 # これは新サービス開始、までリージョンに来てなかったサービスが来たなど複数考えらる</li>
+<li>追加: 172 # 機能追加として使うと推測する</li>
+<li>簡素化: 9 # 簡単に使えるなどの改善リリースと思われる</li>
+<li>改善: 6 # 既存サービスの改善</li>
+<li>発表: 89 # これが新サービスとして使えるようになった、前と違う何かが出たような雰囲気を感じる</li>
+<li>利用可能に: 281 #これは開始と似たような雰囲気を感じるが、既存サービスがリージョンに来たなどに使われる模様</li>
+<li>サポート: 460 #これは今まで出来ていなかった事が出来る用になった、既存サービス向けが多いかと思う</li>
+<li>拡大: 12 # 既存サービスで既存サービスが使えるようになった、リージョンなどが増えたなどの意味が多いかと思う</li>
+</ul>
+<p>これを見る限り <strong>開始</strong> を見ていくのがいいかなぁ〜と思ったので開始が入っているタイトルを見ていきます✌️
+- <a href="https://gist.github.com/popowa/d8d2bf940f6a761c7dc691cf706605b0">2019年に何かを開始したAWSリリース一覧</a></p>
+<p>一通り見る限りこの単語が入っている物はより欲しいモノに近いようです <strong>一般提供, 一般公開</strong>
+- <a href="https://gist.github.com/popowa/9dee3e3958a4502a108ae24b67415405">2019年に何かを一般公開・提供始めたサービス</a></p>
+<p>逆に以下の単語が入っているタイトルは除いてもいいのではと思いました <strong>リージョン, サポート</strong>
+<a href="https://gist.github.com/popowa/303a5c6cb8e14d4e2ca23ccd7eae7e97">2019年に何かを一般公開・提供始めたリージョン＆サポートを除いたサービス</a></p>
+<h2 id="da ban noririsusaretasabisuhaqian nian nore:inventdefa biao sareteiru">大半のリリースされたサービスは前年のre:Inventで発表されている</h2>
+<p>なるほど&hellip;&hellip;なるほど&hellip;&hellip;
+見るとやはりre:Inventで&beta;リリースをして、年中頃ぐらいにGAとして出しているパターンが多いようですね👀</p>
+<table>
+<thead>
+<tr>
+<th>サービス名</th>
+<th>公開された日</th>
+<th>GAになった日</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Amazon DocumentDB (MongoDB 互換)</td>
+<td></td>
+<td><a href="https://aws.amazon.com/jp/about-aws/whats-new/2019/01/amazon-documentdb-with-mongodb-compatibility-generally-available/">2019年1月9日</a></td>
+</tr>
+<tr>
+<td>Amazon Corretto</td>
+<td><a href="https://aws.amazon.com/jp/blogs/opensource/amazon-corretto-no-cost-distribution-openjdk-long-term-support/">2018年11月14日</a></td>
+<td><a href="https://aws.amazon.com/jp/blogs/opensource/amazon-corretto-8-generally-available/">2019年1月31日</a></td>
+</tr>
+<tr>
+<td>AWS App Mesh</td>
+<td><a href="https://aws.amazon.com/jp/blogs/compute/introducing-aws-app-mesh-service-mesh-for-microservices-on-aws/">2018年11月28日</a></td>
+<td><a href="https://aws.amazon.com/jp/about-aws/whats-new/2019/03/aws-app-mesh-is-now-generally-available/">2019年3月27日</a></td>
+</tr>
+<tr>
+<td>Amazon EC2 T3a インスタンス</td>
+<td><a href="https://aws.amazon.com/jp/blogs/aws/new-hibernate-your-ec2-instances/">2018年11月28日</a></td>
+<td><a href="https://aws.amazon.com/jp/about-aws/whats-new/2019/04/amazon-ec2-t3a-instances-are-now-generally-available/">2019年4月24日</a></td>
+</tr>
+<tr>
+<td>Elastic Fabric Adapter</td>
+<td><a href="https://aws.amazon.com/jp/about-aws/whats-new/2018/11/introducing-elastic-fabric-adapter/">2018年11月26日</a></td>
+<td><a href="https://aws.amazon.com/jp/about-aws/whats-new/2019/04/elastic-fabric-adapter-is-now-generally-available/">2019年4月29日</a></td>
+</tr>
+<tr>
+<td>Amazon EC2 I3en インスタンス</td>
+<td></td>
+<td><a href="https://aws.amazon.com/jp/about-aws/whats-new/2019/05/amazon-ec2-i3en-instances-are-now-generally-available/">2019年5月8日</a></td>
+</tr>
+<tr>
+<td>AWS Ground Station</td>
+<td><a href="https://aws.amazon.com/jp/about-aws/whats-new/2018/12/announcing-aws-groundstation/">2018年11月30日</a></td>
+<td><a href="https://aws.amazon.com/jp/about-aws/whats-new/2019/05/announcing-general-availability-of-aws-ground-station-/">2019年5月23日</a></td>
+</tr>
+<tr>
+<td>Amazon Textract</td>
+<td><a href="https://aws.amazon.com/jp/blogs/news/reinvent-2018-andy-keynote-amazon-textract/">2018年11月29日</a></td>
+<td><a href="https://aws.amazon.com/jp/about-aws/whats-new/2019/05/amazon-textract-now-generally-available/">2019年5月29日</a></td>
+</tr>
+<tr>
+<td>Amazon Managed Streaming for Apache Kafka (Amazon MSK)</td>
+<td><a href="https://aws.amazon.com/jp/blogs/news/reinvent-2018-werner-vogels-keynote-amazon-msk/">2018年11月30日</a></td>
+<td><a href="https://aws.amazon.com/jp/about-aws/whats-new/2019/05/amazon_managed_streaming_for_apache_kafka_amazon_msk_is_now_generally_available/">2019年5月30日</a></td>
+</tr>
+<tr>
+<td>Amazon Personalize</td>
+<td><a href="https://aws.amazon.com/jp/blogs/aws/aws-previews-and-pre-announcements-at-reinvent-2018-andy-jassy-keynote/">2018年11月28日</a></td>
+<td><a href="https://aws.amazon.com/jp/about-aws/whats-new/2019/06/amazon-personalize-now-generally-available/">2019年6月10日</a></td>
+</tr>
+<tr>
+<td>AWS Control Tower</td>
+<td><a href="https://aws.amazon.com/jp/blogs/news/reinvent-2018-andy-keynote-aws-control-tower/">2018年11月29日</a></td>
+<td><a href="https://aws.amazon.com/jp/about-aws/whats-new/2019/06/aws-control-tower-is-now-generally-available/">2019年6月24日</a></td>
+</tr>
+<tr>
+<td>AWS Security Hub</td>
+<td><a href="https://aws.amazon.com/jp/blogs/news/reinvent-2018-andy-keynote-aws-security-hub/">2018年11月29日</a></td>
+<td><a href="https://aws.amazon.com/jp/about-aws/whats-new/2019/06/aws-security-hub-now-generally-available/">2019年6月24日</a></td>
+</tr>
+<tr>
+<td>AWS Lake Formation</td>
+<td><a href="https://aws.amazon.com/jp/blogs/news/reinvent-2018-andy-keynote-aws-lake-formation/">2018年11月29日</a></td>
+<td><a href="https://aws.amazon.com/jp/blogs/aws/aws-lake-formation-now-generally-available/">2019年8月8日</a></td>
+</tr>
+<tr>
+<td>Amazon Forecast</td>
+<td><a href="https://aws.amazon.com/jp/blogs/news/amazon-forecast-time-series-forecasting-made-easy/">2018年11月29日</a></td>
+<td><a href="https://aws.amazon.com/jp/about-aws/whats-new/2019/08/amazon-forecast-now-generally-available/">2019年8月22日</a></td>
+</tr>
+<tr>
+<td>Amazon Quantum Ledger Database (QLDB)</td>
+<td><a href="https://aws.amazon.com/jp/blogs/news/reinvent-2018-andy-keynote-amazon-quantum-ledger-database/">2018年11月29日</a></td>
+<td><a href="https://aws.amazon.com/jp/about-aws/whats-new/2019/09/announcing-general-availability-qldb/">2019年9月4日</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="si fang ba fang niguang gatsutekiteiruawssabisu">四方八方に広がってきているAWSサービス</h2>
+<p>年々AWSサービスは複雑になってきてて、正直そんなにリリースしなくてもいいんじゃない？て思う事も結構あるな〜と個人的には思ったりしています。もちろんそれが欲しい顧客がいるから出しているんだと思うんだけど、なんかre:Inventの為に無理してない？て思う時もあったりなかったり&hellip;&hellip;</p>
+<p>もっと気軽に、全く知らない新サービスを突然バーン！と出して、界隈が朝からドキュメントを読んで検証して午後には提案にいくような、そんな昔懐かしな時期がまた来たとしても私はきっと楽しめますよ😘💕
+そういえば明日からre:Inventですね、私は現地には行かないけど生放送見たりして楽しみたいなと思います！</p>
+<p>気になったので、re:Inventで発表されたサービスで翌年に一般公開にならなかったサービスあるのかな〜また今度調べてみまーす🙌
+https://aws.amazon.com/jp/new/reinvent/</p>
+
+        <div class="sharethis-bottom">
+          <span class='st_fblike_hcount' displayText='Facebook Like'></span>
+          <span class='st_plusone_hcount' displayText='Google +1'></span>
+          <span class='st_twitter_hcount' displayText='Tweet'></span>
+          <span class='st_email_hcount' displayText='Email'></span>
+        </div>
+      </div><!-- /.entry-content -->
+
+    </article>
+  </section>
+</div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="site-footer">
+        <div class="row-fluid">
+            <div class="span10 offset1">
+                <address>
+                    <p>
+                        This blog is proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                    </p>
+                    <p>
+                        <a href="http://github.com/jsliang/pelican-fresh/">Fresh</a> is a responsive theme designed by <a href="http://jsliang.com/">jsliang</a> and <a href="https://github.com/jsliang/pelican-fresh/graphs/contributors">contributors</a>.
+                        Special thanks to <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a> and <a href="http://getbootstrap.com/">Twitter Bootstrap</a>.
+                    </p>
+                </address>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-845207-15']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+</body>
+</html>
