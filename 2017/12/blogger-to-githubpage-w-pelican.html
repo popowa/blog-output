@@ -6,11 +6,11 @@
     <meta name="robots" content="index, follow"/>
 
     <meta property="og:title" content="BloggerからPelican + github pageに移行する方法"/>
-    <meta property="og:url" content="http://blog.popowa.com/2017/12/blogger-to-githubpage-w-pelican.html"/>
+    <meta property="og:url" content="https://blog.popowa.com/2017/12/blogger-to-githubpage-w-pelican.html"/>
     <meta property="og:site_name" content="popowa"/>
     <meta property="og:type" content="article"/>
 
-    <link rel="canonical" href="http://blog.popowa.com/2017/12/blogger-to-githubpage-w-pelican.html" />
+    <link rel="canonical" href="https://blog.popowa.com/2017/12/blogger-to-githubpage-w-pelican.html" />
 
     <title>BloggerからPelican + github pageに移行する方法 | popowa</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +18,7 @@
     <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />
 
-    <link rel="stylesheet" type="text/css" href="http://blog.popowa.com/theme/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://blog.popowa.com/theme/css/main.css" />
 
     <script type="text/javascript">var switchTo5x=true;</script>
     <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
@@ -37,11 +37,12 @@
         <div class="span10 offset1">
             <header id="banner" >
                 <h1>
-                    <a href="http://blog.popowa.com/">popowa </a>
+                    <a href="https://blog.popowa.com/">popowa </a>
                 </h1>
                 <nav class="navbar">
                     <div class="navbar-inner">
                         <ul class="nav">
+                            <li ><a href="https://blog.popowa.com">TOP</a></li>
                             <li ><a href="http://www.popowa.com">About Aya</a></li>
                             <li ><a href="https://twitter.com/ayakomuro">Twitter</a></li>
                             <li ><a href="https://github.com/popowa">Github</a></li>
@@ -73,24 +74,24 @@
     <article>
       <header>
         <h1 class="entry-title">
-          <a href="http://blog.popowa.com/2017/12/blogger-to-githubpage-w-pelican.html" rel="bookmark"
+          <a href="https://blog.popowa.com/2017/12/blogger-to-githubpage-w-pelican.html" rel="bookmark"
              title="Permalink to BloggerからPelican + github pageに移行する方法">BloggerからPelican + github pageに移行する方法</a></h1>
 <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="ayakomuro">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
       </header>
       <div class="entry-content">
 <footer class="post-info">
     <address class="vcard author">
-        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+        by <a class="url fn" href="https://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
     </address>
 
-    in <a href="http://blog.popowa.com/category/blog.html">blog</a>
+    in <a href="https://blog.popowa.com/category/blog.html">blog</a>
 
     on 2017-12-10
 
         |
-        tags:         <a href="http://blog.popowa.com/tag/blogger.html">blogger</a>
-        <a href="http://blog.popowa.com/tag/s3.html">S3</a>
-        <a href="http://blog.popowa.com/tag/pelican.html">pelican</a>
+        tags:         <a href="https://blog.popowa.com/tag/blogger.html">blogger</a>
+        <a href="https://blog.popowa.com/tag/s3.html">S3</a>
+        <a href="https://blog.popowa.com/tag/pelican.html">pelican</a>
 
 
 
@@ -122,11 +123,11 @@ WordPressは使いたくないし、かといって知らないサービスも�
 <li>手組みで少しmarkdown変更</li>
 <li>Pelicanで静的HTML出力</li>
 </ul>
-<h2 id="rokarunoshi-qian-zhun-bei">ローカルの事前準備</h2>
+<h2 id="rokarunoshi qian zhun bei">ローカルの事前準備</h2>
 <p>ローカルにPelicanを入れます。</p>
 <div class="highlight"><pre><span></span>pip install lxml BeautifulSoup4 pelican
 </pre></div>
-<h2 id="bloggerkaratou-gao-nei-rong-woekusupotosuru">Bloggerから投稿内容をエクスポートする</h2>
+<h2 id="bloggerkaratou gao nei rong woekusupotosuru">Bloggerから投稿内容をエクスポートする</h2>
 <p>やり方は以下の通り</p>
 <ul>
 <li><a href="https://support.google.com/blogger/answer/41387?hl=ja">ブログのバックアップ、読み込み、削除 - Blogger ヘルプ </a></li>
@@ -145,18 +146,18 @@ Permalinks設定を Post name設定にします。
 出力する際は<code>Posts</code>で<code>Status: Published</code>のみとします
 こういうファイル名のXMLがダウンロード出来ると思います。
 {Blog name}.wordpress.{YYYY-MM-DD}.xml</p>
-<h2 id="pelicandewordpresshuairuwobian-huan-suru">PelicanでWordPressファイルを変換する</h2>
+<h2 id="pelicandewordpresshuairuwobian huan suru">PelicanでWordPressファイルを変換する</h2>
 <p>ローカルにダウントードしたXMLファイルを変換します。</p>
 <div class="highlight"><pre><span></span>$ pelican-import --wpfile --strip-raw --markup markdown ./migration/wordpress.2017-12-09.xml -o ./content-markdown/
 </pre></div>
-<h2 id="sonohou-shao-shimarkdownhuairuwoxiu-zheng-shimasu">その後少しMarkdownファイルを修正します。</h2>
+<h2 id="sonohou shao shimarkdownhuairuwoxiu zheng shimasu.">その後少しMarkdownファイルを修正します。</h2>
 <div class="highlight"><pre><span></span>$ python xml-convert.py
 </pre></div>
 <p><a href="https://github.com/popowa/blog/blob/master/migration/xml-convert.py">blog/xml-convert.py at master &middot; popowa/blog</a></p>
-<h2 id="soshitepelicannooutputji-neng-woshi-tsutejing-de-htmlnichu-li-shimasu">そしてPelicanのOutput機能を使って静的HTMLに出力します。</h2>
+<h2 id="soshitepelicannooutputji neng woshi tsutejing de htmlnichu li shimasu.">そしてPelicanのOutput機能を使って静的HTMLに出力します。</h2>
 <div class="highlight"><pre><span></span>$ pelican path_content
 </pre></div>
-<h2 id="github-page-du-zi-domein">Github page + 独自ドメイン</h2>
+<h2 id="github page + du zi domein">Github page + 独自ドメイン</h2>
 <p>あとはoutputされたコンテンツをGithub pageとして公開し、独自ドメインを設定します。</p>
 <ul>
 <li>[Custom domain redirects for GitHub Pages sites - User Documentation] (https://help.github.com/articles/custom-domain-redirects-for-github-pages-sites/)</li>

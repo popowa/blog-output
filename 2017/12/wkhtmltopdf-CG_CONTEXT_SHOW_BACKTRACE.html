@@ -6,11 +6,11 @@
     <meta name="robots" content="index, follow"/>
 
     <meta property="og:title" content="wkhtmltopdfで無限ループでPDFを作り出してしまうバグ"/>
-    <meta property="og:url" content="http://blog.popowa.com/2017/12/wkhtmltopdf-CG_CONTEXT_SHOW_BACKTRACE.html"/>
+    <meta property="og:url" content="https://blog.popowa.com/2017/12/wkhtmltopdf-CG_CONTEXT_SHOW_BACKTRACE.html"/>
     <meta property="og:site_name" content="popowa"/>
     <meta property="og:type" content="article"/>
 
-    <link rel="canonical" href="http://blog.popowa.com/2017/12/wkhtmltopdf-CG_CONTEXT_SHOW_BACKTRACE.html" />
+    <link rel="canonical" href="https://blog.popowa.com/2017/12/wkhtmltopdf-CG_CONTEXT_SHOW_BACKTRACE.html" />
 
     <title>wkhtmltopdfで無限ループでPDFを作り出してしまうバグ | popowa</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +18,7 @@
     <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />
 
-    <link rel="stylesheet" type="text/css" href="http://blog.popowa.com/theme/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://blog.popowa.com/theme/css/main.css" />
 
     <script type="text/javascript">var switchTo5x=true;</script>
     <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
@@ -37,11 +37,12 @@
         <div class="span10 offset1">
             <header id="banner" >
                 <h1>
-                    <a href="http://blog.popowa.com/">popowa </a>
+                    <a href="https://blog.popowa.com/">popowa </a>
                 </h1>
                 <nav class="navbar">
                     <div class="navbar-inner">
                         <ul class="nav">
+                            <li ><a href="https://blog.popowa.com">TOP</a></li>
                             <li ><a href="http://www.popowa.com">About Aya</a></li>
                             <li ><a href="https://twitter.com/ayakomuro">Twitter</a></li>
                             <li ><a href="https://github.com/popowa">Github</a></li>
@@ -73,22 +74,22 @@
     <article>
       <header>
         <h1 class="entry-title">
-          <a href="http://blog.popowa.com/2017/12/wkhtmltopdf-CG_CONTEXT_SHOW_BACKTRACE.html" rel="bookmark"
+          <a href="https://blog.popowa.com/2017/12/wkhtmltopdf-CG_CONTEXT_SHOW_BACKTRACE.html" rel="bookmark"
              title="Permalink to wkhtmltopdfで無限ループでPDFを作り出してしまうバグ">wkhtmltopdfで無限ループでPDFを作り出してしまうバグ</a></h1>
 <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="ayakomuro">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
       </header>
       <div class="entry-content">
 <footer class="post-info">
     <address class="vcard author">
-        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+        by <a class="url fn" href="https://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
     </address>
 
-    in <a href="http://blog.popowa.com/category/tech.html">tech</a>
+    in <a href="https://blog.popowa.com/category/tech.html">tech</a>
 
     on 2017-12-18
 
         |
-        tags:         <a href="http://blog.popowa.com/tag/python.html">python</a>
+        tags:         <a href="https://blog.popowa.com/tag/python.html">python</a>
 
 
 
@@ -102,7 +103,7 @@
         </div>
 
         <p>やりたい事はただ一つ、HTMLファイルをPDFにしたいだけだ。</p>
-<h1 id="set-cg_context_show_backtrace-environmental-variable">set CG_CONTEXT_SHOW_BACKTRACE environmental variable</h1>
+<h1 id="set cg_context_show_backtrace environmental variable">set CG_CONTEXT_SHOW_BACKTRACE environmental variable</h1>
 <p>何かしらの方法で取得したHTMLがあるとする</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pdfkit</span>
@@ -116,13 +117,13 @@ If you want to see the backtrace, please set CG_CONTEXT_SHOW_BACKTRACE environme
 調べたらまだバグとしては直っていない模様。</p>
 <p><a href="https://github.com/wkhtmltopdf/wkhtmltopdf/issues/2196">Infinite loop of errors &middot; Issue #2196 &middot; wkhtmltopdf/wkhtmltopdf</a></p>
 <p>まずは他のツールがないかと探して見た</p>
-<h1 id="xhtml2pdf-bu-cai-yong">xhtml2pdf &lt;= 不採用</h1>
+<h1 id="xhtml2pdf &lt;= bu cai yong">xhtml2pdf &lt;= 不採用</h1>
 <ul>
 <li><a href="https://github.com/xhtml2pdf/xhtml2pdf">xhtml2pdf/xhtml2pdf: A library for converting HTML into PDFs using ReportLab</a></li>
 <li><a href="http://xhtml2pdf.readthedocs.io/en/latest/index.html">Welcome to xhtml2pdf&rsquo;s documentation! &mdash; xhtml2pdf 0.1b3 documentation</a></li>
 </ul>
 <p>このツールはissues見ている限りバギーだし、実際に動かしてみてもバギーだった。まともに動かない</p>
-<h1 id="weasyprint-cai-yong">WeasyPrint &lt;= 採用</h1>
+<h1 id="weasyprint &lt;= cai yong">WeasyPrint &lt;= 採用</h1>
 <ul>
 <li><a href="https://github.com/Kozea/WeasyPrint">Kozea/WeasyPrint: WeasyPrint converts web documents (HTML with CSS, SVG, &hellip;) to PDF.</a></li>
 <li><a href="http://weasyprint.readthedocs.io/en/latest/index.html">WeasyPrint &mdash; WeasyPrint 0.41 documentation</a></li>
@@ -133,7 +134,7 @@ brew install cairo pango gdk-pixbuf libffi
 </pre></div>
 </td></tr></table>
 <p>素直にいい感じに動いてくれた。</p>
-<h1 id="jie-lun">結論</h1>
+<h1 id="jie lun">結論</h1>
 <p>pdfkit, wkhtmltopdfを捨ててweasyprint使おう</p>
 
         <div class="sharethis-bottom">

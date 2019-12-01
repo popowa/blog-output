@@ -6,11 +6,11 @@
     <meta name="robots" content="index, follow"/>
 
     <meta property="og:title" content="CloudAutomatorとDatadogを連携して障害時にメンテナンスサーバーへ自動で変更する"/>
-    <meta property="og:url" content="http://blog.popowa.com/2017/12/cloudAutomator-n-datadog.html"/>
+    <meta property="og:url" content="https://blog.popowa.com/2017/12/cloudAutomator-n-datadog.html"/>
     <meta property="og:site_name" content="popowa"/>
     <meta property="og:type" content="article"/>
 
-    <link rel="canonical" href="http://blog.popowa.com/2017/12/cloudAutomator-n-datadog.html" />
+    <link rel="canonical" href="https://blog.popowa.com/2017/12/cloudAutomator-n-datadog.html" />
 
     <title>CloudAutomatorとDatadogを連携して障害時にメンテナンスサーバーへ自動で変更する | popowa</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +18,7 @@
     <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />
 
-    <link rel="stylesheet" type="text/css" href="http://blog.popowa.com/theme/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://blog.popowa.com/theme/css/main.css" />
 
     <script type="text/javascript">var switchTo5x=true;</script>
     <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
@@ -37,11 +37,12 @@
         <div class="span10 offset1">
             <header id="banner" >
                 <h1>
-                    <a href="http://blog.popowa.com/">popowa </a>
+                    <a href="https://blog.popowa.com/">popowa </a>
                 </h1>
                 <nav class="navbar">
                     <div class="navbar-inner">
                         <ul class="nav">
+                            <li ><a href="https://blog.popowa.com">TOP</a></li>
                             <li ><a href="http://www.popowa.com">About Aya</a></li>
                             <li ><a href="https://twitter.com/ayakomuro">Twitter</a></li>
                             <li ><a href="https://github.com/popowa">Github</a></li>
@@ -73,23 +74,23 @@
     <article>
       <header>
         <h1 class="entry-title">
-          <a href="http://blog.popowa.com/2017/12/cloudAutomator-n-datadog.html" rel="bookmark"
+          <a href="https://blog.popowa.com/2017/12/cloudAutomator-n-datadog.html" rel="bookmark"
              title="Permalink to CloudAutomatorとDatadogを連携して障害時にメンテナンスサーバーへ自動で変更する">CloudAutomatorとDatadogを連携して障害時にメンテナンスサーバーへ自動で変更する</a></h1>
 <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="ayakomuro">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
       </header>
       <div class="entry-content">
 <footer class="post-info">
     <address class="vcard author">
-        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+        by <a class="url fn" href="https://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
     </address>
 
-    in <a href="http://blog.popowa.com/category/tech.html">tech</a>
+    in <a href="https://blog.popowa.com/category/tech.html">tech</a>
 
     on 2017-12-04
 
         |
-        tags:         <a href="http://blog.popowa.com/tag/cloudautomator.html">cloudautomator</a>
-        <a href="http://blog.popowa.com/tag/datadog.html">datadog</a>
+        tags:         <a href="https://blog.popowa.com/tag/cloudautomator.html">cloudautomator</a>
+        <a href="https://blog.popowa.com/tag/datadog.html">datadog</a>
 
 
 
@@ -111,9 +112,9 @@
 </ul>
 <p>という所です。
 そこで今回は私が好きなサービス二つを掛け合わせます。</p>
-<h2 id="jin-hui-yarugou-cheng">今回やる構成</h2>
-<p><img alt="今回の構成" src="http://blog.popowa.com/images/architecture.png"/></p>
-<h2 id="cloudautomatordeziyobuwozuo-cheng-suru">CloudAutomatorでジョブを作成する</h2>
+<h2 id="jin hui yarugou cheng">今回やる構成</h2>
+<p><img alt="今回の構成" src="https://blog.popowa.com/images/architecture.png"/></p>
+<h2 id="cloudautomatordeziyobuwozuo cheng suru">CloudAutomatorでジョブを作成する</h2>
 <p>CloudAutomatorにはトリガーにHTTPがあります。</p>
 <p><a href="https://cloudautomator.com/blog/2014/08/13/http-trigger-release/">Cloud Automator | HTTPトリガーをリリースしました</a></p>
 <p>これを使えばHTTPを叩く事でジョブを実行出来るのです。作り方は上記のリンクをご覧ください。
@@ -136,14 +137,14 @@
 </ul>
 <p>をメモっておきます。後でDatadogを開いた時にコピペでもいいかもしれません。
 CloudAutomatorのAPI登録はRoute53のFullアクセス権限のみアタッチしたIAMユーザーで大丈夫です。</p>
-<h2 id="datadogdewebhookji-neng-toshitecloudautomatorwodeng-lu-suru">DatadogでWebhook機能としてCloudAutomatorを登録する</h2>
-<p><img alt="Webhookインテグレーション" src="http://blog.popowa.com/images/20171204-02.png"/></p>
+<h2 id="datadogdewebhookji neng toshitecloudautomatorwodeng lu suru">DatadogでWebhook機能としてCloudAutomatorを登録する</h2>
+<p><img alt="Webhookインテグレーション" src="https://blog.popowa.com/images/20171204-02.png"/></p>
 <p>まずDatadogでWebhook機能をONにします。
 <a href="https://docs.datadoghq.com/integrations/webhooks/">Datadog-Webhooks Integration</a></p>
 <p>WebhooksのConfigurationから設定をします。
-<img alt="Webhookインテグレーション" src="http://blog.popowa.com/images/20171204-03.png"/></p>
+<img alt="Webhookインテグレーション" src="https://blog.popowa.com/images/20171204-03.png"/></p>
 <p>その際に先ほどメモをしたCloudAutomatorのジョブの情報を入れます。
-<img alt="Webhookインテグレーション" src="http://blog.popowa.com/images/20171204-04.png"/></p>
+<img alt="Webhookインテグレーション" src="https://blog.popowa.com/images/20171204-04.png"/></p>
 <div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">"Authorization"</span> <span class="p">:</span> <span class="s2">"CAAuth xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx,</span>
 <span class="s2">"</span><span class="err">Content-Length"</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
 </pre></div>
@@ -151,7 +152,7 @@ CloudAutomatorのAPI登録はRoute53のFullアクセス権限のみアタッチ�
 その後<a href="https://app.datadoghq.com/monitors#/create">モニター作成</a>を選び、障害時の挙動についての設定を行います。</p>
 <p>今回はcode.popowa.comにDatadogエージェントを入れて監視しているのですが、2分間データが来なかった場合に自動でURLを切り替える挙動を想定したエラーとにします。
 アラート時には切り替えのジョブをキックして、リカバリーしたら元々のURLに切り替えるジョブをキックします。</p>
-<p><img alt="Webhookインテグレーション" src="http://blog.popowa.com/images/20171204-05.png"/></p>
+<p><img alt="Webhookインテグレーション" src="https://blog.popowa.com/images/20171204-05.png"/></p>
 <div class="highlight"><pre><span></span><span class="cp">{{</span><span class="err">#</span><span class="nv">is_alert</span><span class="cp">}}</span><span class="x"></span>
 <span class="x">Server </span><span class="cp">{{</span><span class="nv">host.name</span><span class="cp">}}</span><span class="x"> is down!</span>
 <span class="x">Fail over to maintenance URL  @webhook-CA-R53-Failover</span>
@@ -164,9 +165,9 @@ CloudAutomatorのAPI登録はRoute53のFullアクセス権限のみアタッチ�
 </pre></div>
 <p>注意事項としてはCloud AutomatorのRoute53の値変更は同じタイプ(AもしくはCNAME)でしか変更出来ないという事です。
 元々Aレコード値を、Failover時にCNAMEに変えることは出来ない &gt;&lt;</p>
-<h2 id="jian-zheng-suru">検証する</h2>
+<h2 id="jian zheng suru">検証する</h2>
 <p>検証用のURL: <a href="http://dev.code.popowa.com">http://dev.code.popowa.com</a></p>
-<p><img alt="正常時" src="http://blog.popowa.com/images/20171204-06.png"/></p>
+<p><img alt="正常時" src="https://blog.popowa.com/images/20171204-06.png"/></p>
 <p>Datadogエージェントを止めます。<a href="https://help.datadoghq.com/hc/en-us/articles/203764515-Start-Stop-Restart-the-Datadog-Agent">Start/Stop/Restart the Datadog Agent &ndash; Datadog</a></p>
 <div class="highlight"><pre><span></span>aya@codepopowa:~$ sudo /etc/init.d/datadog-agent stop
 <span class="o">[</span> ok <span class="o">]</span> Stopping Datadog Agent <span class="o">(</span>stopping supervisord<span class="o">)</span>: datadog-agent.
@@ -174,12 +175,12 @@ CloudAutomatorのAPI登録はRoute53のFullアクセス権限のみアタッチ�
 <p>2分後にWebhookが動くはずなので待ちます。
 ....
 アラートが来た！</p>
-<p><img alt="アラート" src="http://blog.popowa.com/images/20171204-07.png"/></p>
+<p><img alt="アラート" src="https://blog.popowa.com/images/20171204-07.png"/></p>
 <p>切り替わりました！
-<img alt="Failover時" src="http://blog.popowa.com/images/20171204-08.png"/></p>
+<img alt="Failover時" src="https://blog.popowa.com/images/20171204-08.png"/></p>
 <p>それではDatadogのエージェントを立ち上げ直して状態としては復旧とさせます。</p>
 <p>Cloud Automatorのイベントログにも追加されていました。</p>
-<p><img alt="実行ログ一覧" src="http://blog.popowa.com/images/20171204-09.png"/></p>
+<p><img alt="実行ログ一覧" src="https://blog.popowa.com/images/20171204-09.png"/></p>
 <p>やったね！今回はCloud Automator + Datadogでの自動切り替えでしたが、Datadogは色々な連携が出来るので、Cloud Automatorでフェイルオーバーしていると時にPageDutyなどで通知などもいいかもしれません。</p>
 <p><a href="http://blog.serverworks.co.jp/tech/2015/10/29/pagerduty-cloudautomator-2/">Cloud Automator と PagerDuty を組み合わせた便利な使い方 &ndash; サーバーワークスエンジニアブログ</a></p>
 <h2 id="matome">まとめ</h2>

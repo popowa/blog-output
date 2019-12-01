@@ -6,11 +6,11 @@
     <meta name="robots" content="index, follow"/>
 
     <meta property="og:title" content="Pythonの正規表現：メタ文字とは何ぞや"/>
-    <meta property="og:url" content="http://blog.popowa.com/2017/12/python-regular-expression-1.html"/>
+    <meta property="og:url" content="https://blog.popowa.com/2017/12/python-regular-expression-1.html"/>
     <meta property="og:site_name" content="popowa"/>
     <meta property="og:type" content="article"/>
 
-    <link rel="canonical" href="http://blog.popowa.com/2017/12/python-regular-expression-1.html" />
+    <link rel="canonical" href="https://blog.popowa.com/2017/12/python-regular-expression-1.html" />
 
     <title>Pythonの正規表現：メタ文字とは何ぞや | popowa</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +18,7 @@
     <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />
 
-    <link rel="stylesheet" type="text/css" href="http://blog.popowa.com/theme/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://blog.popowa.com/theme/css/main.css" />
 
     <script type="text/javascript">var switchTo5x=true;</script>
     <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
@@ -37,11 +37,12 @@
         <div class="span10 offset1">
             <header id="banner" >
                 <h1>
-                    <a href="http://blog.popowa.com/">popowa </a>
+                    <a href="https://blog.popowa.com/">popowa </a>
                 </h1>
                 <nav class="navbar">
                     <div class="navbar-inner">
                         <ul class="nav">
+                            <li ><a href="https://blog.popowa.com">TOP</a></li>
                             <li ><a href="http://www.popowa.com">About Aya</a></li>
                             <li ><a href="https://twitter.com/ayakomuro">Twitter</a></li>
                             <li ><a href="https://github.com/popowa">Github</a></li>
@@ -73,22 +74,22 @@
     <article>
       <header>
         <h1 class="entry-title">
-          <a href="http://blog.popowa.com/2017/12/python-regular-expression-1.html" rel="bookmark"
+          <a href="https://blog.popowa.com/2017/12/python-regular-expression-1.html" rel="bookmark"
              title="Permalink to Pythonの正規表現：メタ文字とは何ぞや">Pythonの正規表現：メタ文字とは何ぞや</a></h1>
 <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="ayakomuro">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
       </header>
       <div class="entry-content">
 <footer class="post-info">
     <address class="vcard author">
-        by <a class="url fn" href="http://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
+        by <a class="url fn" href="https://blog.popowa.com/author/ayakomuro.html">ayakomuro</a>
     </address>
 
-    in <a href="http://blog.popowa.com/category/tech.html">tech</a>
+    in <a href="https://blog.popowa.com/category/tech.html">tech</a>
 
     on 2017-12-30
 
         |
-        tags:         <a href="http://blog.popowa.com/tag/python.html">python</a>
+        tags:         <a href="https://blog.popowa.com/tag/python.html">python</a>
 
 
 
@@ -105,19 +106,19 @@
 <p>ちゃんと勉強してなかった正規表現ですが、もしかしたら英語でドキュメント読んだら分かるかも！？と
 思ってこちらの記事を読んでみました。そう、つまり私なりの要約です。</p>
 <p><a href="https://docs.python.org/3.6/howto/regex.html#regular-expression-howto">Regular Expression HOWTO &mdash; Python 3.6.4 documentation</a></p>
-<h2 id="zheng-gui-biao-xian-noji-ben">正規表現の基本</h2>
+<h2 id="zheng gui biao xian noji ben">正規表現の基本</h2>
 <ul>
 <li>正規表現ってすごいシンプルな仕組みで、"test"で探したら"test"が引っかかるだけなの。</li>
 <li>でもそれだと困る人がいるので、大文字小文字区別しないモード(case-insensitive)で実行すれば"Test"とか"TEST"が引っかかるわよ</li>
 </ul>
-<h2 id="metawen-zi-hax-men">メタ文字はX-MEN</h2>
+<h2 id="metawen zi hax-men">メタ文字はX-MEN</h2>
 <ul>
 <li>ところが以下の文字は上記のルールに当てはまらない。文字というより役割を持っている</li>
 <li>つまり元々平凡な高校生だったのに、秘められた力が開花して世界を救う羽目になったX-MENと思って取り扱って頂きたい</li>
 </ul>
 <p>役割を持っている子達</p>
 <p><code>. ^ $ * + ? { } [ ] \ | ( )</code></p>
-<h3 id="zheng-gui-biao-xian-noxiang-wozuo-ru-to-jiao-gua-hu-square-bracket">正規表現の箱を作る：　<code>[</code> と <code>]</code> (角括弧/Square Bracket)</h3>
+<h3 id="zheng gui biao xian noxiang wozuo ru: [ to ] (jiao gua hu /square bracket)">正規表現の箱を作る：　<code>[</code> と <code>]</code> (角括弧/Square Bracket)</h3>
 <p>この<code>[</code> と <code>]</code> は正規表現の括りを作る為の箱の役割になる
 この中に入れる文字は、個別の文字を入れてもいいし、文字の範囲を入れてもいい</p>
 <ul>
@@ -136,13 +137,13 @@
 <ul>
 <li><code>^</code> (例外): <code>[^5]</code> =&gt; 5以外の文字</li>
 </ul>
-<h3 id="metanoyi-ge-wojie-chu-shiyuan-nowen-zi-nisuru-ni-xie-xian-batsukusuratsushiyu">メタの役割を解除し元々の文字にする： <code>\</code>(逆斜線/バックスラッシュ)</h3>
+<h3 id='metanoyi ge wojie chu shiyuan "nowen zi nisuru: \(ni xie xian /batsukusuratsushiyu)'>メタの役割を解除し元々の文字にする： <code>\</code>(逆斜線/バックスラッシュ)</h3>
 <p>バックスラッシュの前ではどのメタ文字も自分自身に戻らないといけないのだ！！</p>
 <ul>
 <li><code>\[</code> =&gt; '['</li>
 <li><code>\\</code> =&gt; '\'</li>
 </ul>
-<h3 id="wen-zi-nozu-mihe-wasewozhao-huan-shiteshimau-ni-xie-xian-batsukusuratsushiyu">文字の組み合わせを召喚してしまう： <code>\</code> (逆斜線/バックスラッシュ)</h3>
+<h3 id="wen zi nozu mihe wasewozhao huan shiteshimau: \ (ni xie xian /batsukusuratsushiyu)">文字の組み合わせを召喚してしまう： <code>\</code> (逆斜線/バックスラッシュ)</h3>
 <p>文字と一緒になると文字の組み合わせを召喚出来る。
 バックスラッシュの後に続く文字が大文字だと、それ以外、というルールが適応される。
 多分大文字だと反抗期になっちゃうのね</p>
@@ -165,9 +166,9 @@
 <ul>
 <li><code>[\s,.]</code> == <code>\s</code>（スペース文字のどれか）, <code>,</code>, <code>.</code>のどれか</li>
 </ul>
-<h3 id="gai-xing-yi-wai-nara-nandemook">改行以外なら、なんでもOK: <code>.</code></h3>
+<h3 id="gai xing yi wai nara, nandemook: .">改行以外なら、なんでもOK: <code>.</code></h3>
 <p>改行も入れたい場合、re.DOTALLモードにすれば全てを受け入れる神になれる</p>
-<h3 id="he-du-mohe-du-mochen-mo-mohan-meteai-wojiao-bitai">何度も何度も沈黙も含めて愛を叫びたい: <code>*</code></h3>
+<h3 id="he du mohe du mochen mo mohan meteai wojiao bitai: *">何度も何度も沈黙も含めて愛を叫びたい: <code>*</code></h3>
 <p>直前にある文字を何度も繰り返すことが出来る。繰り返さなくてもいい。時には沈黙も愛の一つである。</p>
 <ul>
 <li><code>ca*t</code> == <code>c</code> と <code>t</code>の間に　<code>a</code>　が0個から何個でも繰り返すことが出来る ==&gt; ct, cat, caaat, caaaaaaaaaaaaaaaat</li>
@@ -176,17 +177,17 @@
 </ul>
 </li>
 </ul>
-<h3 id="he-du-mohe-du-mozui-di-yi-hui-yi-shang-haai-wojiao-bitai">何度も何度も最低一回以上は愛を叫びたい： <code>+</code></h3>
+<h3 id="he du mohe du mozui di yi hui yi shang haai wojiao bitai: +">何度も何度も最低一回以上は愛を叫びたい： <code>+</code></h3>
 <p>直前にある文字を一回以上何度も繰り返すことが出来る</p>
 <ul>
 <li><code>ca+t</code> == <code>c</code> と <code>t</code>の間に　<code>a</code>　を1回以上〜何個でも繰り返すことが出来る ==&gt; cat, caaat, caaaaaaaaaaaaaaaat</li>
 </ul>
-<h3 id="chen-mo-moshikuha1du-dakeai-wojiao-bitai">沈黙もしくは1度だけ愛を叫びたい： <code>?</code></h3>
+<h3 id="chen mo moshikuha1du dakeai wojiao bitai: ?">沈黙もしくは1度だけ愛を叫びたい： <code>?</code></h3>
 <p>直前にある文字を、1回繰り返すか、もしくは繰り返さない、のどちらかが出来る</p>
 <ul>
 <li><code>home-?brew</code> == <code>homebrew</code> か <code>home-brew</code>のどちらかにマッチする</li>
 </ul>
-<h3 id="zhi-ding-nohui-shu-dakeai-wojiao-bitai-mn">指定の回数だけ愛を叫びたい: <code>{m,n}</code></h3>
+<h3 id="zhi ding nohui shu dakeai wojiao bitai: {m,n}">指定の回数だけ愛を叫びたい: <code>{m,n}</code></h3>
 <p><code>m</code> 回以上 <code>n</code> 回以下の回数の文字を繰り返す事が出来る</p>
 <ul>
 <li><code>a/{1,3}b</code> == <code>a/b</code> か <code>a//b</code>　か <code>a///b</code>のどれかにマッチする</li>
